@@ -35,7 +35,9 @@ const SingleJobPost: React.FC<SingleJobPostTypes> = ({
             <div className="flex">
                 <div className="">Location: </div>
                 <div className="mx-1 font-semibold">
-                    {country}, {jobLocation}
+                    {country.charAt(0).toUpperCase() +
+                        country.slice(1).toLowerCase()}
+                    , {jobLocation}
                 </div>
             </div>
             <div id="description" className="flex flex-col">
