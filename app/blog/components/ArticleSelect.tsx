@@ -49,7 +49,7 @@ export default function ArticleSelect({
                             return null
                         return (
                             <Link
-                                href={`/${category.attributes.slug}`}
+                                href={`/blog/${category.attributes.slug}`}
                                 className={selectedFilter(
                                     category.attributes.slug,
                                     params.category
@@ -74,7 +74,7 @@ export default function ArticleSelect({
                                 <li>
                                     <Link
                                         rel="noopener noreferrer"
-                                        href={`/${params.category}/${article.attributes.slug}`}
+                                        href={`/blog/${params.category}/${article.attributes.slug}`}
                                         className={`${
                                             params.slug ===
                                                 article.attributes.slug &&

@@ -1,11 +1,8 @@
-// ./frontend/src/app/[lang]/layout.tsx
-
 import type { Metadata } from "next"
 import "./globals.css"
 import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers"
 import { fetchAPI } from "./utils/fetch-api"
 
-import { i18n } from "../../i18n-config"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 
@@ -103,8 +100,4 @@ export default async function RootLayout({
             </body>
         </html>
     )
-}
-
-export async function generateStaticParams() {
-    return i18n.locales.map((locale) => ({ lang: locale }))
 }

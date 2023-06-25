@@ -1,6 +1,6 @@
-import PageHeader from "@/app/[lang]/components/PageHeader"
-import { fetchAPI } from "@/app/[lang]/utils/fetch-api"
-import PostList from "@/app/[lang]/components/PostList"
+import PageHeader from "@/app/blog/components/PageHeader"
+import { fetchAPI } from "@/app/blog/utils/fetch-api"
+import PostList from "@/app/blog/components/PostList"
 
 async function fetchPostsByCategory(filter: string) {
     try {

@@ -43,7 +43,7 @@ function CategoryLink({ attributes }: CategoryLink) {
     return (
         <li className="flex">
             <Link
-                href={`/${attributes.slug}`}
+                href={`/blog/${attributes.slug}`}
                 className="hover:dark:text-violet-400"
             >
                 {attributes.name}
