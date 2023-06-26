@@ -2,12 +2,25 @@
 import Logo from "./Logo"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { CategoryLink } from "./Footer"
 
 interface NavLink {
     id: number
     url: string
     newTab: boolean
     text: string
+}
+
+interface CategoryLink {
+    id: string
+    attributes: {
+        name: string
+        slug: string
+    }
+}
+
+function capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 function NavLink({ url, text }: NavLink) {
@@ -31,30 +44,57 @@ function NavLink({ url, text }: NavLink) {
 export default function Navbar({
     links,
     logoUrl,
-    logoText
+    logoText,
+    categoryLinks
 }: {
+    categoryLinks: Array<CategoryLink>
     links: Array<NavLink>
     logoUrl: string | null
     logoText: string | null
 }) {
+    const pathname = usePathname()
     return (
-        <div className="p-4 dark:bg-black dark:text-gray-100">
-            <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
-                <Logo src={logoUrl}>
+        <div className="container p-6 dark:bg-black dark:text-gray-100">
+            <div className="container flex justify-between mx-auto px-0">
+                {/* <Logo src={logoUrl}>
                     {logoText && (
                         <h2 className="text-2xl font-bold">{logoText}</h2>
                     )}
-                </Logo>
+                </Logo> */}
 
-                <div className="items-center flex-shrink-0 hidden lg:flex">
-                    <ul className="items-stretch hidden space-x-3 lg:flex">
+                <div className="container items-center flex-shrink-0 lg:flex">
+                    <ul className="container items-stretch space-x-3 lg:flex text-[18px] font-semibold">
+                        <Link href={`/`} className="hover:dark:text-violet-400">
+                            <li className="inline-block">Home</li>
+                        </Link>
+                        {categoryLinks.map((link: CategoryLink) => {
+                            const isActive = pathname.startsWith(
+                                `/blog/${link.attributes.slug}`
+                            )
+                            return (
+                                <li className="inline-block" key={link.id}>
+                                    <Link
+                                        href={`/blog/${link.attributes.slug}`}
+                                        className={
+                                            isActive
+                                                ? "text-[#a78bfa] font-semibold"
+                                                : "text-black"
+                                        }
+                                    >
+                                        {link.attributes.name}
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    {/* <ul className="container items-stretch space-x-3 lg:flex">
                         {links.map((item: NavLink) => (
                             <NavLink key={item.id} {...item} />
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
 
-                <button className="p-4 lg:hidden">
+                {/* <button className="p-4 lg:hidden">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -69,7 +109,7 @@ export default function Navbar({
                             d="M4 6h16M4 12h16M4 18h16"
                         ></path>
                     </svg>
-                </button>
+                </button> */}
             </div>
         </div>
     )

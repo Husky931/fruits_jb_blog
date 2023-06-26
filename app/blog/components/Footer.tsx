@@ -39,7 +39,7 @@ function FooterLink({ url, text }: FooterLink) {
     )
 }
 
-function CategoryLink({ attributes }: CategoryLink) {
+export function CategoryLink({ attributes }: CategoryLink) {
     return (
         <li className="flex">
             <Link
@@ -75,8 +75,8 @@ export default function Footer({
     legalLinks,
     socialLinks
 }: {
-    logoUrl: string | null
-    logoText: string | null
+    logoUrl?: string | null
+    logoText?: string | null
     menuLinks: Array<FooterLink>
     categoryLinks: Array<CategoryLink>
     legalLinks: Array<FooterLink>
@@ -86,7 +86,7 @@ export default function Footer({
         <footer className="py-6 dark:bg-black dark:text-gray-50">
             <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
                 <div className="grid grid-cols-12">
-                    <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
+                    {/* <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
                         <Logo src={logoUrl}>
                             {logoText && (
                                 <h2 className="text-2xl font-bold">
@@ -94,10 +94,12 @@ export default function Footer({
                                 </h2>
                             )}
                         </Logo>
-                    </div>
+                    </div> */}
 
                     <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium">Categories</p>
+                        <p className="pb-1 text-lg font-medium text-left">
+                            Categories
+                        </p>
                         <ul>
                             {categoryLinks.map((link: CategoryLink) => (
                                 <CategoryLink key={link.id} {...link} />
@@ -106,7 +108,9 @@ export default function Footer({
                     </div>
 
                     <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium">Menu</p>
+                        <p className="pb-1 text-lg font-medium text-left">
+                            Menu
+                        </p>
                         <ul>
                             {menuLinks.map((link: FooterLink) => (
                                 <FooterLink key={link.id} {...link} />
