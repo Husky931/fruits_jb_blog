@@ -34,6 +34,9 @@ async function getGlobal(): Promise<any> {
         ]
     }
 
+    // if you transfor the urlParamsObject you get the below query
+    // populate[]=metadata.shareImage&populate[]=favicon&populate[]=navbar.links&populate[]=navbar.navbarLogo.logoImg&populate[]=footer.footerLogo.logoImg&populate[]=footer.menuLinks&populate[]=footer.legalLinks&populate[]=footer.socialLinks&populate[]=footer.categories
+
     const response = await fetchAPI(path, urlParamsObject, options)
     return response
 }
@@ -65,7 +68,6 @@ export default async function RootLayout({
     const global = await getGlobal()
     // TODO: CREATE A CUSTOM ERROR PAGE
     if (!global.data) return null
-
     const { navbar, footer } = global.data.attributes
 
     const navbarLogoUrl = getStrapiMedia(
@@ -77,8 +79,6 @@ export default async function RootLayout({
     )
 
     return (
-        // <html lang={params.lang}>
-        //     <body>
         <>
             <Navbar
                 links={navbar.links}
@@ -100,7 +100,5 @@ export default async function RootLayout({
                 socialLinks={footer.socialLinks}
             />
         </>
-        //     </body>
-        // </html>
     )
 }

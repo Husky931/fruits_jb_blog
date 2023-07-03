@@ -53,6 +53,7 @@ export default function Navbar({
     logoText: string | null
 }) {
     const pathname = usePathname()
+    const isBlog = pathname === `/blog`
     return (
         <div className="container p-6 dark:bg-black dark:text-gray-100">
             <div className="container flex justify-between mx-auto px-0">
@@ -66,6 +67,16 @@ export default function Navbar({
                     <ul className="container items-stretch space-x-3 lg:flex text-[18px] font-semibold">
                         <Link href={`/`} className="hover:dark:text-violet-400">
                             <li className="inline-block">Home</li>
+                        </Link>
+                        <Link
+                            href={`/blog`}
+                            className={
+                                isBlog
+                                    ? "text-[#a78bfa] font-semibold"
+                                    : "text-black"
+                            }
+                        >
+                            <li className="inline-block">all</li>
                         </Link>
                         {categoryLinks.map((link: CategoryLink) => {
                             const isActive = pathname.startsWith(

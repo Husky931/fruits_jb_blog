@@ -12,6 +12,7 @@ interface Article {
             data: {
                 attributes: {
                     url: string
+                    alternativeText: string
                 }
             }
         }
@@ -37,6 +38,7 @@ interface Article {
 export default function Post({ data }: { data: Article }) {
     const { title, description, publishedAt, cover, authorsBio } =
         data.attributes
+
     const author = authorsBio.data?.attributes
     const imageUrl = getStrapiMedia(cover.data?.attributes.url)
     const authorImgUrl = getStrapiMedia(
@@ -48,7 +50,7 @@ export default function Post({ data }: { data: Article }) {
             {imageUrl && (
                 <Image
                     src={imageUrl}
-                    alt="article cover image"
+                    alt={data.attributes.cover.data.attributes.alternativeText}
                     width={400}
                     height={400}
                     className="w-full h-96 object-cover rounded-lg"
@@ -75,7 +77,7 @@ export default function Post({ data }: { data: Article }) {
             </div>
 
             <div className="dark:text-gray-100">
-                <p>{description}</p>
+                <p className="text-[#78B53B]">{description}</p>
 
                 {data.attributes.blocks.map((section: any, index: number) =>
                     postRenderer(section, index)

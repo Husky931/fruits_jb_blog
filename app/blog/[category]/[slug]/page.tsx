@@ -8,7 +8,7 @@ async function getPostBySlug(slug: string) {
     const urlParamsObject = {
         filters: { slug },
         populate: {
-            cover: { fields: ["url"] },
+            cover: { fields: ["url", "alternativeText"] },
             authorsBio: { populate: "*" },
             category: { fields: ["name"] },
             blocks: { populate: "*" }

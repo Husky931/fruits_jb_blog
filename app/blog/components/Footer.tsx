@@ -82,6 +82,7 @@ export default function Footer({
     legalLinks: Array<FooterLink>
     socialLinks: Array<FooterLink>
 }) {
+    // console.log(categoryLinks, "i am categoryLinks")
     return (
         <footer className="py-6 dark:bg-black dark:text-gray-50">
             <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
