@@ -64,7 +64,7 @@ export default function Navbar({
                 </Logo> */}
 
                 <div className="container items-center flex-shrink-0 lg:flex">
-                    <ul className="container items-stretch space-x-3 lg:flex text-[18px] font-semibold">
+                    <ul className="container items-stretch space-x-3 lg:flex text-[18px]">
                         <Link href={`/`} className="hover:dark:text-violet-400">
                             <li className="inline-block">Home</li>
                         </Link>
