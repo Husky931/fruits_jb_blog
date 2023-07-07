@@ -26,7 +26,7 @@ const Countries = () => {
         "usa"
     ]
     return (
-        <ul className="container px-6">
+        <ul className="container px-6 my-2">
             <li className="inline-block px-1 mx-1 cursor-pointer">
                 <Link
                     className={

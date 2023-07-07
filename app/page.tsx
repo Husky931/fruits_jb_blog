@@ -71,7 +71,6 @@ export default async function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <SiteTitle />
             <div className="w-full flex justify-start items-center">
                 <Pagination
                     count={totalPages}

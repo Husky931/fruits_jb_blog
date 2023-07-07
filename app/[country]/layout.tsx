@@ -7,7 +7,7 @@ export default function LayoutRoute({
 }) {
     return (
         <section>
-            <SiteTitle />
+            {/* <SiteTitle /> */}
             {children}
         </section>
     )

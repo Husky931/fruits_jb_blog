@@ -55,72 +55,39 @@ export default function Navbar({
     const pathname = usePathname()
     const isBlog = pathname === `/blog`
     return (
-        <div className="container p-6 dark:bg-black dark:text-gray-100">
-            <div className="container flex justify-between mx-auto px-0">
-                {/* <Logo src={logoUrl}>
-                    {logoText && (
-                        <h2 className="text-2xl font-bold">{logoText}</h2>
-                    )}
-                </Logo> */}
-
-                <div className="container items-center flex-shrink-0 lg:flex">
-                    <ul className="container items-stretch space-x-3 lg:flex text-[18px]">
-                        <Link href={`/`} className="hover:dark:text-violet-400">
-                            <li className="inline-block">Home</li>
-                        </Link>
-                        <Link
-                            href={`/blog`}
-                            className={
-                                isBlog
-                                    ? "text-[#a78bfa] font-semibold"
-                                    : "text-black"
-                            }
-                        >
-                            <li className="inline-block">all</li>
-                        </Link>
-                        {categoryLinks.map((link: CategoryLink) => {
-                            const isActive = pathname.startsWith(
-                                `/blog/${link.attributes.slug}`
-                            )
-                            return (
-                                <li className="inline-block" key={link.id}>
-                                    <Link
-                                        href={`/blog/${link.attributes.slug}`}
-                                        className={
-                                            isActive
-                                                ? "text-[#a78bfa] font-semibold"
-                                                : "text-black"
-                                        }
-                                    >
-                                        {link.attributes.name}
-                                    </Link>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                    {/* <ul className="container items-stretch space-x-3 lg:flex">
-                        {links.map((item: NavLink) => (
-                            <NavLink key={item.id} {...item} />
-                        ))}
-                    </ul> */}
-                </div>
-
-                {/* <button className="p-4 lg:hidden">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        className="w-6 h-6 dark:text-gray-100"
+        <div className="m-6 py-1 dark:bg-black dark:text-gray-100 border-t border-b border-black">
+            <div className="items-center lg:flex justify-start">
+                <ul className="w-full items-start space-x-3 lg:flex text-[18px]">
+                    <Link
+                        href={`/blog`}
+                        className={
+                            isBlog
+                                ? "text-[#a78bfa] font-semibold"
+                                : "text-black"
+                        }
                     >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4 6h16M4 12h16M4 18h16"
-                        ></path>
-                    </svg>
-                </button> */}
+                        <li className="inline-block">all</li>
+                    </Link>
+                    {categoryLinks.map((link: CategoryLink) => {
+                        const isActive = pathname.startsWith(
+                            `/blog/${link.attributes.slug}`
+                        )
+                        return (
+                            <li className="inline-block" key={link.id}>
+                                <Link
+                                    href={`/blog/${link.attributes.slug}`}
+                                    className={
+                                        isActive
+                                            ? "text-[#a78bfa] font-semibold"
+                                            : "text-black"
+                                    }
+                                >
+                                    {link.attributes.name}
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
             </div>
         </div>
     )

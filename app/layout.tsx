@@ -24,8 +24,8 @@ export default function RootLayout({
             <body
                 className={`${inter.className} p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto`}
             >
-                {/* <SiteTitle /> */}
                 <Navigation />
+                <SiteTitle />
                 <Countries />
                 {children}
             </body>

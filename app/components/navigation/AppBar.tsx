@@ -33,7 +33,7 @@ export default function Nav() {
     }
 
     return (
-        <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600">
+        <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600 rounded-lg">
             <Link
                 className="w-[30px] h-[30px]"
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
