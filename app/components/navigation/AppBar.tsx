@@ -1,0 +1,101 @@
+"use client"
+import React, { useState, useEffect, useRef } from "react"
+import { showAuthModal } from "../../../signals/showAuthModal"
+// import { useUser } from "../../../context/user"
+import { unsetToken as logout } from "../../api/auth/route"
+import AppBar from "@mui/material/AppBar"
+import Toolbar from "@mui/material/Toolbar"
+import Button from "@mui/material/Button"
+import Link from "next/link"
+import Image from "next/image"
+import { User } from "../../../types"
+import Avatar from "@mui/material/Avatar"
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+
+// const navItems = ["Home", "Forum", "Contact"]
+
+export default function Nav() {
+    // const user: User | undefined = useUser()
+    const user = undefined
+
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+    const open = Boolean(anchorEl)
+
+    const handleClick = (
+        event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    ) => {
+        setAnchorEl(event.currentTarget)
+    }
+
+    const handleClose = () => {
+        setAnchorEl(null)
+    }
+
+    return (
+        <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600">
+            <Link
+                className="w-[30px] h-[30px]"
+                href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
+            >
+                <div className="w-[30px] h-[30px] relative cursor-pointer">
+                    <Image
+                        src="/logo_trademark.png"
+                        alt="company background"
+                        width="70"
+                        height="40"
+                        className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                    />
+                </div>
+            </Link>
+
+            <div>
+                <Button
+                    key="Waitlist"
+                    className="text-white pr-0 md:pr-8 text-sm"
+                >
+                    Forum
+                </Button>
+                <Button
+                    key="Documentation"
+                    className="text-white pr-0 md:pr-8 text-sm"
+                >
+                    Blog
+                </Button>
+                {!user && (
+                    <>
+                        <Button
+                            key="Login"
+                            // onClick={() => (showAuthModal.value = true)}
+                            className="text-white pr-0 md:pr-8 text-sm"
+                        >
+                            Employer
+                        </Button>
+                    </>
+                )}
+                {user && (
+                    <>
+                        <Avatar
+                            // onClick={(e) => handleClick(e)}
+                            className="cursor-pointer w-7.5 h-7.5 bg-blue-300 inline-flex sm:w-8.75 sm:h-8.75"
+                        />
+
+                        {/* <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                "aria-labelledby": "basic-button"
+                            }}
+                        >
+                            <MenuItem className="py-0" onClick={() => logout()}>
+                                Logout
+                            </MenuItem>
+                        </Menu> */}
+                    </>
+                )}
+            </div>
+        </div>
+    )
+}

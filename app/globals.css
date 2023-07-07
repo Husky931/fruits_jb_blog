@@ -25,3 +25,29 @@ body {
         )
         rgb(var(--background-start-rgb));
 }
+
+.my-custom-app-bar .MuiAppBar-root {
+    max-width: 1550px !important;
+    max-height: 40px !important;
+    top: 40px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: transparent !important; */
+}
+
+/* .MuiDialog-paper {
+    background-color: transparent !important;
+} */
+
+@media only screen and (min-width: 1200px) {
+    .my-custom-app-bar .MuiAppBar-root {
+        max-width: 1350px !important;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .my-custom-app-bar .MuiAppBar-root {
+        max-width: 1550px !important;
+    }
+}

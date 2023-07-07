@@ -3,6 +3,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import Countries from "@/app/components/Countries"
 import GoogleAnalytics from "@/app/components/GoogleAnalytics"
+import Navigation from "./components/navigation"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,9 +22,10 @@ export default function RootLayout({
         <html lang="en">
             <GoogleAnalytics gaTrackingId={gaTrackingId} />
             <body
-                className={`${inter.className} p-4 sm:px-24 sm:py-12 max-w-[1350px] mx-auto`}
+                className={`${inter.className} p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto`}
             >
                 {/* <SiteTitle /> */}
+                <Navigation />
                 <Countries />
                 {children}
             </body>
