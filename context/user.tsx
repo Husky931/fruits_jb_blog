@@ -14,7 +14,7 @@ export function Provider({ children }: any) {
 
                 try {
                     const res = await fetch(
-                        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/users/me/`,
+                        `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/users/me/`,
                         {
                             headers: {
                                 "Content-Type": "application/json",

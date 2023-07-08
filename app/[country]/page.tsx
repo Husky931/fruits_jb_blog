@@ -25,7 +25,7 @@ export default async function Page() {
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_POSTS_API_URL}/api/${pathname}?page=${pageNum}`,
+            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`,
             {
                 cache: "no-store"
             }
@@ -38,7 +38,7 @@ export default async function Page() {
     useEffect(() => {
         const fetchTotalPosts = async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_POSTS_API_URL}/api/all_number/${pathname}`,
+                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all_number/${pathname}`,
                 {
                     cache: "no-store"
                 }

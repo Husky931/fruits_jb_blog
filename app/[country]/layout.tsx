@@ -5,10 +5,5 @@ export default function LayoutRoute({
 }: {
     children: React.ReactNode
 }) {
-    return (
-        <section>
-            {/* <SiteTitle /> */}
-            {children}
-        </section>
-    )
+    return <section>{children}</section>
 }

@@ -22,7 +22,7 @@ export default async function AllCountries() {
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_POSTS_API_URL}/api/all?page=${pageNum}`,
+            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`,
             {
                 cache: "no-store"
             }
@@ -35,7 +35,7 @@ export default async function AllCountries() {
     useEffect(() => {
         const fetchTotalPosts = async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_POSTS_API_URL}/total`,
+                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/total`,
                 {
                     cache: "no-store"
                 }
@@ -50,7 +50,6 @@ export default async function AllCountries() {
     if (isLoading)
         return (
             <>
-                <SiteTitle />
                 <div className="min-h-screen min-w-screen flex justify-center items-top z-50">
                     <ColorRing
                         visible={true}

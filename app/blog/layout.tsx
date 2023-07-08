@@ -87,9 +87,7 @@ export default async function RootLayout({
                 logoText={navbar.navbarLogo.logoText}
             />
 
-            <main className="dark:bg-black dark:text-gray-100 min-h-screen">
-                {children}
-            </main>
+            <main className="min-h-screen">{children}</main>
 
             <Footer
                 // logoUrl={footerLogoUrl}

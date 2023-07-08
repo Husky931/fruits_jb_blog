@@ -12,6 +12,7 @@ import { User } from "../../../types"
 import Avatar from "@mui/material/Avatar"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
+import Tooltip from "@mui/material/Tooltip"
 
 // const navItems = ["Home", "Forum", "Contact"]
 
@@ -50,27 +51,28 @@ export default function Nav() {
             </Link>
 
             <div>
-                <Button
-                    key="Waitlist"
-                    className="text-white pr-0 md:pr-8 text-sm"
-                >
-                    Forum
-                </Button>
-                <Button
-                    key="Documentation"
-                    className="text-white pr-0 md:pr-8 text-sm"
-                >
-                    Blog
-                </Button>
+                <Tooltip title="Coming soon" className="cursor-default">
+                    <Button className="text-white pr-0 md:pr-8 text-sm">
+                        Forum
+                    </Button>
+                </Tooltip>
+
+                <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}>
+                    <Button className="text-white pr-0 md:pr-8 text-sm">
+                        Blog
+                    </Button>
+                </Link>
+
                 {!user && (
                     <>
-                        <Button
-                            key="Login"
-                            // onClick={() => (showAuthModal.value = true)}
-                            className="text-white pr-0 md:pr-8 text-sm"
-                        >
-                            Employer
-                        </Button>
+                        <Tooltip title="Coming soon" className="cursor-default">
+                            <Button
+                                // onClick={() => (showAuthModal.value = true)}
+                                className="text-white pr-0 md:pr-8 text-sm"
+                            >
+                                Employer
+                            </Button>
+                        </Tooltip>
                     </>
                 )}
                 {user && (
