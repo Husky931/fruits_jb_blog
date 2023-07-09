@@ -49,6 +49,7 @@ export default function ArticleSelect({
                             return null
                         return (
                             <Link
+                                prefetch={false}
                                 href={`/blog/${category.attributes.slug}`}
                                 className={selectedFilter(
                                     category.attributes.slug,
@@ -59,7 +60,11 @@ export default function ArticleSelect({
                             </Link>
                         )
                     })}
-                    <Link href={"/"} className={selectedFilter("", "filter")}>
+                    <Link
+                        prefetch={false}
+                        href={"/"}
+                        className={selectedFilter("", "filter")}
+                    >
                         #all
                     </Link>
                 </div>
@@ -73,6 +78,7 @@ export default function ArticleSelect({
                             return (
                                 <li>
                                     <Link
+                                        prefetch={false}
                                         rel="noopener noreferrer"
                                         href={`/blog/${params.category}/${article.attributes.slug}`}
                                         className={`${

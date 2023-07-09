@@ -10,7 +10,10 @@ const SiteTitle = () => {
     const dateString = `${month}/${day}/${year}`
     return (
         <div className="w-full my-4">
-            <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}>
+            <Link
+                prefetch={false}
+                href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
+            >
                 <h2 className="w-full text-center text-2xl sm:text-3xl font-semibold">
                     Fruits Picking Jobs Daily
                 </h2>

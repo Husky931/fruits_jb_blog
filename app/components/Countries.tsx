@@ -29,6 +29,7 @@ const Countries = () => {
         <ul className="container px-6 my-2">
             <li className="inline-block px-1 mx-1 cursor-pointer">
                 <Link
+                    prefetch={false}
                     className={
                         pathname === "/"
                             ? "text-[#0000EE] font-semibold"
@@ -48,6 +49,7 @@ const Countries = () => {
                         key={link}
                     >
                         <Link
+                            prefetch={false}
                             className={
                                 isActive
                                     ? "text-[#0000EE] font-semibold"

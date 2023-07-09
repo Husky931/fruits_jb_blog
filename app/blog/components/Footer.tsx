@@ -35,6 +35,7 @@ function FooterLink({ url, text }: FooterLink) {
     return (
         <li className="flex">
             <Link
+                prefetch={false}
                 href={url}
                 className={`hover:dark:text-violet-400 ${
                     path === url &&

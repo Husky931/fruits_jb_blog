@@ -29,6 +29,7 @@ function NavLink({ url, text }: NavLink) {
     return (
         <li className="flex">
             <Link
+                prefetch={false}
                 href={url}
                 className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${
                     path === url &&
@@ -59,6 +60,7 @@ export default function Navbar({
             <div className="items-center lg:flex justify-start">
                 <ul className="w-full items-start space-x-3 lg:flex text-[18px]">
                     <Link
+                        prefetch={false}
                         href={`/blog`}
                         className={
                             isBlog
@@ -75,6 +77,7 @@ export default function Navbar({
                         return (
                             <li className="inline-block" key={link.id}>
                                 <Link
+                                    prefetch={false}
                                     href={`/blog/${link.attributes.slug}`}
                                     className={
                                         isActive

@@ -36,6 +36,7 @@ export default function Nav() {
     return (
         <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600 rounded-lg">
             <Link
+                prefetch={false}
                 className="w-[50px] h-[40px]"
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
             >
@@ -57,7 +58,10 @@ export default function Nav() {
                     </Button>
                 </Tooltip>
 
-                <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}>
+                <Link
+                    prefetch={false}
+                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+                >
                     <Button className="text-white pr-0 md:pr-8 text-sm">
                         Blog
                     </Button>
