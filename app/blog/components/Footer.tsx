@@ -5,6 +5,7 @@ import Logo from "./Logo"
 import { CgWebsite } from "react-icons/cg"
 import { FaDiscord } from "react-icons/fa"
 import { AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai"
+import { Toolbar, Tooltip } from "@mui/material"
 
 interface FooterLink {
     id: number
@@ -24,6 +25,13 @@ interface CategoryLink {
 
 function FooterLink({ url, text }: FooterLink) {
     const path = usePathname()
+    if (text === "Forum") {
+        return (
+            <Tooltip title="Coming soon">
+                <li className="flex">{text}</li>
+            </Tooltip>
+        )
+    }
     return (
         <li className="flex">
             <Link
@@ -85,8 +93,8 @@ export default function Footer({
     // console.log(categoryLinks, "i am categoryLinks")
     return (
         <footer className="py-6 dark:bg-black dark:text-gray-50">
-            <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-                <div className="grid grid-cols-12">
+            <div className="container px-6 mx-auto space-y-6 md:space-y-12">
+                <div className="grid grid-cols-12 border-t border-gray-400-50 pt-6">
                     {/* <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
                         <Logo src={logoUrl}>
                             {logoText && (
@@ -119,7 +127,7 @@ export default function Footer({
                         </ul>
                     </div>
                 </div>
-                <div className="grid justify-center pt-6 lg:justify-between">
+                <div className="grid justify-center pt-6 lg:justify-between border-t border-gray-400-50">
                     <div className="flex">
                         <span className="mr-2">
                             ©{new Date().getFullYear()} All rights reserved

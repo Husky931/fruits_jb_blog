@@ -36,15 +36,15 @@ export default function Nav() {
     return (
         <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600 rounded-lg">
             <Link
-                className="w-[30px] h-[30px]"
+                className="w-[50px] h-[40px]"
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
             >
-                <div className="w-[30px] h-[30px] relative cursor-pointer">
+                <div className="w-[50px] h-[40px] relative cursor-pointer">
                     <Image
-                        src="/logo_trademark.png"
+                        src="/fruits_white_logo_1.png"
                         alt="company background"
                         width="70"
-                        height="40"
+                        height="70"
                         className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
                     />
                 </div>

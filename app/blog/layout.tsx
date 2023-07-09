@@ -89,14 +89,14 @@ export default async function RootLayout({
 
             <main className="min-h-screen">{children}</main>
 
-            <Footer
+            {/* <Footer
                 // logoUrl={footerLogoUrl}
                 // logoText={footer.footerLogo.logoText}
                 menuLinks={footer.menuLinks}
                 categoryLinks={footer.categories.data}
                 legalLinks={footer.legalLinks}
                 socialLinks={footer.socialLinks}
-            />
+            /> */}
         </>
     )
 }
