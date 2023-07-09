@@ -132,7 +132,7 @@ export default function Footer({
                         <span className="mr-2">
                             ©{new Date().getFullYear()} All rights reserved
                         </span>
-                        <ul className="flex">
+                        {/* <ul className="flex">
                             {legalLinks.map((link: FooterLink) => (
                                 <Link
                                     href={link.url}
@@ -142,7 +142,7 @@ export default function Footer({
                                     {link.text}
                                 </Link>
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                     <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                         {socialLinks.map((link: FooterLink) => {

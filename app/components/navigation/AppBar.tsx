@@ -41,8 +41,8 @@ export default function Nav() {
             >
                 <div className="w-[50px] h-[40px] relative cursor-pointer">
                     <Image
-                        src="/fruits_white_logo_1.png"
-                        alt="company background"
+                        src="/fruits_job_board_logo.png"
+                        alt="harvest jobs logo"
                         width="70"
                         height="70"
                         className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"

@@ -23,12 +23,16 @@ export default async function HomeText() {
                 specific country in mind that you want to do some picking in? We
                 present country-specific information, so just select the country
                 you want to find a job in. You can find additional information
-                in the
-                <a href="{`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}">
+                in the{" "}
+                <a
+                    className="text-[#0000FF] font-semibold"
+                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+                    target="_blank"
+                >
                     blog section
-                </a>
-                about visa related issues or just topic around the subjects and
-                we are in the process of{" "}
+                </a>{" "}
+                about visa related issues or just related topics about the fruit
+                picking industry and we are in the process of{" "}
                 <span className="font-semibold">making a forum</span>, so the
                 fruit pickers and harvest workers can more easily exchange
                 information.

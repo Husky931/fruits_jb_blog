@@ -53,8 +53,8 @@ const Countries = () => {
                                     ? "text-[#0000EE] font-semibold"
                                     : "text-black"
                             }
-                            href={link}
-                            as={link}
+                            href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
+                            as={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
                         >
                             {link}
                         </Link>
