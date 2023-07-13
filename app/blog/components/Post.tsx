@@ -63,7 +63,7 @@ export default function Post({ data }: { data: Article }) {
                         {authorImgUrl && (
                             <Image
                                 src={authorImgUrl}
-                                alt="article cover image"
+                                alt="article author image"
                                 width={400}
                                 height={400}
                                 className="w-14 h-14 border rounded-full dark:bg-gray-500 dark:border-gray-700"

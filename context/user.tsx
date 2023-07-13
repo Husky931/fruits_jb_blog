@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react"
-import { getTokenFromLocalCookie, unsetToken } from "../app/api/auth/route"
+import { getTokenFromLocalCookie, unsetToken } from "../app/auth/authFunctions"
 
 const Context = createContext(undefined)
 

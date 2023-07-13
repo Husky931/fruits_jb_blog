@@ -1,5 +1,5 @@
 import Cookies from "js-cookie"
-import { User } from "../../../types"
+import { User } from "../../types"
 
 type Data = {
     jwt: string

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { showAuthModal } from "../../../signals/showAuthModal"
 // import { useUser } from "../../../context/user"
-import { unsetToken as logout } from "../../api/auth/route"
+import { unsetToken as logout } from "../../auth/authFunctions"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Button from "@mui/material/Button"
@@ -52,8 +52,15 @@ export default function Nav() {
             </Link>
 
             <div>
-                <Tooltip title="Coming soon" className="cursor-default">
-                    <Button className="text-white pr-0 md:pr-8 text-sm">
+                <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
+                    <Button
+                        sx={{
+                            color: "white",
+                            pr: { xs: 0, md: 1 },
+                            pl: 0,
+                            fontSize: "small"
+                        }}
+                    >
                         Forum
                     </Button>
                 </Tooltip>
@@ -62,17 +69,27 @@ export default function Nav() {
                     prefetch={false}
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
                 >
-                    <Button className="text-white pr-0 md:pr-8 text-sm">
+                    <Button
+                        sx={{
+                            color: "white",
+                            pr: { xs: 0, md: 1 },
+                            fontSize: "small"
+                        }}
+                    >
                         Blog
                     </Button>
                 </Link>
 
                 {!user && (
                     <>
-                        <Tooltip title="Coming soon" className="cursor-default">
+                        <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
                             <Button
                                 // onClick={() => (showAuthModal.value = true)}
-                                className="text-white pr-0 md:pr-8 text-sm"
+                                sx={{
+                                    color: "white",
+                                    pr: { xs: 0, md: 1 },
+                                    fontSize: "small"
+                                }}
                             >
                                 Employer
                             </Button>
@@ -83,7 +100,13 @@ export default function Nav() {
                     <>
                         <Avatar
                             // onClick={(e) => handleClick(e)}
-                            className="cursor-pointer w-7.5 h-7.5 bg-blue-300 inline-flex sm:w-8.75 sm:h-8.75"
+                            sx={{
+                                cursor: "pointer",
+                                width: { xs: "7.5", sm: "8.75" },
+                                height: { xs: "7.5", sm: "8.75" },
+                                backgroundColor: "blue.300",
+                                display: "inline-flex"
+                            }}
                         />
 
                         {/* <Menu

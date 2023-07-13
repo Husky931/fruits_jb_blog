@@ -76,7 +76,7 @@ export default function PostList({
                         >
                             {imageUrl && (
                                 <Image
-                                    alt="presentation"
+                                    alt="thumbnail image from the article cover image"
                                     width="240"
                                     height="240"
                                     className="object-cover w-full h-44 "
@@ -86,7 +86,7 @@ export default function PostList({
                             <div className="p-6 space-y-2 relative">
                                 {avatarUrl && (
                                     <Image
-                                        alt="avatar"
+                                        alt="the article author avatar"
                                         width="80"
                                         height="80"
                                         src={avatarUrl}
