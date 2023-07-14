@@ -22,7 +22,7 @@ export default async function AllCountries() {
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`,
+            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all?page=${pageNum}`,
             {
                 cache: "no-store"
             }

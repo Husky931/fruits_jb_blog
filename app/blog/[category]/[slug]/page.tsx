@@ -68,6 +68,8 @@ export async function generateStaticParams() {
         options
     )
 
+    // console.log(articleResponse, 'i am article response')
+
     return articleResponse.data.map(
         (article: {
             attributes: {
