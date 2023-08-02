@@ -2,6 +2,8 @@ import { formatDate, getStrapiMedia } from "@/app/blog/utils/api-helpers"
 import { postRenderer } from "@/app/blog/utils/post-renderer"
 import Image from "next/image"
 
+//
+
 interface Article {
     id: number
     attributes: {
