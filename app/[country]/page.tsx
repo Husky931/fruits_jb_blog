@@ -25,12 +25,15 @@ export default async function Page() {
 
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
-        const res = await fetch(
-            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`,
-            {
-                cache: "no-store"
-            }
-        )
+        let url
+        if (process.env.NODE_ENV === "production") {
+            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/${pathname}?page=${pageNum}`
+        } else {
+            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`
+        }
+        const res = await fetch(url, {
+            cache: "no-store"
+        })
         const data = await res.json()
         setPosts(data)
         setIsLoading(false)
@@ -38,12 +41,15 @@ export default async function Page() {
 
     useEffect(() => {
         const fetchTotalPosts = async () => {
-            const res = await fetch(
-                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all_number/${pathname}`,
-                {
-                    cache: "no-store"
-                }
-            )
+            let url
+            if (process.env.NODE_ENV === "production") {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all_number/${pathname}`
+            } else {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all_number/${pathname}`
+            }
+            const res = await fetch(url, {
+                cache: "no-store"
+            })
             const total = await res.json()
             setTotalPages(Math.ceil(total / 25))
         }

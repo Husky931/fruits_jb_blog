@@ -2,22 +2,16 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    // basePath: '/blog',
     experimental: {
         appDir: true,
     },
     images: {
         remotePatterns: [
-        {
-            protocol: 'http',
-            hostname: 'localhost',
-            port: '1337',
-            pathname: '/uploads/**',
+         {
+             protocol: process.env.NODE_ENV === 'production' ? 'https' : 'http',
+             hostname: process.env.NODE_ENV === 'production' ? 'strapi.fruitspickingjobs.com' : 'localhost',
+             pathname: '/uploads/**',
         },
-        {
-            protocol: 'https',
-            hostname: 'images.pexels.com',
-        }
         ],
     },
     }

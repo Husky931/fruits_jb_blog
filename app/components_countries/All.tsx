@@ -22,12 +22,15 @@ export default async function AllCountries() {
 
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
-        const res = await fetch(
-            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`,
-            {
-                cache: "no-store"
-            }
-        )
+        let url
+        if (process.env.NODE_ENV === "production") {
+            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all?page=${pageNum}`
+        } else {
+            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`
+        }
+        const res = await fetch(url, {
+            cache: "no-store"
+        })
         const data = await res.json()
         setPosts(data)
         setIsLoading(false)
@@ -35,12 +38,15 @@ export default async function AllCountries() {
 
     useEffect(() => {
         const fetchTotalPosts = async () => {
-            const res = await fetch(
-                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/get/total`,
-                {
-                    cache: "no-store"
-                }
-            )
+            let url
+            if (process.env.NODE_ENV === "production") {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/get/total`
+            } else {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/get/total`
+            }
+            const res = await fetch(url, {
+                cache: "no-store"
+            })
             const total = await res.json()
             setTotalPages(Math.ceil(total / 25))
         }
