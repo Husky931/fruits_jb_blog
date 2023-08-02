@@ -7,7 +7,6 @@ export async function fetchAPI(
     options = {}
 ) {
     try {
-        // Merge default and user options
         const mergedOptions = {
             next: { revalidate: 60 },
             headers: {
@@ -16,14 +15,11 @@ export async function fetchAPI(
             ...options
         }
 
-        // Build request URL
         const queryString = qs.stringify(urlParamsObject)
 
         const requestUrl = `${getStrapiURL(
             `/api${path}${queryString ? `?${queryString}` : ""}`
         )}`
-        // console.log(requestUrl, "i am requestUrl")
-        // Trigger API call
         const response = await fetch(requestUrl, mergedOptions)
         const data = await response.json()
         return data

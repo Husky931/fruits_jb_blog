@@ -18,41 +18,39 @@ const SingleJobPost: React.FC<SingleJobPostTypes> = ({
     date
 }) => {
     return (
-        <li className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px]">
-            <a
-                id="job-title"
-                className="text-[14px] sm:text-[18px] font-semibold underline text-[#0000EE]"
-            >
-                {title}
-            </a>
+        <a href={link} target="_blank" className="text-black no-underline">
+            <li className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px]">
+                <div
+                    id="job-title"
+                    className="text-[14px] sm:text-[18px] font-semibold underline text-[#0000EE]"
+                >
+                    {title}
+                </div>
 
-            <div className="flex">
-                <div className="">Company name: </div>
-                <div className="text-[#663300] mx-1 font-semibold">
-                    {companyName}
+                <div className="flex">
+                    <div className="">Company name: </div>
+                    <div className="text-[#663300] mx-1 font-semibold">
+                        {companyName}
+                    </div>
                 </div>
-            </div>
-            <div className="flex">
-                <div className="">Location: </div>
-                <div className="mx-1 font-semibold">
-                    {country.charAt(0).toUpperCase() +
-                        country.slice(1).toLowerCase()}
-                    , {jobLocation}
+                <div className="flex">
+                    <div className="">Location: </div>
+                    <div className="mx-1 font-semibold">
+                        {country.charAt(0).toUpperCase() +
+                            country.slice(1).toLowerCase()}
+                        , {jobLocation}
+                    </div>
                 </div>
-            </div>
-            <div id="description" className="flex flex-col">
-                <div className="line-clamp-2 overflow-ellipsis overflow-hidden">
-                    <span className="">Description: </span>
-                    <a href={link} target="_blank">
+                <div id="description" className="flex flex-col">
+                    <div className="line-clamp-2 overflow-ellipsis overflow-hidden">
+                        <span className="">Description: </span>
                         <span className="font-semibold">{jobDescription}</span>
-                    </a>
+                    </div>
+                    <div className="text-[#0000EE]">read more</div>
                 </div>
-                <a href={link} className="text-[#0000EE]" target="_blank">
-                    read more
-                </a>
-            </div>
-            <div className="text-gray-500 font-semibold">{date}</div>
-        </li>
+                <div className="text-gray-500 font-semibold">{date}</div>
+            </li>
+        </a>
     )
 }
 

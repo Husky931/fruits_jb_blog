@@ -17,12 +17,13 @@ export default async function AllCountries() {
     ) => {
         setPage(value)
         await fetchPosts(value)
+        window.scrollTo(0, 0)
     }
 
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all?page=${pageNum}`,
+            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`,
             {
                 cache: "no-store"
             }
@@ -35,7 +36,7 @@ export default async function AllCountries() {
     useEffect(() => {
         const fetchTotalPosts = async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/total`,
+                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/get/total`,
                 {
                     cache: "no-store"
                 }

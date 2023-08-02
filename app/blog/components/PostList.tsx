@@ -57,7 +57,6 @@ export default function PostList({
                     const imageUrl = getStrapiMedia(
                         article.attributes.cover.data?.attributes.url
                     )
-
                     const category =
                         article.attributes.category.data?.attributes
                     const authorsBio =

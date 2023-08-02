@@ -20,12 +20,13 @@ export default async function Page() {
     ) => {
         setPage(value)
         await fetchPosts(value)
+        window.scrollTo(0, 0)
     }
 
     const fetchPosts = async (pageNum: number) => {
         setIsLoading(true)
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/${pathname}?page=${pageNum}`,
+            `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`,
             {
                 cache: "no-store"
             }
@@ -38,7 +39,7 @@ export default async function Page() {
     useEffect(() => {
         const fetchTotalPosts = async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all_number/${pathname}`,
+                `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all_number/${pathname}`,
                 {
                     cache: "no-store"
                 }
