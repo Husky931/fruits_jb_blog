@@ -31,10 +31,7 @@ function NavLink({ url, text }: NavLink) {
             <Link
                 prefetch={false}
                 href={url}
-                className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${
-                    path === url &&
-                    "dark:text-violet-400 dark:border-violet-400"
-                }}`}
+                className="flex items-center mx-4 -mb-1 border-b-2"
             >
                 {text}
             </Link>
@@ -56,7 +53,7 @@ export default function Navbar({
     const pathname = usePathname()
     const isBlog = pathname === `/blog`
     return (
-        <div className="m-6 py-1 dark:bg-black dark:text-gray-100 border-t border-b border-black">
+        <div className="m-6 py-1 border-t border-b border-black">
             <div className="items-center lg:flex justify-start">
                 <ul className="w-full items-start space-x-3 lg:flex text-[18px]">
                     <Link

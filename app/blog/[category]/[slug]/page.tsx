@@ -68,8 +68,6 @@ export async function generateStaticParams() {
         options
     )
 
-    console.log(articleResponse, "i am article response")
-
     //  if (articleResponse.data === null || articleResponse.data === undefined) {
     //     return []; // Return an empty array or handle the error case as per your requirement
     // }

@@ -43,7 +43,7 @@ export default async function HomeText() {
                 you.
             </p>
 
-            <p>Easy picking</p>
+            <p>Easy picking.</p>
         </div>
     )
 }

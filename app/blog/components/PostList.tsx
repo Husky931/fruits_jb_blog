@@ -71,7 +71,7 @@ export default function PostList({
                             prefetch={false}
                             href={`/blog/${category?.slug}/${article.attributes.slug}`}
                             key={article.id}
-                            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[365px] rounded-2xl overflow-hidden shadow-lg"
+                            className="max-w-sm mx-auto group hover:no-underline focus:no-underline lg:w-[300px] xl:min-w-[365px] rounded-2xl overflow-hidden shadow-lg"
                         >
                             {imageUrl && (
                                 <Image
@@ -98,13 +98,13 @@ export default function PostList({
                                 </h3>
 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-xs dark:text-gray-400">
+                                    <span className="text-xs">
                                         {formatDate(
                                             article.attributes.publishedAt
                                         )}
                                     </span>
                                     {authorsBio && (
-                                        <span className="text-xs dark:text-gray-400">
+                                        <span className="text-xs">
                                             {authorsBio.name}
                                         </span>
                                     )}

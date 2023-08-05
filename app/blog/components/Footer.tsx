@@ -34,14 +34,7 @@ function FooterLink({ url, text }: FooterLink) {
     }
     return (
         <li className="flex">
-            <Link
-                prefetch={false}
-                href={url}
-                className={`hover:dark:text-violet-400 ${
-                    path === url &&
-                    "dark:text-violet-400 dark:border-violet-400"
-                }}`}
-            >
+            <Link prefetch={false} href={url}>
                 {text}
             </Link>
         </li>
@@ -51,12 +44,7 @@ function FooterLink({ url, text }: FooterLink) {
 export function CategoryLink({ attributes }: CategoryLink) {
     return (
         <li className="flex">
-            <Link
-                href={`/blog/${attributes.slug}`}
-                className="hover:dark:text-violet-400"
-            >
-                {attributes.name}
-            </Link>
+            <Link href={`/blog/${attributes.slug}`}>{attributes.name}</Link>
         </li>
     )
 }
@@ -93,7 +81,7 @@ export default function Footer({
 }) {
     // console.log(categoryLinks, "i am categoryLinks")
     return (
-        <footer className="py-6 dark:bg-black dark:text-gray-50">
+        <footer className="py-6">
             <div className="container px-6 mx-auto space-y-6 md:space-y-12">
                 <div className="grid grid-cols-12 border-t border-gray-400-50 pt-6">
                     {/* <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
@@ -154,7 +142,7 @@ export default function Footer({
                                     href={link.url}
                                     title={link.text}
                                     target={link.newTab ? "_blank" : "_self"}
-                                    className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900"
+                                    className="flex items-center justify-center w-10 h-10 rounded-full"
                                 >
                                     <RenderSocialIcon social={link.social} />
                                 </a>

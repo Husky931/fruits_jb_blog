@@ -22,8 +22,8 @@ interface Article {
 
 function selectedFilter(current: string, selected: string) {
     return current === selected
-        ? "px-3 py-1 rounded-lg hover:underline dark:bg-violet-700 dark:text-gray-100"
-        : "px-3 py-1 rounded-lg hover:underline dark:bg-violet-400 dark:text-gray-900"
+        ? "px-3 py-1 rounded-lg hover:underline"
+        : "px-3 py-1 rounded-lg hover:underline"
 }
 
 export default function ArticleSelect({
@@ -39,11 +39,11 @@ export default function ArticleSelect({
     }
 }) {
     return (
-        <div className="p-4 rounded-lg dark:bg-gray-900 min-h-[365px] relative">
+        <div className="p-4 rounded-lg min-h-[365px] relative">
             <h4 className="text-xl font-semibold">Browse By Category</h4>
 
             <div>
-                <div className="flex flex-wrap py-6 space-x-2 dark:border-gray-400">
+                <div className="flex flex-wrap py-6 space-x-2">
                     {categories.map((category: Category) => {
                         if (category.attributes.articles.data.length === 0)
                             return null
