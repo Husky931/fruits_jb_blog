@@ -52,7 +52,7 @@ export default function Nav() {
             </Link>
 
             <div>
-                <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
+                {/* <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
                     <Button
                         sx={{
                             color: "white",
@@ -63,7 +63,7 @@ export default function Nav() {
                     >
                         Forum
                     </Button>
-                </Tooltip>
+                </Tooltip> */}
 
                 <Link
                     prefetch={false}
@@ -80,7 +80,7 @@ export default function Nav() {
                     </Button>
                 </Link>
 
-                {!user && (
+                {/* {!user && (
                     <>
                         <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
                             <Button
@@ -95,7 +95,7 @@ export default function Nav() {
                             </Button>
                         </Tooltip>
                     </>
-                )}
+                )} */}
                 {user && (
                     <>
                         <Avatar

@@ -28,7 +28,8 @@ function FooterLink({ url, text }: FooterLink) {
     if (text === "Forum") {
         return (
             <Tooltip title="Coming soon">
-                <li className="flex">{text}</li>
+                {/* <li className="flex">{text}</li> */}
+                <></>
             </Tooltip>
         )
     }
