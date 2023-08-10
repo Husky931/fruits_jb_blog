@@ -1,8 +1,7 @@
 import { formatDate, getStrapiMedia } from "@/app/blog/utils/api-helpers"
 import { postRenderer } from "@/app/blog/utils/post-renderer"
 import Image from "next/image"
-
-//
+import Head from "next/head"
 
 interface Article {
     id: number
@@ -49,6 +48,12 @@ export default function Post({ data }: { data: Article }) {
 
     return (
         <article className="space-y-8">
+            <Head>
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={imageUrl || undefined} />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Head>
             {imageUrl && (
                 <Image
                     src={imageUrl}
