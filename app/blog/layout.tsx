@@ -7,8 +7,9 @@ import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 
 const FALLBACK_SEO = {
-    title: "Strapi Starter Next Blog",
-    description: "Strapi Starter Next Blog"
+    title: "Fruit pickers Daily Blog",
+    description: "Daily content related to the fruit picking industry",
+    ogImage: "image url"
 }
 
 async function getGlobal(): Promise<any> {
