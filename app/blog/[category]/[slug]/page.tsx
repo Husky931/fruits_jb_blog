@@ -38,12 +38,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const meta = await getMetaData(params.slug)
     const metadata = meta[0].attributes.seo
-    const ogImageUrl = metadata.shareImage.data.attributes.url
+    const ogImage = metadata.shareImage.data.attributes.url
 
     return {
         title: metadata.metaTitle,
         description: metadata.metaDescription,
-        ogImage: ogImageUrl
+        ogImage: ogImage
     }
 }
 
