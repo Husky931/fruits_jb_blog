@@ -8,8 +8,8 @@ import Navbar from "./components/Navbar"
 
 const FALLBACK_SEO = {
     title: "Fruit pickers Daily Blog",
-    description: "Daily content related to the fruit picking industry",
-    ogImage: "image url"
+    description: "Daily content related to the fruit picking industry"
+    // ogImage: "image url"
 }
 
 async function getGlobal(): Promise<any> {
