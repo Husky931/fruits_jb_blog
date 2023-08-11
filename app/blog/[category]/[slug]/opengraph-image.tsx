@@ -6,7 +6,8 @@ export const size = {
     height: 630
 }
 
-export const contentType = "image/png"
+export const contentType = "image/jpg"
+export const runtime = "edge"
 
 export default async function og({ params }: { params: { slug: string } }) {
     async function getMetaData(slug: string) {
@@ -24,6 +25,7 @@ export default async function og({ params }: { params: { slug: string } }) {
     const meta = await getMetaData(params.slug)
     const metadata = meta[0].attributes.seo
     const ogImageURL = metadata.shareImage.data.attributes.url
+    console.log(ogImageURL)
 
     return new ImageResponse(<img src={ogImageURL} />, size)
 }
