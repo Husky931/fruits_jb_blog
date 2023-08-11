@@ -8,8 +8,7 @@ import Navbar from "./components/Navbar"
 
 const FALLBACK_SEO = {
     title: "Fruit pickers Daily Blog",
-    description: "Daily content related to the fruit picking industry"
-    // ogImage: "image url"
+    description: "Strapi Starter Next Blog"
 }
 
 async function getGlobal(): Promise<any> {
@@ -23,7 +22,7 @@ async function getGlobal(): Promise<any> {
 
     const urlParamsObject = {
         populate: [
-            // "metadata.shareImage",
+            "metadata.shareImage",
             "favicon",
             "navbar.links",
             "navbar.navbarLogo.logoImg",
@@ -34,6 +33,9 @@ async function getGlobal(): Promise<any> {
             "footer.categories"
         ]
     }
+
+    // if you transfor the urlParamsObject you get the below query
+    // populate[]=metadata.shareImage&populate[]=favicon&populate[]=navbar.links&populate[]=navbar.navbarLogo.logoImg&populate[]=footer.footerLogo.logoImg&populate[]=footer.menuLinks&populate[]=footer.legalLinks&populate[]=footer.socialLinks&populate[]=footer.categories
 
     const response = await fetchAPI(path, urlParamsObject, options)
     return response
