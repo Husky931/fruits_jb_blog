@@ -40,7 +40,7 @@ export async function generateMetadata({
     const metadata = meta[0].attributes.seo
     const ogImage = metadata.shareImage.data.attributes.url
     // console.log(metadata, "i am metadata")
-    // console.log(ogImage, "i am ogImage")
+    console.log(ogImage, "i am ogImage")
 
     return {
         title: metadata.metaTitle,
