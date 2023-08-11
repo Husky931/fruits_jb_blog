@@ -38,21 +38,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const meta = await getMetaData(params.slug)
     const metadata = meta[0].attributes.seo
-    // const ogImage = metadata.shareImage.data.attributes.url
-
-    // console.log(metadata, "i am metadata")
-    // console.log(metadata.shareImage, "i am ogImage")
-    // console.log(ogImage, "i am ogImage")
 
     return {
         title: metadata.metaTitle,
         description: metadata.metaDescription
-        // openGraph: {
-        //     type: "website",
-        //     url: ogImage,
-        //     siteName: "Fruit picking jobs",
-        //     description: "daily friuit picking job posts",
-        // }
     }
 }
 
