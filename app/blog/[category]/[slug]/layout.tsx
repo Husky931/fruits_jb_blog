@@ -61,9 +61,10 @@ interface Data {
     categories: Category[]
 }
 
-export const metadata = {
-    metadataBase: new URL("https://fruitspickingjobs.com")
-}
+// export const metadata = {
+//     metadataBase: new URL("https://fruitspickingjobs.com"),
+//     url: 'https://nextjs.org',
+// }
 
 export default async function LayoutRoute({
     params,

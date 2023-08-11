@@ -35,9 +35,6 @@ async function getGlobal(): Promise<any> {
         ]
     }
 
-    // if you transfor the urlParamsObject you get the below query
-    // populate[]=metadata.shareImage&populate[]=favicon&populate[]=navbar.links&populate[]=navbar.navbarLogo.logoImg&populate[]=footer.footerLogo.logoImg&populate[]=footer.menuLinks&populate[]=footer.legalLinks&populate[]=footer.socialLinks&populate[]=footer.categories
-
     const response = await fetchAPI(path, urlParamsObject, options)
     return response
 }
