@@ -6,7 +6,7 @@ export const size = {
     height: 630
 }
 
-export const contentType = "image/jpg"
+// export const contentType = "image/*"
 export const runtime = "edge"
 
 export default async function og({ params }: { params: { slug: string } }) {
