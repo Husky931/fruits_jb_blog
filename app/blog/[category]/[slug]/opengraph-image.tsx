@@ -18,12 +18,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
             <div
                 style={{
                     display: "flex",
-                    fontSize: 60,
                     color: "black",
                     background: "#f6f6f6",
                     width: "100%",
                     height: "100%",
-                    paddingTop: 50,
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center"
@@ -33,7 +31,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     alt="My Image"
                     height="630"
                     //@ts-ignore
-                    src={new URL(imgSrc).toString()}
+                    src="https://strapi.fruitspickingjobs.com/favicon.ico"
                     width="1200"
                 />
             </div>
