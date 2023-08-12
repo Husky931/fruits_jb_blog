@@ -8,9 +8,9 @@ export const size = {
 }
 export const runtime = "edge"
 
-export const contentType = "image/jpg"
+export const contentType = "image/jpeg"
 
-export default async function og({ params }: { params: { slug: string } }) {
+export default async function Image({ params }: { params: { slug: string } }) {
     async function getPostBySlug(slug: string) {
         const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
         const path = `/articles`
