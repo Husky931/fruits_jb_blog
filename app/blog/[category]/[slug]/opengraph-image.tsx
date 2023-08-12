@@ -23,7 +23,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     <img
                         alt="My Image"
                         height="630"
-                        src="${imageUrl}"
+                        src={imageUrl}
                         width="1200"
                     />
                 </div>
