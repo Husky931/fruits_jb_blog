@@ -8,15 +8,15 @@ export const size = {
     height: 630
 }
 export const runtime = "edge"
+export const alt = ""
 
 export const contentType = "image/jpeg"
 
 export default async function Image({ params }: { params: { slug: string } }) {
-    const imageUrl = imgSrc.src
-
+    const fontData = await fetch(
+        new URL("./fonts/Inter-Medium.ttf", import.meta.url)
+    ).then((res) => res.arrayBuffer())
     try {
-        const imageUrl = imgSrc.src
-
         return new ImageResponse(
             (
                 <div
@@ -36,7 +36,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     <img
                         alt="My Image"
                         height="630"
-                        src={imageUrl}
+                        //@ts-ignore
+                        src={imgSrc}
                         width="1200"
                     />
                 </div>
