@@ -19,7 +19,20 @@ export default async function Image({ params }: { params: { slug: string } }) {
 
         return new ImageResponse(
             (
-                <div style="height: 100%; width: 100%; display: flex; textAlign: center; alignItems: center; justifyContent: center;">
+                <div
+                    style={{
+                        display: "flex",
+                        fontSize: 60,
+                        color: "black",
+                        background: "#f6f6f6",
+                        width: "100%",
+                        height: "100%",
+                        paddingTop: 50,
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}
+                >
                     <img
                         alt="My Image"
                         height="630"
