@@ -37,7 +37,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                         alt="My Image"
                         height="630"
                         //@ts-ignore
-                        src={imgSrc}
+                        src={new url(imgSrc)}
                         width="1200"
                     />
                 </div>
