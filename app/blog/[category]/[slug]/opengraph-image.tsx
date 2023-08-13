@@ -45,13 +45,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     alignItems: "center"
                 }}
             >
-                <img
-                    alt="My Image"
-                    height="630"
-                    //@ts-ignore
-                    src={imageLink}
-                    width="1200"
-                />
+                <img alt="My Image" height="630" src={imageLink} width="1200" />
             </div>
         ),
         {
