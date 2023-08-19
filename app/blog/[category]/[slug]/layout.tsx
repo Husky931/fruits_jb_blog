@@ -111,12 +111,16 @@ export async function generateStaticParams() {
             attributes: {
                 slug: string
                 category: {
-                    slug: string
+                    data: {
+                        attributes: {
+                            slug: string
+                        }
+                    }
                 }
             }
         }) => ({
             slug: article.attributes.slug,
-            category: article.attributes.slug
+            category: article.attributes.category.data.attributes.slug
         })
     )
 }

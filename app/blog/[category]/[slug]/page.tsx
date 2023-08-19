@@ -68,21 +68,21 @@ export async function generateStaticParams() {
         options
     )
 
-    //  if (articleResponse.data === null || articleResponse.data === undefined) {
-    //     return []; // Return an empty array or handle the error case as per your requirement
-    // }
-
     return articleResponse.data.map(
         (article: {
             attributes: {
                 slug: string
                 category: {
-                    slug: string
+                    data: {
+                        attributes: {
+                            slug: string
+                        }
+                    }
                 }
             }
         }) => ({
             slug: article.attributes.slug,
-            category: article.attributes.slug
+            category: article.attributes.category.data.attributes.slug
         })
     )
 }
