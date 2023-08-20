@@ -1,8 +1,5 @@
 import { ImageResponse } from "next/server"
 import { fetchAPI } from "../../utils/fetch-api"
-import { getStrapiMedia } from "../../utils/api-helpers"
-import imgSrc from "../../../../public/opengraph-image.jpg"
-import { Metadata } from "next"
 
 export const size = {
     width: 1200,
