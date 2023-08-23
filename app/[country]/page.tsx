@@ -1,17 +1,42 @@
-import { fetchAPI } from "../blog/utils/fetch-api"
 import CountryPagination from "../components/CountryPagination"
-import RichText from "../blog/components/RichText"
+import {
+    Australia,
+    Austria,
+    Belgium,
+    Canada,
+    Denmark,
+    England,
+    France,
+    Finland,
+    Germany,
+    Italy,
+    Ireland,
+    Japan,
+    NewZealand,
+    Norway,
+    Spain,
+    Sweden,
+    USA
+} from "../seo_text/index"
 
-async function getCountrySeo(slug: string) {
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
-    const path = `/seo-countries`
-    // const urlParamsObject = {
-    //     // filters: { slug },
-    //     populate: "*"
-    // }
-    const options = { headers: { Authorization: `Bearer ${token}` } }
-    const response = await fetchAPI(path, options)
-    return response.data
+const countryComponents = {
+    australia: Australia,
+    austria: Austria,
+    belgium: Belgium,
+    canada: Canada,
+    denmark: Denmark,
+    england: England,
+    france: France,
+    finland: Finland,
+    germany: Germany,
+    italy: Italy,
+    ireland: Ireland,
+    japan: Japan,
+    newzealand: NewZealand,
+    norway: Norway,
+    spain: Spain,
+    sweden: Sweden,
+    usa: USA
 }
 
 export default async function Page({
@@ -19,20 +44,18 @@ export default async function Page({
 }: {
     params: { country: string }
 }) {
-    const { country } = params
-    const res = await getCountrySeo(country)
-    const filteredData = res.filter(
-        (item: any) => item.attributes.slug === country
-    )
-    const data = {
-        body: filteredData[0].attributes.seo_text
+    let { country } = params
+    if (country === "new-zealand") {
+        country = country.replace("-", "")
     }
+    //@ts-ignore
+    const CountrySEO = countryComponents[country]
 
     return (
         <main className="flex min-h-screen flex-col items-center">
             <div className="w-full flex flex-col justify-start items-center">
-                {/* <CountryPagination /> */}
-                <RichText data={data} />
+                <CountryPagination />
+                <CountrySEO />
             </div>
         </main>
     )
@@ -49,9 +72,9 @@ export async function generateStaticParams() {
         "finland",
         "france",
         "germany",
-        // "greece",
-        "ireland",
         "italy",
+        // // "greece",
+        "ireland",
         "japan",
         "new-zealand",
         "norway",
@@ -59,7 +82,6 @@ export async function generateStaticParams() {
         "sweden",
         "usa"
     ]
-    // const res = await fetch(`https://...`, { cache: 'no-store' })
 
     return countries.map((m) => ({
         country: m
