@@ -9,6 +9,7 @@ type SingleJobPostTypes = {
     jobDescription: string
     link: string
     date: string
+    db_add_timestamp: string
 }
 
 const SingleJobPost: React.FC<SingleJobPostTypes> = ({
@@ -18,7 +19,8 @@ const SingleJobPost: React.FC<SingleJobPostTypes> = ({
     jobLocation,
     jobDescription,
     link,
-    date
+    date,
+    db_add_timestamp
 }) => {
     function isISOFormat(date: string) {
         // Regex for ISO 8601 format
@@ -26,9 +28,16 @@ const SingleJobPost: React.FC<SingleJobPostTypes> = ({
         return regex.test(date)
     }
 
-    const displayDate = isISOFormat(date)
-        ? formatDistance(parseISO(date), new Date(), { addSuffix: true })
+    const displayDate = isISOFormat(db_add_timestamp)
+        ? formatDistance(parseISO(db_add_timestamp), new Date(), {
+              addSuffix: true
+          })
         : date
+
+    // THE SAME FUNCTION BELOW, BUT TO SHOW THE SCRAPER DATA FROM THE WEBSITES
+    // const displayDate = isISOFormat(date)
+    //     ? formatDistance(parseISO(date), new Date(), { addSuffix: true })
+    //     : date
 
     return (
         <a href={link} target="_blank" className="text-black no-underline">

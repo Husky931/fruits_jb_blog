@@ -32,6 +32,7 @@ export default async function AllCountries() {
         })
         const data = await res.json()
         setPosts(data)
+        // console.log(data)
         setIsLoading(false)
     }
 
@@ -94,6 +95,7 @@ export default async function AllCountries() {
                         country={m.country}
                         jobLocation={m.location}
                         jobDescription={m.description}
+                        db_add_timestamp={m.db_add_timestamp}
                         link={m.url}
                         date={m.posted_date}
                     />
