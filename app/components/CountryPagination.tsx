@@ -98,6 +98,7 @@ export default async function CountryPagination() {
                         jobDescription={m.description}
                         link={m.url}
                         date={m.posted_date}
+                        db_add_timestamp={m.db_add_timestamp}
                     />
                 ))}
             </ul>

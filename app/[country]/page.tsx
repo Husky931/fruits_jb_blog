@@ -73,7 +73,7 @@ export async function generateStaticParams() {
         "france",
         "germany",
         "italy",
-        // // "greece",
+        // "greece",
         "ireland",
         "japan",
         "new-zealand",
