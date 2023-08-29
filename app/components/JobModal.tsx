@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { ColorRing } from "react-loader-spinner"
 import formatDistance from "date-fns/formatDistance"
 import parseISO from "date-fns/parseISO"
@@ -18,11 +18,13 @@ type SingleJobPostTypes = {
     db_add_timestamp: string
 }
 
-export default async function Page() {
+type JobModalProps = {
+    jobId: string
+}
+
+export default async function JobModal({ jobId }: JobModalProps) {
     const [job, setJob] = useState<SingleJobPostTypes | undefined>(undefined)
     const [isLoading, setIsLoading] = useState(true)
-
-    const { id } = useParams()
     const router = useRouter()
 
     function isISOFormat(date: string | undefined) {
@@ -38,14 +40,14 @@ export default async function Page() {
         : job?.date
 
     useEffect(() => {
-        if (id) {
+        if (jobId) {
             const fetchJob = async () => {
                 setIsLoading(true)
                 let url
                 if (process.env.NODE_ENV === "production") {
-                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${id}`
+                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${jobId}`
                 } else {
-                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${id}`
+                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${jobId}`
                 }
                 const res = await fetch(url, {
                     cache: "no-store"
@@ -59,26 +61,19 @@ export default async function Page() {
         } else {
             setIsLoading(false)
         }
-    }, [id])
+    }, [jobId])
 
     const handleOutsideClick = (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
-        const applyNowButton = document.getElementById("applyNowButton")
-        if (applyNowButton && applyNowButton.contains(e.target as Node)) {
-            return
-        }
-        if (
-            e.target !== document.getElementById("applyNowButton") &&
-            e.target === e.currentTarget
-        ) {
+        if (e.target === e.currentTarget) {
             router.push("/")
         }
     }
 
     return (
         <div
-            className="fixed inset-0 flex justify-center items-center z-50"
+            className="fixed inset-0 flex justify-center items-center z-[100]"
             onClick={handleOutsideClick}
         >
             <section className="bg-white p-8 m-4 rounded-lg shadow-lg">
