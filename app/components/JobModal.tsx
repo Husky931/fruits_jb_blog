@@ -45,7 +45,7 @@ export default async function JobModal({ jobId }: JobModalProps) {
                 setIsLoading(true)
                 let url
                 if (process.env.NODE_ENV === "production") {
-                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${jobId}`
+                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/job/${jobId}`
                 } else {
                     url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${jobId}`
                 }
