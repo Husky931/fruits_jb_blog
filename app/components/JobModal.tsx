@@ -76,7 +76,7 @@ export default async function JobModal({ jobId }: JobModalProps) {
             className="fixed inset-0 flex justify-center items-center z-[100]"
             onClick={handleOutsideClick}
         >
-            <section className="bg-white p-8 m-4 rounded-lg shadow-lg">
+            <section className="bg-white p-8 m-4 rounded-lg shadow-lg lg:max-w-[700px]">
                 {isLoading ? (
                     <div style={{ pointerEvents: isLoading ? "auto" : "none" }}>
                         <ColorRing
