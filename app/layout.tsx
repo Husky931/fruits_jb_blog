@@ -12,7 +12,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
     title: "Fruits picking job board",
-    description: "Daily fruits picking jobs generated from all over the world"
+    description: "Daily fruits picking jobs generated from all over the world",
+    metadataBase: new URL("https://fruitspickingjobs.com")
 }
 
 async function getGlobal(): Promise<any> {
