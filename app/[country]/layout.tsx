@@ -1,5 +1,3 @@
-import SiteTitle from "../components/SiteTitle"
-
 export default function LayoutRoute({
     children
 }: {

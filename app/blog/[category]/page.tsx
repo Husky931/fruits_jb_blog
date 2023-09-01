@@ -1,6 +1,7 @@
 import PageHeader from "@/app/blog/components/PageHeader"
 import { fetchAPI } from "@/app/blog/utils/fetch-api"
 import PostList from "@/app/blog/components/PostList"
+import type { Metadata } from "next"
 
 async function fetchPostsByCategory(filter: string) {
     try {
@@ -31,6 +32,19 @@ async function fetchPostsByCategory(filter: string) {
     }
 }
 
+export async function generateMetadata({
+    params
+}: {
+    params: { category: string }
+}): Promise<Metadata> {
+    return {
+        title: params.category,
+        alternates: {
+            canonical: params.category
+        }
+    }
+}
+
 export default async function CategoryRoute({
     params
 }: {
@@ -52,5 +66,16 @@ export default async function CategoryRoute({
 }
 
 export async function generateStaticParams() {
-    return []
+    const categories = [
+        "entertaining",
+        "general",
+        "guides",
+        "innovations",
+        "money",
+        "visa"
+    ]
+
+    return categories.map((m) => ({
+        category: m
+    }))
 }

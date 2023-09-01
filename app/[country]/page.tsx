@@ -1,4 +1,5 @@
 import CountryPagination from "../components/CountryPagination"
+import { Metadata } from "next"
 import {
     Australia,
     Austria,
@@ -37,6 +38,21 @@ const countryComponents = {
     spain: Spain,
     sweden: Sweden,
     usa: USA
+}
+
+export async function generateMetadata({
+    params
+}: {
+    params: { country: string }
+}): Promise<Metadata> {
+    const title = `Daily ${params.country} curated fruit harvesting and picking jobs `
+
+    return {
+        title: title,
+        alternates: {
+            canonical: params.country
+        }
+    }
 }
 
 export default async function Page({

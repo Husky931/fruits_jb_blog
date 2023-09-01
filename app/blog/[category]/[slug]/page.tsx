@@ -41,7 +41,10 @@ export async function generateMetadata({
 
     return {
         title: metadata.metaTitle,
-        description: metadata.metaDescription
+        description: metadata.metaDescription,
+        alternates: {
+            canonical: params.slug
+        }
     }
 }
 
