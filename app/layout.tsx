@@ -1,4 +1,5 @@
 import SiteTitle from "@/app/components/SiteTitle"
+import { Metadata } from "next"
 import "./globals.css"
 import { Inter } from "next/font/google"
 import Countries from "@/app/components/NavBar_Countries"
@@ -10,10 +11,16 @@ import Footer from "./blog/components/Footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-    title: "Fruits picking job board",
-    description: "Daily fruits picking jobs generated from all over the world",
-    metadataBase: new URL("https://fruitspickingjobs.com")
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: "Fruits picking job board",
+        description:
+            "Daily fruits picking jobs generated from all over the world",
+        metadataBase: new URL("https://fruitspickingjobs.com"),
+        alternates: {
+            canonical: "https://fruitspickingjobs.com"
+        }
+    }
 }
 
 async function getGlobal(): Promise<any> {
