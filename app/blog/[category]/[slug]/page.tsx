@@ -34,7 +34,7 @@ async function getMetaData(slug: string) {
 export async function generateMetadata({
     params
 }: {
-    params: { slug: string }
+    params: { slug: string; category: string }
 }): Promise<Metadata> {
     const meta = await getMetaData(params.slug)
     const metadata = meta[0].attributes.seo
@@ -43,7 +43,7 @@ export async function generateMetadata({
         title: metadata.metaTitle,
         description: metadata.metaDescription,
         alternates: {
-            canonical: params.slug
+            canonical: `blog/${params.category}/${params.slug}`
         }
     }
 }

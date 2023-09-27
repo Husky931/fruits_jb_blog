@@ -37,10 +37,24 @@ export async function generateMetadata({
 }: {
     params: { category: string }
 }): Promise<Metadata> {
+    const category = params.category
     return {
-        title: params.category,
+        title: `Blog Category: ${category}`,
+        description: `Posts in the ${category} category`,
+        openGraph: {
+            title: `Blog Category: ${category}`,
+            description: `Posts in the ${category} category`,
+            url: `https://fruitspickingjobs.com/blog/${category}`,
+            type: "website"
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `Blog Category: ${category}`,
+            description: `Posts in the ${category} category`,
+            site: "@yourTwitterHandle"
+        },
         alternates: {
-            canonical: params.category
+            canonical: `blog/${params.category}`
         }
     }
 }

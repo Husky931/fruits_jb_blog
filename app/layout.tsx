@@ -19,6 +19,34 @@ export async function generateMetadata(): Promise<Metadata> {
         metadataBase: new URL("https://fruitspickingjobs.com"),
         alternates: {
             canonical: "https://fruitspickingjobs.com"
+        },
+        keywords: ["Fruits", "Jobs", "Picking", "World", "Daily"],
+        viewport: {
+            width: "device-width",
+            initialScale: 1
+        },
+        openGraph: {
+            title: "Fruits picking job board",
+            description:
+                "Daily fruits picking jobs generated from all over the world",
+            url: "https://fruitspickingjobs.com",
+            siteName: "Fruits Picking Jobs",
+            images: [
+                {
+                    url: "https://fruitspickingjobs.com/poster.jpeg",
+                    width: 800,
+                    height: 600
+                }
+            ],
+            type: "website"
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Fruits picking job board",
+            description:
+                "Daily fruits picking jobs generated from all over the world",
+            site: "@fruitspickingjobs",
+            images: ["https://fruitspickingjobs.com/twitter-image.jpg"]
         }
     }
 }

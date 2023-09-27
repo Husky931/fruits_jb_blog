@@ -52,8 +52,28 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: metadata.metaTitle,
         description: metadata.metaDescription,
-        icons: {
-            icon: [new URL(url, getStrapiURL())]
+        alternates: {
+            canonical: "https://fruitspickingjobs.com/blog"
+        },
+        openGraph: {
+            images: [
+                {
+                    url: "https://fruitspickingjobs.com/poster.jpeg",
+                    width: 800,
+                    height: 600,
+                    alt: "Fruit pickers Daily Blog"
+                }
+            ],
+            url: "https://fruitspickingjobs.com/blog",
+            siteName: "Fruit pickers Daily Blog",
+            locale: "en_US",
+            type: "website"
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: metadata.metaTitle,
+            description: metadata.metaDescription,
+            images: "https://fruitspickingjobs.com/poster.jpeg"
         }
     }
 }

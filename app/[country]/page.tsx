@@ -51,6 +51,18 @@ export async function generateMetadata({
         title: title,
         alternates: {
             canonical: params.country
+        },
+        description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+        openGraph: {
+            title: title,
+            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+            images: [`https://fruitpickingjobs.com/og/poster.jpeg`]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: title,
+            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+            images: [`https://fruitpickingjobs.com/og/poster.jpeg.jpg`]
         }
     }
 }
