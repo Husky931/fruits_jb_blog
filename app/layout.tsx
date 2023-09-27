@@ -5,7 +5,6 @@ import { Inter } from "next/font/google"
 import Countries from "@/app/components/NavBar_Countries"
 import GoogleAnalytics from "@/app/components/GoogleAnalytics"
 import Navigation from "./components/navigation"
-import { getStrapiMedia, getStrapiURL } from "./blog/utils/api-helpers"
 import { fetchAPI } from "./blog/utils/fetch-api"
 import Footer from "./blog/components/Footer"
 
