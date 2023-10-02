@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "Fruits picking job board",
+        title: "Fruit harvesting jobs board",
         description:
             "Daily fruits picking jobs generated from all over the world",
         metadataBase: new URL("https://fruitspickingjobs.com"),

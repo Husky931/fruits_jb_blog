@@ -68,6 +68,9 @@ const SingleJobPost: React.FC<SingleJobPostTypes> = ({
                     </div>
                     <div className="text-[#0000EE]">read more</div>
                 </div>
+                <div className="border-2 rounded-md border-custom-dark-blue p-1 my-1 inline-block">
+                    Source: {new URL(link).hostname}
+                </div>
                 <div className="text-gray-500 font-semibold">{displayDate}</div>
             </li>
         </a>
