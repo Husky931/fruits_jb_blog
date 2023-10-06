@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const USA = () => {
     return (
         <section>
@@ -76,14 +78,39 @@ const USA = () => {
             <br />
             <div>
                 <p>
-                    <strong>Fruits grown and percentage:</strong>
+                    <strong>
+                        Fruits grown in{" "}
+                        <Link href="https://www.statista.com">1000 tones</Link>:
+                    </strong>
                 </p>
                 <ul className="flex flex-col gap-y-5">
-                    <li>Apples: ~30%</li>
-                    <li>Grapes: ~15%</li>
-                    <li>Oranges: ~10%</li>
-                    <li>Strawberries: ~8%</li>
-                    <li>Watermelons: ~7%</li>
+                    <li>Grapes: 6871</li>
+                    <li>Apples: 5509</li>
+                    <li>Oranges: 5427</li>
+                    <li>Strawberries: 1126</li>
+                    <li>Tangerines and mandarines: 1107</li>
+                    <li>Lemons: 1102</li>
+                    <li>Pears: 729</li>
+                    <li>Peaches: 681</li>
+                    <li>Grapefruits: 604</li>
+                    <li>Cranberries: 395</li>
+                </ul>
+            </div>
+            <div>
+                <p>
+                    <strong>Fruits grown in the US in percentages:</strong>
+                </p>
+                <ul className="flex flex-col gap-y-5">
+                    <li>Grapes: 20.85%</li>
+                    <li>Apples: 16.72%</li>
+                    <li>Oranges: 16.47%</li>
+                    <li>Strawberries: 3.42%</li>
+                    <li>Tangerines and mandarines: 3.36%</li>
+                    <li>Lemons: 3.34%</li>
+                    <li>Pears: 2.21%</li>
+                    <li>Peaches: 2.07%</li>
+                    <li>Grapefruits: 1.83%</li>
+                    <li>Cranberries: 1.20%</li>
                 </ul>
             </div>
             <br />
@@ -105,20 +132,46 @@ const USA = () => {
                     <strong>Fruit producing trend:</strong>
                 </p>
                 <p>
-                    The fruit production trend in the USA has seen fluctuations,
-                    but there's a general increase in organic and sustainable
-                    farming methods. The precise numbers can vary based on
-                    annual reports.
+                    The fruit production trends in the USA for the 2023/24
+                    season exhibit a mixed outlook. The US Department of
+                    Agriculture's National Agricultural Statistics Service
+                    (NASS) has forecasted increases in the production of certain
+                    fruits and tree nuts, while others are expected to see a
+                    decline. Here are some key points regarding the fruit
+                    production trend: Increase in Production of Certain Fruits:
+                    The production of almonds, apples, apricots, grapes, pears,
+                    sweet cherries, and walnuts is expected to increase. This
+                    positive trend is attributed to favorable spring weather in
+                    the Pacific Northwest, which significantly benefited apple
+                    and sweet cherry productions​1​. Decrease in Production of
+                    Other Fruits: On the contrary, the production of peaches,
+                    tart cherries, and cranberries is expected to decrease. This
+                    decline is linked to various factors, including a cool
+                    spring which lowered yields for some earlier blooming crops,
+                    inadequate chill hours, and spring freeze events, especially
+                    in the mid-Atlantic and Southeast regions, causing declines
+                    in the mentioned fruits​1​.
                 </p>
             </div>
             <br />
             <div>
                 <p>
-                    <strong>Domestic and exported fruits:</strong>
+                    <strong>Export trends:</strong>
                 </p>
                 <p>
-                    Most consumed domestically: Apples, Bananas, and Oranges
-                    Most exported: Apples, Grapes, and Almonds
+                    The U.S. exports a substantial amount of fruits, with
+                    notable markets being Mexico and Canada. In recent years,
+                    exports to Mexico increased significantly, reaching a value
+                    of $936 million, driven mainly by apple shipments. In
+                    2021/22, top commodities included apples ($343 million),
+                    grapes ($118 million), and pears ($86 million)​1​. In 2022,
+                    the total export value of U.S. fruits and vegetables was
+                    $12.59 billion, with a volume of 7 million metric tons. The
+                    export value had a slight decline compared to the previous
+                    years, as it was $7.1 billion in 2019 and $6.9 billion in
+                    2020, with Canada remaining the top U.S. market, accounting
+                    for 49 percent of total exports both years, according to{" "}
+                    <Link href="https://www.fas.usda.gov/"></Link>
                 </p>
             </div>
             <br />
@@ -127,9 +180,13 @@ const USA = () => {
                     <strong>Annual revenue:</strong>
                 </p>
                 <p>
-                    The agriculture sector generates hundreds of billions of
-                    dollars annually. Breaking down the revenue for each crop
-                    would require more specific data.
+                    In 2022, the market size for fruits and vegetables in the
+                    USA was valued at USD 92.88 billion, and it's projected to
+                    grow at a compound annual growth rate (CAGR) of 4.1% from
+                    2023 to 2030​1​. The U.S. fruit and tree nuts industry
+                    generates, on average, over $28 billion in farm cash
+                    receipts annually since 2010, accounting for about 6% of the
+                    total receipts for all agricultural products​.
                 </p>
             </div>
             <br />
@@ -138,9 +195,31 @@ const USA = () => {
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
                 <p>
-                    The USA heavily relies on seasonal agricultural workers,
-                    especially during harvest seasons. Many of these workers are
-                    migrants.
+                    H-2A Guest Workers: The use of H-2A guest workers, who fill
+                    seasonal agricultural jobs, has been on the rise. The number
+                    of US farm jobs certified to be filled with H-2A workers was
+                    below 100,000 until 2014, but it doubled to over 200,000 in
+                    2017 and has continued to increase since then. As of now,
+                    H-2A guest workers fill 10% of the seasonal jobs in US crop
+                    agriculture According to{" "}
+                    <Link href="https://www.ibisworld.com/industry-statistics/employment/fruit-nut-farming-united-states/#:~:text=Industry%20market%20research%20reports%2C%20statistics%2C,Nut%20Farming%20industry%20is%20202%2C874"></Link>{" "}
+                    In 2023, the total employment in the Fruit & Nut Farming
+                    industry in the US was reported to be 202,874, although this
+                    figure includes all types of employment, not just seasonal
+                    workers. In 2019, nearly 57% of crop production workers were
+                    immigrants, and the share of workers that were foreign-born
+                    has slightly decreased since 2014, which was 61.4% -{" "}
+                    <Link href="https://data.americanimmigrationcouncil.org/en/crop-workers/#:~:text=In%202019%2C%20almost%2057%20percent,4">
+                        1
+                    </Link>
+                    In 2019, about 258,000 immigrant workers were granted
+                    temporary H-2A visas, up from 48,000 positions certified in
+                    2005. This figure reflects a significant reliance on foreign
+                    seasonal workers, particularly in states like Florida,
+                    Georgia, Washington, California, and North Carolina​{" "}
+                    <Link href="https://www.fwd.us/news/immigrant-farmworkers-and-americas-food-production-5-things-to-know/#:~:text=In%202019%2C%20about%20258%2C000%20immigrant,2A%20workers%20were%20employed">
+                        2
+                    </Link>
                 </p>
             </div>
             <br />
@@ -149,21 +228,56 @@ const USA = () => {
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
                 <p>
-                    There are approximately 2 million farms in the USA. While
-                    there's a presence of massive agricultural corporations,
-                    many farms are family-owned and medium-sized.
+                    In 2022, the number of farms in the USA was estimated to be
+                    2,002,700, which was a decrease of 9,350 farms from the
+                    previous year (2021)​{" "}
+                    <Link href="https://data.nass.usda.gov/economics/farms-and-land-in-farms/#:~:text=The%20National%20Agricultural%20Statistics%20Service,Save%20as%20Image">
+                        3
+                    </Link>
+                    Texas was the leading state in terms of the total number of
+                    farms, having about 246,000 farms by the end of 2022​{" "}
+                    <Link href="https://www.statista.com/statistics/196114/top-10-us-states-by-number-of-farms/#:~:text=Published%20by,Missouri%20was">
+                        4
+                    </Link>
                 </p>
             </div>
             <br />
             <div>
                 <p>
-                    <strong>Agricultural programs:</strong>
+                    <strong>Agricultural USDA programs:</strong>
                 </p>
                 <p>
-                    The USA has multiple farming and agricultural programs,
-                    including those run by the USDA (United States Department of
-                    Agriculture) that support farmers and promote sustainable
-                    practices.
+                    Farm Labor Stabilization and Protection Pilot Grant Program:
+                    Launched by the USDA in September 2023, this program
+                    addresses labor shortages in agriculture by utilizing up to
+                    $65 million in American Rescue Plan Act funding. It aims at
+                    promoting a safe, healthy work environment for both U.S.
+                    workers and workers from Northern Central American countries
+                    hired under the seasonal H-2A visa program. This initiative
+                    is particularly focused on bolstering the resiliency of the
+                    food and agricultural supply chain, reducing irregular
+                    migration through legal pathways, and enhancing labor
+                    protections for farmworkers.{" "}
+                    <Link href="https://www.fsa.usda.gov/farmworkers/index">
+                        5
+                    </Link>
+                    USDA Farm Service Agency Programs: The USDA Farm Service
+                    Agency provides a host of programs and services aimed at
+                    supporting agricultural endeavors, although not specifically
+                    targeted at fruit picking. These include programs like the
+                    Conservation Programs, Cooperative Agreements, Disaster
+                    Assistance Programs, and more, which might be beneficial for
+                    those involved in the agricultural sector, including fruit
+                    picking{" "}
+                    <Link href="https://www.fsa.usda.gov/programs-and-services/index#:~:text=Home%20Programs%20and%20Services%20A,Agreements%20Dairy%20Margin%20Protection%20Program">
+                        6
+                    </Link>
+                    . The most common way for immigrant workers is the H-2A
+                    program. The H-2A program helps employers who anticipate a
+                    lack of available domestic workers to bring foreign workers
+                    to the U.S. to perform temporary or seasonal agricultural
+                    work, which includes, but is not limited to, planting,
+                    cultivating, or harvesting labor​3​.
                 </p>
             </div>
             <br />
@@ -172,8 +286,15 @@ const USA = () => {
                     <strong>Seasons for migrant workers:</strong>
                 </p>
                 <p>
-                    Spring to early autumn are the best seasons for fruit
-                    picking, varying slightly depending on the crop and region.
+                    Spring and Summer: These seasons are usually busy times for
+                    fruit workers as many fruits such as berries, cherries,
+                    peaches, and nectarines, among others, are harvested during
+                    these periods. Fall: Apples, pears, and various nuts are
+                    often harvested in the fall, making it another busy season
+                    for migrant fruit workers. Winter: While winter is generally
+                    a quieter season for outdoor fruit harvesting, there might
+                    still be work available in warmer states like California or
+                    Florida, or in greenhouse operations.
                 </p>
             </div>
             <br />
@@ -184,10 +305,33 @@ const USA = () => {
                     </strong>
                 </p>
                 <p>
-                    The USA's agricultural sector is technologically advanced,
-                    with a growing trend towards automation and precision
-                    agriculture. The government plays a pivotal role, offering
-                    subsidies, grants, and support programs.
+                    New technologies are emerging to assist fruit growers in
+                    managing pests, for instance, the Integrated Pest Management
+                    (IPM) Module for Stone Fruits developed by Davis
+                    Instruments. This software links weather data to actual pest
+                    risk, aiding in combating pest damage to stone fruit crops
+                    like peaches, apricots, cherries, plums, and prunes.{" "}
+                    <Link href="https://www.growingproduce.com/fruits/new-technologies-for-fruit-growers/">
+                        7
+                    </Link>
+                    The digital agriculture transformation, encompassing
+                    digitalization and automation of farming tasks, is seen as a
+                    pivotal solution to challenges like rising production costs,
+                    climate change, and labor shortages. Technologies like yield
+                    maps, soil maps, and variable rate technologies have been
+                    substantially adopted in certain crops, with automated
+                    guidance technology seeing a sharp increase in adoption over
+                    the past 20 years.
+                    <Link href="https://www.ers.usda.gov/publications/pub-details/?pubid=105893">
+                        8
+                    </Link>
+                    Additionally, autonomous robots are being developed and
+                    deployed in the soft fruit sector for various tasks
+                    including disease treatment, logistics support, and even
+                    picking, which is still in the demonstration phase.
+                    <Link href="https://www.sciencedirect.com/science/article/pii/S2772375522000831#:~:text=Autonomous%20robots%20for%20use%20in,picking%20approaching%20a%20demonstration%20phase">
+                        9
+                    </Link>
                 </p>
             </div>
             <br />
@@ -203,46 +347,21 @@ const USA = () => {
                 </p>
             </div>
             <br />
-            <div>
-                <p>
-                    <strong>Regions and fruit farms:</strong>
-                </p>
-
-                <ul className="flex flex-col gay-y-5">
-                    <li>
-                        Pacific Northwest: Apples (peak in autumn), temperatures
-                        of 50-70°F
-                    </li>
-                    <li>
-                        California: Grapes (peak in late summer to early fall),
-                        temperatures of 60-80°F
-                    </li>
-                    <li>
-                        Florida: Oranges (peak in winter), temperatures of
-                        65-75°F
-                    </li>
-                </ul>
-            </div>
             <br />
             <div>
                 <p>
                     <strong>Peak seasons:</strong>
                 </p>
-                <p>N/A</p>
+                <p>
+                    Summer: Apples Apricots Avocados Berries (like strawberries,
+                    blueberries, raspberries) Cherries Peaches Nectarines Plums
+                    Pineapples Fall: Apples Pears Pumpkins (September and
+                    October) Winter: Citrus fruits like grapefruits, lemons,
+                    oranges, and tangerines Spring: Strawberries (June through
+                    1st week in July) Avocado Mango Pineapple Rhubarb
+                </p>
             </div>
             <br />
-            <div>
-                <p>
-                    <strong>Natural landscape:</strong>
-                </p>
-                <p>
-                    Natural Landscape's Relation:The USA's diverse landscape,
-                    with its varied climates, allows for the growth of a wide
-                    variety of fruits. For instance, the humid conditions in
-                    Florida favor citrus, while the cooler climates of
-                    Washington state are ideal for apple orchards.
-                </p>
-            </div>
             <br />
             <br />
             <div>
@@ -250,13 +369,9 @@ const USA = () => {
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
                 <p>
-                    Earnings for seasonal picker workers can range from the
-                    federal minimum wage to slightly higher rates, often
-                    depending on the state and the specific fruit. For instance,
-                    apple picking in Washington might yield higher earnings than
-                    berry picking in the South. Precise minimum and maximum
-                    possible earnings would require up-to-date wage data for the
-                    industry.
+                    Earnings for seasonal picker workers in the United States
+                    can range anywhere from 11$ up to 29$, depending on the
+                    location, type of fruits and specific farm.
                 </p>
             </div>
         </section>
