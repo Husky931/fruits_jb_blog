@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Norway = () => {
     return (
         <section>
@@ -80,19 +82,22 @@ const Norway = () => {
                 <p>
                     <strong>GDP contribution:</strong>
                 </p>
-                <p>N/A</p>
+                <p className="my-1">
+                    In recent years agriculture contributed 1.61% to the
+                    national GDP.
+                </p>
             </div>
             <br />
             <div>
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <p>
+                <p className="my-1">
                     While Norway's cold climate limits the variety of fruit that
                     can be grown, there are still some prominent fruits
                     cultivated: apples, berries (strawberries, raspberries,
                     blueberries, cloudberries), plums and pears most prominent.
-                    Rough percentage numbers are N/A.
+                    Rough percentage numbers are not exact.
                 </p>
             </div>
             <br />
@@ -102,7 +107,7 @@ const Norway = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p>
+                <p className="my-1">
                     Approximately 3% of Norway's territory is used for
                     agricultural production. Around 1.4% of the population is
                     engaged in the agriculture sector, either directly or
@@ -114,11 +119,18 @@ const Norway = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p>
+                <p className="my-1">
                     The fruit production trend in Norway has generally seen
                     modest growth, especially in the berry sector due to
-                    increased demand domestically and for exports. Exact numbers
-                    and percentages: N/A
+                    increased demand domestically and for exports. Due to recent
+                    drastic changes in climate, Norwegian farmers have started
+                    cultivating more exotic fruits like apricot, sea berry,
+                    edamame beans, and sweet potato
+                </p>
+                <p>
+                    The gross production value in the fruit market is projected
+                    to amount to US$18.43 million in 2023, with an expected
+                    annual growth rate of 2.13% from 2023 to 2028.
                 </p>
             </div>
             <br />
@@ -126,10 +138,14 @@ const Norway = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p>
-                    Apples and berries, particularly strawberries, are primarily
-                    consumed domestically. Berries like cloudberries and
-                    raspberries also have a good export market.
+                <p className="my-1">
+                    The fruits that generate most of the revenue in the
+                    Norwegian market are largely imported tropical fruits,
+                    including bananas, melons, kiwi fruit, pineapples, and
+                    grapes. Bananas are particularly notable as a significant
+                    import product when it comes to fresh fruits and vegetables.
+                    Moreover, there's been growth in the imports of mandarins,
+                    mangoes, avocados, lemons, and blueberries​
                 </p>
             </div>
             <br />
@@ -137,17 +153,47 @@ const Norway = () => {
                 <p>
                     <strong>Annual revenue:</strong>
                 </p>
-                <p>N/A</p>
+                <p className="my-1">
+                    The revenue generated from the fruit and vegetable
+                    processing industry in Norway for the year 2021 was
+                    approximately six billion Norwegian kroner (540 million
+                    USD). In 2022, the turnover of the processing and preserving
+                    industry of fruit and vegetables in Norway remained nearly
+                    unchanged at around 533 million euros.
+                </p>
             </div>
             <br />
             <div>
                 <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                <p>
-                    Norway does rely on seasonal agricultural workers,
-                    especially during the berry picking season. The exact
-                    reliance in terms of percentage: N/A
+                <p className="my-1">
+                    The reliance on seasonal fruit pickers in Norway is notably
+                    accentuated due to the country's relatively short growing
+                    season, which typically spans from May to September, with
+                    the intensive fruit picking period occurring from July to
+                    October. This narrow window for fruit harvesting
+                    necessitates a surge in labor, often filled by seasonal
+                    workers to help with the harvest. Various farms start
+                    looking for workers around this time and many vacancies are
+                    advertised online on platforms like Picking Jobs, Workaway,
+                    WWOOF Norway, One World 365, Indeed, EURES, and
+                    Arbeidplassen.{" "}
+                    <Link href="https://womenwanderingbeyond.com/fruit-picking-jobs-in-norway/">
+                        <small className="text-[#0700ee]">1</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    Additionally, some farms in Norway offer fruit picking jobs
+                    year-round, albeit not as intensely as during the summer
+                    months. For instance, Auster Berget Gård in Bergmyran,
+                    Rissa, Norway, has harvest times year-round for
+                    strawberries, seasonal fruits, and seasonal vegetables,
+                    indicating that while the need for fruit pickers surges in
+                    the summer, some level of demand exists throughout the year.
+                    <Link href="https://womenwanderingbeyond.com/fruit-picking-jobs-in-norway/">
+                        <small className="text-[#0700ee]">2</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -155,7 +201,7 @@ const Norway = () => {
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p>
+                <p className="my-1">
                     Norway has several thousand farms, but there has been a
                     trend of a declining number of farms with increased farm
                     size. While large farming corporations are present, small
@@ -168,10 +214,14 @@ const Norway = () => {
                 <p>
                     <strong>Agricultural programs:</strong>
                 </p>
-                <p>
-                    Norway has various programs aimed at supporting farmers and
-                    ensuring food security. These often come in the form of
-                    subsidies, training, and technical support.
+                <p className="my-1">
+                    There are programs available for seasonal work in Norway's
+                    farms and greenhouses. For instance, a seasonal worker
+                    program based in Stavanger offers placements in farms and
+                    greenhouses. One of them is {""}
+                    <Link href="https://internship-workabroad.com/">
+                        https://internship-workabroad.com/
+                    </Link>
                 </p>
             </div>
             <br />
@@ -179,76 +229,46 @@ const Norway = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p>
-                    Summer months, particularly from June to August, are the
-                    best for fruit picking, especially berries.
+                <p className="my-1">
+                    The fruit picking season in Norway generally spans from June
+                    to September.
                 </p>
             </div>
             <br />
             <div>
                 <p>
-                    <strong>
-                        Technology adoption and government involvement:
-                    </strong>
+                    <strong>Technology adoption:</strong>
                 </p>
-                <p>
-                    Technology adoption in Norway's agriculture sector is on the
-                    rise, with more farms utilizing modern equipment and
-                    methods. The government plays a supportive role, offering
-                    subsidies and promoting sustainable farming practices.
-                </p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Jobs provided:</strong>
-                </p>
-                <p>N/A</p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Regions and fruit farms:</strong>
-                </p>
-
-                <ul className="flex flex-col gay-y-5">
-                    <li>
-                        In the warmer, coastal regions like Rogaland and
-                        Hordaland, you can find apple and pear farms
-                    </li>
-                    <li>
-                        Berries, on the other hand, can be grown further inland
-                        and even in the northern parts of the country due to
-                        their resilience to colder temperatures.
-                    </li>
-                </ul>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Peak seasons:</strong>
-                </p>
-                <p>Peak seasons usually align with the summer months.</p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Natural landscape:</strong>
-                </p>
-                <p>
-                    Norway's natural landscape, characterized by its cool
-                    climate and long daylight hours during summer, is conducive
-                    for the cultivation of certain fruits like berries. The cold
-                    helps intensify the flavor of the berries.
+                <p className="my-1">
+                    The fruit picking industry in Norway is embracing technology
+                    to address challenges such as labor shortages, especially
+                    during peak harvesting seasons. Robot uses are starting to
+                    implement who are now trained to collect strawberries and
+                    just like in the global trend, more use of IoT devices, such
+                    as GPS technology for precision farming and drones for
+                    monitoring crop health.
                 </p>
             </div>
-            <br />
             <br />
             <div>
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p>N/A</p>
+                <p className="my-1">
+                    The average gross salary for a fruit picker in Norway is NOK
+                    270,172 per year, with an equivalent hourly rate of NOK 130.
+                    Additionally, they earn an average bonus of NOK 2,513 per
+                    year.{" "}
+                    <Link href="https://www.salaryexpert.com/salary/job/fruit-picker/norway#:~:text=The%20average%20fruit%20picker%20gross,and%20anonymous%20employees%20in%20Norway">
+                        <small className="text-[#0700ee]">3</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    Experienced fruit pickers earn about +7% more than the
+                    average, mid-career fruit pickers earn about +8% more, while
+                    entry-level fruit pickers earn about -12% less than the
+                    average
+                </p>
             </div>
         </section>
     )
