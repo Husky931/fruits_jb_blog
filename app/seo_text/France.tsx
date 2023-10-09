@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const France = () => {
     return (
         <section>
@@ -89,7 +91,13 @@ const France = () => {
                 </p>
                 <p>
                     Agriculture contributes approximately 1.6% to France's GDP.
-                    It's important to verify this with recent statistics.
+                    It's important to verify this with recent statistics. In the
+                    second quarter of 2023, the GDP from agriculture in France
+                    increased to 7880 EUR million from 7870 EUR million in the
+                    first quarter of the same year.{" "}
+                    <Link href="https://tradingeconomics.com/france/gdp-from-agriculture#:~:text=GDP%20from%20Agriculture%20by%20Country,the%20first%20quarter%20of%202023">
+                        <small className="text-[#0700ee]">1</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -97,13 +105,26 @@ const France = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <p>
-                    The main fruit crops in France include apples, grapes,
-                    pears, cherries, strawberries, and peaches. Exact percentage
-                    figures for each crop can vary by year, so it's essential to
-                    refer to the latest agricultural statistics for precise
-                    numbers
-                </p>
+                <ul className="flex flex-col gap-y-2 my-1">
+                    <li>
+                        <span className="italic">Apple:</span> 64%
+                    </li>
+                    <li>
+                        <span className="italic">Peach:</span> 9%
+                    </li>
+                    <li>
+                        <span className="italic">Prune:</span> 5%
+                    </li>
+                    <li>
+                        <span className="italic">Strawberry:</span> 4%
+                    </li>
+                    <li>
+                        <span className="italic">Apricot:</span> 3%
+                    </li>
+                    <li>
+                        <span className="italic">Clementine:</span> 2%
+                    </li>
+                </ul>
             </div>
             <br />
             <div>
@@ -112,7 +133,7 @@ const France = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p>
+                <p className="my-1">
                     France devotes about <strong>33% of its territory</strong>{" "}
                     to agricultural production. Close to 2% of the country's
                     population works directly in the agriculture sector.
@@ -123,12 +144,28 @@ const France = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p>
-                    Historically, France has seen a slight decline in certain
-                    fruit crops due to changing climate patterns and
-                    international competition. However, wine grapes, for
-                    example, have maintained a steady production trend. Checking
-                    recent data is necessary for up-to-date trends.
+                <p className="my-1">
+                    The fruit production in France saw a modest expansion in
+                    2022, albeit with a relatively flat trend pattern over the
+                    reviewed period. A significant spike in growth was observed
+                    in 2018 with a 13% increase from the previous year. However,
+                    the production peaked in 2014 and remained at a lower figure
+                    from 2015 to 2022.
+                    <Link href="https://www.indexbox.io/store/france-fruits-market-report-analysis-and-forecast-to-2025/">
+                        <small className="text-[#0700ee]">2</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    The average yield of fruits in France rose rapidly to a
+                    certain value (X tons per ha) in 2022, marking a 6.6%
+                    increase compared to the previous year. Similar to
+                    production, the yield showed a relatively flat trend
+                    pattern, with the most pronounced growth occurring in 2018
+                    (16% increase). The yield peaked in 2015 but failed to
+                    regain momentum from 2016 to 2022.
+                    <Link href="https://www.indexbox.io/store/france-fruits-market-report-analysis-and-forecast-to-2025/">
+                        <small className="text-[#0700ee]">3</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -136,45 +173,79 @@ const France = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p>
-                    Apples, pears, and grapes are primarily consumed
-                    domestically, while wine (from grapes) is one of the
-                    country's main agricultural exports.
+                <p className="my-1">
+                    <span className="font-semibold">Domestic Production: </span>{" "}
+                    The production value of fruits and vegetables, including
+                    potatoes, in France is around 15 billion euros.
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Exports:</span> France
+                    exports a significant amount of its fruit production. In
+                    2021, some of the top fresh fruit export commodities
+                    included apples, grapes, oranges, strawberries, and
+                    cherries, which accounted for a combined $3.1 billion. The
+                    top markets for these exports were Canada, Mexico, South
+                    Korea, Japan, and Taiwan.
+                    <Link href="https://www.fas.usda.gov/fresh-fruits-and-vegetables-2021-export-highlights#:~:text=Top%20fresh%20fruit%20export%20commodities,South%20Korea%2C%20Japan%2C%20and%20Taiwan">
+                        <small className="text-[#0700ee]">4</small>
+                    </Link>
                 </p>
             </div>
             <br />
             <div>
-                <p>
-                    <strong>Annual revenue:</strong>
-                </p>
-                <p>
-                    In 2021, the agriculture sector's revenue was vast, with
-                    wine being a significant contributor. However, for specific
-                    numbers for each crop, one would need the latest
-                    agricultural and export reports.
-                </p>
-            </div>
-            <br />
-            <div>
-                <p>
+                <p className="my-1">
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                <p>
-                    France heavily relies on seasonal agricultural workers,
-                    especially during the grape harvest season in wine-producing
-                    regions.
-                </p>
+                The COVID-19 pandemic highlighted the reliance on seasonal fruit
+                pickers in France. With the pandemic restricting the movement of
+                foreign seasonal labourers, France faced a challenge to ensure
+                that fruits and vegetables were harvested in time to prevent
+                spoilage. There were appeals made to French citizens, especially
+                those not currently working, to assist with the harvest.{" "}
+                <Link href="https://www.rfi.fr/en/france/20200330-more-french-needed-to-pick-fruit-vegetable-in-coronavirus-lockdown-harvest-sow-seeds-agriculture-covid-19#:~:text=With%20Covid,to%20help%20harvest%20crops%20and">
+                    <small className="text-[#0700ee]">5</small>
+                </Link>
             </div>
             <br />
             <div>
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p>
-                    France has hundreds of thousands of farms, with a mix of
-                    large cooperatives and small, family-owned farms.
-                    Historically, small family farms have been dominant, but
-                    there's been a slow trend towards consolidation.
+                <p className="my-1">
+                    In 2020, France had 416,400 farms, which was 20% less
+                    compared to a decade ago. Cattle production utilized 33% of
+                    the French agricultural area, and the average area of French
+                    farms increased to 69 hectares in 2020 from 55 hectares in
+                    2010. The data also noted a growing importance of organic
+                    farming in France.
+                    <Link href="https://eaap2023.org/agriculture-in-france/#:~:text=In%20addition%2C%20France%20had%20416%2C400,growing%20importance%20of%20organic%20farming">
+                        <small className="text-[#0700ee]">6</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    A once-in-a-decade agricultural census released by the
+                    ministry showed that the number of farms in France decreased
+                    to 389,000 from 490,000 in 2010, indicating a trend of
+                    declining farm numbers that began in the 1970.
+                </p>
+                <p className="my-1">
+                    A report noted that between 2010 and 2020, the number of
+                    farms in France fell by 21%, from 490,000 to 389,000, which
+                    equates to nearly 100,000 farms being wiped off the map in
+                    metropolitan France over a span of 10 years.
+                    <Link href="https://www.lemonde.fr/en/economy/article/2023/02/26/france-has-to-make-a-choice-for-its-agricultural-model_6017327_19.html#:~:text=Between%202010%20and%202020%2C%20the,This%20continues%20a%20trend">
+                        <small className="text-[#0700ee]">7</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    According to a strategic plan report, there were about
+                    456,000 farms in France, with an average size of 69 hectares
+                    per farm. The total agricultural land in France is
+                    approximately 28 million hectares, which is about half of
+                    the country's total territory.
+                    <Link href="https://agriculture.ec.europa.eu/cap-my-country/cap-strategic-plans/france_en#:~:text=Timeline,average%20size%20of%2069%20hectares">
+                        <small className="text-[#0700ee]">8</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -182,7 +253,7 @@ const France = () => {
                 <p>
                     <strong>Agricultural programs:</strong>
                 </p>
-                <p>
+                <p className="my-1">
                     France has several agricultural programs, many of which are
                     supported by the European Union's Common Agricultural Policy
                     (CAP).
@@ -193,9 +264,31 @@ const France = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p>
-                    Late summer and early autumn are peak seasons, especially
-                    for grape harvesting. Technology and Government Involvement:
+                <p className="my-1">
+                    <span className="font-semibold">
+                        Cherry and Strawberry Harvesting:{" "}
+                    </span>
+                    hese usually occur in the Loire Valley, the Rhone, and
+                    Alsace regions. The specific seasons for cherry and
+                    strawberry picking weren't explicitly mentioned, but
+                    cherries and strawberries are typically harvested in late
+                    spring to early summer (May-June) in many regions.
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Plum Harvesting: </span>
+                    This takes place in the Southern Pyrenees. While the exact
+                    timeframe wasn't provided, plum harvesting in many areas
+                    occurs in late summer to early fall.
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Melon Harvesting: </span>
+                    Occurs in the Rhone Valley. Melons are typically harvested
+                    in the summer months.
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Grape Harvesting: </span>
+                    The grape picking season spans from September to
+                    mid-November across various regions in France.
                 </p>
             </div>
             <br />
@@ -205,11 +298,10 @@ const France = () => {
                         Technology adoption and government involvement:
                     </strong>
                 </p>
-                <p>
+                <p className="my-1">
                     France has been keen on adopting modern farming
-                    technologies. The government is deeply involved in the
-                    agriculture sector, with subsidies and programs to support
-                    farmers.
+                    technologies. Most notable uses are: robotic harvesting,
+                    machine vision technology, intelligent robots, and drones.
                 </p>
             </div>
             <br />
@@ -217,57 +309,26 @@ const France = () => {
                 <p>
                     <strong>Jobs provided:</strong>
                 </p>
-                <p>
-                    The sector provides jobs to hundreds of thousands, ranging
-                    from permanent roles in agricultural management to seasonal
-                    roles like fruit picking and vine pruning.
+                <p className="my-1">
+                    The fruits and vegetable sector provides 450,000 direct jobs
+                    and encompasses about 75,000 companies, with the 700,000 in
+                    the agriculture sector.{" "}
+                    <Link href="https://www.fao.org/country-showcase/item-detail/en/c/1278517/#:~:text=The%20fruit%20and%20vegetable%20sector,0">
+                        <small className="text-[#0700ee]">9</small>
+                    </Link>
                 </p>
             </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Regions and fruit farms:</strong>
-                </p>
-                <ul>
-                    <li>Bordeaux region is famous for wine grapes.</li>
-                    <li>Normandy for apples.</li>
-                    <li>Loire Valley for a variety of fruits.</li>
-                </ul>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Peak seasons:</strong>
-                </p>
-                <p>
-                    Peak seasons generally align with late summer and early
-                    autumn, and temperatures in these regions can vary from cool
-                    to mild during these times.
-                </p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Natural landscape:</strong>
-                </p>
-                <p>
-                    France's varied landscape, from its river valleys to its
-                    sunny southern coast, provides a perfect environment for a
-                    range of agricultural products, allowing for the cultivation
-                    of both temperate and Mediterranean fruits.
-                </p>
-            </div>
-            <br />
             <br />
             <div>
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p>
-                    Earnings can vary based on the fruit and region. Grape
-                    harvesters in renowned wine regions might earn more.
-                    Checking updated labor statistics or industry reports is
-                    necessary for current figures.
+                <p className="my-1">
+                    On average, fruit or vegetable pickers in France earn a
+                    gross salary of €22,713 annually, which translates to an
+                    hourly rate of about €11. Another source states the average
+                    fruit picker salary in France is slightly lower at €21,392
+                    annually or an equivalent hourly rate of €10.
                 </p>
             </div>
         </section>

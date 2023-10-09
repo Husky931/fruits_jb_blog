@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Germany = () => {
     return (
         <section>
@@ -79,21 +81,11 @@ const Germany = () => {
                 <p>
                     <strong>GDP contribution:</strong>
                 </p>
-                <p>
+                <p className="my-1">
                     The agricultural sector, including fruits production,
-                    contributed about 0.6% to Germany's GDP.
-                </p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Fruits grown and percentage:</strong>
-                </p>
-                <p>
-                    The major fruit crops in Germany include apples,
-                    strawberries, cherries, plums, pears, and currants. Exact
-                    percentage numbers for each fruit's contribution to total
-                    fruit production might not be up-to-date as of 2021.
+                    contributed about 0.6% to Germany's GDP. The gross
+                    production value in the agriculture market of Germany is
+                    projected to amount to US$63.43 billion in 2023
                 </p>
             </div>
             <br />
@@ -103,7 +95,7 @@ const Germany = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p>
+                <p className="my-1">
                     Approximately 48% of Germany's territory is used for
                     agricultural production. Around 1.4% of its population works
                     in the agriculture sector.
@@ -114,9 +106,12 @@ const Germany = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p>
-                    Historically, Germany has seen steady fruit production, but
-                    the exact trend (rise or decline) is N/A.
+                <p className="my-1">
+                    The fruit market in Germany witnessed a decrease of 8% in
+                    2022 following two years of growth. However, the market
+                    value increased at an average annual rate of +1.9% over the
+                    period from 2012 to 2022, with only minor fluctuations
+                    observed in certain years.
                 </p>
             </div>
             <br />
@@ -124,9 +119,31 @@ const Germany = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p>
-                    Apples are extensively used for domestic purposes, and they,
-                    along with strawberries, are among the most exported fruits.
+                <p className="my-1">
+                    <span className="font-semibold">Limited Export: </span> Most
+                    of the imported and domestically produced fresh fruit and
+                    vegetables are destined for the internal market, with
+                    exports adding up to only 1.5 billion euros. Exports majorly
+                    comprise large commodities like bananas or local produce
+                    such as potatoes, berries, apples, sweet peppers, asparagus,
+                    onion, lettuce, and cabbage, mainly to surrounding countries
+                    like the Netherlands and Denmark.{" "}
+                    <Link href="https://www.cbi.eu/market-information/fresh-fruit-vegetables/germany">
+                        <small className="text-[#0700ee]">1</small>
+                    </Link>
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Imported Fruits: </span>{" "}
+                    FGermany complements its domestic supply with imports,
+                    particularly of tomatoes, sweet peppers, table grapes,
+                    apples, and cucumbers from other European countries. Popular
+                    import products from developing countries include more
+                    tropical varieties with significant increases in the imports
+                    of berries, avocados, dates, mangoes, and melons over the
+                    past five years
+                    <Link href="https://www.cbi.eu/market-information/fresh-fruit-vegetables/germany">
+                        <small className="text-[#0700ee]">1</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -134,16 +151,33 @@ const Germany = () => {
                 <p>
                     <strong>Annual revenue:</strong>
                 </p>
-                <p>N/A</p>
+                <p className="my-1">
+                    In 2023, the agriculture sector in Germany generated about
+                    €43.7 billion in net revenue, showing an increase from the
+                    previous year, which had a net revenue of €40.97 billion.
+                </p>
+                <p className="my-1">
+                    While the fruit and vegetable processing industry in Germany
+                    generated roughly €11.29 billion in revenues in 2021, a
+                    slight decrease from the previous year which had revenues of
+                    €11.55 billion.
+                </p>
             </div>
             <br />
             <div>
                 <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                <p>
-                    Germany significantly relies on seasonal agricultural/fruit
-                    picking workers, especially during harvest seasons.
+                <p className="my-1">
+                    Traditionally, a substantial portion of the seasonal
+                    agricultural labor force in Germany has been comprised of
+                    migrant workers, particularly from Bulgaria and Romania. In
+                    2019, Germany's agricultural sector hired 300,000 migrant
+                    workers. The snippet hints at some government action when
+                    borders were closed, but the specifics are not provided.
+                    <Link href="https://globalvoices.org/2020/07/14/fruit-picking-in-a-pandemic-europes-precarious-migrant-workers/#:~:text=Choke%20on%20your%20asparagus,federal%20government%20closed%20the">
+                        <small className="text-[#0700ee]">2</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -151,21 +185,14 @@ const Germany = () => {
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p>
-                    Germany has both large farming corporations and smaller
-                    family-run farms. There are tens of thousands of farms, but
-                    exact numbers for 2023 might need to be sourced.
-                </p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Agricultural programs:</strong>
-                </p>
-                <p>
-                    Germany has numerous agricultural programs and subsidies in
-                    place to support farmers, ensuring sustainable and quality
-                    production.
+                <p className="my-1">
+                    According to the German Federal Statistical Office states
+                    that there are 262,776 agricultural holdings in Germany,
+                    including 26,133 holdings with organic farming, employing
+                    937,900 agricultural workers.{" "}
+                    <Link href="https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Agriculture-Forestry-Fisheries/Agricultural-Holdings/_node.html">
+                        <small className="text-[#0700ee]">3</small>
+                    </Link>
                 </p>
             </div>
             <br />
@@ -173,10 +200,17 @@ const Germany = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p>
-                    Typically, summer and early autumn are the peak seasons for
-                    fruit picking, especially for crops like strawberries,
-                    cherries, and apples.
+                <p className="my-1">
+                    <span className="font-semibold">Winter</span> Winter is
+                    noted as the peak season for fruit-picking jobs in Germany,
+                    as many employers are eager to begin harvesting their crops
+                    during this time.
+                </p>
+                <p className="my-1">
+                    <span className="font-semibold">Fall:</span> This season is
+                    mentioned as a productive time for fruit and vegetable
+                    harvesting in Germany, indicating a potentially busy period
+                    for fruit pickers.
                 </p>
             </div>
             <br />
@@ -186,12 +220,21 @@ const Germany = () => {
                         Technology adoption and government involvement:
                     </strong>
                 </p>
-                <p>
-                    Germany is at the forefront of adopting innovative farming
-                    technologies, including precision agriculture and digital
-                    farming. The German government actively supports the
-                    agricultural sector through subsidies, training, and quality
-                    control initiatives.
+                <p className="my-1">
+                    Data collection and processing along with intelligent
+                    automation technologies are vital in the development of new
+                    agricultural machinery. In 2023, the domestic market volume
+                    for agricultural machinery was approximately EUR 7.5
+                    billion, reflecting a significant investment in
+                    technological advancement.
+                    <Link href="https://www.gtai.de/en/invest/service/publications/digital-farming-in-germany-992502#:~:text=Germany%20is%20the%20world%E2%80%99s%20third,points%20in%20new%20machinery%20development">
+                        <small className="text-[#0700ee]">3</small>
+                    </Link>
+                    Germany stands as the world's third-largest producer of
+                    agricultural machinery, following the USA and China, which
+                    signifies a substantial technological footprint in the
+                    agriculture sector. It also uses the standard global
+                    robotics, gps and drone technologies.
                 </p>
             </div>
             <br />
@@ -199,51 +242,64 @@ const Germany = () => {
                 <p>
                     <strong>Jobs provided:</strong>
                 </p>
-                <p>N/A</p>
+                <p className="my-1">
+                    According to recent statistics, the agriculturale job sector
+                    hired up to 300,000 workers.
+                </p>
             </div>
             <br />
             <div>
                 <p>
                     <strong>Regions and fruit farms:</strong>
                 </p>
-                <ul>
-                    <li>
-                        The Altes Land region near Hamburg is famous for apple
-                        orchards.
-                    </li>
-                    <li>
-                        The Lake Constance region is known for its apple and
-                        cherry farms.
-                    </li>
-                </ul>
+                <p className="my-1">
+                    <span className="italic">Lake Constance Region: </span>{" "}
+                    Known for being a prime location for growing apples and
+                    pears. This region is Germany's southernmost fruit-growing
+                    area where apple orchards reach directly to the shores of
+                    Lake Constance. The counties of Constance, Lindau,
+                    Ravensburg, and the Lake Constance district are particularly
+                    conducive for fruit growing.
+                </p>
+                <p className="my-1">
+                    <span className="italic">Alte Land near Hamburg: </span>{" "}
+                    Another well-known region for apple and pear cultivation
+                </p>
+                <p className="my-1">
+                    <span className="italic">
+                        Rhineland-Palatinate, Saxony, and Thuringia{" "}
+                    </span>{" "}
+                    These regions are primarily known for sour cherry
+                    cultivation. Rhineland-Palatinate is also noted for its
+                    nearly Mediterranean climate, making it ideal for growing a
+                    variety of fruits and vegetables.
+                </p>
+                <p className="my-1">
+                    <span className="italic">Baden-Württemberg: </span>{" "}
+                    Significant for the production of plums, damson plums, and
+                    mirabelle plums. About 71% of the plum harvest in Germany
+                    comes from this region and Rhineland-Palatinate.
+                </p>
+                <p className="my-1">
+                    <span className="italic">Palatinate (Pfalz) Region: </span>{" "}
+                    Known for its almost Mediterranean climate conditions, the
+                    Palatinate region is ideal for growing a variety of fruits
+                    and vegetables. Pfalzmarkt, a collective of 120 growers in
+                    this region, is noted for producing fruits and vegetables of
+                    outstanding quality.
+                </p>
             </div>
             <br />
-            <div>
-                <p>
-                    <strong>Peak seasons:</strong>
-                </p>
-                <p>The seasons typically peak in summer and early autumn.</p>
-            </div>
-            <br />
-            <div>
-                <p>
-                    <strong>Natural landscape:</strong>
-                </p>
-                <p>
-                    Germany's diverse climate and soil types allow for a varied
-                    range of fruit crops. The temperate climate is favorable for
-                    many types of fruits, and the fertile plains in the north
-                    and rolling hills in the south cater to different types of
-                    crops.
-                </p>
-            </div>
-            <br />
-            <br />
+
             <div>
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p>N/A</p>
+                <p>
+                    The earnings in Germany for harvester depends on the region.
+                    It can go from 1000EU in some regions up to 3000 in others,
+                    with hourly rate of 10EU to 15EU.
+                </p>
             </div>
         </section>
     )

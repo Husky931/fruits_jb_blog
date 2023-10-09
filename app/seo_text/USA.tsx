@@ -456,19 +456,18 @@ const USA = () => {
                     <span className="font-semibold">Summer and Spring:</span>{" "}
                     Apples Apricots Avocados Berries (like strawberries,
                     blueberries, raspberries) Cherries Peaches Nectarines Plums
-                    Pineapples
+                    Pineapples.
                 </p>
                 <p className="my-1">
                     <span className="font-semibold">Fall:</span> Apples Pears
-                    Pumpkins (September and October)
+                    Pumpkins (September and October).
                 </p>
                 <p className="my-1">
                     <span className="font-semibold">Winter:</span>Winter: Citrus
                     fruits like grapefruits, lemons, oranges, and tangerines
                     Spring: Strawberries (June through 1st week in July) Avocado
-                    Mango Pineapple Rhubarb
+                    Mango Pineapple Rhubarb.
                 </p>
-                <p></p>
             </div>
             <br />
             <div>
