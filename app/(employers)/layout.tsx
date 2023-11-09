@@ -2,6 +2,7 @@ import { Inter } from "next/font/google"
 import "../globals/globals.css"
 import Footer from "../(home)/blog/components/Footer"
 import { fetchAPI } from "../(home)/blog/utils/fetch-api"
+import EmployersNav from "../(employers)/components/nav"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -53,6 +54,7 @@ export default async function RootLayout({
                 className={`${inter.className}`}
                 style={{ height: "100vh", margin: 0 }}
             >
+                <EmployersNav />
                 {children}
                 <Footer
                     menuLinks={footer.menuLinks}
