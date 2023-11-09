@@ -1,27 +1,27 @@
-import Button from "@mui/material/Button"
-
-export default function EmployerPage() {
-    return (
-        <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-x-hidden">
-            <img
-                src="/employers.jpg"
-                alt="Employers"
-                className="absolute inset-0 w-full h-full object-cover object-right md:object-center lg:object-none"
-            />
-            <div className="relative z-10 text-center text-white p-4 flex flex-col justify-center items-center h-full w-full">
-                <h1 className="text-4xl font-bold">
-                    Make your new harvest hire
-                </h1>
-                <p className="text-xl mt-2">
-                    Post a job for free and find the right candidate
+;<header
+    class="section-header hero hero-primary dark horizontal hero-height-short hero-mobile-bottom has-image hero-content-only"
+    data-desktopbackground="https://cdn-empmerch.newjobs.com/wp-content/uploads/sites/4/2022/11/homepage-desktop.jpg"
+    data-mobilebackground="https://cdn-empmerch.newjobs.com/wp-content/uploads/sites/4/2022/11/homepage-mobile.jpg"
+    style='background-image: url("https://cdn-empmerch.newjobs.com/wp-content/uploads/sites/4/2022/11/homepage-desktop.jpg");'
+>
+    <div class="container-wide hero-text-left">
+        <div class="hero-copy">
+            <h1>Make your next hire with Monster+</h1>
+            <span>
+                <p>
+                    We can help you expand your reach and get your jobs in front
+                    of the right candidates.
                 </p>
-                <Button
-                    variant="contained"
-                    className="mt-4 rounded-full bg-white text-gray-800"
-                >
-                    Post a job
-                </Button>
-            </div>
+            </span>
+            <a
+                class="button button-teal"
+                href="https://hiring.monster.ca/pricing/"
+                data-cta="post_a_job"
+                aria-label="Sign Up Now - Make your next hire with Monster+"
+                data-detail="hero"
+            >
+                Sign Up Now{" "}
+            </a>
         </div>
-    )
-}
+    </div>
+</header>
