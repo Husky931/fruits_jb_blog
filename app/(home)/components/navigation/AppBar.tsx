@@ -67,7 +67,7 @@ export default function Nav() {
 
                 <Link
                     prefetch={false}
-                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/employer`}
                 >
                     <Button
                         sx={{

@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import Pagination from "@mui/material/Pagination"
-import SingleJobPost from "@/app/components/SingleJobPost"
+import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import { ColorRing } from "react-loader-spinner"
 
 export default async function AllCountries() {
