@@ -76,6 +76,20 @@ export default function Nav() {
                             fontSize: "small"
                         }}
                     >
+                        Employer
+                    </Button>
+                </Link>
+                <Link
+                    prefetch={false}
+                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+                >
+                    <Button
+                        sx={{
+                            color: "white",
+                            pr: { xs: 0, md: 1 },
+                            fontSize: "small"
+                        }}
+                    >
                         Blog
                     </Button>
                 </Link>
