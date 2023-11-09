@@ -1,6 +1,6 @@
 export default function PricingExplanation() {
     return (
-        <div className="bg-[#4D4D4D] px-4 py-8 pb-24">
+        <div className="bg-[#717171] px-4 py-8 pb-24">
             <div className="text-center my-12 mb-16 text-white">
                 <h1 className="font-bold  text-3xl mb-4 ">Fee structure</h1>
                 <p className="">
