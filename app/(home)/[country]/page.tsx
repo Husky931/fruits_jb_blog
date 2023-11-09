@@ -18,7 +18,7 @@ import {
     Spain,
     Sweden,
     USA
-} from "../seo_text/index"
+} from "../../seo_text/index"
 
 const countryComponents = {
     australia: Australia,

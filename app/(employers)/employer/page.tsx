@@ -2,34 +2,28 @@ import Button from "@mui/material/Button"
 
 export default function EmployerPage() {
     return (
-        <div className="relative w-full h-screen flex items-center justify-center">
-            <div
+        <main className="w-full h-full">
+            <header
+                className="relative w-full h-full bg-no-repeat bg-cover bg-center"
                 style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    zIndex: -1
+                    backgroundImage: "url('/employers.jpg')"
                 }}
             >
-                <img
-                    src="/employers.jpg"
-                    alt="Employers"
-                    className="object-cover w-full h-full"
-                />
-            </div>
-            <div className="relative z-10 text-center md:text-left">
-                <h1 className="text-4xl font-bold">
-                    Make your new harvest hire
-                </h1>
-                <p className="text-xl mt-2">
-                    Post a job for free and find the right candidate
-                </p>
-                <Button variant="contained" className="mt-4 rounded-full">
-                    Post a job
-                </Button>
-            </div>
-        </div>
+                <div className="z-10 text-center p-4 flex flex-col justify-center items-center h-full w-full">
+                    <h1 className="text-[40px] sm:text-[45px] md:text-[60px] mb-[30px] font-bold text-yellow-100">
+                        Make your new harvest hire
+                    </h1>
+                    <p className="text-[20px] mt-2 text-white">
+                        Post a job for free and find the right candidate
+                    </p>
+                    <Button
+                        variant="contained"
+                        className="mt-24 py-3 px-6 rounded-full bg-white text-gray-800 font-bold"
+                    >
+                        Post a job
+                    </Button>
+                </div>
+            </header>
+        </main>
     )
 }

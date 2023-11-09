@@ -1,6 +1,6 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
 import { Metadata } from "next"
-import "../styles/globals.css"
+import "../globals/globals.css"
 import { Inter } from "next/font/google"
 import Countries from "@/app/(home)/components/NavBar_Countries"
 import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
