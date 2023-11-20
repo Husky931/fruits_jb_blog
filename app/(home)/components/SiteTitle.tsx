@@ -14,13 +14,13 @@ const SiteTitle = () => {
                 prefetch={false}
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
             >
-                <h2 className="w-full text-center text-2xl sm:text-3xl font-semibold">
+                <div className="w-full text-center text-2xl sm:text-3xl font-semibold">
                     Fruits Picking Jobs Daily
-                </h2>
+                </div>
             </Link>
-            <h4 className="w-full text-center font-semibold">
+            <div className="w-full text-center font-semibold text-[16px]">
                 Last updated: {dateString}
-            </h4>
+            </div>
         </div>
     )
 }
