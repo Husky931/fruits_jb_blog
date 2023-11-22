@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server"
+import { ImageResponse } from "next/og"
 import { fetchAPI } from "../../utils/fetch-api"
 
 export const size = {
