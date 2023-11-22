@@ -1,5 +1,5 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 import "../globals/globals.css"
 import { Inter } from "next/font/google"
 import Countries from "@/app/(home)/components/NavBar_Countries"
@@ -20,10 +20,6 @@ export async function generateMetadata(): Promise<Metadata> {
             canonical: "https://fruitspickingjobs.com"
         },
         keywords: ["Fruits", "Jobs", "Picking", "World", "Daily"],
-        viewport: {
-            width: "device-width",
-            initialScale: 1
-        },
         openGraph: {
             title: "Fruits picking job board",
             description:
@@ -48,6 +44,12 @@ export async function generateMetadata(): Promise<Metadata> {
             images: ["https://fruitspickingjobs.com/twitter-image.jpg"]
         }
     }
+}
+
+export const viewPort: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1
 }
 
 async function getGlobal(): Promise<any> {
