@@ -9,7 +9,7 @@ export default function EmpoyersNav() {
             <Link prefetch={false} href="/">
                 <div className="w-[50px] h-[40px] relative cursor-pointer">
                     <Image
-                        src="/fruits_job_board_logo.png"
+                        src="/fruits_job_board_logo_blue.png"
                         alt="harvest jobs logo"
                         width="70"
                         height="70"
@@ -18,7 +18,7 @@ export default function EmpoyersNav() {
                 </div>
             </Link>
             <Button
-                className="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-8 border border-white hover:border-transparent rounded"
+                className="bg-blue-600 text-white hover:bg-transparent hover:text-blue-600 border-blue-600 border-2 font-semibold py-2 px-8 rounded"
                 variant="outlined"
                 color="inherit"
             >

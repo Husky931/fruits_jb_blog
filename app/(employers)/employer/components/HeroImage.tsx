@@ -4,7 +4,7 @@ export default function HeroImage() {
     return (
         <header className="relative w-full h-[400px] md:h-[400px] xl:h-[500px] 2xl:h-[700px] bg-no-repeat bg-cover bg-top bg-[url('/employers-mob.jpg')] md:bg-[url('/employers.jpg')]">
             <div className="z-10 text-center p-4 flex flex-col justify-center items-center w-auto h-full md:items-start md:justify-center md:ml-4">
-                <h1 className="text-[40px] lg:text-[60px] font-bold text-yellow-100">
+                <h1 className="text-[40px] lg:text-[60px] font-bold !text-yellow-100">
                     Make your new harvest hire
                 </h1>
                 <p className="text-[20px] mt-2 text-white">
