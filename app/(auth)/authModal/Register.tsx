@@ -69,12 +69,8 @@ const Register: React.FC<{
 
     return (
         <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
-            <div className="text-[22px] text-[#f4f4f9]">
-                Create your account
-            </div>
-            <div className="text-[#f4f4f9]">
-                Enter your desired username and password
-            </div>
+            <div className="text-[22px] ">Create your account</div>
+            <div className="">Enter your desired username and password</div>
             <Controller
                 control={control}
                 name="email"
@@ -280,10 +276,10 @@ const Register: React.FC<{
                 Sign Up
             </Button>
             <div className="w-full flex flex-col justify-center items-center">
-                <div className="text-[#f4f4f9]">Already have an account?</div>
+                <div className="">Already have an account?</div>
                 <div
                     onClick={() => setDisplayRegister(false)}
-                    className="text-[#1876d1] font-semibold underline cursor-pointer"
+                    className="font-semibold underline cursor-pointer"
                 >
                     Log in
                 </div>

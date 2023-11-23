@@ -70,8 +70,11 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
 
     return (
         <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
-            <div className="text-[22px] ">Welcome</div>
-            <div className="">Log in so you can participate in the forum</div>
+            <div className="flex flex-col items-center justify-center mb-8">
+                <div className="text-[22px] ">Welcome</div>
+                <div className="">Log in to your dashboard</div>
+            </div>
+
             <Controller
                 control={control}
                 name="username"
@@ -174,7 +177,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                 fullWidth
                 sx={{
                     paddingY: "10px !important",
-                    marginTop: "10px !important",
+                    marginTop: "30px !important",
                     background: "#86a1d8 !important",
                     color: "#f4f4f9"
                 }}
@@ -183,7 +186,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                 Log in
             </Button>
             <div
-                className="w-full  cursor-pointer text-center"
+                className="w-full  cursor-pointer text-center mt-2"
                 // onClick={() => {
                 //     showAuthModal.value = false
                 //     showForgotPassModal.value = true
@@ -191,11 +194,11 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
             >
                 Forgot password?
             </div>
-            <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center mt-8">
                 <div className="">Don't have an account yet?</div>
                 <div
                     onClick={() => setDisplayRegister(true)}
-                    className=" font-semibold underline cursor-pointer"
+                    className=" font-semibold underline cursor-pointer text-xl"
                 >
                     Sign up
                 </div>
