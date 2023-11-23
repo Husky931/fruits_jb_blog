@@ -1,9 +1,7 @@
 import React from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { useState } from "react"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import Button from "@mui/material/Button"
+import { Box, TextField, Button } from "@mui/material"
 // import { setToken } from "../../pages/api/auth/js-cookie"
 // import { showForgotPassModal } from "../../signals/showForgotPassModal"
 // import { showAuthModal } from "../../signals/showAuthModal"
@@ -71,11 +69,9 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
     }
 
     return (
-        <>
-            <div className="text-[22px] text-[#f4f4f9]">Welcome</div>
-            <div className="text-[#f4f4f9]">
-                Log in so you can participate in the forum
-            </div>
+        <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
+            <div className="text-[22px] ">Welcome</div>
+            <div className="">Log in so you can participate in the forum</div>
             <Controller
                 control={control}
                 name="username"
@@ -187,7 +183,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                 Log in
             </Button>
             <div
-                className="w-full text-[#1876d1] cursor-pointer text-center"
+                className="w-full  cursor-pointer text-center"
                 // onClick={() => {
                 //     showAuthModal.value = false
                 //     showForgotPassModal.value = true
@@ -196,15 +192,15 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                 Forgot password?
             </div>
             <div className="w-full flex flex-col justify-center items-center">
-                <div className="text-[#f4f4f9]">Don't have an account yet?</div>
+                <div className="">Don't have an account yet?</div>
                 <div
                     onClick={() => setDisplayRegister(true)}
-                    className="text-[#1876d1] font-semibold underline cursor-pointer"
+                    className=" font-semibold underline cursor-pointer"
                 >
                     Sign up
                 </div>
             </div>
-        </>
+        </Box>
     )
 }
 

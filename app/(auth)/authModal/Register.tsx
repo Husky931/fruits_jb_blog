@@ -1,39 +1,42 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
-import { useState } from "react"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import Button from "@mui/material/Button"
+import { TextField, Button, Box } from "@mui/material"
 // import { setToken } from "../../pages/api/auth/js-cookie"
-// import { showForgotPassModal } from "../../signals/showForgotPassModal"
-// import { showAuthModal } from "../../signals/showAuthModal"
 
 type Inputs = {
+    email: string
     username: string
     password: string
+    passwordConfirm: string
 }
 
-const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
-    setDisplayRegister
-}) => {
+const Register: React.FC<{
+    setDisplayRegister: (display: boolean) => void
+}> = ({ setDisplayRegister }) => {
     const [show, setShow] = useState(false)
     const [serverError, setServerError] = useState("")
 
     const {
         control,
         handleSubmit,
+        watch,
         formState: { errors }
     } = useForm({
         defaultValues: {
+            email: "",
             username: "",
-            password: ""
+            password: "",
+            passwordConfirm: ""
         }
     })
 
-    const loginUser: SubmitHandler<Inputs> = async (data: Inputs) => {
+    const password = useRef({})
+    password.current = watch("password", "")
+
+    const registerUser: SubmitHandler<Inputs> = async (data: Inputs) => {
         try {
             const submitData = await fetch(
-                `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/auth/local`,
+                `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/auth/local/register`,
                 {
                     headers: {
                         "Content-Type": "application/json"
@@ -41,21 +44,15 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     method: "POST",
                     body: JSON.stringify({
                         password: data.password,
-                        identifier: data.username
+                        email: data.email,
+                        username: data.username
                     })
                 }
             )
-            const res = await submitData.json()
+
+            const res = await (submitData as Response).json()
 
             if (res.error) {
-                if (
-                    res.error.message === "Your account email is not confirmed"
-                ) {
-                    return window.location.assign(
-                        `${process.env.NEXT_PUBLIC_LINGO_HOMEPAGE}/verify-email`
-                    )
-                }
-
                 setShow(true)
                 setServerError(res.error.message)
                 return
@@ -63,19 +60,62 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
 
             // setToken(res)
         } catch (error) {
+            console.log(error)
             alert(
                 "There was an error connecting to the server. Please try again later."
             )
-            console.log(error)
         }
     }
 
     return (
-        <>
-            <div className="text-[22px] text-[#f4f4f9]">Welcome</div>
-            <div className="text-[#f4f4f9]">
-                Log in so you can participate in the forum
+        <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
+            <div className="text-[22px] text-[#f4f4f9]">
+                Create your account
             </div>
+            <div className="text-[#f4f4f9]">
+                Enter your desired username and password
+            </div>
+            <Controller
+                control={control}
+                name="email"
+                rules={{ required: true }}
+                render={({ field: { onChange, value, ref } }) => (
+                    <TextField
+                        fullWidth
+                        inputRef={ref}
+                        label="Email"
+                        type="email"
+                        value={value}
+                        onChange={onChange}
+                        error={!!errors.email}
+                        variant="standard"
+                        sx={{
+                            "& .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "&:hover .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "&.Mui-focused .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "& .MuiInputBase-input": {
+                                paddingBottom: "8px !important"
+                            }
+                        }}
+                        InputLabelProps={{
+                            sx: {
+                                color: "#86a1d8"
+                            }
+                        }}
+                        InputProps={{
+                            sx: {
+                                color: "#86a1d8"
+                            }
+                        }}
+                    />
+                )}
+            />
             <Controller
                 control={control}
                 name="username"
@@ -84,9 +124,10 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     <TextField
                         fullWidth
                         inputRef={ref}
+                        label="Username"
+                        type="text"
                         value={value}
                         onChange={onChange}
-                        label="Username or Email"
                         error={!!errors.username}
                         variant="standard"
                         sx={{
@@ -116,11 +157,6 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     />
                 )}
             />
-            {errors.username && (
-                <span className="text-[#d32f2f]">
-                    {errors.username.message}
-                </span>
-            )}
             <Controller
                 control={control}
                 name="password"
@@ -167,45 +203,93 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     Minimum password length is 6 charachters
                 </span>
             )}
+            <Controller
+                control={control}
+                name="passwordConfirm"
+                rules={{
+                    required: true,
+                    minLength: 6,
+                    validate: (val: string) => {
+                        if (watch("password") != val) {
+                            return (
+                                val === password.current ||
+                                "Passwords do not match"
+                            )
+                        }
+                    }
+                }}
+                render={({ field: { onChange, value, ref } }) => (
+                    <TextField
+                        fullWidth
+                        inputRef={ref}
+                        label="Confirm password"
+                        type="password"
+                        value={value}
+                        onChange={onChange}
+                        error={!!errors.passwordConfirm}
+                        variant="standard"
+                        sx={{
+                            "& .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "&:hover .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "&.Mui-focused .MuiInput-underline:before": {
+                                borderBottomColor: "#f4f4f9 !important"
+                            },
+                            "& .MuiInputBase-input": {
+                                paddingBottom: "8px !important"
+                            }
+                        }}
+                        InputLabelProps={{
+                            sx: {
+                                color: "#86a1d8"
+                            }
+                        }}
+                        InputProps={{
+                            sx: {
+                                color: "#86a1d8"
+                            }
+                        }}
+                    />
+                )}
+            />
+            {errors.passwordConfirm && (
+                <p className="text-[#d32f2f]">
+                    {errors.passwordConfirm.message}
+                </p>
+            )}
+
             {show ? (
                 <span className="w-full text-center text-red-900 border-[1px] border-red-900 rounded py-2">
                     {serverError}
                 </span>
             ) : null}
-
             <Button
                 variant="contained"
                 fullWidth
                 sx={{
                     paddingY: "10px !important",
-                    marginTop: "10px !important",
+                    marginTop: "10px",
                     background: "#86a1d8 !important",
                     color: "#f4f4f9"
                 }}
-                onClick={handleSubmit(loginUser)}
+                onClick={handleSubmit(registerUser)}
             >
-                Log in
+                Sign Up
             </Button>
-            <div
-                className="w-full text-[#1876d1] cursor-pointer text-center"
-                // onClick={() => {
-                //     showAuthModal.value = false
-                //     showForgotPassModal.value = true
-                // }}
-            >
-                Forgot password?
-            </div>
             <div className="w-full flex flex-col justify-center items-center">
-                <div className="text-[#f4f4f9]">Don't have an account yet?</div>
+                <div className="text-[#f4f4f9]">Already have an account?</div>
                 <div
-                    onClick={() => setDisplayRegister(true)}
+                    onClick={() => setDisplayRegister(false)}
                     className="text-[#1876d1] font-semibold underline cursor-pointer"
                 >
-                    Sign up
+                    Log in
                 </div>
             </div>
-        </>
+        </Box>
     )
 }
 
-export default Login
+export default Register

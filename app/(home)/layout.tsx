@@ -1,14 +1,11 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
 import { Metadata, Viewport } from "next"
 import "../globals/globals.css"
-import { Inter } from "next/font/google"
 import Countries from "@/app/(home)/components/NavBar_Countries"
 import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
 import Navigation from "./components/navigation"
 import { fetchAPI } from "./blog/utils/fetch-api"
 import Footer from "./blog/components/Footer"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -93,9 +90,7 @@ export default async function RootLayout({
     return (
         <html lang="en">
             <GoogleAnalytics gaTrackingId={gaTrackingId} />
-            <body
-                className={`${inter.className} p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto`}
-            >
+            <body className="p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto">
                 <Navigation />
                 <SiteTitle />
                 <Countries />

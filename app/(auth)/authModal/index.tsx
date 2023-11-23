@@ -5,7 +5,7 @@ import Image from "next/image"
 import logoSignup from "../../public/logo_blue2_signup.png"
 import Login from "./Login"
 import Register from "./Register"
-// import { showAuthModal } from "../../signals/showAuthModal"
+import { showAuthModal } from "../../signals/showAuthModal"
 
 const AuthModal = () => {
     const [displayRegister, setDisplayRegister] = useState<boolean>(false)
