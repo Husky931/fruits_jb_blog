@@ -10,19 +10,19 @@ const Countries = () => {
         "austria",
         "belgium",
         "canada",
-        "denmark",
+        // "denmark",
         "england",
-        "finland",
+        // "finland",
         "france",
         "germany",
         // "greece",
-        "ireland",
+        // "ireland",
         "italy",
-        "japan",
+        // "japan",
         "new-zealand",
-        "norway",
+        // "norway",
         "spain",
-        "sweden",
+        // "sweden",
         "usa"
     ]
     return (
@@ -38,7 +38,7 @@ const Countries = () => {
                     href="/"
                     as="/"
                 >
-                    All
+                    Latest
                 </Link>
             </li>
             {countries.map((link) => {

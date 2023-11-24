@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef } from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { TextField, Button, Box } from "@mui/material"
