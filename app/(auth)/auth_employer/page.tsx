@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
-import Login from "../authModal/Login"
-import Register from "../authModal/Register"
+import Login from "../components/Login"
+import Register from "../components/Register"
 import { Box, Paper } from "@mui/material"
 
 export default function EmployerHomePage() {

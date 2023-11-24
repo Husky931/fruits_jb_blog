@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { TextField, Button, Box } from "@mui/material"
+import { usePathname } from "next/navigation"
 // import { setToken } from "../../pages/api/auth/js-cookie"
 
 type Inputs = {
@@ -16,6 +17,7 @@ const Register: React.FC<{
 }> = ({ setDisplayRegister }) => {
     const [show, setShow] = useState(false)
     const [serverError, setServerError] = useState("")
+    const pathname = usePathname()
 
     const {
         control,
@@ -46,7 +48,11 @@ const Register: React.FC<{
                     body: JSON.stringify({
                         password: data.password,
                         email: data.email,
-                        username: data.username
+                        username: data.email,
+                        userType:
+                            pathname.includes("employer") === true
+                                ? "employer"
+                                : "jobseeker"
                     })
                 }
             )
@@ -58,7 +64,7 @@ const Register: React.FC<{
                 setServerError(res.error.message)
                 return
             }
-
+            console.log(res)
             // setToken(res)
         } catch (error) {
             console.log(error)
@@ -70,8 +76,8 @@ const Register: React.FC<{
 
     return (
         <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
-            <div className="text-[22px] ">Create your account</div>
-            <div className="">Enter your desired username and password</div>
+            <div className="text-[22px] ">Welcome employer</div>
+            <div className="">Create your account</div>
             <Controller
                 control={control}
                 name="email"
@@ -113,7 +119,7 @@ const Register: React.FC<{
                     />
                 )}
             />
-            <Controller
+            {/* <Controller
                 control={control}
                 name="username"
                 rules={{ required: true }}
@@ -153,7 +159,7 @@ const Register: React.FC<{
                         }}
                     />
                 )}
-            />
+            /> */}
             <Controller
                 control={control}
                 name="password"
@@ -276,11 +282,11 @@ const Register: React.FC<{
             >
                 Sign Up
             </Button>
-            <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center mt-8">
                 <div className="">Already have an account?</div>
                 <div
                     onClick={() => setDisplayRegister(false)}
-                    className="font-semibold underline cursor-pointer"
+                    className="font-semibold underline cursor-pointer text-xl"
                 >
                     Log in
                 </div>
