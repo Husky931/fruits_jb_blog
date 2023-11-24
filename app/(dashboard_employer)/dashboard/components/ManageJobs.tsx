@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react"
+import { Button, Box, Divider } from "@mui/material"
 
 const ManageJobs = () => {
     const [jobs, setJobs] = useState([])
@@ -23,30 +24,22 @@ const ManageJobs = () => {
     }, [])
 
     return (
-        <div className="container mx-auto p-4">
-            <div className="bg-white shadow rounded-lg p-6">
-                <div className="mb-4">
-                    <h1 className="text-xl font-semibold">Manage Jobs</h1>
+        <Box className="mt-12">
+            <div className="my-4 text-2xl">Active jobs</div>
+            <Box className="bg-white shadow rounded-lg">
+                <div className=" flex justify-between items-center w-full p-6">
+                    <div>
+                        <div className="text-xl font-semibold">Manage jobs</div>
+                    </div>
                 </div>
-                {isLoading ? (
-                    <p>Loading jobs...</p>
-                ) : jobs.length === 0 ? (
-                    <p>No jobs posted yet.</p>
-                ) : (
-                    <ul>
-                        {jobs.map((job) => (
-                            <li
-                                key={job.id}
-                                className="border-b border-gray-200 p-4"
-                            >
-                                {job.title}
-                                {/* Add action buttons or links here */}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-        </div>
+                <Divider />
+                <div className="mt-12 p-6">
+                    <div className="text-xl text-center">
+                        No jobs posted yet
+                    </div>
+                </div>
+            </Box>
+        </Box>
     )
 }
 

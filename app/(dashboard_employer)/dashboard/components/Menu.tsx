@@ -1,94 +1,93 @@
+"use client"
 import React, { useState } from "react"
+import MenuIcon from "@mui/icons-material/Menu"
+import WorkIcon from "@mui/icons-material/Work"
+import PostAddIcon from "@mui/icons-material/PostAdd"
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong"
+import CloseIcon from "@mui/icons-material/Close"
+import { Box, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 
-const Menu = ({ setCurrentView }) => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+type HamburgerMenuProps = {
+    setView: (view: string) => void
+    setIsOpen: (isOpen: boolean) => void
+    isOpen: boolean
+}
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen)
+const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
+    const toogleMenu = () => {
+        setIsOpen(!isOpen)
     }
 
     return (
-        <nav className="bg-white shadow-md p-4">
-            {/* Hamburger Icon for Mobile View */}
-            <div className="md:hidden">
-                <button
-                    onClick={toggleMobileMenu}
-                    className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-                >
-                    <svg
-                        className="fill-current h-3 w-3"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z"></path>
-                    </svg>
-                </button>
-            </div>
-
-            {/* Mobile Menu Items */}
-            <div
-                className={`${
-                    isMobileMenuOpen === true ? "block" : "hidden"
-                } md:hidden`}
+        <nav>
+            <Box
+                className="flex items-center px-4 py-4  bg-black "
+                sx={{ borderRadius: isOpen ? "4px 4px 0 0" : "4px" }}
             >
-                <ul className="pt-4">
-                    <li>
-                        <button
-                            onClick={() => setCurrentView("Dashboard")}
-                            className="block px-4 py-2"
-                        >
-                            Dashboard
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            onClick={() => setCurrentView("ManageJobs")}
-                            className="block px-4 py-2"
-                        >
-                            Manage Jobs
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            onClick={() => setCurrentView("PostJob")}
-                            className="block px-4 py-2"
-                        >
-                            Post a Job
-                        </button>
-                    </li>
-                </ul>
-            </div>
+                {isOpen ? (
+                    <CloseIcon
+                        onClick={toogleMenu}
+                        fontSize="large"
+                        sx={{ color: "white", padding: "0" }}
+                    />
+                ) : (
+                    <MenuIcon
+                        onClick={toogleMenu}
+                        fontSize="large"
+                        sx={{ color: "white", padding: "0" }}
+                    />
+                )}
 
-            {/* Desktop Menu Items */}
-            <ul className="hidden md:flex flex-col md:flex-row md:space-x-4">
-                <li>
-                    <button
-                        onClick={() => setCurrentView("Dashboard")}
-                        className="px-4 py-2"
+                <div className="text-white text-lg ml-4 font-bold">
+                    Dashboard navigation
+                </div>
+            </Box>
+            {isOpen && (
+                <Box
+                    sx={{
+                        backgroundColor: "white",
+                        paddingY: "15px",
+                        borderRadius: "0 0 4px 4px"
+                    }}
+                >
+                    <ListItemButton
+                        className="hover:bg-white/20"
+                        onClick={() => setView("Dashboard")}
                     >
-                        Dashboard
-                    </button>
-                </li>
-                <li>
-                    <button
-                        onClick={() => setCurrentView("ManageJobs")}
-                        className="px-4 py-2"
+                        <ListItemIcon>
+                            <ReceiptLongIcon sx={{ color: "black" }} />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Dashboard"
+                            sx={{
+                                fontWeight: "bold"
+                            }}
+                        />
+                    </ListItemButton>
+
+                    <ListItemButton
+                        className="hover:bg-white/20"
+                        onClick={() => setView("ManageJobs")}
                     >
-                        Manage Jobs
-                    </button>
-                </li>
-                <li>
-                    <button
-                        onClick={() => setCurrentView("PostJob")}
-                        className="px-4 py-2"
+                        <ListItemIcon>
+                            <WorkIcon sx={{ color: "black" }} />
+                        </ListItemIcon>
+                        <ListItemText primary="Manage Jobs" />
+                    </ListItemButton>
+
+                    <ListItemButton
+                        className="hover:bg-white/20"
+                        onClick={() => setView("PostJob")}
                     >
-                        Post a Job
-                    </button>
-                </li>
-            </ul>
+                        <ListItemIcon>
+                            <PostAddIcon sx={{ color: "black" }} />
+                        </ListItemIcon>
+                        <ListItemText primary="Post a job" />
+                    </ListItemButton>
+                </Box>
+            )}
         </nav>
     )
 }
 
-export default Menu
+export default HamburgerMenu

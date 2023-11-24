@@ -10,13 +10,8 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" style={{ height: "100vh" }}>
-            <body
-                className="flex justify-center items-center"
-                style={{ height: "100vh", margin: 0 }}
-            >
-                {children}
-            </body>
+        <html lang="en" className="h-auto">
+            <body className="h-auto w-full py-4 px-4">{children}</body>
         </html>
     )
 }
