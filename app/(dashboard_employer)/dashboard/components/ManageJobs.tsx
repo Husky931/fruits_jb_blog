@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from "react"
 import { Button, Box, Divider } from "@mui/material"
 
+interface Job {
+    id: number
+    title: string
+}
 const ManageJobs = () => {
-    const [jobs, setJobs] = useState([])
+    const [jobs, setJobs] = useState<Array<Job>>([])
     const [isLoading, setIsLoading] = useState(true)
 
     // Dummy data fetching function
