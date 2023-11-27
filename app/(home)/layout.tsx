@@ -43,12 +43,6 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export const viewPort: Viewport = {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1
-}
-
 async function getGlobal(): Promise<any> {
     const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
 

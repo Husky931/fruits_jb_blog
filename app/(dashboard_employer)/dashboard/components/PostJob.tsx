@@ -11,19 +11,19 @@ const PostJob = () => {
         // Add other fields as necessary
     })
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         setJobDetails({ ...jobDetails, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault()
         // Handle job posting logic here
         console.log("Job Details:", jobDetails)
     }
 
-    const [logoPreview, setLogoPreview] = useState(null) // State for the logo preview
+    const [logoPreview, setLogoPreview] = useState<any>(null) // State for the logo preview
 
-    const handleChangeImge = (e) => {
+    const handleChangeImge = (e: any) => {
         setJobDetails({ ...jobDetails, [e.target.name]: e.target.value })
 
         // Handling file upload

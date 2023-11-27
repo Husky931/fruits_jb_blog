@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react"
 // import { useUser } from "../../../context/user"
-import { unsetToken as logout } from "../../../auth/auth"
+// import { unsetToken as logout } from "../../../auth/auth"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Button from "@mui/material/Button"
