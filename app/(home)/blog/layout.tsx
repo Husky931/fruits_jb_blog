@@ -11,6 +11,13 @@ const FALLBACK_SEO = {
     description: "Strapi Starter Next Blog"
 }
 
+export const metadata = {
+    metadataBase: new URL("https://fruitspickingjobs.com"),
+    openGraph: {
+        images: "https://fruitspickingjobs.com"
+    }
+}
+
 async function getGlobal(): Promise<any> {
     const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
 

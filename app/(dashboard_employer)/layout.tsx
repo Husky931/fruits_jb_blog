@@ -1,7 +1,8 @@
 import "../globals/globals.css"
 
 export const metadata = {
-    title: "authentication"
+    title: "employer dashboard",
+    metadataBase: new URL("https://fruitspickingjobs.com")
 }
 
 export default function RootLayout({

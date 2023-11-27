@@ -62,7 +62,10 @@ interface Data {
 }
 
 export const metadata = {
-    metadataBase: new URL("https://fruitspickingjobs.com")
+    metadataBase: new URL("https://fruitspickingjobs.com"),
+    openGraph: {
+        images: "https://fruitspickingjobs.com"
+    }
 }
 
 export default async function LayoutRoute({

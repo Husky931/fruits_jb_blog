@@ -1,6 +1,7 @@
 import "../globals/globals.css"
 
 export const metadata = {
+    metadataBase: new URL("https://fruitspickingjobs.com"),
     title: "authentication"
 }
 

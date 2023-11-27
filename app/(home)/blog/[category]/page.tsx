@@ -39,9 +39,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const category = params.category
     return {
+        metadataBase: new URL("https://fruitspickingjobs.com"),
         title: `Blog Category: ${category}`,
         description: `Posts in the ${category} category`,
         openGraph: {
+            images: "https://fruitspickingjobs.com",
             title: `Blog Category: ${category}`,
             description: `Posts in the ${category} category`,
             url: `https://fruitspickingjobs.com/blog/${category}`,
