@@ -8,11 +8,12 @@ import { fetchAPI } from "./blog/utils/fetch-api"
 import Footer from "./blog/components/Footer"
 
 export async function generateMetadata(): Promise<Metadata> {
+    const metadataBase = new URL("https://fruitspickingjobs.com")
     return {
         title: "Fruit harvesting jobs board",
         description:
             "Daily fruits picking jobs generated from all over the world",
-        metadataBase: new URL("https://fruitspickingjobs.com"),
+        metadataBase: metadataBase,
         alternates: {
             canonical: "https://fruitspickingjobs.com"
         },
@@ -25,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
             siteName: "Fruits Picking Jobs",
             images: [
                 {
-                    url: "https://fruitspickingjobs.com/poster.jpeg",
+                    url: metadataBase + "/poster.jpeg",
                     width: 800,
                     height: 600
                 }
@@ -38,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
             description:
                 "Daily fruits picking jobs generated from all over the world",
             site: "@fruitspickingjobs",
-            images: ["https://fruitspickingjobs.com/twitter-image.jpg"]
+            images: [metadataBase + "/twitter-image.jpg"]
         }
     }
 }

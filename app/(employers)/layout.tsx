@@ -4,8 +4,33 @@ import { fetchAPI } from "../(home)/blog/utils/fetch-api"
 import EmployersNav from "../(employers)/components/nav"
 
 export const metadata = {
-    metadataBase: new URL("http://localhost:3000"),
-    title: "Employers page"
+    metadataBase: new URL("https://fruitspickingjobs.com/employers"),
+    title: "Employers page",
+    openGraph: {
+        images: "/poster.jpeg"
+    },
+    twitter: {
+        images: "/poster.jpeg"
+    }
+    // openGraph: {
+    //     images: [
+    //         {
+    //             url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
+    //             width: 800,
+    //             height: 600
+    //         }
+    //     ]
+    // },
+    // twitter: {
+    //     images: [
+    //         {
+    //             url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
+    //             width: 800,
+    //             height: 600
+    //         }
+    //     ],
+    //     card: "summary_large_image"
+    // }
 }
 
 async function getGlobal(): Promise<any> {

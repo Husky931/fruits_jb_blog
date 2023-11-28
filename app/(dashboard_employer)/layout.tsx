@@ -1,8 +1,21 @@
 import "../globals/globals.css"
 
 export const metadata = {
-    title: "employer dashboard",
-    metadataBase: new URL("http://localhost:3000")
+    metadataBase: new URL("https://fruitspickingjobs.com/dashboard_employer"),
+    title: "Authentication",
+    description: "Fruts picking jobs daily",
+    openGraph: {
+        title: "Fruits picking job",
+        description: "Fruts picking jobs daily",
+        image: "/poster.jpeg"
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@eMartiiin94",
+        title: "Fruits picking job",
+        description: "Fruts picking jobs daily",
+        image: "/poster.jpeg"
+    }
 }
 
 export default function RootLayout({

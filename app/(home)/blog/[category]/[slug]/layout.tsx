@@ -69,8 +69,18 @@ interface Data {
 // }
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com"),
+    title: "Authentication",
+    description: "this is the desciption",
     openGraph: {
-        images: "https://fruitspickingjobs.com"
+        title: "Fruits picking job",
+        description: "Fruts picking jobs daily",
+        image: "/poster.jpeg"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Fruits picking job",
+        description: "Fruts picking jobs daily",
+        image: "/poster.jpeg"
     }
 }
 

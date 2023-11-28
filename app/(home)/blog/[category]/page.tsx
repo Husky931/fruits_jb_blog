@@ -43,17 +43,24 @@ export async function generateMetadata({
         title: `Blog Category: ${category}`,
         description: `Posts in the ${category} category`,
         openGraph: {
-            images: "https://fruitspickingjobs.com",
+            // images: [
+            //     {
+            //         url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
+            //         width: 800,
+            //         height: 600
+            //     }
+            // ],
+            images: "/poster.jpeg",
             title: `Blog Category: ${category}`,
             description: `Posts in the ${category} category`,
             url: `https://fruitspickingjobs.com/blog/${category}`,
             type: "website"
         },
         twitter: {
+            images: "/poster.jpeg",
             card: "summary_large_image",
             title: `Blog Category: ${category}`,
-            description: `Posts in the ${category} category`,
-            site: "@yourTwitterHandle"
+            description: `Posts in the ${category} category`
         },
         alternates: {
             canonical: `blog/${params.category}`
