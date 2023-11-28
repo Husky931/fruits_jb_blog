@@ -1,40 +1,41 @@
-"use client"
 import { useState, useEffect } from "react"
 import Pagination from "@mui/material/Pagination"
 import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import { ColorRing } from "react-loader-spinner"
 
-export default async function AllCountries() {
+export default function AllCountries() {
     const [page, setPage] = useState<number>(1)
     const [posts, setPosts] = useState([])
     const [totalPages, setTotalPages] = useState<number>(1)
     const [isLoading, setIsLoading] = useState(true)
 
-    const handlePageChange = async (
+    const handlePageChange = (
         event: React.ChangeEvent<unknown>,
         value: number
     ) => {
         setPage(value)
-        await fetchPosts(value)
         window.scrollTo(0, 0)
     }
 
-    const fetchPosts = async (pageNum: number) => {
-        setIsLoading(true)
-        let url
-        if (process.env.NODE_ENV === "production") {
-            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all?page=${pageNum}`
-        } else {
-            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`
+    useEffect(() => {
+        const fetchPosts = async (pageNum: number) => {
+            setIsLoading(true)
+            let url
+            if (process.env.NODE_ENV === "production") {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all?page=${pageNum}`
+            } else {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all?page=${pageNum}`
+            }
+            const res = await fetch(url, {
+                cache: "no-store"
+            })
+            const data = await res.json()
+            setPosts(data)
+            setIsLoading(false)
         }
-        const res = await fetch(url, {
-            cache: "no-store"
-        })
-        const data = await res.json()
-        setPosts(data)
-        // console.log(data)
-        setIsLoading(false)
-    }
+
+        fetchPosts(page)
+    }, [page])
 
     useEffect(() => {
         const fetchTotalPosts = async () => {
@@ -51,7 +52,6 @@ export default async function AllCountries() {
             setTotalPages(Math.ceil(total / 25))
         }
         fetchTotalPosts()
-        fetchPosts(page)
     }, [])
 
     if (isLoading)

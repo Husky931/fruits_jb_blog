@@ -18,43 +18,43 @@ export default function Profile() {
     const [data, setData] = useState<any>([])
     const [isLoading, setLoading] = useState(true)
 
-    const fetchData = useCallback(async (start: number, limit: number) => {
+    const fetchData = useCallback((start: number, limit: number) => {
         setLoading(true)
-        try {
-            const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
-            const path = `/articles`
-            const urlParamsObject = {
-                sort: { createdAt: "desc" },
-                populate: {
-                    cover: { fields: ["url"] },
-                    category: { populate: "*" },
-                    authorsBio: {
-                        populate: "*"
-                    }
-                },
-                pagination: {
-                    start: start,
-                    limit: limit
+        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
+        const path = `/articles`
+        const urlParamsObject = {
+            sort: { createdAt: "desc" },
+            populate: {
+                cover: { fields: ["url"] },
+                category: { populate: "*" },
+                authorsBio: {
+                    populate: "*"
                 }
+            },
+            pagination: {
+                start: start,
+                limit: limit
             }
-            const options = { headers: { Authorization: `Bearer ${token}` } }
-            const responseData = await fetchAPI(path, urlParamsObject, options)
-
-            if (start === 0) {
-                setData(responseData.data)
-            } else {
-                setData((prevData: any[]) => [
-                    ...prevData,
-                    ...responseData.data
-                ])
-            }
-
-            setMeta(responseData.meta)
-        } catch (error) {
-            console.error(error)
-        } finally {
-            setLoading(false)
         }
+        const options = { headers: { Authorization: `Bearer ${token}` } }
+        fetchAPI(path, urlParamsObject, options)
+            .then((responseData) => {
+                if (start === 0) {
+                    setData(responseData.data)
+                } else {
+                    setData((prevData: any[]) => [
+                        ...prevData,
+                        ...responseData.data
+                    ])
+                }
+                setMeta(responseData.meta)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [])
 
     function loadMorePosts(): void {

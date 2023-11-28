@@ -6,35 +6,38 @@ import Link from "next/link"
 const Countries = () => {
     const pathname = usePathname()
     const countries = [
-        "australia",
-        "austria",
-        "belgium",
+        // "australia",
+        "usa",
         "canada",
-        // "denmark",
         "england",
-        // "finland",
         "france",
+        "austria",
+        "spain",
         "germany",
+        "italy",
+        "belgium"
+        // "denmark",
+        // "finland",
         // "greece",
         // "ireland",
-        "italy",
         // "japan",
-        "new-zealand",
+        // "new-zealand",
         // "norway",
-        "spain",
+
         // "sweden",
-        "usa"
     ]
     return (
-        <ul className="container px-6 my-2">
+        <ul className="container px-6 my-2 mt-8">
             <li className="inline-block px-1 mx-1 cursor-pointer">
                 <Link
                     prefetch={false}
-                    className={
-                        pathname === "/"
-                            ? "text-[#0000EE] font-semibold"
-                            : "text-black"
-                    }
+                    className={`
+                        ${
+                            pathname === "/"
+                                ? "text-[#0000EE] font-semibold"
+                                : "text-black"
+                        }
+                    text-2xl`}
                     href="/"
                     as="/"
                 >
@@ -50,11 +53,13 @@ const Countries = () => {
                     >
                         <Link
                             prefetch={false}
-                            className={
-                                isActive
-                                    ? "text-[#0000EE] font-semibold"
-                                    : "text-black"
-                            }
+                            className={`
+                                ${
+                                    isActive
+                                        ? "text-[#0000EE] font-semibold"
+                                        : "text-black"
+                                }
+                                    text-2xl`}
                             href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
                             as={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
                         >

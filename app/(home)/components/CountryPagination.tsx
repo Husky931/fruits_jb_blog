@@ -6,7 +6,7 @@ import Pagination from "@mui/material/Pagination"
 import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import { ColorRing } from "react-loader-spinner"
 
-export default async function CountryPagination() {
+export default function CountryPagination() {
     const [page, setPage] = useState(1)
     const [posts, setPosts] = useState([])
     const [totalPages, setTotalPages] = useState<number>(1)
@@ -14,32 +14,32 @@ export default async function CountryPagination() {
 
     const pathname = usePathname().slice(1)
 
-    const handlePageChange = async (
+    const handlePageChange = (
         event: React.ChangeEvent<unknown>,
         value: number
     ) => {
         setPage(value)
-        await fetchPosts(value)
         window.scrollTo(0, 0)
     }
 
-    const fetchPosts = async (pageNum: number) => {
-        setIsLoading(true)
-        let url
-        if (process.env.NODE_ENV === "production") {
-            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/${pathname}?page=${pageNum}`
-        } else {
-            url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`
-        }
-        const res = await fetch(url, {
-            cache: "no-store"
-        })
-        const data = await res.json()
-        setPosts(data)
-        setIsLoading(false)
-    }
-
     useEffect(() => {
+        const fetchPosts = async (pageNum: number) => {
+            setIsLoading(true)
+
+            let url
+            if (process.env.NODE_ENV === "production") {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/${pathname}?page=${pageNum}`
+            } else {
+                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`
+            }
+            const res = await fetch(url, {
+                cache: "no-store"
+            })
+            const data = await res.json()
+            setPosts(data)
+            setIsLoading(false)
+        }
+
         const fetchTotalPosts = async () => {
             let url
             if (process.env.NODE_ENV === "production") {
@@ -55,7 +55,7 @@ export default async function CountryPagination() {
         }
         fetchTotalPosts()
         fetchPosts(page)
-    }, [])
+    }, [page])
 
     if (isLoading)
         return (

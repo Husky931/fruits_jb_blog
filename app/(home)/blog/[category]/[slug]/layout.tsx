@@ -61,6 +61,12 @@ interface Data {
     categories: Category[]
 }
 
+// export const metadata = {
+//     metadataBase: new URL("https://fruitspickingjobs.com"),
+//     openGraph: {
+//         images: "https://fruitspickingjobs.com"
+//     }
+// }
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com"),
     openGraph: {
