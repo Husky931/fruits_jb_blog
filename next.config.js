@@ -6,7 +6,7 @@ const nextConfig = {
         remotePatterns: [
          {
              protocol: process.env.NODE_ENV === 'production' ? 'https' : 'http',
-             hostname: process.env.NODE_ENV === 'production' ? 'strapi.fruitspickingjobs.com' : 'localhost',
+             hostname: process.env.NODE_ENV === 'production' ? 'strapi.fruitspickingjobs.com' : '127.0.0.1',
              pathname: '/uploads/**',
         },
         ],

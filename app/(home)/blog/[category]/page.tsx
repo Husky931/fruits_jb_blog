@@ -5,8 +5,9 @@ import type { Metadata } from "next"
 
 async function fetchPostsByCategory(filter: string) {
     try {
-        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
         const path = `/articles`
+
+        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
         const urlParamsObject = {
             sort: { createdAt: "desc" },
             filters: {
