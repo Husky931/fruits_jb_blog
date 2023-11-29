@@ -34,7 +34,8 @@ body {
 } */
 
 /* Global styles for Mobile View */
-p {
+p,
+li {
     font-size: 16px !important;
     line-height: 28px !important;
     margin-bottom: 26px !important;
@@ -61,7 +62,8 @@ h3 {
 
 /* Styles for iPad View (Tailwind's md breakpoint at 768px) */
 @media (min-width: 768px) {
-    p {
+    p,
+    li {
         font-size: 20px !important;
         line-height: 33px !important;
         margin-bottom: 33px !important;

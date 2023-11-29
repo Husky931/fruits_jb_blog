@@ -64,7 +64,7 @@ export default function Nav() {
                     </Button>
                 </Tooltip> */}
 
-                <Link
+                {/* <Link
                     prefetch={false}
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/employer`}
                 >
@@ -77,7 +77,7 @@ export default function Nav() {
                     >
                         Employer
                     </Button>
-                </Link>
+                </Link> */}
                 <Link
                     prefetch={false}
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
