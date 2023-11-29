@@ -27,47 +27,41 @@ const Countries = () => {
         // "sweden",
     ]
     return (
-        <ul className="container px-6 my-2 mt-8">
-            <li className="inline-block px-1 mx-1 cursor-pointer">
-                <Link
-                    prefetch={false}
-                    className={`
-                        ${
-                            pathname === "/"
-                                ? "text-[#0000EE] font-semibold"
-                                : "text-black"
-                        }
-                    text-2xl`}
-                    href="/"
-                    as="/"
-                >
-                    Latest
-                </Link>
-            </li>
-            {countries.map((link) => {
-                const isActive = pathname.startsWith(`/${link}`)
-                return (
-                    <li
-                        className="inline-block px-1 mx-1 cursor-pointer"
-                        key={link}
+        <ul className="container px-6 my-12">
+            <div className="space-y-4 sm:justify-evenly md:space-y-0 md:flex md:flex-wrap md:justify-start ">
+                <li className="inline-block py-2 px-1 mx-1 cursor-pointer">
+                    <Link
+                        prefetch={false}
+                        className={`
+          ${pathname === "/" ? "text-[#0000EE] font-semibold" : "text-black"}
+          text-3xl`}
+                        href="/"
+                        as="/"
                     >
-                        <Link
-                            prefetch={false}
-                            className={`
-                                ${
-                                    isActive
-                                        ? "text-[#0000EE] font-semibold"
-                                        : "text-black"
-                                }
-                                    text-2xl`}
-                            href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
-                            as={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
+                        Latest
+                    </Link>
+                </li>
+                {countries.map((link) => {
+                    const isActive = pathname.startsWith(`/${link}`)
+                    return (
+                        <li
+                            className="inline-block py-2 px-1 mx-1 cursor-pointer"
+                            key={link}
                         >
-                            {link}
-                        </Link>
-                    </li>
-                )
-            })}
+                            <Link
+                                prefetch={false}
+                                className={`
+              ${isActive ? "text-[#0000EE] font-semibold" : "text-black"}
+              text-3xl capitalize`}
+                                href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
+                                as={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
+                            >
+                                {link}
+                            </Link>
+                        </li>
+                    )
+                })}
+            </div>
         </ul>
     )
 }

@@ -137,9 +137,11 @@ export async function generateStaticParams() {
                     }
                 }
             }
-        }) => ({
-            slug: article.attributes.slug,
-            category: article.attributes.category.data.attributes.slug
-        })
+        }) => {
+            return {
+                slug: article.attributes.slug,
+                category: article.attributes.category.data.attributes.slug
+            }
+        }
     )
 }
