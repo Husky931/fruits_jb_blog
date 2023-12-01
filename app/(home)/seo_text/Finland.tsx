@@ -1,11 +1,11 @@
 const Finland = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Finland's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Midnight Sun Farming: </strong>Due to its position
                     above the Arctic Circle, parts of Finland experience the
@@ -60,9 +60,7 @@ const Finland = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Finland's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Finland's Agriculture</h1>
             <br />
             <p>
                 Finland, a Nordic country in Northern Europe, is famed for its

@@ -1,11 +1,11 @@
 const Ireland = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Ireland's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Forty Shades of Green: </strong>The song "Forty
                     Shades of Green" by Johnny Cash was inspired by Ireland's
@@ -69,9 +69,7 @@ const Ireland = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Ireland's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Ireland's Agriculture</h1>
             <br />
             <p>
                 Ireland, often referred to as the Emerald Isle due to its lush
@@ -221,7 +219,7 @@ const Ireland = () => {
                     <strong>Regions and fruit farms:</strong>
                 </p>
 
-                <ul className="flex flex-col gay-y-5">
+                <ul className="flex flex-col">
                     <li>
                         Apples: Mainly in County Armagh and County Tipperary,
                         with peak season in late summer to early autumn.

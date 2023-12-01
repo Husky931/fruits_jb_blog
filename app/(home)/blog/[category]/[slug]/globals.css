@@ -9,7 +9,7 @@
     width: 100% !important;
     object-fit: cover !important;
 }
-.rich-text li {
+.rich-text p {
     font-size: 16px !important;
     line-height: 28px !important;
     margin-bottom: 26px !important;

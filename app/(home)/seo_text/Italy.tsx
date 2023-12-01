@@ -1,11 +1,9 @@
 const Italy = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
-                Fun Facts About Italy's Agriculture
-            </h1>
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">Fun Facts About Italy's Agriculture</h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Wine Wonderland: </strong>Italy often toggles with
                     France for the position of the world's largest wine
@@ -74,9 +72,7 @@ const Italy = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Italy's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Italy's Agriculture</h1>
             <br />
             <p>
                 Italy, a picturesque country located in southern Europe, is
@@ -223,7 +219,7 @@ const Italy = () => {
                     <strong>Regions and fruit farms:</strong>
                 </p>
 
-                <ul className="flex flex-col gay-y-5">
+                <ul className="flex flex-col">
                     <li>
                         Northern Italy: Apple orchards are common, especially in
                         regions like South Tyrol. Peak season is usually autumn.

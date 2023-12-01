@@ -1,11 +1,9 @@
 const Japan = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
-                Fun Facts About Japan's Agriculture
-            </h1>
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">Fun Facts About Japan's Agriculture</h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Shiitake Mushrooms: </strong>While not a fruit,
                     shiitake mushrooms are a significant agricultural product in
@@ -74,9 +72,7 @@ const Japan = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Japan's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Japan's Agriculture</h1>
             <br />
             <p>
                 Japan, an archipelago in East Asia, is renowned for its unique

@@ -33,65 +33,85 @@ body {
     background-color: transparent !important;
 } */
 
-/* Global styles for Mobile View */
-/* p,
-    li {
-        font-size: 16px !important;
-        line-height: 28px !important;
-        margin-bottom: 26px !important;
-    }
+.seo-text p {
+    font-size: 16px !important;
+    line-height: 28px !important;
+    margin-bottom: 26px !important;
+}
 
-    h1 {
-        font-size: 27px !important;
-        padding-top: 10px !important;
-        margin-bottom: 22px !important;
-        color: rgb(0, 0, 0) !important;
-    }
+.seo-text li {
+    font-size: 16px !important;
+    line-height: 28px !important;
+    margin-bottom: 12px !important;
+}
 
-    h2 {
-        font-size: 20px !important;
-        padding-top: 33px !important;
-        margin-bottom: 25px !important;
-        color: rgb(0, 0, 0) !important;
-    }
+.seo-text h1 {
+    font-size: 27px !important;
+    padding-top: 10px !important;
+    margin-bottom: 22px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
 
-    h3 {
-        font-size: 20px !important;
-        color: rgb(0, 0, 0) !important;
-    } */
+.seo-text h2 {
+    font-size: 20px !important;
+    padding-top: 33px !important;
+    margin-bottom: 25px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
+
+.seo-text h3 {
+    font-size: 20px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
 
 /* Styles for iPad View (Tailwind's md breakpoint at 768px) */
-/* @media (min-width: 768px) {
-    p,
-    li {
+@media (min-width: 768px) {
+    .seo-text p {
         font-size: 20px !important;
         line-height: 33px !important;
         margin-bottom: 33px !important;
     }
 
-    h1 {
+    .seo-text li {
+        font-size: 20px !important;
+        line-height: 33px !important;
+        margin-bottom: 19px !important;
+    }
+
+    .seo-text h1 {
         font-size: 30px !important;
         margin-bottom: 25px !important;
     }
 
-    h2 {
+    .seo-text h2 {
         font-size: 24px !important;
         padding-top: 40px !important;
         margin-bottom: 30px !important;
     }
 
-    h3 {
+    .seo-text h3 {
         font-size: 22px !important;
+        padding-top: 10px;
+        margin-bottom: 10px !important;
     }
-} */
+}
 
 /* Styles for Desktop View and above (Tailwind's lg breakpoint at 1024px) */
-/* @media (min-width: 1024px) {
-    h1 {
-        font-size: 36px;
+@media (min-width: 1024px) {
+    .seo-text h1 {
+        font-size: 32px !important; /* Adjusted size */
         margin-bottom: 30px;
     }
-} */
+    .seo-text h2 {
+        font-size: 28px !important; /* Adjusted size */
+    }
+    .seo-text h3 {
+        font-size: 24px !important; /* Adjusted size */
+    }
+}
 
 @media only screen and (min-width: 1200px) {
     .my-custom-app-bar .MuiAppBar-root {

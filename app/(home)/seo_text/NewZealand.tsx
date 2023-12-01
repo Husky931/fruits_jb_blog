@@ -1,11 +1,11 @@
 const NewZealand = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About New Zealand's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Sheep Outnumber Humans:</strong>New Zealand is
                     famous for having more sheep than people! As of 2021, there
@@ -60,7 +60,7 @@ const NewZealand = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center">
                 Info About New Zealand's Agriculture
             </h1>
             <br />
@@ -216,7 +216,7 @@ const NewZealand = () => {
                     <strong>Regions and fruit farms:</strong>
                 </p>
 
-                <ul className="flex flex-col gay-y-5">
+                <ul className="flex flex-col">
                     <li>Bay of Plenty: Kiwifruit - Peak in April to June.</li>
                     <li>Hawke's Bay: Apples - Peak in February to May.</li>
                     <li>Marlborough: Grapes - Peak in March to April.</li>

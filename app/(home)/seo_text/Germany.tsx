@@ -2,12 +2,12 @@ import Link from "next/link"
 
 const Germany = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Germany's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Altes Land Orchards: </strong> The Altes Land
                     (meaning "Old Land" in English) region near Hamburg is one
@@ -65,9 +65,7 @@ const Germany = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Germany's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Germany's Agriculture</h1>
             <br />
             <p>
                 Germany, located in the heart of Europe, is a country known for
@@ -81,7 +79,7 @@ const Germany = () => {
                 <p>
                     <strong>GDP contribution:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The agricultural sector, including fruits production,
                     contributed about 0.6% to Germany's GDP. The gross
                     production value in the agriculture market of Germany is
@@ -95,7 +93,7 @@ const Germany = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Approximately 48% of Germany's territory is used for
                     agricultural production. Around 1.4% of its population works
                     in the agriculture sector.
@@ -106,7 +104,7 @@ const Germany = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruit market in Germany witnessed a decrease of 8% in
                     2022 following two years of growth. However, the market
                     value increased at an average annual rate of +1.9% over the
@@ -119,7 +117,7 @@ const Germany = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Limited Export: </span> Most
                     of the imported and domestically produced fresh fruit and
                     vegetables are destined for the internal market, with
@@ -132,7 +130,7 @@ const Germany = () => {
                         <small className="text-[#0700ee]">1</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Imported Fruits: </span>{" "}
                     FGermany complements its domestic supply with imports,
                     particularly of tomatoes, sweet peppers, table grapes,
@@ -151,12 +149,12 @@ const Germany = () => {
                 <p>
                     <strong>Annual revenue:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     In 2023, the agriculture sector in Germany generated about
                     €43.7 billion in net revenue, showing an increase from the
                     previous year, which had a net revenue of €40.97 billion.
                 </p>
-                <p className="my-1">
+                <p>
                     While the fruit and vegetable processing industry in Germany
                     generated roughly €11.29 billion in revenues in 2021, a
                     slight decrease from the previous year which had revenues of
@@ -168,7 +166,7 @@ const Germany = () => {
                 <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Traditionally, a substantial portion of the seasonal
                     agricultural labor force in Germany has been comprised of
                     migrant workers, particularly from Bulgaria and Romania. In
@@ -185,7 +183,7 @@ const Germany = () => {
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     According to the German Federal Statistical Office states
                     that there are 262,776 agricultural holdings in Germany,
                     including 26,133 holdings with organic farming, employing
@@ -200,13 +198,13 @@ const Germany = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Winter</span> Winter is
                     noted as the peak season for fruit-picking jobs in Germany,
                     as many employers are eager to begin harvesting their crops
                     during this time.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Fall:</span> This season is
                     mentioned as a productive time for fruit and vegetable
                     harvesting in Germany, indicating a potentially busy period
@@ -220,7 +218,7 @@ const Germany = () => {
                         Technology adoption and government involvement:
                     </strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Data collection and processing along with intelligent
                     automation technologies are vital in the development of new
                     agricultural machinery. In 2023, the domestic market volume
@@ -242,7 +240,7 @@ const Germany = () => {
                 <p>
                     <strong>Jobs provided:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     According to recent statistics, the agriculturale job sector
                     hired up to 300,000 workers.
                 </p>
@@ -252,7 +250,7 @@ const Germany = () => {
                 <p>
                     <strong>Regions and fruit farms:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="italic">Lake Constance Region: </span>{" "}
                     Known for being a prime location for growing apples and
                     pears. This region is Germany's southernmost fruit-growing
@@ -261,11 +259,11 @@ const Germany = () => {
                     Ravensburg, and the Lake Constance district are particularly
                     conducive for fruit growing.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="italic">Alte Land near Hamburg: </span>{" "}
                     Another well-known region for apple and pear cultivation
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="italic">
                         Rhineland-Palatinate, Saxony, and Thuringia{" "}
                     </span>{" "}
@@ -274,13 +272,13 @@ const Germany = () => {
                     nearly Mediterranean climate, making it ideal for growing a
                     variety of fruits and vegetables.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="italic">Baden-Württemberg: </span>{" "}
                     Significant for the production of plums, damson plums, and
                     mirabelle plums. About 71% of the plum harvest in Germany
                     comes from this region and Rhineland-Palatinate.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="italic">Palatinate (Pfalz) Region: </span>{" "}
                     Known for its almost Mediterranean climate conditions, the
                     Palatinate region is ideal for growing a variety of fruits

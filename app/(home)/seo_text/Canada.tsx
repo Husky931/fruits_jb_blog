@@ -1,11 +1,11 @@
 const Canada = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Canada's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Wine from the Desert: </strong>Many people don't
                     associate Canada with deserts, but the Okanagan Valley in
@@ -68,9 +68,7 @@ const Canada = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Canada’s Agriculture
-            </h1>
+            <h1 className="text-center">Info About Canada’s Agriculture</h1>
             <br />
             <p>
                 Canada, the second-largest country in the world by land area,

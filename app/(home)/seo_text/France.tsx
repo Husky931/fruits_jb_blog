@@ -2,12 +2,12 @@ import Link from "next/link"
 
 const France = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About France's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Wine Wonder: </strong>France is one of the world's
                     largest wine producers. Historically, regions like Bordeaux,
@@ -73,9 +73,7 @@ const France = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About France's Agriculture
-            </h1>
+            <h1 className="text-center">Info About France's Agriculture</h1>
             <br />
             <p>
                 France, often hailed as the epicenter of culture, cuisine, and
@@ -105,7 +103,7 @@ const France = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="flex flex-col">
                     <li>
                         <span className="italic">Apple:</span> 64%
                     </li>
@@ -133,7 +131,7 @@ const France = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p className="my-1">
+                <p>
                     France devotes about <strong>33% of its territory</strong>{" "}
                     to agricultural production. Close to 2% of the country's
                     population works directly in the agriculture sector.
@@ -144,7 +142,7 @@ const France = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruit production in France saw a modest expansion in
                     2022, albeit with a relatively flat trend pattern over the
                     reviewed period. A significant spike in growth was observed
@@ -155,7 +153,7 @@ const France = () => {
                         <small className="text-[#0700ee]">2</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     The average yield of fruits in France rose rapidly to a
                     certain value (X tons per ha) in 2022, marking a 6.6%
                     increase compared to the previous year. Similar to
@@ -173,12 +171,12 @@ const France = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Domestic Production: </span>{" "}
                     The production value of fruits and vegetables, including
                     potatoes, in France is around 15 billion euros.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Exports:</span> France
                     exports a significant amount of its fruit production. In
                     2021, some of the top fresh fruit export commodities
@@ -193,7 +191,7 @@ const France = () => {
             </div>
             <br />
             <div>
-                <p className="my-1">
+                <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
                 The COVID-19 pandemic highlighted the reliance on seasonal fruit
@@ -211,7 +209,7 @@ const France = () => {
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     In 2020, France had 416,400 farms, which was 20% less
                     compared to a decade ago. Cattle production utilized 33% of
                     the French agricultural area, and the average area of French
@@ -222,13 +220,13 @@ const France = () => {
                         <small className="text-[#0700ee]">6</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     A once-in-a-decade agricultural census released by the
                     ministry showed that the number of farms in France decreased
                     to 389,000 from 490,000 in 2010, indicating a trend of
                     declining farm numbers that began in the 1970.
                 </p>
-                <p className="my-1">
+                <p>
                     A report noted that between 2010 and 2020, the number of
                     farms in France fell by 21%, from 490,000 to 389,000, which
                     equates to nearly 100,000 farms being wiped off the map in
@@ -237,7 +235,7 @@ const France = () => {
                         <small className="text-[#0700ee]">7</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     According to a strategic plan report, there were about
                     456,000 farms in France, with an average size of 69 hectares
                     per farm. The total agricultural land in France is
@@ -253,7 +251,7 @@ const France = () => {
                 <p>
                     <strong>Agricultural programs:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     France has several agricultural programs, many of which are
                     supported by the European Union's Common Agricultural Policy
                     (CAP).
@@ -264,7 +262,7 @@ const France = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">
                         Cherry and Strawberry Harvesting:{" "}
                     </span>
@@ -274,18 +272,18 @@ const France = () => {
                     cherries and strawberries are typically harvested in late
                     spring to early summer (May-June) in many regions.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Plum Harvesting: </span>
                     This takes place in the Southern Pyrenees. While the exact
                     timeframe wasn't provided, plum harvesting in many areas
                     occurs in late summer to early fall.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Melon Harvesting: </span>
                     Occurs in the Rhone Valley. Melons are typically harvested
                     in the summer months.
                 </p>
-                <p className="my-1">
+                <p>
                     <span className="font-semibold">Grape Harvesting: </span>
                     The grape picking season spans from September to
                     mid-November across various regions in France.
@@ -298,7 +296,7 @@ const France = () => {
                         Technology adoption and government involvement:
                     </strong>
                 </p>
-                <p className="my-1">
+                <p>
                     France has been keen on adopting modern farming
                     technologies. Most notable uses are: robotic harvesting,
                     machine vision technology, intelligent robots, and drones.
@@ -309,7 +307,7 @@ const France = () => {
                 <p>
                     <strong>Jobs provided:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruits and vegetable sector provides 450,000 direct jobs
                     and encompasses about 75,000 companies, with the 700,000 in
                     the agriculture sector.{" "}
@@ -323,7 +321,7 @@ const France = () => {
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     On average, fruit or vegetable pickers in France earn a
                     gross salary of €22,713 annually, which translates to an
                     hourly rate of about €11. Another source states the average

@@ -1,11 +1,11 @@
 const Belgium = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Belgium's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Chocolate Roots: </strong>Belgium is globally
                     renowned for its chocolates. However, cacao isn't grown in
@@ -56,9 +56,7 @@ const Belgium = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Belgium’s Agriculture
-            </h1>
+            <h1 className="text-center">Info About Belgium’s Agriculture</h1>
             <br />
             <p>
                 Belgium, a Western European nation, is known for its medieval
@@ -78,7 +76,7 @@ const Belgium = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <ul className="flex flex-col gap-y-3">
+                <ul className="flex flex-col">
                     <li>
                         - Apples: Significant percentage (particularly in
                         Limburg and Antwerp)

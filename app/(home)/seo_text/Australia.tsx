@@ -1,11 +1,11 @@
 const Australia = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Australia’s Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Huge Farms</strong> Some farms in Australia are
                     bigger than some small countries! Anna Creek Station in
@@ -66,9 +66,7 @@ const Australia = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Australia’s Agriculture
-            </h1>
+            <h1 className="text-center">Info About Australia’s Agriculture</h1>
             <br />
             <p>
                 Australia, a vast continent in the Southern Hemisphere, is known
@@ -95,7 +93,7 @@ const Australia = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <ul className="flex flex-col gap-y-3">
+                <ul className="flex flex-col">
                     <li>Apples: Approx. 20%</li>
                     <li>Bananas: Approx. 25%</li>
                     <li>Oranges: Approx. 15%</li>

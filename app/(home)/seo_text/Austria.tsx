@@ -1,11 +1,11 @@
 const Austria = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Austria's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Organic Pioneers: </strong>Austria leads in organic
                     farming in Europe. A significant portion of its agricultural
@@ -52,9 +52,7 @@ const Austria = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Austria’s Agriculture
-            </h1>
+            <h1 className="text-center">Info About Austria’s Agriculture</h1>
             <br />
             <p>
                 Austria is a landlocked country located in Central Europe,

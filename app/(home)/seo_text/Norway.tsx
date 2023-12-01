@@ -2,12 +2,12 @@ import Link from "next/link"
 
 const Norway = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Fun Facts About Norway's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Midnight Sun Farming:</strong>Due to its location
                     above the Arctic Circle, parts of Norway experience the
@@ -66,9 +66,7 @@ const Norway = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Norway's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Norway's Agriculture</h1>
             <br />
             <p>
                 Norway, located in Northern Europe, is known for its magnificent
@@ -82,7 +80,7 @@ const Norway = () => {
                 <p>
                     <strong>GDP contribution:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     In recent years agriculture contributed 1.61% to the
                     national GDP.
                 </p>
@@ -92,7 +90,7 @@ const Norway = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     While Norway's cold climate limits the variety of fruit that
                     can be grown, there are still some prominent fruits
                     cultivated: apples, berries (strawberries, raspberries,
@@ -107,7 +105,7 @@ const Norway = () => {
                         Territory and population involved with agriculture:
                     </strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Approximately 3% of Norway's territory is used for
                     agricultural production. Around 1.4% of the population is
                     engaged in the agriculture sector, either directly or
@@ -119,7 +117,7 @@ const Norway = () => {
                 <p>
                     <strong>Fruit producing trend:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruit production trend in Norway has generally seen
                     modest growth, especially in the berry sector due to
                     increased demand domestically and for exports. Due to recent
@@ -138,7 +136,7 @@ const Norway = () => {
                 <p>
                     <strong>Domestic and exported fruits:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruits that generate most of the revenue in the
                     Norwegian market are largely imported tropical fruits,
                     including bananas, melons, kiwi fruit, pineapples, and
@@ -153,7 +151,7 @@ const Norway = () => {
                 <p>
                     <strong>Annual revenue:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The revenue generated from the fruit and vegetable
                     processing industry in Norway for the year 2021 was
                     approximately six billion Norwegian kroner (540 million
@@ -167,7 +165,7 @@ const Norway = () => {
                 <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The reliance on seasonal fruit pickers in Norway is notably
                     accentuated due to the country's relatively short growing
                     season, which typically spans from May to September, with
@@ -183,7 +181,7 @@ const Norway = () => {
                         <small className="text-[#0700ee]">1</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     Additionally, some farms in Norway offer fruit picking jobs
                     year-round, albeit not as intensely as during the summer
                     months. For instance, Auster Berget Gård in Bergmyran,
@@ -201,7 +199,7 @@ const Norway = () => {
                 <p>
                     <strong>Number of farms and agricultural entities:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Norway has several thousand farms, but there has been a
                     trend of a declining number of farms with increased farm
                     size. While large farming corporations are present, small
@@ -214,7 +212,7 @@ const Norway = () => {
                 <p>
                     <strong>Agricultural programs:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     There are programs available for seasonal work in Norway's
                     farms and greenhouses. For instance, a seasonal worker
                     program based in Stavanger offers placements in farms and
@@ -229,7 +227,7 @@ const Norway = () => {
                 <p>
                     <strong>Seasons for migrant workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruit picking season in Norway generally spans from June
                     to September.
                 </p>
@@ -239,7 +237,7 @@ const Norway = () => {
                 <p>
                     <strong>Technology adoption:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The fruit picking industry in Norway is embracing technology
                     to address challenges such as labor shortages, especially
                     during peak harvesting seasons. Robot uses are starting to
@@ -254,7 +252,7 @@ const Norway = () => {
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     The average gross salary for a fruit picker in Norway is NOK
                     270,172 per year, with an equivalent hourly rate of NOK 130.
                     Additionally, they earn an average bonus of NOK 2,513 per
@@ -263,7 +261,7 @@ const Norway = () => {
                         <small className="text-[#0700ee]">3</small>
                     </Link>
                 </p>
-                <p className="my-1">
+                <p>
                     Experienced fruit pickers earn about +7% more than the
                     average, mid-career fruit pickers earn about +8% more, while
                     entry-level fruit pickers earn about -12% less than the
