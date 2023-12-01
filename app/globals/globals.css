@@ -34,7 +34,7 @@ body {
 } */
 
 /* Global styles for Mobile View */
-p,
+/* p,
 li {
     font-size: 16px !important;
     line-height: 28px !important;
@@ -58,10 +58,10 @@ h2 {
 h3 {
     font-size: 20px !important;
     color: rgb(0, 0, 0) !important;
-}
+} */
 
 /* Styles for iPad View (Tailwind's md breakpoint at 768px) */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     p,
     li {
         font-size: 20px !important;
@@ -83,15 +83,15 @@ h3 {
     h3 {
         font-size: 22px !important;
     }
-}
+} */
 
 /* Styles for Desktop View and above (Tailwind's lg breakpoint at 1024px) */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     h1 {
         font-size: 36px;
         margin-bottom: 30px;
     }
-}
+} */
 
 @media only screen and (min-width: 1200px) {
     .my-custom-app-bar .MuiAppBar-root {

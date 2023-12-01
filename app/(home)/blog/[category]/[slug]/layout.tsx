@@ -1,4 +1,5 @@
 import React from "react"
+import "./globals.css"
 
 import ArticleSelect from "@/app/(home)/blog/components/ArticleSelect"
 import { fetchAPI } from "@/app/(home)/blog/utils/fetch-api"

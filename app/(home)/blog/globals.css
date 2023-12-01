@@ -3,49 +3,6 @@
 @tailwind utilities;
 @import "react-slideshow-image/dist/styles.css";
 
-/******************************************* 
-      Rich Text Styles
-    *******************************************/
-
-/* Headers */
-.rich-text h1 {
-    @apply text-4xl font-bold mb-4 text-violet-400;
-}
-
-.rich-text h2 {
-    @apply text-3xl font-bold mb-4 text-violet-400;
-}
-
-.rich-text h3 {
-    @apply text-2xl font-bold mb-4 text-violet-400;
-}
-
-.rich-text h4 {
-    @apply text-xl font-bold mb-4 text-violet-400;
-}
-
-.rich-text h5 {
-    @apply text-lg font-bold mb-4 text-violet-400;
-}
-
-.rich-text h6 {
-    @apply text-base font-bold mb-4 text-violet-200;
-}
-
-/* Horizontal rules */
-.rich-text hr {
-    @apply border-gray-300 my-8;
-}
-
-.rich-text a {
-    @apply text-violet-400 underline;
-}
-
-/* Typographic replacements */
-.rich-text p {
-    @apply mb-4;
-}
-
 /* Emphasis */
 .rich-text strong {
     @apply font-bold;
@@ -66,11 +23,11 @@
 
 /* Lists */
 .rich-text ul {
-    @apply list-disc pl-4 mb-4;
+    @apply list-disc;
 }
 
 .rich-text ol {
-    @apply list-decimal pl-4 mb-4;
+    @apply list-decimal;
 }
 
 .rich-text li {

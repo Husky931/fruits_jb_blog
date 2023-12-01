@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "react-slideshow-image/dist/styles.css";
+
+/* Global styles for Mobile View */
+
+.rich-text img {
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.rich-text p,
+.rich-text li {
+    font-size: 16px !important;
+    line-height: 28px !important;
+    margin-bottom: 26px !important;
+}
+
+.rich-text h1 {
+    font-size: 27px !important;
+    padding-top: 10px !important;
+    margin-bottom: 22px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
+
+.rich-text h2 {
+    font-size: 20px !important;
+    padding-top: 33px !important;
+    margin-bottom: 25px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
+
+.rich-text h3 {
+    font-size: 20px !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700 !important;
+}
+
+/* Styles for iPad View (Tailwind's md breakpoint at 768px) */
+@media (min-width: 768px) {
+    .rich-text p,
+    .rich-text li {
+        font-size: 20px !important;
+        line-height: 33px !important;
+        margin-bottom: 33px !important;
+    }
+
+    .rich-text h1 {
+        font-size: 30px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .rich-text h2 {
+        font-size: 24px !important;
+        padding-top: 40px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .rich-text h3 {
+        font-size: 22px !important;
+        padding-top: 10px;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* Styles for Desktop View and above (Tailwind's lg breakpoint at 1024px) */
+@media (min-width: 1024px) {
+    .rich-text h1 {
+        font-size: 32px !important; /* Adjusted size */
+        margin-bottom: 30px;
+    }
+    .rich-text h2 {
+        font-size: 28px !important; /* Adjusted size */
+    }
+    .rich-text h3 {
+        font-size: 24px !important; /* Adjusted size */
+    }
+}
+
+/* Emphasis */
+.rich-text strong {
+    @apply font-bold;
+}
+
+.rich-text em {
+    @apply italic;
+}
+
+.rich-text del {
+    @apply line-through;
+}
+
+/* Blockquotes */
+.rich-text blockquote {
+    @apply border-l-4 border-gray-400 pl-4 py-2 mb-4;
+}
+
+/* Lists */
+.rich-text ul {
+    @apply list-disc;
+}
+
+.rich-text ol {
+    @apply list-decimal;
+}
+
+.rich-text li {
+    @apply mb-2;
+}
+
+.rich-text li > ul {
+    @apply list-disc;
+}
+
+.rich-text li > ol {
+    @apply list-decimal;
+}
+
+.rich-text a {
+    color: blue;
+}
+
+/* Code blocks */
+.rich-text pre {
+    @apply font-mono bg-gray-900 text-gray-100 rounded p-4  my-6;
+}
+
+.rich-text code {
+    @apply font-mono bg-gray-900 text-gray-100 rounded px-2 py-1;
+}
+
+/* Tables */
+.rich-text table {
+    @apply w-full border-collapse border-gray-300 my-6;
+}
+
+.rich-text th {
+    @apply bg-gray-900 text-left py-2 px-4 font-semibold border-b border-gray-300;
+}
+
+.rich-text td {
+    @apply py-2 px-4 border-b border-gray-300;
+}
+
+/* Images */
+.rich-text img {
+    @apply w-full object-cover rounded-xl;
+}
+
+/* Custom containers */
+.rich-text .warning {
+    @apply bg-yellow-100 border-yellow-500 text-yellow-700 px-4 py-2 rounded-lg mb-4;
+}
+
+/******************************************* 
+      React Slideshow Styles
+    *******************************************/
+
+.react-slideshow-container [aria-label="Previous Slide"] {
+    margin-left: 1rem;
+}
+
+.react-slideshow-container [aria-label="Next Slide"] {
+    margin-right: 1rem;
+}
