@@ -86,3 +86,4 @@ export default function Post({ data }: { data: Article }) {
         </article>
     )
 }
+//
