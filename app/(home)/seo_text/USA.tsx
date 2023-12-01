@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const USA = () => {
     return (
-        <section>
+        <section className="seo-text mt-8 md:mt-12">
             <h1 className="font-bold text-3xl text-center mt-4">
                 Fun Facts About USA's Agriculture
             </h1>

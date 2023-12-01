@@ -2,12 +2,10 @@ import Link from "next/link"
 
 const Spain = () => {
     return (
-        <section>
-            <h1 className="font-bold text-3xl text-center">
-                Fun Facts About Spain's Agriculture
-            </h1>
+        <section className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">Fun Facts About Spain's Agriculture</h1>
             <br />
-            <ol className="flex flex-col gap-y-5">
+            <ol className="flex flex-col">
                 <li>
                     <strong>Olives Galore: </strong>Spain is the world's largest
                     producer of olives and olive oil, with over 300 million
@@ -69,9 +67,7 @@ const Spain = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
-                Info About Spain's Agriculture
-            </h1>
+            <h1 className="text-center">Info About Spain's Agriculture</h1>
             <br />
             <p>
                 Spain, located on the Iberian Peninsula in Southwestern Europe,
@@ -95,7 +91,7 @@ const Spain = () => {
                 <p>
                     <strong>Fruits grown in 1000 tones</strong>
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="flex flex-col">
                     <li>
                         <span className="italic">Grapes:</span> 1318.1t
                     </li>
@@ -133,7 +129,7 @@ const Spain = () => {
                 <p>
                     <strong>Fruits grown and percentage:</strong>
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="flex flex-col">
                     <li>
                         <span className="italic">Grapes:</span> 25.49%
                     </li>
@@ -334,7 +330,7 @@ const Spain = () => {
                     <strong>Regions and fruit farms:</strong>
                 </p>
 
-                <ul className="flex flex-col gay-y-5">
+                <ul className="flex flex-col">
                     <li>
                         <span className="font-semibold">Andalusia:</span>{" "}
                         Olives, with peak seasons in winter. Temperatures range
@@ -359,7 +355,7 @@ const Spain = () => {
                 <p>
                     <strong>Peak seasons:</strong>
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="flex flex-col">
                     <li>
                         <span className="italic">
                             Winter (December, January, February):
@@ -403,12 +399,12 @@ const Spain = () => {
                 <p>
                     <strong>Earnings for seasonal workers:</strong>
                 </p>
-                <p className="my-1">
+                <p>
                     Earnings can vary significantly depending on the crop and
                     region. On average, a seasonal picker might earn between €30
                     to €100 per day.
                 </p>
-                <p className="my-1">
+                <p>
                     The average gross salary for a fruit picker in Spain is
                     reported to be €15,118 annually, or an equivalent hourly
                     rate of around €7 to €7.27, with an additional average bonus

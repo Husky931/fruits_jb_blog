@@ -1,15 +1,15 @@
 export default async function HomeText() {
     return (
-        <div className="w-full mt-10">
-            <h1 className="text-4xl font-bold text-center my-6">
+        <div className="seo-text mt-8 md:mt-12">
+            <h1 className="text-center">
                 Welcome to the World of Fruit Picking Jobs!
             </h1>
-            <h3 className="font-bold ">
+            <h3>
                 Your one-stop destination for fruit picker positions, farm labor
                 opportunities, and seasonal worker roles across the globe
             </h3>
 
-            <p className="my-6">
+            <p>
                 Are you looking for seasonal picking work? We are a platform
                 that <span className="font-semibold">collects and display</span>{" "}
                 all sorts of harvesting and seasonal fruits related picking jobs
@@ -17,7 +17,7 @@ export default async function HomeText() {
                 one place.
             </p>
 
-            <p className="my-6">
+            <p>
                 This is a place where a job seeker can come, get the needed
                 information and try to find a job in this industry. Have a
                 specific country in mind that you want to do some picking in? We
@@ -38,7 +38,7 @@ export default async function HomeText() {
                 information.
             </p>
 
-            <p className="my-6">
+            <p>
                 If you have any questions, contact us and we will get back to
                 you.
             </p>

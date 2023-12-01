@@ -194,15 +194,18 @@ const France = () => {
                 <p>
                     <strong>Reliance on seasonal workers:</strong>
                 </p>
-                The COVID-19 pandemic highlighted the reliance on seasonal fruit
-                pickers in France. With the pandemic restricting the movement of
-                foreign seasonal labourers, France faced a challenge to ensure
-                that fruits and vegetables were harvested in time to prevent
-                spoilage. There were appeals made to French citizens, especially
-                those not currently working, to assist with the harvest.{" "}
-                <Link href="https://www.rfi.fr/en/france/20200330-more-french-needed-to-pick-fruit-vegetable-in-coronavirus-lockdown-harvest-sow-seeds-agriculture-covid-19#:~:text=With%20Covid,to%20help%20harvest%20crops%20and">
-                    <small className="text-[#0700ee]">5</small>
-                </Link>
+                <p>
+                    The COVID-19 pandemic highlighted the reliance on seasonal
+                    fruit pickers in France. With the pandemic restricting the
+                    movement of foreign seasonal labourers, France faced a
+                    challenge to ensure that fruits and vegetables were
+                    harvested in time to prevent spoilage. There were appeals
+                    made to French citizens, especially those not currently
+                    working, to assist with the harvest.{" "}
+                    <Link href="https://www.rfi.fr/en/france/20200330-more-french-needed-to-pick-fruit-vegetable-in-coronavirus-lockdown-harvest-sow-seeds-agriculture-covid-19#:~:text=With%20Covid,to%20help%20harvest%20crops%20and">
+                        <small className="text-[#0700ee]">5</small>
+                    </Link>
+                </p>
             </div>
             <br />
             <div>
