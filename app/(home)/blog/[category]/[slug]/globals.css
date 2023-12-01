@@ -9,11 +9,16 @@
     width: 100% !important;
     object-fit: cover !important;
 }
-.rich-text p,
 .rich-text li {
     font-size: 16px !important;
     line-height: 28px !important;
     margin-bottom: 26px !important;
+}
+
+.rich-text li {
+    font-size: 16px !important;
+    line-height: 28px !important;
+    margin-bottom: 12px !important;
 }
 
 .rich-text h1 {
@@ -40,11 +45,16 @@
 
 /* Styles for iPad View (Tailwind's md breakpoint at 768px) */
 @media (min-width: 768px) {
-    .rich-text p,
-    .rich-text li {
+    .rich-text p {
         font-size: 20px !important;
         line-height: 33px !important;
         margin-bottom: 33px !important;
+    }
+
+    .rich-text li {
+        font-size: 20px !important;
+        line-height: 33px !important;
+        margin-bottom: 19px !important;
     }
 
     .rich-text h1 {

@@ -5,7 +5,7 @@ const Canada = () => {
                 Fun Facts About Canada's Agriculture
             </h1>
             <br />
-            <ol className="flex flex-col">
+            <ol className="flex flex-col gap-y-5">
                 <li>
                     <strong>Wine from the Desert: </strong>Many people don't
                     associate Canada with deserts, but the Okanagan Valley in
