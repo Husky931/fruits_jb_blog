@@ -77,7 +77,7 @@ export default function Post({ data }: { data: Article }) {
             </div>
 
             <div>
-                <p className="text-[#78B53B] font-semibold">{description}</p>
+                {/* <p className="text-[#78B53B] font-semibold">{description}</p> */}
 
                 {data.attributes.blocks.map((section: any, index: number) =>
                     postRenderer(section, index)
