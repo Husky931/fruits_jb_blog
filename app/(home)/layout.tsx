@@ -1,11 +1,17 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
 import { Metadata, Viewport } from "next"
+import { Manrope } from "next/font/google"
 import "../globals/globals.css"
 import Countries from "@/app/(home)/components/NavBar_Countries"
 import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
 import Navigation from "./components/navigation"
 import { fetchAPI } from "./blog/utils/fetch-api"
 import Footer from "./blog/components/Footer"
+
+const manrope = Manrope({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"]
+})
 
 export async function generateMetadata(): Promise<Metadata> {
     const metadataBase = new URL("https://fruitspickingjobs.com")
@@ -84,7 +90,7 @@ export default async function RootLayout({
     const gaTrackingId = process.env.GA_TRACKING_ID as string
 
     return (
-        <html lang="en">
+        <html lang="en" className={manrope.className}>
             <GoogleAnalytics gaTrackingId={gaTrackingId} />
             <body className="p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto">
                 <Navigation />
