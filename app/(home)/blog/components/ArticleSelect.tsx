@@ -50,6 +50,7 @@ export default function ArticleSelect({
                         return (
                             <Link
                                 prefetch={false}
+                                key={category.id}
                                 href={`/blog/${category.attributes.slug}`}
                                 className={selectedFilter(
                                     category.attributes.slug,

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /*?_rsc
+
+Disallow: /api/  
+Disallow: /_next/
