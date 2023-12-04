@@ -122,11 +122,15 @@ const PostJob = () => {
                                     className="w-full p-2 border rounded mt-2"
                                 />
                             </label>
-                            <img
-                                src="upload-image.png"
-                                alt="Logo Preview"
-                                className=" max-h-[200px]"
-                            />
+                            <div>
+                                <div className="max-h-[200px] overflow-hidden">
+                                    <img
+                                        src="upload-image_1.png"
+                                        alt="Logo Preview"
+                                        className="h-full w-auto object-contain"
+                                    />
+                                </div>
+                            </div>
                         </Box>
                         <Box mb={2}>
                             <label>
@@ -164,6 +168,20 @@ const PostJob = () => {
                 <Divider />
                 <div className=" p-6"></div>
             </Box>
+
+            <Button
+                variant="contained"
+                color="error"
+                onClick={() => console.log("working")}
+                style={{
+                    width: "100%",
+                    marginTop: "30px",
+                    marginBottom: "20px",
+                    padding: "8px"
+                }}
+            >
+                Post a Job
+            </Button>
         </Box>
     )
 }

@@ -5,7 +5,7 @@
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+    --background-end-rgb: 236, 236, 236;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
             rgb(var(--background-end-rgb))
         )
         rgb(var(--background-start-rgb));
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
 }
 
 .my-custom-app-bar .MuiAppBar-root {

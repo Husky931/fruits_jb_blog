@@ -1,4 +1,10 @@
+import { Manrope } from "next/font/google"
 import "../globals/globals.css"
+
+const manrope = Manrope({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"]
+})
 
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/dashboard_employer"),
@@ -24,7 +30,12 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className="min-h-screen h-auto">
+        <html
+            lang="en"
+            style={{ height: "auto" }}
+            // className="min-h-screen h-auto"
+            className={manrope.className}
+        >
             <body className="h-auto w-full ">{children}</body>
         </html>
     )

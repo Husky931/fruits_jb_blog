@@ -1,5 +1,5 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
-import { Metadata, Viewport } from "next"
+import { Metadata } from "next"
 import { Manrope } from "next/font/google"
 import "../globals/globals.css"
 import Countries from "@/app/(home)/components/NavBar_Countries"

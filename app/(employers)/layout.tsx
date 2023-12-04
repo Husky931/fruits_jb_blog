@@ -1,7 +1,13 @@
-import "../globals/globals.css"
 import Footer from "../(home)/blog/components/Footer"
-import { fetchAPI } from "../(home)/blog/utils/fetch-api"
 import EmployersNav from "../(employers)/components/nav"
+import "../globals/globals.css"
+import { Manrope } from "next/font/google"
+import { fetchAPI } from "../(home)/blog/utils/fetch-api"
+
+const manrope = Manrope({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"]
+})
 
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/employers"),
@@ -72,7 +78,11 @@ export default async function RootLayout({
     const { navbar, footer } = global.data.attributes
 
     return (
-        <html lang="en" style={{ height: "100vh" }}>
+        <html
+            lang="en"
+            style={{ height: "100vh" }}
+            className={manrope.className}
+        >
             <body style={{ height: "100vh", margin: 0 }}>
                 <EmployersNav />
                 {children}
