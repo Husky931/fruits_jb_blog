@@ -2,16 +2,20 @@
 import React, { useState, useEffect, useRef } from "react"
 // import { useUser } from "../../../context/user"
 // import { unsetToken as logout } from "../../../auth/auth"
-import AppBar from "@mui/material/AppBar"
-import Toolbar from "@mui/material/Toolbar"
-import Button from "@mui/material/Button"
+import {
+    Box,
+    AppBar,
+    Toolbar,
+    Button,
+    Menu,
+    MenuItem,
+    Tooltip
+} from "@mui/material"
 import Link from "next/link"
 import Image from "next/image"
 import { User } from "../../../../types"
 import Avatar from "@mui/material/Avatar"
-import Menu from "@mui/material/Menu"
-import MenuItem from "@mui/material/MenuItem"
-import Tooltip from "@mui/material/Tooltip"
+import PersonIcon from "@mui/icons-material/Person"
 
 // const navItems = ["Home", "Forum", "Contact"]
 
@@ -93,22 +97,19 @@ export default function Nav() {
                     </Button>
                 </Link>
 
-                {/* {!user && (
-                    <>
-                        <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
-                            <Button
-                                // onClick={() => (showAuthModal.value = true)}
-                                sx={{
-                                    color: "white",
-                                    pr: { xs: 0, md: 1 },
-                                    fontSize: "small"
-                                }}
-                            >
-                                Employer
-                            </Button>
-                        </Tooltip>
-                    </>
-                )} */}
+                {!user && (
+                    <Button
+                        // onClick={() => (showAuthModal.value = true)}
+                        sx={{
+                            color: "white",
+                            pr: { xs: 0, md: 1 },
+                            fontSize: "small"
+                        }}
+                    >
+                        <PersonIcon sx={{ mr: 0.5 }} />
+                        Sign In
+                    </Button>
+                )}
                 {user && (
                     <>
                         <Avatar

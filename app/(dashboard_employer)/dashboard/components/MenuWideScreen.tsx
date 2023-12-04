@@ -7,6 +7,7 @@ import LogoutIcon from "@mui/icons-material/Logout"
 import { Box, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 import Link from "next/link"
 import Image from "next/image"
+import { unsetToken } from "@/app/utils/auth"
 
 type NormalMenuProps = {
     setView: (view: string) => void
@@ -84,7 +85,7 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                 <ListItemButton
                     className="hover:bg-white/20"
                     onClick={() => {
-                        /* handleLogout logic */
+                        unsetToken()
                     }}
                 >
                     <ListItemIcon>

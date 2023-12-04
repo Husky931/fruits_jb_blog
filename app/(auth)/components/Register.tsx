@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { TextField, Button, Box } from "@mui/material"
 import { usePathname } from "next/navigation"
-// import { setToken } from "../../pages/api/auth/js-cookie"
+import { setToken } from "../../utils/auth"
 
 type Inputs = {
     email: string
@@ -65,7 +65,7 @@ const Register: React.FC<{
                 return
             }
             console.log(res)
-            // setToken(res)
+            setToken(res)
         } catch (error) {
             console.log(error)
             alert(

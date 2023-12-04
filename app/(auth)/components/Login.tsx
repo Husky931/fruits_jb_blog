@@ -3,7 +3,7 @@ import React from "react"
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { useState } from "react"
 import { Box, TextField, Button } from "@mui/material"
-// import { setToken } from "../../pages/api/auth/js-cookie"
+import { setToken } from "../../utils/auth"
 // import { showForgotPassModal } from "../../signals/showForgotPassModal"
 // import { showAuthModal } from "../../signals/showAuthModal"
 
@@ -60,7 +60,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                 return
             }
 
-            // setToken(res)
+            setToken(res)
         } catch (error) {
             alert(
                 "There was an error connecting to the server. Please try again later."
