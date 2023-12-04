@@ -1,4 +1,12 @@
-import { createContext, useState, useEffect, useContext } from "react"
+"use client"
+import {
+    createContext,
+    useState,
+    useEffect,
+    useContext,
+    FC,
+    ReactNode
+} from "react"
 import { getTokenFromLocalCookie, unsetToken } from "../app/utils/auth"
 
 const Context = createContext(undefined)

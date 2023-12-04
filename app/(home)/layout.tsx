@@ -1,17 +1,9 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
 import { Metadata } from "next"
-import { Manrope } from "next/font/google"
-import "../globals/globals.css"
 import Countries from "@/app/(home)/components/NavBar_Countries"
-import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
 import Navigation from "./components/navigation"
 import { fetchAPI } from "./blog/utils/fetch-api"
 import Footer from "./blog/components/Footer"
-
-const manrope = Manrope({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"]
-})
 
 export async function generateMetadata(): Promise<Metadata> {
     const metadataBase = new URL("https://fruitspickingjobs.com")
@@ -87,25 +79,21 @@ export default async function RootLayout({
     // TODO: CREATE A CUSTOM ERROR PAGE
     if (!global.data) return null
     const { navbar, footer } = global.data.attributes
-    const gaTrackingId = process.env.GA_TRACKING_ID as string
 
     return (
-        <html lang="en" className={manrope.className}>
-            <GoogleAnalytics gaTrackingId={gaTrackingId} />
-            <body className="p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto">
-                <Navigation />
-                <SiteTitle />
-                <Countries />
-                {children}
-                <Footer
-                    // logoUrl={footerLogoUrl}
-                    // logoText={footer.footerLogo.logoText}
-                    menuLinks={footer.menuLinks}
-                    categoryLinks={footer.categories.data}
-                    legalLinks={footer.legalLinks}
-                    socialLinks={footer.socialLinks}
-                />
-            </body>
-        </html>
+        <div className="p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto">
+            <Navigation />
+            <SiteTitle />
+            <Countries />
+            {children}
+            <Footer
+                // logoUrl={footerLogoUrl}
+                // logoText={footer.footerLogo.logoText}
+                menuLinks={footer.menuLinks}
+                categoryLinks={footer.categories.data}
+                legalLinks={footer.legalLinks}
+                socialLinks={footer.socialLinks}
+            />
+        </div>
     )
 }

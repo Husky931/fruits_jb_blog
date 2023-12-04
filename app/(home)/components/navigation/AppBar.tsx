@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react"
-// import { useUser } from "../../../context/user"
+import { useUser } from "@/context/AuthUser"
 // import { unsetToken as logout } from "../../../auth/auth"
 import {
     Box,
@@ -13,15 +13,16 @@ import {
 } from "@mui/material"
 import Link from "next/link"
 import Image from "next/image"
-import { User } from "../../../../types"
+import { User } from "@/types"
 import Avatar from "@mui/material/Avatar"
 import PersonIcon from "@mui/icons-material/Person"
 
 // const navItems = ["Home", "Forum", "Contact"]
 
 export default function Nav() {
-    // const user: User | undefined = useUser()
-    const user = undefined
+    const user: User | undefined = useUser()
+    console.log(user, "i am user")
+    // const user = undefined
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
