@@ -1,4 +1,10 @@
+import { Manrope } from "next/font/google"
 import "../globals/globals.css"
+
+const manrope = Manrope({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"]
+})
 
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/auth"),
@@ -23,7 +29,11 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" style={{ height: "100vh" }}>
+        <html
+            lang="en"
+            style={{ height: "100vh" }}
+            className={manrope.className}
+        >
             <body
                 className="flex justify-center items-center bg-blue-600"
                 style={{ height: "100vh", margin: 0 }}

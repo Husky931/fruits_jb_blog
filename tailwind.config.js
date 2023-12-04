@@ -5,6 +5,8 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(employers)/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(home)/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/(auth)/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/(dashboard_employer)/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {

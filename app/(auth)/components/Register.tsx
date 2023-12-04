@@ -76,8 +76,11 @@ const Register: React.FC<{
 
     return (
         <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
-            <div className="text-[22px] ">Welcome employer</div>
-            <div className="">Create your account</div>
+            <div className="mb-[20px] flex flex-col items-center justify-center">
+                <div className="text-2xl">Welcome employer</div>
+                <div className="">Create your account</div>
+            </div>
+
             <Controller
                 control={control}
                 name="email"
@@ -274,7 +277,7 @@ const Register: React.FC<{
                 fullWidth
                 sx={{
                     paddingY: "10px !important",
-                    marginTop: "10px",
+                    marginTop: "30px !important",
                     background: "#86a1d8 !important",
                     color: "#f4f4f9"
                 }}
