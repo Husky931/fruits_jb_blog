@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button"
+import Link from "next/link"
 
 export default function HeroImage() {
     return (
@@ -10,12 +11,14 @@ export default function HeroImage() {
                 <p className="text-[20px] mt-2 text-white">
                     Post a job for free and find the right candidate
                 </p>
-                <Button
-                    variant="contained"
-                    className="mt-12 md:ml-4 lg:mt-18 py-3 px-20 rounded bg-[#2557A7] text-white font-bold"
-                >
-                    Post a job
-                </Button>
+                <Link href="/dashboard">
+                    <Button
+                        variant="contained"
+                        className="mt-12 md:ml-4 lg:mt-18 py-3 px-20 rounded bg-[#2557A7] text-white font-bold"
+                    >
+                        Post a job
+                    </Button>
+                </Link>
             </div>
         </header>
     )

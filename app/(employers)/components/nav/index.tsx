@@ -1,10 +1,9 @@
 "use client"
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import { useUser } from "@/context/AuthUser"
 import { User } from "@/types"
 import Link from "next/link"
 import Button from "@mui/material/Button"
-import Image from "next/image"
 
 export default function EmpoyersNav() {
     const user: User | undefined = useUser()
@@ -47,18 +46,11 @@ export default function EmpoyersNav() {
                         alt="harvest jobs logo"
                         className="h-full w-full"
                     />
-                    {/* <Image
-                        src="/fruits_job_board_logo.png"
-                        alt="harvest jobs logo"
-                        width="90"
-                        height="90"
-                        className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
-                    /> */}
                 </div>
             </Link>
             <Link href="/dashboard">
                 <Button
-                    className="bg-[#2557A7] text-white hover:bg-transparent hover:text-blue-600  border-0 font-semibold py-2 px-8 rounded"
+                    className="bg-[#2557A7] text-white hover:bg-[#2557A7]  border-0 font-semibold py-2 px-8 rounded"
                     variant="outlined"
                     color="inherit"
                 >
