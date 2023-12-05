@@ -35,8 +35,8 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                         <Image
                             src="/fruits_job_board_logo_blue.png"
                             alt="Fruits Jobs Logo"
-                            width={100}
-                            height={50}
+                            width={80}
+                            height={40}
                             className="mx-auto"
                         />
                     </Link>
@@ -91,7 +91,7 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                     <ListItemIcon>
                         <LogoutIcon sx={{ color: "black" }} />
                     </ListItemIcon>
-                    <ListItemText primary="Log out" />
+                    <ListItemText primary="Sign Out" />
                 </ListItemButton>
             </Box>
         </Box>

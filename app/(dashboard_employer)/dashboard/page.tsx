@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react"
 import dynamic from "next/dynamic"
 import { ColorRing } from "react-loader-spinner"
+import Cookies from "js-cookie"
+import { redirect } from "next/navigation"
 
 const MenuMobile = dynamic(() => import("./components/MenuMobile"), {
     ssr: false,
@@ -30,12 +32,15 @@ const PostJob = dynamic(() => import("./components/PostJob"), { ssr: false })
 import { useWidth } from "../../utils/useWindowWidth"
 
 const App = () => {
+    if (Cookies.get("jwt") === undefined) return redirect("/auth_employer")
+
     const [currentView, setCurrentView] = useState("PostJob")
     const [isOpen, setIsOpen] = useState(false)
     const [isClient, setIsClient] = useState(false)
 
     useEffect(() => {
         setIsClient(true)
+        console.log("i have rendered")
     }, [])
 
     const width = useWidth()

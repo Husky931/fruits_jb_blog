@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useUser } from "@/context/AuthUser"
 import { User } from "@/types"
-import { unsetToken as logout } from "@/app/utils/auth"
+import { unsetToken as signout } from "@/app/utils/auth"
 import { Button, Menu, MenuItem } from "@mui/material"
 import Link from "next/link"
 import Image from "next/image"
@@ -131,9 +131,9 @@ export default function Nav() {
                                     fontSize: "15px",
                                     fontFamily: "__Manrope_452239"
                                 }}
-                                onClick={() => logout()}
+                                onClick={() => signout()}
                             >
-                                Logout
+                                Sign Out
                             </MenuItem>
                         </Menu>
                     </div>
