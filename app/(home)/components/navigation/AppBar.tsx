@@ -11,7 +11,6 @@ import PersonIcon from "@mui/icons-material/Person"
 
 export default function Nav() {
     const user: User | undefined = useUser()
-    // console.log(user, "i am user")
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
@@ -103,26 +102,19 @@ export default function Nav() {
                                 fontFamily: "__Manrope_452239"
                             }}
                         >
-                            <MenuItem
-                                sx={{
-                                    paddingTop: "5px",
-                                    paddingBottom: "5px",
-                                    fontSize: "15px",
-                                    fontFamily: "__Manrope_452239"
-                                }}
-                            >
-                                New
-                            </MenuItem>
-                            <MenuItem
-                                sx={{
-                                    paddingTop: "5px",
-                                    paddingBottom: "5px",
-                                    fontSize: "15px",
-                                    fontFamily: "__Manrope_452239"
-                                }}
-                            >
-                                Dashboard
-                            </MenuItem>
+                            {" "}
+                            <Link href="/dashboard">
+                                <MenuItem
+                                    sx={{
+                                        paddingTop: "5px",
+                                        paddingBottom: "5px",
+                                        fontSize: "15px",
+                                        fontFamily: "__Manrope_452239"
+                                    }}
+                                >
+                                    Dashboard
+                                </MenuItem>
+                            </Link>
                             {/* <Divider /> */}
                             <MenuItem
                                 sx={{

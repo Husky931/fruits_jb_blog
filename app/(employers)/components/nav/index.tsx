@@ -1,29 +1,64 @@
 "use client"
+import React, { useEffect, useState, useRef } from "react"
 import { useUser } from "@/context/AuthUser"
 import { User } from "@/types"
-import React from "react"
 import Link from "next/link"
 import Button from "@mui/material/Button"
 import Image from "next/image"
 
 export default function EmpoyersNav() {
     const user: User | undefined = useUser()
+    const [isScrolling, setIsScrolling] = useState(false)
+    let scrollTimeout: number | null = null
+
+    const handleScroll = () => {
+        if (!isScrolling) setIsScrolling(true)
+
+        if (scrollTimeout !== null) {
+            clearTimeout(scrollTimeout)
+        }
+
+        scrollTimeout = window.setTimeout(() => {
+            setIsScrolling(false)
+        }, 200) // Adjust the time to control the delay
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+            if (scrollTimeout !== null) {
+                clearTimeout(scrollTimeout)
+            }
+        }
+    }, [])
     return (
-        <div className="fixed top-4 left-2/4 transform -translate-x-2/4 w-full md:w-[85%] mx-auto flex justify-between items-center px-4 py-3 bg-transparent z-50 ">
+        // <div className="fixed top-4 left-2/4 transform -translate-x-2/4 w-full md:w-[85%] mx-auto flex justify-between items-center px-4 py-3 bg-transparent z-50 ">
+        <div
+            className={`fixed transform w-full mx-auto flex justify-between items-center px-12 py-3 z-50 transition-all duration-700 ${
+                isScrolling ? "opacity-0" : "opacity-100 bg-[#2D2D2D]"
+            }`}
+        >
             <Link prefetch={false} href="/">
-                <div className="w-[50px] h-[40px] relative cursor-pointer">
-                    <Image
-                        src="/fruits_job_board_logo_blue.png"
+                <div className="w-[65px] h-[35px] relative cursor-pointer">
+                    <img
+                        src="/fruits_job_board_logo.png"
                         alt="harvest jobs logo"
-                        width="70"
-                        height="70"
-                        className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                        className="h-full w-full"
                     />
+                    {/* <Image
+                        src="/fruits_job_board_logo.png"
+                        alt="harvest jobs logo"
+                        width="90"
+                        height="90"
+                        className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                    /> */}
                 </div>
             </Link>
             <Link href="/dashboard">
                 <Button
-                    className="bg-blue-600 text-white hover:bg-transparent hover:text-blue-600 border-blue-600 border-2 font-semibold py-2 px-8 rounded"
+                    className="bg-[#2557A7] text-white hover:bg-transparent hover:text-blue-600  border-0 font-semibold py-2 px-8 rounded"
                     variant="outlined"
                     color="inherit"
                 >

@@ -64,7 +64,6 @@ const Register: React.FC<{
                 setServerError(res.error.message)
                 return
             }
-            console.log(res)
             setToken(res)
         } catch (error) {
             console.log(error)

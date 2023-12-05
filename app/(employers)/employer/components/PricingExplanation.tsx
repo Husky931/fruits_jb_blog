@@ -1,18 +1,17 @@
 export default function PricingExplanation() {
     return (
-        <div className="bg-[#717171] px-4 py-8 pb-24">
-            <div className="text-center my-12 mb-16 text-white">
-                <h1 className="font-bold text-3xl mb-4">No need to pay</h1>
-                <p>
+        <div className="px-4 py-8 pb-24 bg-white">
+            <div className="text-center my-12 mb-16 text-black">
+                <h1 className="font-bold text-4xl mb-4">No need to pay</h1>
+                <p className="text-[18px]">
                     Posting a job requires no long-term contract, and there are
-                    no initial costs, posting costs, or recruitment success
-                    fees.
+                    no initial costs, posting costs, or recruitment fees.
                 </p>
             </div>
 
             <div className="flex justify-center">
-                <div className="rounded border flex flex-col space-y-4 w-full max-w-md p-4 bg-[#D6DBDC]">
-                    <h2 className="text-center font-semibold text-xl mb-4">
+                <div className="rounded border flex flex-col space-y-4 w-full max-w-md p-6 bg-[#D6DBDC]">
+                    <h2 className="text-center font-semibold text-2xl mb-4">
                         Why its Free
                     </h2>
                     <img
@@ -21,20 +20,18 @@ export default function PricingExplanation() {
                         className="w-[80%] md:w-1/2 h-auto mx-auto"
                     />
                     <p className="mt-4">
-                        Our mission is to connect fruit pickers with employers.
-                        We believe that by posting more jobs, we can provide job
-                        seekers with more opportunities to find the job they
-                        desire.
+                        We are looking for the easiest way to start connecting
+                        workers with employers.
                     </p>
                     <p>
-                        We provide a service that is free to hiring companies,
-                        just make your post free of charge.
+                        Thats why it's extremely easy to create an account and
+                        post a job on our platform.
                     </p>
                 </div>
             </div>
             {/* Commented out for future use
             <div className="flex justify-center">
-                <div className="rounded border flex flex-col space-y-4 w-full max-w-md p-4 bg-[#D6DBDC]">
+                <div className="rounded border flex flex-col space-y-4 w-full max-w-md p-6 bg-[#D6DBDC]">
                     <h2 className="text-center font-semibold text-xl mb-4">
                         Advantages of using paid options
                     </h2>
