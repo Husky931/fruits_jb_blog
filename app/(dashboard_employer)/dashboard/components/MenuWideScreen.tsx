@@ -35,8 +35,8 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                         <Image
                             src="/fruits_job_board_logo_blue.png"
                             alt="Fruits Jobs Logo"
-                            width={80}
-                            height={40}
+                            width={70}
+                            height={30}
                             className="mx-auto"
                         />
                     </Link>

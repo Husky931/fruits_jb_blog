@@ -22,7 +22,7 @@ export function Provider({ children }: any) {
 
                 try {
                     const res = await fetch(
-                        `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/users/me/`,
+                        `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/users/me?populate=*`,
                         {
                             headers: {
                                 "Content-Type": "application/json",
@@ -32,6 +32,7 @@ export function Provider({ children }: any) {
                     )
 
                     const data = await res.json()
+                    console.log(data, "i am data")
                     setUserData(data)
                 } catch (error) {
                     unsetToken()

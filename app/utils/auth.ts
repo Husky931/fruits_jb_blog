@@ -18,6 +18,7 @@ export const setToken = (data: Data) => {
 
     Cookies.set("jwt", data.jwt)
     Cookies.set("username", data.user.username)
+    Cookies.set("email", data.user.email)
     Cookies.set("id", data.user.id.toString())
     // Cookies.set("confirmed", data.user.confirmed.toString())
 

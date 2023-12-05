@@ -4,6 +4,8 @@ import dynamic from "next/dynamic"
 import { ColorRing } from "react-loader-spinner"
 import Cookies from "js-cookie"
 import { redirect } from "next/navigation"
+import { useUser } from "@/context/AuthUser"
+import { User } from "@/types"
 
 const MenuMobile = dynamic(() => import("./components/MenuMobile"), {
     ssr: false,
@@ -32,9 +34,11 @@ const PostJob = dynamic(() => import("./components/PostJob"), { ssr: false })
 import { useWidth } from "../../utils/useWindowWidth"
 
 const App = () => {
-    const [currentView, setCurrentView] = useState("PostJob")
+    const [currentView, setCurrentView] = useState("Dashboard")
     const [isOpen, setIsOpen] = useState(false)
     const [isClient, setIsClient] = useState(false)
+    const user: User | undefined = useUser()
+    console.log(user, "i am user")
 
     useEffect(() => {
         setIsClient(true)
@@ -64,7 +68,9 @@ const App = () => {
                 />
             )}
             <div className="flex-grow w-full px-8">
-                {currentView === "Dashboard" && <Dashboard setView={setView} />}
+                {currentView === "Dashboard" && (
+                    <Dashboard setView={setView} user={user} />
+                )}
                 {currentView === "ManageJobs" && <ManageJobs />}
                 {currentView === "PostJob" && <PostJob />}
             </div>
