@@ -1,28 +1,17 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react"
 import { useUser } from "@/context/AuthUser"
-// import { unsetToken as logout } from "../../../auth/auth"
-import {
-    Box,
-    AppBar,
-    Toolbar,
-    Button,
-    Menu,
-    MenuItem,
-    Tooltip
-} from "@mui/material"
+import { User } from "@/types"
+import { unsetToken as logout } from "@/app/utils/auth"
+import { Button, Menu, MenuItem } from "@mui/material"
 import Link from "next/link"
 import Image from "next/image"
-import { User } from "@/types"
 import Avatar from "@mui/material/Avatar"
 import PersonIcon from "@mui/icons-material/Person"
 
-// const navItems = ["Home", "Forum", "Contact"]
-
 export default function Nav() {
     const user: User | undefined = useUser()
-    console.log(user, "i am user")
-    // const user = undefined
+    // console.log(user, "i am user")
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
@@ -55,20 +44,9 @@ export default function Nav() {
                 </div>
             </Link>
 
-            <div>
-                {/* <Tooltip title="Coming soon" sx={{ cursor: "default" }}>
-                    <Button
-                        sx={{
-                            color: "white",
-                            pr: { xs: 0, md: 1 },
-                            pl: 0,
-                            fontSize: "small"
-                        }}
-                    >
-                        Forum
-                    </Button>
-                </Tooltip> */}
-
+            <div className="flex items-center">
+                {" "}
+                {/* Added flex wrapper */}
                 <Link
                     prefetch={false}
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/employer`}
@@ -77,7 +55,8 @@ export default function Nav() {
                         sx={{
                             color: "white",
                             pr: { xs: 0, md: 1 },
-                            fontSize: "small"
+                            fontSize: "small",
+                            fontFamily: "__Manrope_452239"
                         }}
                     >
                         Employer
@@ -91,53 +70,73 @@ export default function Nav() {
                         sx={{
                             color: "white",
                             pr: { xs: 0, md: 1 },
-                            fontSize: "small"
+                            fontSize: "small",
+                            fontFamily: "__Manrope_452239"
                         }}
                     >
                         Blog
                     </Button>
                 </Link>
-
-                {!user && (
-                    <Button
-                        // onClick={() => (showAuthModal.value = true)}
-                        sx={{
-                            color: "white",
-                            pr: { xs: 0, md: 1 },
-                            fontSize: "small"
-                        }}
-                    >
-                        <PersonIcon sx={{ mr: 0.5 }} />
-                        Sign In
-                    </Button>
-                )}
                 {user && (
-                    <>
+                    <div className="flex items-center">
                         <Avatar
-                            // onClick={(e) => handleClick(e)}
+                            onClick={(e) => handleClick(e)}
                             sx={{
                                 cursor: "pointer",
-                                width: { xs: "7.5", sm: "8.75" },
-                                height: { xs: "7.5", sm: "8.75" },
+                                pr: { xs: 0, md: 1 },
                                 backgroundColor: "blue.300",
-                                display: "inline-flex"
+                                width: "30px",
+                                height: "30px"
                             }}
                         />
-
-                        {/* <Menu
+                        <Menu
                             id="basic-menu"
                             anchorEl={anchorEl}
                             open={open}
                             onClose={handleClose}
+                            autoFocus={false}
                             MenuListProps={{
                                 "aria-labelledby": "basic-button"
                             }}
+                            sx={{
+                                fontSize: "12px",
+                                fontFamily: "__Manrope_452239"
+                            }}
                         >
-                            <MenuItem className="py-0" onClick={() => logout()}>
+                            <MenuItem
+                                sx={{
+                                    paddingTop: "5px",
+                                    paddingBottom: "5px",
+                                    fontSize: "15px",
+                                    fontFamily: "__Manrope_452239"
+                                }}
+                            >
+                                New
+                            </MenuItem>
+                            <MenuItem
+                                sx={{
+                                    paddingTop: "5px",
+                                    paddingBottom: "5px",
+                                    fontSize: "15px",
+                                    fontFamily: "__Manrope_452239"
+                                }}
+                            >
+                                Dashboard
+                            </MenuItem>
+                            {/* <Divider /> */}
+                            <MenuItem
+                                sx={{
+                                    paddingTop: "5px",
+                                    paddingBottom: "5px",
+                                    fontSize: "15px",
+                                    fontFamily: "__Manrope_452239"
+                                }}
+                                onClick={() => logout()}
+                            >
                                 Logout
                             </MenuItem>
-                        </Menu> */}
-                    </>
+                        </Menu>
+                    </div>
                 )}
             </div>
         </div>

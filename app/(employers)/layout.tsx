@@ -6,30 +6,24 @@ export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/employers"),
     title: "Employers page",
     openGraph: {
-        images: "/poster.jpeg"
+        images: [
+            {
+                url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
+                width: 800,
+                height: 600
+            }
+        ]
     },
     twitter: {
-        images: "/poster.jpeg"
+        images: [
+            {
+                url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
+                width: 800,
+                height: 600
+            }
+        ],
+        card: "summary_large_image"
     }
-    // openGraph: {
-    //     images: [
-    //         {
-    //             url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
-    //             width: 800,
-    //             height: 600
-    //         }
-    //     ]
-    // },
-    // twitter: {
-    //     images: [
-    //         {
-    //             url: new URL("https://fruitspickingjobs.com/poster.jpeg"),
-    //             width: 800,
-    //             height: 600
-    //         }
-    //     ],
-    //     card: "summary_large_image"
-    // }
 }
 
 async function getGlobal(): Promise<any> {
