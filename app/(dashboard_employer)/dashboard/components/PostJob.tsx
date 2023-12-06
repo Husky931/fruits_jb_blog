@@ -83,7 +83,9 @@ const PostJob = () => {
             // window.location.reload()
         } catch (error) {
             console.error("Error creating job post:", error)
-            setErrorMessage("There was an error processing your request.")
+            setErrorMessage(
+                "There was an error processing your request. Is your company "
+            )
             setErrorModalOpen(true)
         }
     }
@@ -252,12 +254,14 @@ const PostJob = () => {
                 title="Success"
                 description={successMessage}
                 onClose={handleSuccessClose}
+                type="success"
             />
             <ReusableModal
                 open={errorModalOpen}
                 title="Error"
                 description={errorMessage}
                 onClose={handleErrorClose}
+                type="error"
             />
         </Box>
     )

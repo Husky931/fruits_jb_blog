@@ -71,7 +71,7 @@ const App = () => {
                 {currentView === "Dashboard" && (
                     <Dashboard setView={setView} user={user} />
                 )}
-                {currentView === "ManageJobs" && <ManageJobs />}
+                {currentView === "ManageJobs" && <ManageJobs user={user} />}
                 {currentView === "PostJob" && <PostJob />}
             </div>
         </div>

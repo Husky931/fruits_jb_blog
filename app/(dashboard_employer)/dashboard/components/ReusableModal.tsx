@@ -7,14 +7,18 @@ interface ReusableModalProps {
     title: string
     description: string
     onClose: () => void
+    type: "success" | "error"
 }
 
 const ReusableModal: React.FC<ReusableModalProps> = ({
     open,
     title,
     description,
-    onClose
+    onClose,
+    type
 }) => {
+    const isSuccessful = type === "success"
+
     return (
         <Modal
             open={open}
@@ -41,7 +45,10 @@ const ReusableModal: React.FC<ReusableModalProps> = ({
                     id="modal-title"
                     variant="h6"
                     component="h2"
-                    sx={{ textAlign: "center" }}
+                    sx={{
+                        color: isSuccessful ? "green" : "red",
+                        textAlign: "center"
+                    }}
                 >
                     {title}
                 </Typography>
@@ -53,7 +60,9 @@ const ReusableModal: React.FC<ReusableModalProps> = ({
                     onClick={onClose}
                     sx={{
                         marginTop: "20px",
-                        backgroundColor: "red !important",
+                        backgroundColor: isSuccessful
+                            ? "green !important"
+                            : "red !important",
                         color: "white",
                         width: "100%",
                         padding: "8px",

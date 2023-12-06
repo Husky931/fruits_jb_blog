@@ -5,7 +5,7 @@ import { User } from "@/types"
 
 type DashboardProps = {
     setView: (view: string) => void
-    user: User
+    user: User | undefined
 }
 
 const Dashboard = ({ setView, user }: DashboardProps) => {
@@ -31,8 +31,8 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
                 </div>
                 <Divider />
                 <div className="mt-12 p-6">
-                    {user.job_posts.length > 0 ? (
-                        user.job_posts.map((job) => (
+                    {user!.job_posts.length > 0 ? (
+                        user!.job_posts.map((job) => (
                             <div
                                 key={job.id}
                                 className="bg-gray-100 p-4 mb-4 rounded-lg shadow md:grid md:grid-cols-2 md:grid-rows-2"
@@ -52,16 +52,17 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
                                     </div>
                                 </div>
                                 <div className="mt-4 md:mt-0 md:text-right">
-                                    <div
-                                        className={`mb-1 ${
-                                            job.status === "pending"
-                                                ? "text-red-500"
-                                                : "text-gray-500"
-                                        }`}
-                                    >
+                                    <div className="mb-1 text-red-500">
                                         Status:{" "}
-                                        <span className="font-semibold">
-                                            {job.status}
+                                        <span
+                                            className={`mb-1 ${
+                                                job.moderation_status ===
+                                                "pending"
+                                                    ? "text-red-500"
+                                                    : "text-green-500"
+                                            } font-semibold`}
+                                        >
+                                            {job.moderation_status}
                                         </span>
                                     </div>
                                     <div className="text-gray-500">
