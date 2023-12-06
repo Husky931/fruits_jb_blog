@@ -130,3 +130,6 @@ body {
 .MuiAvatar-root {
     padding-right: 0 !important;
 }
+.MuiListItemIcon-root {
+    min-width: 46px !important;
+}

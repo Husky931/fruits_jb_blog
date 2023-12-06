@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from "react"
-import { Button, Box, Divider } from "@mui/material"
+import { Button, Box, Divider, Modal, Typography } from "@mui/material"
 import { getTokenFromLocalCookie } from "@/app/utils/auth"
 import Cookies from "js-cookie"
+import ReusableModal from "./ReusableModal"
 
 const PostJob = () => {
     const [jobDetails, setJobDetails] = useState({
@@ -13,6 +14,12 @@ const PostJob = () => {
         description: "",
         url: ""
     })
+
+    const [successModalOpen, setSuccessModalOpen] = useState(false)
+    const [successMessage, setSuccessMessage] = useState("")
+
+    const [errorModalOpen, setErrorModalOpen] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
 
     const [logoPreview, setLogoPreview] = useState<any>(null)
 
@@ -28,6 +35,15 @@ const PostJob = () => {
             const file = e.target.files[0]
             setLogoPreview(URL.createObjectURL(file))
         }
+    }
+
+    const handleSuccessClose = () => {
+        setSuccessModalOpen(false)
+        window.location.reload()
+    }
+
+    const handleErrorClose = () => {
+        setErrorModalOpen(false)
     }
 
     async function createJobPost() {
@@ -60,11 +76,15 @@ const PostJob = () => {
             }
 
             const data = await response.json()
-            window.location.reload()
-            // Handle success (e.g., update state, redirect, show message)
+            setSuccessMessage(
+                "Your job post has been successfully submitted and will be reviewed by a moderator within the next 24 hours. Please check your dashboard again after 24 hours."
+            )
+            setSuccessModalOpen(true)
+            // window.location.reload()
         } catch (error) {
             console.error("Error creating job post:", error)
-            // Handle error (e.g., show error message)
+            setErrorMessage("There was an error processing your request.")
+            setErrorModalOpen(true)
         }
     }
 
@@ -227,6 +247,18 @@ const PostJob = () => {
             >
                 Post Job
             </Button>
+            <ReusableModal
+                open={successModalOpen}
+                title="Success"
+                description={successMessage}
+                onClose={handleSuccessClose}
+            />
+            <ReusableModal
+                open={errorModalOpen}
+                title="Error"
+                description={errorMessage}
+                onClose={handleErrorClose}
+            />
         </Box>
     )
 }
