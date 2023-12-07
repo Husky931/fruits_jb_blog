@@ -1,9 +1,9 @@
 "use client"
-import HomeText from "./components/HomepageText"
 import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+import HomeText from "./components/HomepageText"
 import JobModal from "./components/JobModal"
 import AllCountries from "./components_countries/All"
-import { useSearchParams } from "next/navigation"
 
 export default function Home() {
     const searchParams = useSearchParams()

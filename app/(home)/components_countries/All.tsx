@@ -105,6 +105,7 @@ export default function AllCountries() {
                     moderation_status={m.attributes.moderation_status}
                     status={m.attributes.status}
                     company_logo={m.attributes.company_logo}
+                    contact_email={m.attributes.contact_email}
                 />
             ))}
 

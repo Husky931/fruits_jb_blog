@@ -62,6 +62,7 @@ export type StrapiPostAttributes = {
     moderation_status: ModerationStatus
     status: UserStatus
     company_logo: CompanyLogo
+    contact_email: string
 }
 
 export type User = {
