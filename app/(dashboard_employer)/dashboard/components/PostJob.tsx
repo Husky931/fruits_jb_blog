@@ -4,6 +4,7 @@ import { Button, Box, Divider, Modal, Typography } from "@mui/material"
 import { getTokenFromLocalCookie } from "@/app/utils/auth"
 import Cookies from "js-cookie"
 import ReusableModal from "./ReusableModal"
+import JobPostPreview from "./JobPostPreview"
 import { processImage } from "@/app/utils/processImage"
 
 const PostJob = () => {
@@ -13,7 +14,8 @@ const PostJob = () => {
         city: "",
         title: "",
         description: "",
-        url: ""
+        url: "",
+        email: ""
     })
 
     const [successModalOpen, setSuccessModalOpen] = useState(false)
@@ -218,6 +220,19 @@ const PostJob = () => {
                 <Divider />
                 <div className=" p-6">
                     <Box mb={2}>
+                        <label>
+                            Contact email
+                            <input
+                                type="text"
+                                name="email"
+                                value={jobDetails.email}
+                                onChange={handleChange}
+                                placeholder="Email for applications"
+                                className="w-full p-2 border rounded mt-2"
+                            />
+                        </label>
+                    </Box>
+                    <Box mb={2}>
                         <label className="mb-6">
                             Company logo
                             <input
@@ -266,16 +281,13 @@ const PostJob = () => {
                     </div>
                 </div>
                 <Divider />
-                <div className=" p-6"></div>
-            </Box>
-            <Box className="bg-white shadow rounded-lg mt-12">
+
                 <div className=" flex justify-between items-center w-full p-6">
-                    <div>
-                        <div className="text-xl font-semibold">Job Preview</div>
-                    </div>
+                    <JobPostPreview
+                        jobDetails={jobDetails}
+                        logoPreview={logoPreview}
+                    />
                 </div>
-                <Divider />
-                <div className=" p-6"></div>
             </Box>
             <Button
                 variant="contained"
