@@ -91,11 +91,29 @@ export default function AllCountries() {
                 />
             </div>
             {clientsPosts?.map((m) => (
-                <SingleClientPost key={m.id} />
+                <SingleClientPost
+                    key={m.id}
+                    title={m.attributes.title}
+                    job_description={m.attributes.job_description}
+                    createdAt={m.attributes.createdAt}
+                    updatedAt={m.attributes.createdAt}
+                    publishedAt={m.attributes.publishedAt}
+                    city_location={m.attributes.city_location}
+                    company_name={m.attributes.company_name}
+                    country_location={m.attributes.country_location}
+                    URL={m.attributes.URL}
+                    moderation_status={m.attributes.moderation_status}
+                    status={m.attributes.status}
+                    company_logo={m.attributes.company_logo}
+                />
             ))}
 
             <ul className="w-full mt-[10px]">
-                <div>Aggregated posts from other websites</div>
+                {clientsPosts && clientsPosts?.length > 0 && (
+                    <div className="mt-[20px] w-full">
+                        Aggregated posts from other websites
+                    </div>
+                )}
                 {posts.map((m: any) => (
                     <SingleJobPost
                         key={m.id}

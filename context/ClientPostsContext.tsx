@@ -8,11 +8,11 @@ import React, {
     ReactNode
 } from "react"
 
-import { JobPostAttributes } from "@/types"
+import { StrapiPostAttributes } from "@/types"
 
 interface JobPost {
     id: number
-    attributes: JobPostAttributes
+    attributes: StrapiPostAttributes
 }
 
 interface JobPostsApiResponse {

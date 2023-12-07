@@ -49,7 +49,7 @@ type ModerationStatus = "pending" | "approved" | "rejected"
 
 export type UserType = "employer" | "worker"
 
-export type JobPostAttributes = {
+export type StrapiPostAttributes = {
     title: string
     job_description: string
     createdAt: string
@@ -62,6 +62,19 @@ export type JobPostAttributes = {
     moderation_status: ModerationStatus
     status: UserStatus
     company_logo: CompanyLogo
+}
+
+export type User = {
+    blocked: boolean
+    confirmed: boolean
+    createdAt: string
+    email: string
+    id: number
+    provider: string
+    updatedAt: string
+    username: string
+    userType: UserType
+    job_posts: StrapiPostAttributes[]
 }
 
 export type PostgresJobPostTypes = {
