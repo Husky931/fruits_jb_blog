@@ -32,7 +32,6 @@ const SingleClientPost: React.FC = () => {
     //     : date
 
     return (
-        // <a target="_blank" className="text-black no-underline">
         <div className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px] border-2 rounded-md border-red-600 p-2">
             <div>
                 <div className="text-2xl font-semibold underline text-red-600">
@@ -40,7 +39,18 @@ const SingleClientPost: React.FC = () => {
                 </div>
             </div>
             <Divider sx={{ marginTop: "10px", marginBottom: "10px" }} />
-            <div
+            <div className="flex">
+                <div className="left">1</div>
+                <div>
+                    <div>employer</div>
+                    <div>company name</div>
+                    <div>country / city</div>
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Apply
+                    </button>
+                </div>
+            </div>
+            {/* <div
                 id="job-title"
                 className="text-[14px] sm:text-[18px] font-semibold underline text-[#0000EE]"
             >
@@ -84,9 +94,8 @@ const SingleClientPost: React.FC = () => {
                 <div className="text-[#0000EE]">read more</div>
             </div>
 
-            <div className="text-gray-500 font-semibold">03/02/2023</div>
+            <div className="text-gray-500 font-semibold">03/02/2023</div> */}
         </div>
-        // </a>
     )
 }
 

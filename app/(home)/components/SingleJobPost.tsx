@@ -1,18 +1,8 @@
 import formatDistance from "date-fns/formatDistance"
 import parseISO from "date-fns/parseISO"
+import { PostgresJobPostTypes } from "@/types"
 
-type SingleJobPostTypes = {
-    title: string
-    companyName: string
-    country: string
-    jobLocation: string
-    jobDescription: string
-    link: string
-    date: string
-    db_add_timestamp: string
-}
-
-const SingleJobPost: React.FC<SingleJobPostTypes> = ({
+const SingleJobPost: React.FC<PostgresJobPostTypes> = ({
     title,
     companyName,
     country,

@@ -1,17 +1,53 @@
-import { Mode } from "fs"
-
-export type User = {
-    blocked: boolean
-    confirmed: boolean
-    createdAt: string
-    email: string
-    id: number
-    provider: string
-    updatedAt: string
-    username: string
-    userType: UserType
-    job_posts: JobPost[]
+export type ImageFormat = {
+    name: string
+    hash: string
+    ext: string
+    mime: string
+    width: number
+    height: number
+    size: number
+    url: string
 }
+
+export type CompanyLogo = {
+    data: {
+        id: number
+        attributes: {
+            name: string
+            alternativeText: string | null
+            caption: string | null
+            width: number
+            height: number
+            formats: {
+                thumbnail: ImageFormat
+                small: ImageFormat
+                medium: ImageFormat
+            }
+            hash: string
+            ext: string
+            mime: string
+            size: number
+            url: string
+            previewUrl: string | null
+            provider: string
+            provider_metadata: any | null
+            createdAt: string
+            updatedAt: string
+        }
+    }
+}
+
+type UserStatus =
+    | "running"
+    | "stopped"
+    | "running"
+    | "deleted"
+    | "pending"
+    | "expired"
+
+type ModerationStatus = "pending" | "approved" | "rejected"
+
+export type UserType = "employer" | "worker"
 
 export type JobPostAttributes = {
     title: string
@@ -25,15 +61,16 @@ export type JobPostAttributes = {
     URL: string
     moderation_status: ModerationStatus
     status: UserStatus
+    company_logo: CompanyLogo
 }
 
-type ModerationStatus = "pending" | "approved" | "rejected"
-type UserStatus =
-    | "running"
-    | "stopped"
-    | "running"
-    | "deleted"
-    | "pending"
-    | "expired"
-
-export type UserType = "employer" | "worker"
+export type PostgresJobPostTypes = {
+    title: string
+    companyName: string
+    country: string
+    jobLocation: string
+    jobDescription: string
+    link: string
+    date: string
+    db_add_timestamp: string
+}

@@ -38,7 +38,7 @@ export const ClientPostsProvider: FC<{ children: ReactNode }> = ({
         const fetchClientPosts = async () => {
             try {
                 const response = await fetch(
-                    "http://127.0.0.1:1337/api/job-posts?sort=updatedAt%3Adesc&filters[moderation_status][$eq]=approved&pagination[pageSize]=100"
+                    "http://127.0.0.1:1337/api/job-posts?populate=*&sort=updatedAt%3Adesc&filters[moderation_status][$eq]=approved&pagination[pageSize]=100"
                 )
                 const jsonResponse: JobPostsApiResponse = await response.json()
                 setClientPosts(jsonResponse.data)

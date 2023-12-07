@@ -3,7 +3,7 @@ import Pagination from "@mui/material/Pagination"
 import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import SingleClientPost from "@/app/(home)/components/SingleClientPost"
 import { ColorRing } from "react-loader-spinner"
-import { useClientPosts } from "@/context/ClientPosts"
+import { useClientPosts } from "@/context/ClientPostsContext"
 
 export default function AllCountries() {
     const [page, setPage] = useState<number>(1)
@@ -90,8 +90,10 @@ export default function AllCountries() {
                     sx={{ marginTop: "30px" }}
                 />
             </div>
-            <SingleClientPost />
-            <SingleClientPost />
+            {clientsPosts?.map((m) => (
+                <SingleClientPost key={m.id} />
+            ))}
+
             <ul className="w-full mt-[10px]">
                 <div>Aggregated posts from other websites</div>
                 {posts.map((m: any) => (

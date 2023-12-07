@@ -1,5 +1,5 @@
-import { Provider } from "../context/AuthUser"
-import { ClientPostsProvider } from "../context/ClientPosts"
+import { Provider } from "../context/AuthUserContext"
+import { ClientPostsProvider } from "../context/ClientPostsContext"
 import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
 import { Manrope } from "next/font/google"
 import "./globals/globals.css"

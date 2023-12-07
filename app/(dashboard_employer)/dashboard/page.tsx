@@ -4,7 +4,7 @@ import dynamic from "next/dynamic"
 import { ColorRing } from "react-loader-spinner"
 import Cookies from "js-cookie"
 import { redirect } from "next/navigation"
-import { useUser } from "@/context/AuthUser"
+import { useUser } from "@/context/AuthUserContext"
 import { User } from "@/types"
 
 const MenuMobile = dynamic(() => import("./components/MenuMobile"), {

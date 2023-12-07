@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react"
-import { useUser } from "@/context/AuthUser"
+import { useUser } from "@/context/AuthUserContext"
 import { User } from "@/types"
 import { unsetToken as signout } from "@/app/utils/auth"
 import { Button, Menu, MenuItem } from "@mui/material"
