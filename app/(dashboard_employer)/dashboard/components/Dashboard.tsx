@@ -31,8 +31,9 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
                 </div>
                 <Divider />
                 <div className="mt-12 p-6">
-                    {user!.job_posts.length > 0 ? (
-                        user!.job_posts.map((job) => (
+                    {user && user.job_posts.length > 0 ? (
+                        user &&
+                        user.job_posts.map((job) => (
                             <div
                                 key={job.id}
                                 className="bg-gray-100 p-4 mb-4 rounded-lg shadow md:grid md:grid-cols-2 md:grid-rows-2"

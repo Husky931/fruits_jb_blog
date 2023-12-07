@@ -13,8 +13,7 @@ export type User = {
     job_posts: JobPost[]
 }
 
-export type JobPost = {
-    id: number
+export type JobPostAttributes = {
     title: string
     job_description: string
     createdAt: string

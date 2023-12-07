@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import { Button, Box, Typography, Divider, Modal } from "@mui/material"
-import { User, JobPost } from "@/types" // Import the correct types
+import { User, JobPostAttributes } from "@/types" // Import the correct types
 
 type ManageJobsProps = {
     user: User | undefined
@@ -49,9 +49,9 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                             .filter(
                                 (job) => job.moderation_status === "approved"
                             )
-                            .map((job: JobPost) => (
+                            .map((job: JobPostAttributes) => (
                                 <div
-                                    key={job.id}
+                                    key={job.createdAt}
                                     className="bg-gray-100 p-4 mb-4 rounded-lg shadow md:grid md:grid-cols-2 md:grid-rows-2"
                                 >
                                     <div className="md:col-span-2">

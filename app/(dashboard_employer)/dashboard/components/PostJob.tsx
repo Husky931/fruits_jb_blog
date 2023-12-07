@@ -4,6 +4,7 @@ import { Button, Box, Divider, Modal, Typography } from "@mui/material"
 import { getTokenFromLocalCookie } from "@/app/utils/auth"
 import Cookies from "js-cookie"
 import ReusableModal from "./ReusableModal"
+import { processImage } from "@/app/utils/processImage"
 
 const PostJob = () => {
     const [jobDetails, setJobDetails] = useState({
@@ -28,12 +29,29 @@ const PostJob = () => {
     }
 
     const handleChangeImge = (e: any) => {
-        setJobDetails({ ...jobDetails, [e.target.name]: e.target.value })
+        const file = e.target.files[0]
 
-        // Handling file upload
-        if (e.target.name === "companyLogo" && e.target.files.length > 0) {
-            const file = e.target.files[0]
-            setLogoPreview(URL.createObjectURL(file))
+        if (file) {
+            // Validate file size and dimensions
+            const maxFileSize = 5 * 1024 * 1024 // 5MB
+            if (file.size > maxFileSize) {
+                alert("File size should be less than 5MB")
+                return
+            }
+
+            const img = new Image()
+            img.onload = () => {
+                const width = img.naturalWidth
+                const height = img.naturalHeight
+
+                if (width > 1024 || height > 1024) {
+                    alert("Image dimensions should be less than 1024 x 1024")
+                    return
+                }
+
+                setLogoPreview(URL.createObjectURL(file))
+            }
+            img.src = URL.createObjectURL(file)
         }
     }
 
@@ -47,27 +65,47 @@ const PostJob = () => {
     }
 
     async function createJobPost() {
-        const id = Cookies.get("id")!
+        const formData = new FormData()
+
+        formData.append(
+            "data",
+            JSON.stringify({
+                posted_by: Cookies.get("id"),
+                company_name: jobDetails.companyName,
+                country_location: jobDetails.country,
+                city_location: jobDetails.city,
+                title: jobDetails.title,
+                job_description: jobDetails.description,
+                URL: jobDetails.url
+            })
+        )
+
+        const fileInput = document.querySelector(
+            'input[type="file"]'
+        ) as HTMLInputElement
+        if (fileInput && fileInput.files && fileInput.files.length > 0) {
+            try {
+                const processedBlob = await processImage(fileInput.files[0])
+                formData.append(
+                    "files.company_logo",
+                    processedBlob,
+                    "company_logo.webp"
+                )
+            } catch (error) {
+                console.error("Error processing image:", error)
+                alert(error)
+            }
+        }
+
         try {
             const response = await fetch(
                 "http://localhost:1337/api/job-posts",
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json",
                         Authorization: `Bearer ${getTokenFromLocalCookie()}`
                     },
-                    body: JSON.stringify({
-                        data: {
-                            posted_by: Cookies.get("id"),
-                            company_name: jobDetails.companyName,
-                            country_location: jobDetails.country,
-                            city_location: jobDetails.city,
-                            title: jobDetails.title,
-                            job_description: jobDetails.description,
-                            URL: jobDetails.url
-                        }
-                    })
+                    body: formData
                 }
             )
 
@@ -184,6 +222,7 @@ const PostJob = () => {
                             Company logo
                             <input
                                 type="file"
+                                name="companyLogo"
                                 onChange={handleChangeImge}
                                 placeholder="Company Logo File"
                                 className="w-full p-2 border rounded mt-2"
@@ -192,9 +231,13 @@ const PostJob = () => {
                         <div>
                             <div className="max-h-[200px] overflow-hidden">
                                 <img
-                                    src="upload-image_1.png"
+                                    src={
+                                        !logoPreview
+                                            ? `upload-image_1.png`
+                                            : logoPreview
+                                    }
                                     alt="Logo Preview"
-                                    className="h-full w-auto object-contain"
+                                    className="h-full w-auto object-cover"
                                 />
                             </div>
                         </div>

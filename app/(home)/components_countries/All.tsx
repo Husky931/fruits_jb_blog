@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react"
 import Pagination from "@mui/material/Pagination"
 import SingleJobPost from "@/app/(home)/components/SingleJobPost"
+import SingleClientPost from "@/app/(home)/components/SingleClientPost"
 import { ColorRing } from "react-loader-spinner"
+import { useClientPosts } from "@/context/ClientPosts"
 
 export default function AllCountries() {
     const [page, setPage] = useState<number>(1)
     const [posts, setPosts] = useState([])
     const [totalPages, setTotalPages] = useState<number>(1)
     const [isLoading, setIsLoading] = useState(true)
+    const clientsPosts = useClientPosts()
+    console.log(clientsPosts, "i am client posts")
 
     const handlePageChange = (
         event: React.ChangeEvent<unknown>,
@@ -86,7 +90,10 @@ export default function AllCountries() {
                     sx={{ marginTop: "30px" }}
                 />
             </div>
+            <SingleClientPost />
+            <SingleClientPost />
             <ul className="w-full mt-[10px]">
+                <div>Aggregated posts from other websites</div>
                 {posts.map((m: any) => (
                     <SingleJobPost
                         key={m.id}

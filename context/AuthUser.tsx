@@ -32,7 +32,6 @@ export function Provider({ children }: any) {
                     )
 
                     const data = await res.json()
-                    console.log(data, "i am data")
                     setUserData(data)
                 } catch (error) {
                     unsetToken()

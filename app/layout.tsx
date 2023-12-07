@@ -1,4 +1,5 @@
 import { Provider } from "../context/AuthUser"
+import { ClientPostsProvider } from "../context/ClientPosts"
 import GoogleAnalytics from "@/app/(home)/components/GoogleAnalytics"
 import { Manrope } from "next/font/google"
 import "./globals/globals.css"
@@ -19,7 +20,9 @@ export default async function RootLayout({
         <html lang="en" className={manrope.className}>
             <GoogleAnalytics gaTrackingId={gaTrackingId} />
             <body>
-                <Provider>{children}</Provider>
+                <Provider>
+                    <ClientPostsProvider>{children}</ClientPostsProvider>
+                </Provider>
             </body>
         </html>
     )
