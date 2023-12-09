@@ -15,7 +15,6 @@ export default async function RootLayout({
     children: React.ReactNode
 }) {
     const gaTrackingId = process.env.GA_TRACKING_ID as string
-    console.log("i am always runnig")
 
     return (
         <html lang="en" className={manrope.className}>

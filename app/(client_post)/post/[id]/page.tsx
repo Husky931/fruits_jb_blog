@@ -26,7 +26,6 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
             )
             if (post) {
                 setPost(post)
-                console.log(post, "i am post")
             }
 
             setIsLoading(false)

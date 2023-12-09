@@ -33,7 +33,6 @@ export const ClientPostsProvider: FC<{ children: ReactNode }> = ({
     children
 }) => {
     const [clientPosts, setClientPosts] = useState<JobPost[] | null>(null)
-    console.log("i am always runnig from CONTEXT")
 
     useEffect(() => {
         const fetchClientPosts = async () => {
@@ -42,7 +41,10 @@ export const ClientPostsProvider: FC<{ children: ReactNode }> = ({
                     "http://127.0.0.1:1337/api/job-posts?populate=*&sort=updatedAt%3Adesc&filters[moderation_status][$eq]=approved&pagination[pageSize]=100"
                 )
                 const jsonResponse: JobPostsApiResponse = await response.json()
-                setClientPosts(jsonResponse.data)
+                const runningPosts = jsonResponse.data.filter(
+                    (post) => post.attributes.status === "running"
+                )
+                setClientPosts(runningPosts)
             } catch (error) {
                 console.error("Error fetching client posts:", error)
                 setClientPosts(null)

@@ -63,6 +63,7 @@ export type StrapiPostAttributes = {
     status: UserStatus
     company_logo: CompanyLogo
     contact_email: string
+    id: number
 }
 
 export type User = {

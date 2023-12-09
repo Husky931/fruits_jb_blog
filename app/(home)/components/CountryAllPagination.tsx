@@ -12,7 +12,7 @@ export default function CountryAllPagination() {
     const [totalPages, setTotalPages] = useState<number>(1)
     const [isLoading, setIsLoading] = useState(true)
     const clientsPosts = useClientPosts()
-    console.log(clientsPosts, "i am client posts")
+    console.log(clientsPosts, "i am clients posts")
 
     const handlePageChange = (
         event: React.ChangeEvent<unknown>,
@@ -107,6 +107,7 @@ export default function CountryAllPagination() {
                         status={m.attributes.status}
                         company_logo={m.attributes.company_logo}
                         contact_email={m.attributes.contact_email}
+                        id={m.attributes.id}
                     />
                 </Link>
             ))}

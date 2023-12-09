@@ -2,36 +2,78 @@
 import React, { useState } from "react"
 import { Button, Box, Typography, Divider, Modal } from "@mui/material"
 import { User, StrapiPostAttributes } from "@/types" // Import the correct types
+import { getTokenFromLocalCookie } from "@/app/utils/auth"
 
 type ManageJobsProps = {
     user: User | undefined
 }
 
+type ModalInfoTypes = {
+    id: number | null
+    action: string
+    title: string
+}
+
 const ManageJobs = ({ user }: ManageJobsProps) => {
     const [openModal, setOpenModal] = useState(false)
-    // const [modalInfo, setModalInfo] = useState({
-    //     id: null,
-    //     action: "",
-    //     title: ""
-    // })
+    const [modalInfo, setModalInfo] = useState<ModalInfoTypes>({
+        id: null,
+        action: "",
+        title: ""
+    })
 
-    const handleOpenModal = (jobId, action) => {
-        // setModalInfo({ id: jobId, action, title: job.title })
+    console.log(user, " i am user")
+
+    const handleOpenModal = (jobId: number, action: string, title: string) => {
+        setModalInfo({ id: jobId, action, title })
         setOpenModal(true)
     }
 
     const handleCloseModal = () => {
         setOpenModal(false)
-        // setModalInfo({ id: null, action: "", title: "" })
+        setModalInfo({ id: null, action: "", title: "" })
     }
 
-    // const handleConfirmAction = () => {
-    //     if (modalInfo.id) {
-    //         // Implement the stop/delete logic
-    //         console.log(`${modalInfo.action} job: ${modalInfo.id}`)
-    //     }
-    //     handleCloseModal()
-    // }
+    const handleConfirmAction = async () => {
+        if (modalInfo.id) {
+            if (modalInfo.action === "start") {
+                handleJob("running")
+            }
+            if (modalInfo.action === "stop") {
+                handleJob("stopped")
+            }
+            if (modalInfo.action === "delete") {
+                handleJob("deleted")
+            }
+        }
+        handleCloseModal()
+    }
+
+    const handleJob = async (action: string) => {
+        const token = getTokenFromLocalCookie()
+        const res = await fetch(
+            `http://127.0.0.1:1337/api/job-posts/${modalInfo.id}`,
+            {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    data: {
+                        status: action
+                    }
+                })
+            }
+        )
+        const data = await res.json()
+
+        if (data.error) {
+            alert(data.error.message)
+        } else {
+            window.location.reload()
+        }
+    }
 
     return (
         <Box className="mt-12">
@@ -43,12 +85,11 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                     </div>
                 </div>
                 <Divider />
+
                 <div className="mt-12 p-6">
                     {user && user.job_posts.length > 0 ? (
                         user.job_posts
-                            .filter(
-                                (job) => job.moderation_status === "approved"
-                            )
+                            .filter((job) => job.status !== "pending")
                             .map((job: StrapiPostAttributes) => (
                                 <div
                                     key={job.createdAt}
@@ -95,27 +136,51 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                             </span>
                                         </div>
                                         <div>
-                                            <button
-                                                className="mx-4"
-                                                onClick={() =>
-                                                    handleOpenModal(
-                                                        job.id,
-                                                        "stop"
-                                                    )
-                                                }
-                                            >
-                                                Stop
-                                            </button>
-                                            <button
-                                                onClick={() =>
-                                                    handleOpenModal(
-                                                        job.id,
-                                                        "delete"
-                                                    )
-                                                }
-                                            >
-                                                Delete
-                                            </button>
+                                            {job.status !== "deleted" && (
+                                                <>
+                                                    {job.status ===
+                                                        "running" && (
+                                                        <button
+                                                            className="mx-4"
+                                                            onClick={() =>
+                                                                handleOpenModal(
+                                                                    job.id,
+                                                                    "stop",
+                                                                    job.title
+                                                                )
+                                                            }
+                                                        >
+                                                            Stop
+                                                        </button>
+                                                    )}
+                                                    {job.status ===
+                                                        "stopped" && (
+                                                        <button
+                                                            className="mx-4"
+                                                            onClick={() =>
+                                                                handleOpenModal(
+                                                                    job.id,
+                                                                    "start",
+                                                                    job.title
+                                                                )
+                                                            }
+                                                        >
+                                                            Start
+                                                        </button>
+                                                    )}
+                                                    <button
+                                                        onClick={() =>
+                                                            handleOpenModal(
+                                                                job.id,
+                                                                "delete",
+                                                                job.title
+                                                            )
+                                                        }
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -153,25 +218,23 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                         variant="h6"
                         component="h2"
                         sx={{
-                            // color:
-                            //     modalInfo.action === "delete" ? "red" : "green",
+                            color:
+                                modalInfo.action === "delete" ? "red" : "green",
                             textAlign: "center"
                         }}
                     >
-                        {/* Confirm {modalInfo.action} */}
-                        Confirm
+                        Confirm {modalInfo.action}
                     </Typography>
                     <Typography id="modal-description" sx={{ mt: 2 }}>
-                        {/* Are you sure you want to {modalInfo.action} the job '
-                        {modalInfo.title}'? */}
-                        Are you sure you want
+                        Are you sure you want to {modalInfo.action} the job '
+                        {modalInfo.title}'?
                     </Typography>
                     <Box sx={{ display: "flex", gap: 2, marginTop: "25px" }}>
                         <Button
                             variant="contained"
-                            // onClick={handleConfirmAction}
+                            onClick={handleConfirmAction}
                             sx={{
-                                backgroundColor: "red",
+                                backgroundColor: "red !important",
                                 "&:hover": {
                                     backgroundColor: "red"
                                 },
@@ -190,7 +253,10 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                 color: "black",
                                 width: "100%",
                                 padding: "8px",
-                                fontWeight: "bold"
+                                fontWeight: "bold",
+                                "&:hover": {
+                                    back: "none"
+                                }
                             }}
                         >
                             No
