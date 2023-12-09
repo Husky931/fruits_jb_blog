@@ -33,6 +33,7 @@ export const ClientPostsProvider: FC<{ children: ReactNode }> = ({
     children
 }) => {
     const [clientPosts, setClientPosts] = useState<JobPost[] | null>(null)
+    console.log("i am always runnig from CONTEXT")
 
     useEffect(() => {
         const fetchClientPosts = async () => {

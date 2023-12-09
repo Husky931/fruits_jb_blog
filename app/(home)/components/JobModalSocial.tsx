@@ -53,7 +53,6 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
                     cache: "no-store"
                 })
                 const data = await res.json()
-                console.log(data)
                 setJob(data)
                 setIsLoading(false)
             }
