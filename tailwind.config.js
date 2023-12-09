@@ -7,6 +7,7 @@ module.exports = {
     './app/(home)/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(auth)/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(dashboard_employer)/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/(client_post)/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {

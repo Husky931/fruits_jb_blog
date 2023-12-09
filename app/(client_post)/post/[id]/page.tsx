@@ -61,19 +61,26 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 sx={{
                     marginTop: "30px",
                     display: "flex",
-                    flexDirection: "column"
+                    flexDirection: "column",
+                    background: "rgb(243, 244, 246)",
+                    padding: "10px",
+                    borderRadius: "8px"
                 }}
             >
                 <Box className="w-full flex justify-start items-center">
-                    <Box className="w-[60px] h-[60px]">
+                    <Box sx={{ width: "100px", height: "100px" }}>
                         <img
                             className="max-w-full max-h-full"
                             src={`http://127.0.0.1:1337${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`}
                         />
                     </Box>
-                    <Box>
-                        <div>{post?.attributes.title}</div>
-                        <div>{post?.attributes.company_name}</div>
+                    <Box sx={{ marginLeft: "25px" }}>
+                        <div className="text-2xl md:text-3xl text-[#0000EE] font-bold">
+                            {post?.attributes.title}
+                        </div>
+                        <div className="text-[#663300] font-bold text-lg md:text-xl">
+                            {post?.attributes.company_name}
+                        </div>
                         <div className="font-semibold">
                             {post?.attributes.country_location
                                 .charAt(0)
@@ -86,27 +93,26 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     </Box>
                 </Box>
 
-                <Box sx={{ marginTop: "20px" }}>
+                <Box sx={{ marginTop: "30px" }}>
+                    <div className="font-bold text-2xl mt-1">
+                        Job Description
+                    </div>
+                    <div> {post?.attributes.job_description}</div>
                     {post?.attributes.URL && (
                         <Link
                             href={post?.attributes.URL && post?.attributes.URL}
                         >
-                            <div className="text-blue-600">
+                            <div className="text-blue-700 mt-2">
                                 {post?.attributes.URL}
                             </div>
                         </Link>
                     )}
-
-                    <div className="font-bold text-2xl text-red-500">
-                        Job Description
-                    </div>
-                    <div> {post?.attributes.job_description}</div>
                 </Box>
                 <Box sx={{ marginTop: "20px" }}>
                     <button className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full">
                         Send Resume
                     </button>
-                    <div>
+                    <div className="mt-2">
                         {new Date(
                             post?.attributes.updatedAt
                         ).toLocaleDateString("en-US", {
