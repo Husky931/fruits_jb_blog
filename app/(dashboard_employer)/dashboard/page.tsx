@@ -38,7 +38,7 @@ const App = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isClient, setIsClient] = useState(false)
     const user: User | undefined = useUser()
-    console.log(user, "i am user")
+    // console.log(user, "i am user")
 
     useEffect(() => {
         setIsClient(true)

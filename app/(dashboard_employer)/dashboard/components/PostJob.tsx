@@ -1,6 +1,14 @@
 "use client"
 import React, { useState } from "react"
-import { Button, Box, Divider, Modal, Typography } from "@mui/material"
+import {
+    Button,
+    Box,
+    Divider,
+    Modal,
+    Typography,
+    Select,
+    MenuItem
+} from "@mui/material"
 import { getTokenFromLocalCookie } from "@/app/utils/auth"
 import Cookies from "js-cookie"
 import ReusableModal from "./ReusableModal"
@@ -25,9 +33,24 @@ const PostJob = () => {
     const [errorMessage, setErrorMessage] = useState("")
 
     const [logoPreview, setLogoPreview] = useState<any>(null)
+    const [countryModalOpen, setCountryModalOpen] = useState(false)
+    const [countryInput, setCountryInput] = useState("")
 
     const handleChange = (e: any) => {
         setJobDetails({ ...jobDetails, [e.target.name]: e.target.value })
+    }
+
+    const handleCountryChange = (e: any) => {
+        if (e.target.value === "other") {
+            setCountryModalOpen(true)
+        } else {
+            setJobDetails({ ...jobDetails, country: e.target.value })
+        }
+    }
+
+    const handleCountryModalClose = () => {
+        setCountryModalOpen(false)
+        setJobDetails({ ...jobDetails, country: countryInput })
     }
 
     const handleChangeImge = (e: any) => {
@@ -131,7 +154,7 @@ const PostJob = () => {
     }
 
     return (
-        <Box className="mt-12">
+        <Box className="mt-12 relative">
             <div className="my-4 text-2xl">Post a Job</div>
             <Box className="bg-white shadow rounded-lg">
                 <div className=" flex justify-between items-center w-full p-6">
@@ -159,14 +182,26 @@ const PostJob = () => {
                     <Box mb={2}>
                         <label>
                             Country *
-                            <input
-                                type="text"
-                                name="country"
+                            <Select
                                 value={jobDetails.country}
-                                onChange={handleChange}
-                                placeholder="Enter country name"
-                                className="w-full p-2 border rounded mt-2"
-                            />
+                                onChange={handleCountryChange}
+                                className="w-full  border rounded mt-2"
+                            >
+                                <MenuItem value="usa">USA</MenuItem>
+                                <MenuItem value="canada">Canada</MenuItem>
+                                <MenuItem value="england">England</MenuItem>
+                                <MenuItem value="france">France</MenuItem>
+                                <MenuItem value="austria">Austria</MenuItem>
+                                <MenuItem value="spain">Spain</MenuItem>
+                                <MenuItem value="italy">Italy</MenuItem>
+                                <MenuItem value="belgium">Belgium</MenuItem>
+                                <MenuItem value="other">Other</MenuItem>
+                                {countryInput && (
+                                    <MenuItem value={countryInput}>
+                                        {countryInput}
+                                    </MenuItem>
+                                )}
+                            </Select>
                         </label>
                     </Box>
                     <Box mb={2}>
@@ -296,7 +331,7 @@ const PostJob = () => {
                     backgroundColor: "red !important",
                     color: "white",
                     width: "100%",
-                    marginTop: "30px",
+                    marginTop: "50px",
                     marginBottom: "20px",
                     padding: "8px",
                     fontWeight: "bold"
@@ -318,6 +353,41 @@ const PostJob = () => {
                 onClose={handleErrorClose}
                 type="error"
             />
+            {/* className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4" */}
+            <Modal open={countryModalOpen} onClose={handleCountryModalClose}>
+                <Box
+                    sx={{
+                        padding: 2,
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        backgroundColor: "rgb(215,220,221)",
+                        borderRadius: "4px"
+                    }}
+                >
+                    <div className="text-black text-xl">Enter Country Name</div>
+                    <input
+                        type="text"
+                        value={countryInput}
+                        onChange={(e) => setCountryInput(e.target.value)}
+                        className="w-full p-2 border rounded mt-2"
+                    />
+                    <Button
+                        onClick={handleCountryModalClose}
+                        variant="contained"
+                        sx={{
+                            marginTop: "20px",
+                            backgroundColor: "red",
+                            "&:hover": {
+                                backgroundColor: "red"
+                            }
+                        }}
+                    >
+                        OK
+                    </Button>
+                </Box>
+            </Modal>
         </Box>
     )
 }
