@@ -7,7 +7,9 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
     job_description,
     updatedAt,
     company_name,
-    company_logo
+    company_logo,
+    country_location,
+    city_location
 }) => {
     const getImageUrl = () => {
         if (company_logo.data) {
@@ -34,7 +36,14 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
                     <div className="text-[#0000EE] text-[24px] mb-1">
                         {title}
                     </div>
-                    <Typography variant="subtitle1">{company_name}</Typography>
+                    <div className="text-[#663300] text-base">
+                        {company_name}
+                    </div>
+                    <div className="font-semibold">
+                        {country_location.charAt(0).toUpperCase() +
+                            country_location.slice(1).toLowerCase()}
+                        , {city_location}
+                    </div>
                 </div>
             </Box>
             <Divider sx={{ marginTop: "10px", marginBottom: "10px" }} />

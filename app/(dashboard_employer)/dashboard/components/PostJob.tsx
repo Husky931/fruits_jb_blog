@@ -363,7 +363,8 @@ const PostJob = () => {
                         left: "50%",
                         transform: "translate(-50%, -50%)",
                         backgroundColor: "rgb(215,220,221)",
-                        borderRadius: "4px"
+                        borderRadius: "4px",
+                        minWidth: "270px"
                     }}
                 >
                     <div className="text-black text-xl">Enter Country Name</div>

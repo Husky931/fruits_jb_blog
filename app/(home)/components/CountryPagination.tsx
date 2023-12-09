@@ -5,14 +5,20 @@ import { useState, useEffect } from "react"
 import Pagination from "@mui/material/Pagination"
 import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import { ColorRing } from "react-loader-spinner"
+import { useClientPosts } from "@/context/ClientPostsContext"
+import SingleClientPost from "@/app/(home)/components/SingleClientPost"
 
 export default function CountryPagination() {
     const [page, setPage] = useState(1)
     const [posts, setPosts] = useState([])
     const [totalPages, setTotalPages] = useState<number>(1)
     const [isLoading, setIsLoading] = useState(false)
+    const clientsPosts = useClientPosts()
 
     const pathname = usePathname().slice(1)
+    const filteredPosts = clientsPosts?.filter(
+        (post) => post.attributes.country_location === pathname
+    )
 
     const handlePageChange = (
         event: React.ChangeEvent<unknown>,
@@ -87,6 +93,24 @@ export default function CountryPagination() {
                     sx={{ marginTop: "30px" }}
                 />
             </div>
+            {filteredPosts?.map((m) => (
+                <SingleClientPost
+                    key={m.id}
+                    title={m.attributes.title}
+                    job_description={m.attributes.job_description}
+                    createdAt={m.attributes.createdAt}
+                    updatedAt={m.attributes.createdAt}
+                    publishedAt={m.attributes.publishedAt}
+                    city_location={m.attributes.city_location}
+                    company_name={m.attributes.company_name}
+                    country_location={m.attributes.country_location}
+                    URL={m.attributes.URL}
+                    moderation_status={m.attributes.moderation_status}
+                    status={m.attributes.status}
+                    company_logo={m.attributes.company_logo}
+                    contact_email={m.attributes.contact_email}
+                />
+            ))}
             <ul className="w-full mt-[10px]">
                 {posts.map((m: any) => (
                     <SingleJobPost
