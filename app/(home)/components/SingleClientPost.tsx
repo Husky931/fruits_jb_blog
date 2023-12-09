@@ -21,7 +21,7 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
     }
 
     return (
-        <div className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px] border-2 rounded-md border-red-600 p-2">
+        <div className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px] bg-gray-100 p-4 rounded-lg shadow p-2">
             <div className="text-2xl font-semibold  text-red-600">
                 Direct farm apply
             </div>
