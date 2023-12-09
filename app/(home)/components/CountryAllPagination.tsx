@@ -5,7 +5,7 @@ import SingleClientPost from "@/app/(home)/components/SingleClientPost"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 
-export default function AllCountries() {
+export default function CountryAllPagination() {
     const [page, setPage] = useState<number>(1)
     const [posts, setPosts] = useState([])
     const [totalPages, setTotalPages] = useState<number>(1)

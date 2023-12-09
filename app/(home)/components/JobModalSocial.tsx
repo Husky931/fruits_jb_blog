@@ -22,7 +22,7 @@ type JobModalProps = {
     jobId: string
 }
 
-export default async function JobModal({ jobId }: JobModalProps) {
+export default async function JobModalSocial({ jobId }: JobModalProps) {
     const [job, setJob] = useState<SingleJobPostTypes | undefined>(undefined)
     const [isLoading, setIsLoading] = useState(true)
     const router = useRouter()
