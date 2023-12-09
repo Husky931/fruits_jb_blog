@@ -13,8 +13,14 @@ export default function RootLayout({
 }) {
     return (
         <div
-            className="min-h-screen flex justify-center items-center"
-            style={{ height: "100vh", margin: 0 }}
+            className="min-h-screen flex justify-center items-center p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto"
+            style={{
+                height: "100vh",
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start"
+            }}
         >
             <Navigation />
             {children}

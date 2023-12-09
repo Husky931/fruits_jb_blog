@@ -57,7 +57,7 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
                     </Typography>
                 </Box>
                 <Box className="flex flex-col items-start justify-center gap-y-1 md:px-4 sm:items-end">
-                    <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button className="mt-2 bg-blue-500  text-white font-bold py-2 px-4 rounded">
                         Apply
                     </button>
                     <Typography variant="subtitle2">

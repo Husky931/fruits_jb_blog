@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
+import { Box } from "@mui/material"
+import Link from "next/link"
 
 interface JobPost {
     id: number
@@ -54,8 +56,67 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
     }
 
     return (
-        <section className="bg-white p-8 m-4 rounded-lg shadow-lg lg:max-w-[700px]">
-            <div>Hi</div>
+        <section className="w-full h-auto">
+            <Box
+                sx={{
+                    marginTop: "30px",
+                    display: "flex",
+                    flexDirection: "column"
+                }}
+            >
+                <Box className="w-full flex justify-start items-center">
+                    <Box className="w-[60px] h-[60px]">
+                        <img
+                            className="max-w-full max-h-full"
+                            src={`http://127.0.0.1:1337${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`}
+                        />
+                    </Box>
+                    <Box>
+                        <div>{post?.attributes.title}</div>
+                        <div>{post?.attributes.company_name}</div>
+                        <div className="font-semibold">
+                            {post?.attributes.country_location
+                                .charAt(0)
+                                .toUpperCase() +
+                                post?.attributes.country_location
+                                    .slice(1)
+                                    .toLowerCase()}
+                            , {post?.attributes.city_location}
+                        </div>
+                    </Box>
+                </Box>
+
+                <Box sx={{ marginTop: "20px" }}>
+                    {post?.attributes.URL && (
+                        <Link
+                            href={post?.attributes.URL && post?.attributes.URL}
+                        >
+                            <div className="text-blue-600">
+                                {post?.attributes.URL}
+                            </div>
+                        </Link>
+                    )}
+
+                    <div className="font-bold text-2xl text-red-500">
+                        Job Description
+                    </div>
+                    <div> {post?.attributes.job_description}</div>
+                </Box>
+                <Box sx={{ marginTop: "20px" }}>
+                    <button className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full">
+                        Send Resume
+                    </button>
+                    <div>
+                        {new Date(
+                            post?.attributes.updatedAt
+                        ).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
+                        })}
+                    </div>
+                </Box>
+            </Box>
         </section>
     )
 }
