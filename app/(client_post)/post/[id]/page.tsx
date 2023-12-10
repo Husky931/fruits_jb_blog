@@ -81,12 +81,13 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                             {post?.attributes.company_name}
                         </div>
                         <div className="font-semibold">
-                            {post?.attributes.country_location
-                                .charAt(0)
-                                .toUpperCase() +
+                            {post?.attributes &&
                                 post?.attributes.country_location
-                                    .slice(1)
-                                    .toLowerCase()}
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    post?.attributes.country_location
+                                        .slice(1)
+                                        .toLowerCase()}
                             , {post?.attributes.city_location}
                         </div>
                     </Box>
@@ -112,13 +113,14 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                         Send Resume
                     </button>
                     <div className="mt-2">
-                        {new Date(
-                            post?.attributes.updatedAt
-                        ).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric"
-                        })}
+                        {post?.attributes &&
+                            new Date(
+                                post?.attributes.updatedAt
+                            ).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric"
+                            })}
                     </div>
                 </Box>
             </Box>

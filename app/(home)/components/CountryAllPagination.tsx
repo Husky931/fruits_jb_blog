@@ -12,7 +12,6 @@ export default function CountryAllPagination() {
     const [totalPages, setTotalPages] = useState<number>(1)
     const [isLoading, setIsLoading] = useState(true)
     const clientsPosts = useClientPosts()
-    console.log(clientsPosts, "i am clients posts")
 
     const handlePageChange = (
         event: React.ChangeEvent<unknown>,

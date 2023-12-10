@@ -22,8 +22,6 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
         title: ""
     })
 
-    console.log(user, " i am user")
-
     const handleOpenModal = (jobId: number, action: string, title: string) => {
         setModalInfo({ id: jobId, action, title })
         setOpenModal(true)
