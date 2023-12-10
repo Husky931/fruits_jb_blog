@@ -239,6 +239,7 @@ const PostJob = () => {
                                 onChange={handleChange}
                                 placeholder="Summarize the job duties"
                                 className="w-full p-2 border rounded mt-2"
+                                rows="10"
                             ></textarea>
                         </label>
                     </Box>
