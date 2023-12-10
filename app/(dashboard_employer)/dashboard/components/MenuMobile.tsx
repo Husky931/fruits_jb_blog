@@ -6,6 +6,8 @@ import PostAddIcon from "@mui/icons-material/PostAdd"
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong"
 import CloseIcon from "@mui/icons-material/Close"
 import { Box, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import Image from "next/image"
+import Link from "next/link"
 
 type HamburgerMenuProps = {
     setView: (view: string) => void
@@ -19,11 +21,26 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
     }
 
     return (
-        <nav>
+        <nav className="w-full ">
             <Box
-                className="flex items-center px-4 py-4  bg-black "
+                className="flex items-center justify-around px-4 py-4 bg-black w-full"
                 sx={{ borderRadius: isOpen ? "4px 4px 0 0" : "4px" }}
             >
+                <Link href="/" passHref>
+                    <div className="w-[55px] h-[45px] relative cursor-pointer">
+                        <Image
+                            src="/fruits_job_board_logo_white.png"
+                            alt="harvest jobs logo"
+                            width="70"
+                            height="70"
+                            className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                        />
+                    </div>
+                </Link>
+                <div className="text-white text-lg font-bold">
+                    Dashboard navigation
+                </div>
+
                 {isOpen ? (
                     <CloseIcon
                         onClick={toogleMenu}
@@ -37,10 +54,6 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                         sx={{ color: "white", padding: "0" }}
                     />
                 )}
-
-                <div className="text-white text-lg ml-4 font-bold">
-                    Dashboard navigation
-                </div>
             </Box>
             {isOpen && (
                 <Box

@@ -30,15 +30,17 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
             }}
         >
             <Box>
-                <Box className="w-full py-4 mx-auto">
+                <Box className="w-full p-4 mx-auto">
                     <Link href="/" passHref>
-                        <Image
-                            src="/fruits_job_board_logo_blue.png"
-                            alt="Fruits Jobs Logo"
-                            width={70}
-                            height={30}
-                            className="mx-auto"
-                        />
+                        <div className="w-[55px] h-[45px] relative cursor-pointer">
+                            <Image
+                                src="/fruits_job_board_logo_black.png"
+                                alt="harvest jobs logo"
+                                width="70"
+                                height="70"
+                                className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                            />
+                        </div>
                     </Link>
                 </Box>
                 <Box className="mt-8">
