@@ -7,6 +7,7 @@ import SingleJobPost from "@/app/(home)/components/SingleJobPost"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 import SingleClientPost from "@/app/(home)/components/SingleClientPost"
+import Link from "next/link"
 
 export default function CountryPagination() {
     const [page, setPage] = useState(1)
@@ -94,24 +95,33 @@ export default function CountryPagination() {
                 />
             </div>
             {filteredPosts?.map((m) => (
-                <SingleClientPost
-                    key={m.id}
-                    title={m.attributes.title}
-                    job_description={m.attributes.job_description}
-                    createdAt={m.attributes.createdAt}
-                    updatedAt={m.attributes.createdAt}
-                    publishedAt={m.attributes.publishedAt}
-                    city_location={m.attributes.city_location}
-                    company_name={m.attributes.company_name}
-                    country_location={m.attributes.country_location}
-                    URL={m.attributes.URL}
-                    moderation_status={m.attributes.moderation_status}
-                    status={m.attributes.status}
-                    company_logo={m.attributes.company_logo}
-                    contact_email={m.attributes.contact_email}
-                />
+                <Link href={`/post/${m.id}`} key={m.id}>
+                    <SingleClientPost
+                        key={m.id}
+                        id={m.attributes.id}
+                        title={m.attributes.title}
+                        job_description={m.attributes.job_description}
+                        createdAt={m.attributes.createdAt}
+                        updatedAt={m.attributes.createdAt}
+                        publishedAt={m.attributes.publishedAt}
+                        city_location={m.attributes.city_location}
+                        company_name={m.attributes.company_name}
+                        country_location={m.attributes.country_location}
+                        URL={m.attributes.URL}
+                        moderation_status={m.attributes.moderation_status}
+                        status={m.attributes.status}
+                        company_logo={m.attributes.company_logo}
+                        contact_email={m.attributes.contact_email}
+                    />
+                </Link>
             ))}
+
             <ul className="w-full mt-[10px]">
+                {clientsPosts && clientsPosts?.length > 0 && (
+                    <div className="mt-[20px] w-full">
+                        Aggregated posts from other websites
+                    </div>
+                )}
                 {posts.map((m: any) => (
                     <SingleJobPost
                         key={m.id}

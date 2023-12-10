@@ -36,7 +36,7 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
                     <div className="text-[#0000EE] text-[24px] mb-1">
                         {title}
                     </div>
-                    <div className="text-[#663300] text-base">
+                    <div className="text-[#663300] text-base font-bold">
                         {company_name}
                     </div>
                     <div className="font-semibold">

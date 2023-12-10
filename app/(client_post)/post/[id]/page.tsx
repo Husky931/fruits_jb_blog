@@ -70,7 +70,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     <Box sx={{ width: "100px", height: "100px" }}>
                         <img
                             className="max-w-full max-h-full"
-                            src={`http://127.0.0.1:1337${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`}
+                            src={`${process.env.NEXT_PUBLIC_STRAPI_SERVER}${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`}
                         />
                     </Box>
                     <Box sx={{ marginLeft: "25px" }}>

@@ -52,7 +52,7 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
     const handleJob = async (action: string) => {
         const token = getTokenFromLocalCookie()
         const res = await fetch(
-            `http://127.0.0.1:1337/api/job-posts/${modalInfo.id}`,
+            `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-posts/${modalInfo.id}`,
             {
                 method: "PUT",
                 headers: {
