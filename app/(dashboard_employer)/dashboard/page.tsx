@@ -66,7 +66,7 @@ const App = () => {
                     isOpen={isOpen}
                 />
             )}
-            <div className="flex-grow w-full px-8">
+            <div className="flex-grow w-full px-8 pb-[20px]">
                 {currentView === "Dashboard" && (
                     <Dashboard setView={setView} user={user} />
                 )}

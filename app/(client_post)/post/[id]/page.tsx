@@ -93,7 +93,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 </Box>
 
                 <Box sx={{ marginTop: "30px" }}>
-                    <div className="font-bold text-2xl mt-1">
+                    <div className="font-semibold text-2xl my-1">
                         Job Description
                     </div>
                     <div> {post?.attributes.job_description}</div>
@@ -107,7 +107,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                         </Link>
                     )}
                 </Box>
-                <Box sx={{ marginTop: "20px" }}>
+                <Box sx={{ marginTop: "30px" }}>
                     <button className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full">
                         Send Resume
                     </button>

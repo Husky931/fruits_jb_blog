@@ -137,11 +137,11 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                         </div>
                                         <div>
                                             {job.status !== "deleted" && (
-                                                <>
+                                                <div>
                                                     {job.status ===
                                                         "running" && (
                                                         <button
-                                                            className="mx-4"
+                                                            className="md:mx-4"
                                                             onClick={() =>
                                                                 handleOpenModal(
                                                                     job.id,
@@ -156,7 +156,7 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                                     {job.status ===
                                                         "stopped" && (
                                                         <button
-                                                            className="mx-4"
+                                                            className="md:mx-4"
                                                             onClick={() =>
                                                                 handleOpenModal(
                                                                     job.id,
@@ -169,6 +169,7 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                                         </button>
                                                     )}
                                                     <button
+                                                        className="ml-4 md:ml-0"
                                                         onClick={() =>
                                                             handleOpenModal(
                                                                 job.id,
@@ -179,7 +180,7 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                                     >
                                                         Delete
                                                     </button>
-                                                </>
+                                                </div>
                                             )}
                                         </div>
                                     </div>
