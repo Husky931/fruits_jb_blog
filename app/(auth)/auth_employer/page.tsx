@@ -8,7 +8,14 @@ export default function EmployerHomePage() {
     const [displayRegister, setDisplayRegister] = useState<boolean>(false)
 
     return (
-        <main className="flex justify-center items-center w-full h-full my-auto">
+        <main
+            className="flex justify-center items-center w-full h-full my-auto bg-cover bg-center"
+            style={{
+                backgroundImage: "url('/auth_bg_2.webp')",
+                backgroundBlendMode: "overlay",
+                backgroundColor: "rgba(255, 255, 255, 0.5)"
+            }}
+        >
             <Paper className="flex flex-col items-center justify-center p-4 ml-[10px] mr-[10px] md:w-1/2 lg:w-1/3 md:p-6 bg-white shadow-lg rounded-lg">
                 {/* <img
                     src="/fruits_job_board_logo_blue.png"
