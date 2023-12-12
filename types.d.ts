@@ -64,6 +64,7 @@ export type StrapiPostAttributes = {
     company_logo: CompanyLogo
     contact_email: string
     id: number
+    applicants_number: number | null
 }
 
 export type User = {

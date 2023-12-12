@@ -58,12 +58,40 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
             if (!response.ok) {
                 throw new Error("Network response was not ok")
             }
-            const data = await response.json()
-            console.log(data, "i am data")
+
             alert("File uploaded successfully")
+            await updateApplicantsNumber()
         } catch (error) {
             console.error("Error:", error)
             alert(error)
+        }
+    }
+
+    const updateApplicantsNumber = async () => {
+        const currentApplicantsNumber = post.attributes.applicants_number || 0
+
+        try {
+            const updateResponse = await fetch(
+                `http://127.0.0.1:1337/api/job-posts/${post.id}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        data: {
+                            applicants_number: currentApplicantsNumber + 1
+                        }
+                    })
+                }
+            )
+
+            if (!updateResponse.ok) {
+                throw new Error("Failed to update the applicants_number")
+            }
+        } catch (error) {
+            alert(error)
+            console.log(error)
         }
     }
 
