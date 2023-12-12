@@ -14,6 +14,8 @@ interface JobPost {
 export default function ClientPostPage({ params }: { params: { id: string } }) {
     const id = params.id
     const [post, setPost] = useState<JobPost | null>(null)
+    const [selectedFile, setSelectedFile] = useState()
+
     const [isLoading, setIsLoading] = useState(true)
     const clientsPosts = useClientPosts()
 
@@ -25,12 +27,45 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 (post) => post.id === parseInt(postId)
             )
             if (post) {
+                console.log(post, "posts from page")
                 setPost(post)
             }
 
             setIsLoading(false)
         }
     }, [id, clientsPosts])
+
+    const handleFileChange = (event: any) => {
+        console.log(event.target.files[0])
+        setSelectedFile(event.target.files[0])
+    }
+
+    const handleFileUpload = async () => {
+        if (!selectedFile) {
+            alert("Please select a file")
+            return
+        }
+
+        const formData = new FormData()
+        formData.append("files", selectedFile, `resume${selectedFile.name}`)
+
+        try {
+            const response = await fetch(`http://127.0.0.1:1337/api/upload`, {
+                method: "POST",
+                body: formData
+            })
+
+            if (!response.ok) {
+                throw new Error("Network response was not ok")
+            }
+            const data = await response.json()
+            console.log(data, "i am data")
+            alert("File uploaded successfully")
+        } catch (error) {
+            console.error("Error:", error)
+            alert(error)
+        }
+    }
 
     if (isLoading) {
         return (
@@ -100,7 +135,8 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     <div> {post?.attributes.job_description}</div>
                     {post?.attributes.URL && (
                         <Link
-                            href={post?.attributes.URL && post?.attributes.URL}
+                            href={`https://${post?.attributes.URL}`}
+                            target="_blank"
                         >
                             <div className="text-blue-700 mt-2">
                                 {post?.attributes.URL}
@@ -109,19 +145,26 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px" }}>
-                    <button className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full">
-                        Send Resume
-                    </button>
-                    <div className="mt-2">
-                        {post?.attributes &&
-                            new Date(
-                                post?.attributes.updatedAt
-                            ).toLocaleDateString("en-US", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric"
-                            })}
-                    </div>
+                    <input
+                        type="file"
+                        id="fileInput"
+                        style={{ display: "none" }}
+                        onChange={handleFileChange}
+                    />
+                    <label
+                        htmlFor="fileInput"
+                        className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full cursor-pointer"
+                    >
+                        Select File
+                    </label>
+                    {selectedFile && (
+                        <button
+                            className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full"
+                            onClick={handleFileUpload}
+                        >
+                            Submit CV
+                        </button>
+                    )}
                 </Box>
             </Box>
         </section>
