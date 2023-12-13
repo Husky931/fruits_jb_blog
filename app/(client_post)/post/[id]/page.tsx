@@ -168,6 +168,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     flexDirection: "column",
                     background: "rgb(243, 244, 246)",
                     padding: "10px",
+                    paddingBottom: "30px",
                     borderRadius: "8px"
                 }}
             >
@@ -214,19 +215,24 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                         </Link>
                     )}
                 </Box>
-                <Box sx={{ marginTop: "30px" }}>
-                    <input
-                        type="file"
-                        id="fileInput"
-                        style={{ display: "none" }}
-                        onChange={handleFileChange}
-                    />
-                    <label
-                        htmlFor="fileInput"
-                        className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full cursor-pointer"
-                    >
-                        Select File
-                    </label>
+                <Box sx={{ marginTop: "30px", width: "100%" }}>
+                    {!selectedFile && (
+                        <div className="w-full mx-auto">
+                            <input
+                                type="file"
+                                id="fileInput"
+                                style={{ display: "none" }}
+                                onChange={handleFileChange}
+                                className="w-full"
+                            />
+                            <label
+                                htmlFor="fileInput"
+                                className="mt-2 bg-red-500 text-white font-bold py-2 px-4 rounded block w-full cursor-pointer text-center"
+                            >
+                                Upload CV
+                            </label>
+                        </div>
+                    )}
                     {isFileLoading ? (
                         <ColorRing
                             visible={true}

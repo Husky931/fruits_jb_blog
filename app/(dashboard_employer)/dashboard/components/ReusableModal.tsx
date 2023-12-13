@@ -27,7 +27,7 @@ const ReusableModal: React.FC<ReusableModalProps> = ({
             aria-describedby="modal-description"
         >
             <Box
-                className="bg-white p-6 mx-auto rounded-lg shadow-lg"
+                className="bg-white p-6 mx-auto rounded-lg shadow-lg "
                 sx={(theme) => ({
                     position: "absolute",
                     top: "50%",
