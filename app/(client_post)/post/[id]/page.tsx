@@ -5,6 +5,7 @@ import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
 import { Box } from "@mui/material"
 import Link from "next/link"
+import ReusableModal from "@/app/(dashboard_employer)/dashboard/components/ReusableModal"
 
 interface JobPost {
     id: number
@@ -15,9 +16,18 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
     const id = params.id
     const [post, setPost] = useState<JobPost | null>(null)
     const [selectedFile, setSelectedFile] = useState()
-    const [isFileLoading, setIsFileLoading] = useState(false)
 
+    const [isFileLoading, setIsFileLoading] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+
+    const [successModalOpen, setSuccessModalOpen] = useState(false)
+    const [errorModalOpen, setErrorModalOpen] = useState(false)
+    const [successMessage, setSuccessMessage] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
+
+    const [errorModalFileSizeOpen, setErrorModalFileSizeOpen] = useState(false)
+    const [errorModalFileTypeOpen, setErrorModalFileTypeOpen] = useState(false)
+
     const clientsPosts = useClientPosts()
 
     useEffect(() => {
@@ -45,12 +55,12 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
         ] // PDF, DOC, DOCX
 
         if (event.target.files[0].size > MAX_FILE_SIZE) {
-            alert("File size should not exceed 5MB")
+            setErrorModalFileSizeOpen(true)
             return
         }
 
         if (!ALLOWED_FILE_TYPES.includes(event.target.files[0].type)) {
-            alert("Invalid file type. Only PDF, DOC, and DOCX are allowed")
+            setErrorModalFileTypeOpen(true)
             return
         }
 
@@ -84,11 +94,16 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 throw new Error("Network response was not ok")
             }
 
-            alert("File uploaded successfully")
+            setSuccessMessage(
+                "Resume succesfully uploaded and sent to employer. Good luck"
+            )
+            setSuccessModalOpen(true)
             await updateApplicantsNumber()
         } catch (error) {
-            console.error("Error:", error)
-            alert(error)
+            setErrorMessage(
+                "Error submitting your file to the server. Make sure your file is pdf, doc or docx format and under 5mb"
+            )
+            setErrorModalOpen(true)
         }
     }
 
@@ -97,7 +112,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
 
         try {
             const updateResponse = await fetch(
-                `http://127.0.0.1:1337/api/job-posts/${post.id}`,
+                `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-posts/${post.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -238,6 +253,41 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     )}
                 </Box>
             </Box>
+            <ReusableModal
+                open={successModalOpen}
+                title="Success"
+                description={successMessage}
+                onClose={() => setSuccessModalOpen(false)}
+                type="success"
+            />
+            <ReusableModal
+                open={errorModalOpen}
+                title="Error"
+                description={errorMessage}
+                onClose={() => setErrorModalOpen(false)}
+                type="error"
+            />
+            <ReusableModal
+                open={errorModalOpen}
+                title="Error"
+                description={errorMessage}
+                onClose={() => setErrorModalOpen(false)}
+                type="error"
+            />
+            <ReusableModal
+                open={errorModalFileSizeOpen}
+                title="Error"
+                description="File size should not exceed 5MB"
+                onClose={() => setErrorModalFileSizeOpen(false)}
+                type="error"
+            />
+            <ReusableModal
+                open={errorModalFileTypeOpen}
+                title="Error"
+                description="Invalid file type. Only PDF, DOC, and DOCX are allowed"
+                onClose={() => setErrorModalFileTypeOpen(false)}
+                type="error"
+            />
         </section>
     )
 }
