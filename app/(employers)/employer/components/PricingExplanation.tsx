@@ -1,6 +1,6 @@
 export default function PricingExplanation() {
     return (
-        <div className="px-4 py-8 pb-24 bg-white">
+        <div className="px-4 py-8 bg-white">
             <div className="text-center my-12 mb-16 text-black">
                 <h1 className="font-bold text-4xl mb-4">No need to pay</h1>
                 <p className="text-[18px]">
@@ -10,7 +10,7 @@ export default function PricingExplanation() {
             </div>
 
             <div className="flex justify-center">
-                <div className="rounded border flex flex-col space-y-4 w-full max-w-md p-6 bg-[#D6DBDC]">
+                <div className="rounded-lg border flex flex-col space-y-4 w-full max-w-md p-6 bg-[#D6DBDC]">
                     <h2 className="text-center font-semibold text-2xl mb-4">
                         Why its Free
                     </h2>
