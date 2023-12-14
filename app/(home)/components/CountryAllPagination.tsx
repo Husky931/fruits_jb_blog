@@ -87,7 +87,7 @@ export default function CountryAllPagination() {
                     variant="outlined"
                     page={page}
                     onChange={handlePageChange}
-                    sx={{ marginTop: "30px" }}
+                    sx={{ marginBottom: "10px" }}
                 />
             </div>
             {clientsPosts?.map((m) => (

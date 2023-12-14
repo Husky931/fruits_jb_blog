@@ -102,164 +102,172 @@ const Register: React.FC<{
                         <div className="text-2xl">Welcome employer</div>
                         <div className="">Create your account</div>
                     </div>
-
-                    <Controller
-                        control={control}
-                        name="email"
-                        rules={{ required: true }}
-                        render={({ field: { onChange, value, ref } }) => (
-                            <TextField
-                                fullWidth
-                                inputRef={ref}
-                                label="Email"
-                                type="email"
-                                value={value}
-                                onChange={onChange}
-                                error={!!errors.email}
-                                variant="standard"
-                                sx={{
-                                    "& .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&:hover .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&.Mui-focused .MuiInput-underline:before":
-                                        {
+                    <Box>
+                        <Controller
+                            control={control}
+                            name="email"
+                            rules={{ required: true }}
+                            render={({ field: { onChange, value, ref } }) => (
+                                <TextField
+                                    fullWidth
+                                    inputRef={ref}
+                                    label="Email"
+                                    type="email"
+                                    value={value}
+                                    onChange={onChange}
+                                    error={!!errors.email}
+                                    variant="standard"
+                                    sx={{
+                                        "& .MuiInput-underline:before": {
                                             borderBottomColor:
                                                 "#f4f4f9 !important"
                                         },
-                                    "& .MuiInputBase-input": {
-                                        paddingBottom: "8px !important"
-                                    }
-                                }}
-                                InputLabelProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                                InputProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                            />
-                        )}
-                    />
-                    <Controller
-                        control={control}
-                        name="password"
-                        rules={{ required: true, minLength: 6 }}
-                        render={({ field: { onChange, value, ref } }) => (
-                            <TextField
-                                fullWidth
-                                inputRef={ref}
-                                label="Password"
-                                type="password"
-                                value={value}
-                                onChange={onChange}
-                                error={!!errors.password}
-                                variant="standard"
-                                sx={{
-                                    "& .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&:hover .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&.Mui-focused .MuiInput-underline:before":
-                                        {
+                                        "&:hover .MuiInput-underline:before": {
                                             borderBottomColor:
                                                 "#f4f4f9 !important"
                                         },
-                                    "& .MuiInputBase-input": {
-                                        paddingBottom: "8px !important"
+                                        "&.Mui-focused .MuiInput-underline:before":
+                                            {
+                                                borderBottomColor:
+                                                    "#f4f4f9 !important"
+                                            },
+                                        "& .MuiInputBase-input": {
+                                            paddingBottom: "8px !important"
+                                        }
+                                    }}
+                                    InputLabelProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                    InputProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                />
+                            )}
+                        />
+                        <Controller
+                            control={control}
+                            name="password"
+                            rules={{ required: true, minLength: 6 }}
+                            render={({ field: { onChange, value, ref } }) => (
+                                <TextField
+                                    fullWidth
+                                    inputRef={ref}
+                                    label="Password"
+                                    type="password"
+                                    value={value}
+                                    onChange={onChange}
+                                    error={!!errors.password}
+                                    variant="standard"
+                                    sx={{
+                                        "& .MuiInput-underline:before": {
+                                            borderBottomColor:
+                                                "#f4f4f9 !important"
+                                        },
+                                        "&:hover .MuiInput-underline:before": {
+                                            borderBottomColor:
+                                                "#f4f4f9 !important"
+                                        },
+                                        "&.Mui-focused .MuiInput-underline:before":
+                                            {
+                                                borderBottomColor:
+                                                    "#f4f4f9 !important"
+                                            },
+                                        "& .MuiInputBase-input": {
+                                            paddingBottom: "8px !important"
+                                        }
+                                    }}
+                                    InputLabelProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                    InputProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                />
+                            )}
+                        />
+                        {errors.password &&
+                            errors.password.type === "minLength" && (
+                                <span className="text-[#d32f2f]">
+                                    Minimum password length is 6 charachters
+                                </span>
+                            )}
+                        <Controller
+                            control={control}
+                            name="passwordConfirm"
+                            rules={{
+                                required: true,
+                                minLength: 6,
+                                validate: (val: string) => {
+                                    if (watch("password") != val) {
+                                        return (
+                                            val === password.current ||
+                                            "Passwords do not match"
+                                        )
                                     }
-                                }}
-                                InputLabelProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                                InputProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                            />
-                        )}
-                    />
-                    {errors.password &&
-                        errors.password.type === "minLength" && (
-                            <span className="text-[#d32f2f]">
-                                Minimum password length is 6 charachters
-                            </span>
-                        )}
-                    <Controller
-                        control={control}
-                        name="passwordConfirm"
-                        rules={{
-                            required: true,
-                            minLength: 6,
-                            validate: (val: string) => {
-                                if (watch("password") != val) {
-                                    return (
-                                        val === password.current ||
-                                        "Passwords do not match"
-                                    )
                                 }
-                            }
-                        }}
-                        render={({ field: { onChange, value, ref } }) => (
-                            <TextField
-                                fullWidth
-                                inputRef={ref}
-                                label="Confirm password"
-                                type="password"
-                                value={value}
-                                onChange={onChange}
-                                error={!!errors.passwordConfirm}
-                                variant="standard"
-                                sx={{
-                                    "& .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&:hover .MuiInput-underline:before": {
-                                        borderBottomColor: "#f4f4f9 !important"
-                                    },
-                                    "&.Mui-focused .MuiInput-underline:before":
-                                        {
+                            }}
+                            render={({ field: { onChange, value, ref } }) => (
+                                <TextField
+                                    fullWidth
+                                    inputRef={ref}
+                                    label="Confirm password"
+                                    type="password"
+                                    value={value}
+                                    onChange={onChange}
+                                    error={!!errors.passwordConfirm}
+                                    variant="standard"
+                                    sx={{
+                                        "& .MuiInput-underline:before": {
                                             borderBottomColor:
                                                 "#f4f4f9 !important"
                                         },
-                                    "& .MuiInputBase-input": {
-                                        paddingBottom: "8px !important"
-                                    }
-                                }}
-                                InputLabelProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                                InputProps={{
-                                    sx: {
-                                        color: "#86a1d8"
-                                    }
-                                }}
-                            />
+                                        "&:hover .MuiInput-underline:before": {
+                                            borderBottomColor:
+                                                "#f4f4f9 !important"
+                                        },
+                                        "&.Mui-focused .MuiInput-underline:before":
+                                            {
+                                                borderBottomColor:
+                                                    "#f4f4f9 !important"
+                                            },
+                                        "& .MuiInputBase-input": {
+                                            paddingBottom: "8px !important"
+                                        }
+                                    }}
+                                    InputLabelProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                    InputProps={{
+                                        sx: {
+                                            color: "#86a1d8"
+                                        }
+                                    }}
+                                />
+                            )}
+                        />
+                        {errors.passwordConfirm && (
+                            <p className="text-[#d32f2f]">
+                                {errors.passwordConfirm.message}
+                            </p>
                         )}
-                    />
-                    {errors.passwordConfirm && (
-                        <p className="text-[#d32f2f]">
-                            {errors.passwordConfirm.message}
-                        </p>
-                    )}
 
-                    {show ? (
-                        <span className="w-full text-center text-red-900 border-[1px] border-red-900 rounded py-2">
-                            {serverError}
-                        </span>
-                    ) : null}
+                        {show ? (
+                            <span className="w-full text-center text-red-900 border-[1px] border-red-900 rounded py-2">
+                                {serverError}
+                            </span>
+                        ) : null}
+                    </Box>
+
                     <Button
                         variant="contained"
                         fullWidth

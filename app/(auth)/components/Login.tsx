@@ -218,15 +218,9 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     >
                         Log in
                     </Button>
-                    <div
-                        className="w-full  cursor-pointer text-center"
-                        // onClick={() => {
-                        //     showAuthModal.value = false
-                        //     showForgotPassModal.value = true
-                        // }}
-                    >
+                    {/* <div className="w-full  cursor-pointer text-center mt-2">
                         Forgot password?
-                    </div>
+                    </div> */}
                     <div className="w-full flex flex-col justify-center items-center mt-8">
                         <div className="">Don't have an account yet?</div>
                         <div

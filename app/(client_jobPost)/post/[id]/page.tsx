@@ -16,7 +16,7 @@ interface JobPost {
 export default function ClientPostPage({ params }: { params: { id: string } }) {
     const id = params.id
     const [post, setPost] = useState<JobPost | null>(null)
-    const [selectedFile, setSelectedFile] = useState()
+    const [selectedFile, setSelectedFile] = useState(null)
 
     const [isFileLoading, setIsFileLoading] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
@@ -43,7 +43,6 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 (post) => post.id === parseInt(postId)
             )
             if (post) {
-                console.log(post, "posts from page")
                 setPost(post)
             }
 
@@ -281,21 +280,30 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 open={errorModalOpen}
                 title="Error"
                 description={errorMessage}
-                onClose={() => setErrorModalOpen(false)}
+                onClose={() => {
+                    setErrorModalOpen(false)
+                    setSelectedFile(null)
+                }}
                 type="error"
             />
             <ReusableModal
                 open={errorModalFileSizeOpen}
                 title="Error"
                 description="File size should not exceed 5MB"
-                onClose={() => setErrorModalFileSizeOpen(false)}
+                onClose={() => {
+                    setErrorModalFileSizeOpen(false)
+                    setSelectedFile(null)
+                }}
                 type="error"
             />
             <ReusableModal
                 open={errorModalFileTypeOpen}
                 title="Error"
                 description="Invalid file type. Only PDF, DOC, and DOCX are allowed"
-                onClose={() => setErrorModalFileTypeOpen(false)}
+                onClose={() => {
+                    setErrorModalFileTypeOpen(false)
+                    setSelectedFile(null)
+                }}
                 type="error"
             />
             <ReusableModalYesNo

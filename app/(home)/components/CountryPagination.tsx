@@ -91,7 +91,7 @@ export default function CountryPagination() {
                     variant="outlined"
                     page={page}
                     onChange={handlePageChange}
-                    sx={{ marginTop: "30px" }}
+                    sx={{ marginBottom: "10px" }}
                 />
             </div>
             {filteredPosts?.map((m) => (

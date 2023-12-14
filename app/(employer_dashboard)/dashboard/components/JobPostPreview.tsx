@@ -72,8 +72,8 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px" }}>
-                    <button className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full">
-                        Send Resume
+                    <button className="mt-2 bg-red-500 text-white font-bold py-2 px-4 rounded w-full">
+                        Upload CV
                     </button>
                     <div className="mt-2">
                         {new Date().toLocaleDateString("en-US", {

@@ -1,5 +1,5 @@
 export const metadata = {
-    metadataBase: new URL("https://fruitspickingjobs.com/dashboard_employer"),
+    metadataBase: new URL("https://fruitspickingjobs.com/employer_dashboard"),
     title: "Authentication",
     description: "Fruts picking jobs daily",
     openGraph: {

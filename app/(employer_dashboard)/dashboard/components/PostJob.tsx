@@ -7,22 +7,33 @@ import ReusableModal from "@/app/components/ReusableModal"
 import JobPostPreview from "./JobPostPreview"
 import { processImage } from "@/app/utils/processImage"
 
+type JobDetails = {
+    companyName: string
+    country: string
+    city: string
+    title: string
+    description: string
+    url: string
+    contact_email: string
+    [key: string]: string // This is the index signature
+}
+
 const PostJob = () => {
-    const [jobDetails, setJobDetails] = useState({
+    const [jobDetails, setJobDetails] = useState<JobDetails>({
         companyName: "",
         country: "",
         city: "",
         title: "",
         description: "",
         url: "",
-        email: ""
+        contact_email: ""
     })
 
     const [successModalOpen, setSuccessModalOpen] = useState(false)
     const [successMessage, setSuccessMessage] = useState("")
 
     const [errorModalOpen, setErrorModalOpen] = useState(false)
-    const [errorMessage, setErrorMessage] = useState("")
+    const [errorMessage, setErrorMessage] = useState<unknown | string>("")
 
     const [logoPreview, setLogoPreview] = useState<any>(null)
     const [countryModalOpen, setCountryModalOpen] = useState(false)
@@ -82,6 +93,22 @@ const PostJob = () => {
     }
 
     async function createJobPost() {
+        const requiredFields = [
+            "companyName",
+            "title",
+            "description",
+            "country",
+            "city",
+            "contact_email"
+        ]
+        for (let field of requiredFields) {
+            if (!jobDetails[field].trim()) {
+                setErrorMessage(`Please fill out the ${field} field.`)
+                setErrorModalOpen(true)
+                return // Stop the function execution if a field is empty
+            }
+        }
+
         const formData = new FormData()
 
         formData.append(
@@ -93,7 +120,8 @@ const PostJob = () => {
                 city_location: jobDetails.city,
                 title: jobDetails.title,
                 job_description: jobDetails.description,
-                URL: jobDetails.url
+                URL: jobDetails.url,
+                contact_email: jobDetails.contact_email
             })
         )
 
@@ -126,21 +154,19 @@ const PostJob = () => {
                 }
             )
 
-            if (!response.ok) {
-                throw new Error("Network response was not ok")
+            const data = await response.json()
+            if (data.error) {
+                throw new Error(data.error.message)
             }
 
-            const data = await response.json()
             setSuccessMessage(
                 "Your job post has been successfully submitted and will be reviewed by a moderator within the next 24 hours. Please check your dashboard again after 24 hours."
             )
             setSuccessModalOpen(true)
-            // window.location.reload()
+            window.location.reload()
         } catch (error) {
-            console.error("Error creating job post:", error)
-            setErrorMessage(
-                "There was an error processing your request. Is your company "
-            )
+            // console.error("Error creating job post:", error.message)
+            setErrorMessage(error.message)
             setErrorModalOpen(true)
         }
     }
@@ -249,11 +275,11 @@ const PostJob = () => {
                 <div className=" p-6">
                     <Box mb={2}>
                         <label>
-                            Contact email
+                            Email to receive applications *
                             <input
                                 type="text"
-                                name="email"
-                                value={jobDetails.email}
+                                name="contact_email"
+                                value={jobDetails.contact_email}
                                 onChange={handleChange}
                                 placeholder="Email for applications"
                                 className="w-full p-2 border rounded mt-2"
@@ -265,6 +291,7 @@ const PostJob = () => {
                             Company logo
                             <input
                                 type="file"
+                                accept="image/png, image/jpeg, image/gif"
                                 name="companyLogo"
                                 onChange={handleChangeImge}
                                 placeholder="Company Logo File"
