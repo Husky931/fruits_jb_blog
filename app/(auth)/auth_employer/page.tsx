@@ -13,7 +13,7 @@ export default function EmployerHomePage() {
             style={{
                 backgroundImage: "url('/auth_bg_2.webp')",
                 backgroundBlendMode: "overlay",
-                backgroundColor: "rgba(255, 255, 255, 0.5)"
+                backgroundColor: "rgba(255, 255, 255, 0.3)"
             }}
         >
             <Paper className="flex flex-col items-center justify-center p-4 ml-[10px] mr-[10px] md:w-1/2 lg:w-1/3 md:p-6 bg-white shadow-lg rounded-lg">
