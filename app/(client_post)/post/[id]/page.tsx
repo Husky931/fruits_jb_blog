@@ -5,7 +5,8 @@ import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
 import { Box, Modal, Typography, Button } from "@mui/material"
 import Link from "next/link"
-import ReusableModal from "@/app/(dashboard_employer)/dashboard/components/ReusableModal"
+import ReusableModal from "@/app/components/ReusableModal"
+import ReusableModalYesNo from "@/app/components/ReusableModalYesNo"
 
 interface JobPost {
     id: number
@@ -80,8 +81,14 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
 
         setIsFileLoading(true)
 
-        const timestamp = new Date().getTime() // Get current timestamp
-        const modifiedFileName = `resume_${timestamp}_${selectedFile.name}`
+        const now = new Date()
+        const formattedTimestamp = now
+            .toISOString()
+            .replace(/T/, "_") // replace T with an underscore
+            .replace(/\..+/, "") // delete the dot and everything after
+            .replace(/:/g, "-") // replace colons with dashes
+
+        const modifiedFileName = `resume_${formattedTimestamp}_${selectedFile.name}`
 
         const formData = new FormData()
         formData.append("files", selectedFile, modifiedFileName)
@@ -223,7 +230,24 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px", width: "100%" }}>
-                    {successfullySent ? (
+                    {isFileLoading ? (
+                        <div className="text-center">
+                            <ColorRing
+                                visible={true}
+                                height="60"
+                                width="60"
+                                ariaLabel="file-loading"
+                                colors={[
+                                    "#e15b64",
+                                    "#f47e60",
+                                    "#f8b26a",
+                                    "#abbd81",
+                                    "#849b87"
+                                ]}
+                            />
+                            <p>Uploading file...</p>
+                        </div>
+                    ) : successfullySent ? (
                         <div className="text-2xl font-semibold w-full text-center">
                             Resume Sent Succesfully!
                         </div>
@@ -274,74 +298,15 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 onClose={() => setErrorModalFileTypeOpen(false)}
                 type="error"
             />
-            <Modal
+            <ReusableModalYesNo
                 open={confirmUploadModalOpen}
+                title="Send Resume to Employer"
+                description="Your resume will be sent to the employer. Are you sure
+             you want to proceed?"
                 onClose={() => setConfirmUploadModalOpen(false)}
-                aria-labelledby="modal-title"
-                aria-describedby="modal-description"
-            >
-                <Box
-                    className="bg-white p-6 mx-auto rounded-lg shadow-lg "
-                    sx={(theme) => ({
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        width: "90%",
-                        [theme.breakpoints.up("sm")]: {
-                            width: "400px"
-                        },
-                        maxWidth: "100%",
-                        outline: "none"
-                    })}
-                >
-                    <Typography
-                        id="modal-title"
-                        variant="h6"
-                        component="h2"
-                        sx={{
-                            color: "green",
-                            textAlign: "center"
-                        }}
-                    >
-                        Send Resume to Employer
-                    </Typography>
-                    <Typography id="modal-description" sx={{ mt: 2 }}>
-                        Your resume will be sent to the employer. Are you sure
-                        you want to proceed?
-                    </Typography>
-                    <Box sx={{ display: "flex", gap: "3rem" }}>
-                        <Button
-                            variant="contained"
-                            onClick={() => setConfirmUploadModalOpen(false)}
-                            sx={{
-                                marginTop: "20px",
-                                backgroundColor: "red !important",
-                                color: "white",
-                                width: "100%",
-                                padding: "8px",
-                                fontWeight: "bold"
-                            }}
-                        >
-                            No
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={() => handleFileUpload()}
-                            sx={{
-                                marginTop: "20px",
-                                backgroundColor: "green !important",
-                                color: "white",
-                                width: "100%",
-                                padding: "8px",
-                                fontWeight: "bold"
-                            }}
-                        >
-                            Yes
-                        </Button>
-                    </Box>
-                </Box>
-            </Modal>
+                executeAffirmative={() => handleFileUpload()}
+                executeNegative={() => setConfirmUploadModalOpen(false)}
+            />
         </section>
     )
 }

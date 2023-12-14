@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { Button, Box, Divider, Modal, Select, MenuItem } from "@mui/material"
 import { getTokenFromLocalCookie } from "@/app/utils/auth"
 import Cookies from "js-cookie"
-import ReusableModal from "./ReusableModal"
+import ReusableModal from "@/app/components/ReusableModal"
 import JobPostPreview from "./JobPostPreview"
 import { processImage } from "@/app/utils/processImage"
 
