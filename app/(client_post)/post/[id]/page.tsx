@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
-import { Box } from "@mui/material"
+import { Box, Modal, Typography, Button } from "@mui/material"
 import Link from "next/link"
 import ReusableModal from "@/app/(dashboard_employer)/dashboard/components/ReusableModal"
 
@@ -27,6 +27,10 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
 
     const [errorModalFileSizeOpen, setErrorModalFileSizeOpen] = useState(false)
     const [errorModalFileTypeOpen, setErrorModalFileTypeOpen] = useState(false)
+
+    const [confirmUploadModalOpen, setConfirmUploadModalOpen] = useState(false)
+
+    const [successfullySent, setSuccessfullySent] = useState(false)
 
     const clientsPosts = useClientPosts()
 
@@ -65,6 +69,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
         }
 
         setSelectedFile(event.target.files[0])
+        setConfirmUploadModalOpen(true)
     }
 
     const handleFileUpload = async () => {
@@ -97,6 +102,8 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
             setSuccessMessage(
                 "Resume succesfully uploaded and sent to employer. Good luck"
             )
+            setConfirmUploadModalOpen(false)
+            setSuccessfullySent(true)
             setSuccessModalOpen(true)
             await updateApplicantsNumber()
         } catch (error) {
@@ -216,7 +223,11 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px", width: "100%" }}>
-                    {!selectedFile && (
+                    {successfullySent ? (
+                        <div className="text-2xl font-semibold w-full text-center">
+                            Resume Sent Succesfully!
+                        </div>
+                    ) : (
                         <div className="w-full mx-auto">
                             <input
                                 type="file"
@@ -233,30 +244,6 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                             </label>
                         </div>
                     )}
-                    {isFileLoading ? (
-                        <ColorRing
-                            visible={true}
-                            height="50"
-                            width="50"
-                            ariaLabel="file-loading"
-                            colors={[
-                                "#e15b64",
-                                "#f47e60",
-                                "#f8b26a",
-                                "#abbd81",
-                                "#849b87"
-                            ]}
-                        />
-                    ) : (
-                        selectedFile && (
-                            <button
-                                className="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded w-full"
-                                onClick={handleFileUpload}
-                            >
-                                Submit CV
-                            </button>
-                        )
-                    )}
                 </Box>
             </Box>
             <ReusableModal
@@ -265,13 +252,6 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 description={successMessage}
                 onClose={() => setSuccessModalOpen(false)}
                 type="success"
-            />
-            <ReusableModal
-                open={errorModalOpen}
-                title="Error"
-                description={errorMessage}
-                onClose={() => setErrorModalOpen(false)}
-                type="error"
             />
             <ReusableModal
                 open={errorModalOpen}
@@ -294,6 +274,74 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 onClose={() => setErrorModalFileTypeOpen(false)}
                 type="error"
             />
+            <Modal
+                open={confirmUploadModalOpen}
+                onClose={() => setConfirmUploadModalOpen(false)}
+                aria-labelledby="modal-title"
+                aria-describedby="modal-description"
+            >
+                <Box
+                    className="bg-white p-6 mx-auto rounded-lg shadow-lg "
+                    sx={(theme) => ({
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: "90%",
+                        [theme.breakpoints.up("sm")]: {
+                            width: "400px"
+                        },
+                        maxWidth: "100%",
+                        outline: "none"
+                    })}
+                >
+                    <Typography
+                        id="modal-title"
+                        variant="h6"
+                        component="h2"
+                        sx={{
+                            color: "green",
+                            textAlign: "center"
+                        }}
+                    >
+                        Send Resume to Employer
+                    </Typography>
+                    <Typography id="modal-description" sx={{ mt: 2 }}>
+                        Your resume will be sent to the employer. Are you sure
+                        you want to proceed?
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: "3rem" }}>
+                        <Button
+                            variant="contained"
+                            onClick={() => setConfirmUploadModalOpen(false)}
+                            sx={{
+                                marginTop: "20px",
+                                backgroundColor: "red !important",
+                                color: "white",
+                                width: "100%",
+                                padding: "8px",
+                                fontWeight: "bold"
+                            }}
+                        >
+                            No
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={() => handleFileUpload()}
+                            sx={{
+                                marginTop: "20px",
+                                backgroundColor: "green !important",
+                                color: "white",
+                                width: "100%",
+                                padding: "8px",
+                                fontWeight: "bold"
+                            }}
+                        >
+                            Yes
+                        </Button>
+                    </Box>
+                </Box>
+            </Modal>
         </section>
     )
 }
