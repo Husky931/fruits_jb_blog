@@ -79,7 +79,18 @@ const Register: React.FC<{
     }
 
     return (
-        <Box className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                maxWidth: "md",
+                padding: 4,
+                marginX: "auto"
+            }}
+        >
             {isLoading ? (
                 <div style={{ pointerEvents: "none" }}>
                     <ColorRing
