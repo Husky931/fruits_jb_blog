@@ -9,14 +9,14 @@ export default function EmployerHomePage() {
 
     return (
         <main
-            className="flex justify-center items-center w-full h-full my-auto bg-cover bg-center"
+            className="my-auto flex h-full w-full items-center justify-center bg-cover bg-center"
             style={{
                 backgroundImage: "url('/auth_bg_2.webp')",
                 backgroundBlendMode: "overlay",
                 backgroundColor: "rgba(255, 255, 255, 0.3)"
             }}
         >
-            <Paper className="flex flex-col items-center justify-center p-4 ml-[10px] mr-[10px] md:w-1/2 lg:w-1/3 md:p-6 bg-white shadow-lg rounded-lg">
+            <Paper className="ml-[10px] mr-[10px] flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-lg md:w-1/2 md:p-6 lg:w-1/3">
                 {/* <img
                     src="/fruits_job_board_logo_blue.png"
                     style={{ width: "80px", height: "22px" }}

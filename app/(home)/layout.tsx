@@ -81,7 +81,7 @@ export default async function RootLayout({
     const { navbar, footer } = global.data.attributes
 
     return (
-        <div className="p-4 sm:px-24 sm:py-4 max-w-[1350px] mx-auto">
+        <div className="mx-auto max-w-[1350px] p-4 sm:px-24 sm:py-4">
             <Navigation />
             <SiteTitle />
             <Countries />

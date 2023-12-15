@@ -10,7 +10,7 @@ import { User } from "@/types"
 const MenuMobile = dynamic(() => import("./components/MenuMobile"), {
     ssr: false,
     loading: () => (
-        <div className="min-h-screen w-screen flex justify-center items-center">
+        <div className="flex min-h-screen w-screen items-center justify-center">
             <ColorRing
                 visible={true}
                 height="200"
@@ -66,7 +66,7 @@ const App = () => {
                     isOpen={isOpen}
                 />
             )}
-            <div className="flex-grow w-full px-8 pb-[20px]">
+            <div className="w-full flex-grow px-8 pb-[20px]">
                 {currentView === "Dashboard" && (
                     <Dashboard setView={setView} user={user} />
                 )}

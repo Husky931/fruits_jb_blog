@@ -1,8 +1,8 @@
 export default function PricingExplanation() {
     return (
-        <div className="px-4 py-8 bg-white">
-            <div className="text-center my-12 mb-16 text-black">
-                <h1 className="font-bold text-4xl mb-4">No need to pay</h1>
+        <div className="bg-white px-4 py-8">
+            <div className="my-12 mb-16 text-center text-black">
+                <h1 className="mb-4 text-4xl font-bold">No need to pay</h1>
                 <p className="text-[18px]">
                     Posting a job requires no long-term contract, and there are
                     no initial costs, posting costs, or recruitment fees.
@@ -10,14 +10,14 @@ export default function PricingExplanation() {
             </div>
 
             <div className="flex justify-center">
-                <div className="rounded-lg border flex flex-col space-y-4 w-full max-w-md p-6 bg-[#D6DBDC]">
-                    <h2 className="text-center font-semibold text-2xl mb-4">
+                <div className="flex w-full max-w-md flex-col space-y-4 rounded-lg border bg-[#D6DBDC] p-6">
+                    <h2 className="mb-4 text-center text-2xl font-semibold">
                         Why its Free
                     </h2>
                     <img
                         src="/free.png"
                         alt="Free"
-                        className="w-[80%] md:w-1/2 h-auto mx-auto"
+                        className="mx-auto h-auto w-[80%] md:w-1/2"
                     />
                     <p className="mt-4">
                         We are looking for the easiest way to start connecting

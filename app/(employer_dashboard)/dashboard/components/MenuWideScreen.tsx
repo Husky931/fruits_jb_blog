@@ -30,15 +30,15 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
             }}
         >
             <Box>
-                <div className="w-full p-4 mx-auto">
+                <div className="mx-auto w-full p-4">
                     <Link href="/" passHref>
-                        <div className="w-[55px] h-[45px] relative cursor-pointer">
+                        <div className="relative h-[45px] w-[55px] cursor-pointer">
                             <Image
                                 src="/fruits_job_board_logo_black.png"
                                 alt="harvest jobs logo"
                                 width="70"
                                 height="70"
-                                className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                                className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 transform"
                             />
                         </div>
                     </Link>

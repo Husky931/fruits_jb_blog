@@ -21,7 +21,7 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
     }
 
     return (
-        <div className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px] bg-gray-100 p-4 rounded-lg shadow">
+        <div className="my-4 w-full rounded-lg bg-gray-100 p-4 text-[14px] leading-[20px] shadow sm:text-[14px]">
             <div className="text-2xl font-semibold  text-red-600">
                 Direct farm apply
             </div>
@@ -30,13 +30,13 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
                 <img
                     src={getImageUrl()}
                     alt="company logo"
-                    className="w-16 h-16 mr-4 rounded-md" // Thumbnail size image
+                    className="mr-4 h-16 w-16 rounded-md" // Thumbnail size image
                 />
-                <div className="flex justify-center items-start flex-col">
-                    <div className="text-[#0000EE] text-[24px] mb-1">
+                <div className="flex flex-col items-start justify-center">
+                    <div className="mb-1 text-[24px] text-[#0000EE]">
                         {title}
                     </div>
-                    <div className="text-[#663300] text-base font-bold">
+                    <div className="text-base font-bold text-[#663300]">
                         {company_name}
                     </div>
                     <div className="font-semibold">
@@ -48,16 +48,16 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
             </Box>
             <Divider sx={{ marginTop: "10px", marginBottom: "10px" }} />
             <Box display="flex" flexDirection={{ xs: "column", sm: "row" }}>
-                <Box flexGrow={1} className="pr-4 mb-4 sm:mb-0">
+                <Box flexGrow={1} className="mb-4 pr-4 sm:mb-0">
                     <Typography variant="subtitle1" fontWeight="bold">
                         Description
                     </Typography>
-                    <Typography className="line-clamp-4 overflow-ellipsis overflow-hidden">
+                    <Typography className="line-clamp-4 overflow-hidden overflow-ellipsis">
                         {job_description}
                     </Typography>
                 </Box>
-                <Box className="flex flex-col items-start justify-center gap-y-1 md:px-4 sm:items-end">
-                    <button className="mt-2 bg-blue-500  text-white font-bold py-2 px-4 rounded">
+                <Box className="flex flex-col items-start justify-center gap-y-1 sm:items-end md:px-4">
+                    <button className="mt-2 rounded  bg-blue-500 px-4 py-2 font-bold text-white">
                         Apply
                     </button>
                     <Typography variant="subtitle2">

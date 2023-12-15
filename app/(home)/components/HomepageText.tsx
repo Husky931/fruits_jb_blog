@@ -25,7 +25,7 @@ export default async function HomeText() {
                 you want to find a job in. You can find additional information
                 in the{" "}
                 <a
-                    className="text-[#0000FF] font-semibold"
+                    className="font-semibold text-[#0000FF]"
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
                     target="_blank"
                 >

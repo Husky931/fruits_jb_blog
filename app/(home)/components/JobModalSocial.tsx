@@ -72,10 +72,10 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
 
     return (
         <div
-            className="fixed inset-0 flex justify-center items-center z-[100]"
+            className="fixed inset-0 z-[100] flex items-center justify-center"
             onClick={handleOutsideClick}
         >
-            <section className="bg-white p-8 m-4 rounded-lg shadow-lg lg:max-w-[700px]">
+            <section className="m-4 rounded-lg bg-white p-8 shadow-lg lg:max-w-[700px]">
                 {isLoading ? (
                     <div style={{ pointerEvents: isLoading ? "auto" : "none" }}>
                         <ColorRing
@@ -94,12 +94,12 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
                     </div>
                 ) : (
                     <div>
-                        <h1 className="text-2xl mb-4 font-semibold">
+                        <h1 className="mb-4 text-2xl font-semibold">
                             {job?.title}
                         </h1>
-                        <div className="flex my-1">
+                        <div className="my-1 flex">
                             <div className="font-bold">Company name: </div>
-                            <div className="text-[#663300] mx-1">
+                            <div className="mx-1 text-[#663300]">
                                 {job?.company_name}
                             </div>
                         </div>
@@ -113,18 +113,18 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
                                 , {job?.location}
                             </div>
                         </div>
-                        <div className="my-2 line-clamp-2 overflow-ellipsis overflow-hidden">
+                        <div className="my-2 line-clamp-2 overflow-hidden overflow-ellipsis">
                             Job Description: {job?.description}
                         </div>
                         <div className="my-2">Added On: {displayDate}</div>
                         {job?.url && (
-                            <div className="w-full flex justify-center items-center my-6">
+                            <div className="my-6 flex w-full items-center justify-center">
                                 <Link
                                     href={job?.url}
                                     id="applyNowButton"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors cursor-pointer z-50"
+                                    className="z-50 cursor-pointer rounded bg-black px-4 py-2 text-white transition-colors hover:bg-gray-800"
                                 >
                                     Apply Now
                                 </Link>

@@ -31,17 +31,17 @@ const SingleJobPost: React.FC<PostgresJobPostTypes> = ({
 
     return (
         <a href={link} target="_blank" className="text-black no-underline">
-            <li className="w-full my-4 text-[14px] sm:text-[14px] leading-[20px]">
+            <li className="my-4 w-full text-[14px] leading-[20px] sm:text-[14px]">
                 <div
                     id="job-title"
-                    className="text-[14px] sm:text-[18px] font-semibold underline text-[#0000EE]"
+                    className="text-[14px] font-semibold text-[#0000EE] underline sm:text-[18px]"
                 >
                     {title}
                 </div>
 
                 <div className="flex">
                     <div className="font-bold">Company name: </div>
-                    <div className="text-[#663300] mx-1">{companyName}</div>
+                    <div className="mx-1 text-[#663300]">{companyName}</div>
                 </div>
                 <div className="flex">
                     <div>Location: </div>
@@ -52,16 +52,16 @@ const SingleJobPost: React.FC<PostgresJobPostTypes> = ({
                     </div>
                 </div>
                 <div id="description" className="flex flex-col">
-                    <div className="line-clamp-2 overflow-ellipsis overflow-hidden">
+                    <div className="line-clamp-2 overflow-hidden overflow-ellipsis">
                         <span>Description: </span>
                         <span className="">{jobDescription}</span>
                     </div>
                     <div className="text-[#0000EE]">read more</div>
                 </div>
-                <div className="border-2 rounded-md border-custom-dark-blue p-1 my-1 inline-block">
+                <div className="my-1 inline-block rounded-md border-2 border-custom-dark-blue p-1">
                     Source: {new URL(link).hostname}
                 </div>
-                <div className="text-gray-500 font-semibold">{displayDate}</div>
+                <div className="font-semibold text-gray-500">{displayDate}</div>
             </li>
         </a>
     )

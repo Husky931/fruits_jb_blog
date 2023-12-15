@@ -73,7 +73,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
     }
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
+        <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center p-4">
             {isLoading ? (
                 <div style={{ pointerEvents: "none" }}>
                     <ColorRing
@@ -199,7 +199,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                                 </span>
                             )}
                         {show ? (
-                            <span className="w-full text-center text-red-900 px-1 rounded py-1">
+                            <span className="w-full rounded px-1 py-1 text-center text-red-900">
                                 {serverError}
                             </span>
                         ) : null}
@@ -221,11 +221,11 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     {/* <div className="w-full  cursor-pointer text-center mt-2">
                         Forgot password?
                     </div> */}
-                    <div className="w-full flex flex-col justify-center items-center mt-8">
+                    <div className="mt-8 flex w-full flex-col items-center justify-center">
                         <div className="">Don't have an account yet?</div>
                         <div
                             onClick={() => setDisplayRegister(true)}
-                            className=" font-semibold underline cursor-pointer text-xl"
+                            className=" cursor-pointer text-xl font-semibold underline"
                         >
                             Sign up
                         </div>

@@ -22,7 +22,7 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
     logoPreview
 }) => {
     return (
-        <div className="bg-white shadow rounded-lg w-full text-[14px] sm:text-[14px] leading-[20px] ">
+        <div className="w-full rounded-lg bg-white text-[14px] leading-[20px] shadow sm:text-[14px] ">
             <Box
                 sx={{
                     // marginTop: "30px",
@@ -33,18 +33,18 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                     borderRadius: "8px"
                 }}
             >
-                <div className="w-full flex justify-start items-center">
+                <div className="flex w-full items-center justify-start">
                     <Box sx={{ width: "100px", height: "100px" }}>
                         <img
-                            className="max-w-full max-h-full"
+                            className="max-h-full max-w-full"
                             src={logoPreview || "upload-image_1.png"}
                         />
                     </Box>
                     <Box sx={{ marginLeft: "25px" }}>
-                        <div className="text-2xl md:text-3xl text-[#0000EE] font-bold">
+                        <div className="text-2xl font-bold text-[#0000EE] md:text-3xl">
                             {jobDetails.title || "Job Title"}
                         </div>
-                        <div className="text-[#663300] font-bold text-lg md:text-xl">
+                        <div className="text-lg font-bold text-[#663300] md:text-xl">
                             {jobDetails.companyName || "Job Title"}
                         </div>
                         <div className="font-semibold">
@@ -56,7 +56,7 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                 </div>
 
                 <Box sx={{ marginTop: "30px" }}>
-                    <div className="font-semibold text-2xl my-1">
+                    <div className="my-1 text-2xl font-semibold">
                         Job Description
                     </div>
                     {jobDetails.description.split("\n").map((line, index) => (
@@ -66,13 +66,13 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                         </React.Fragment>
                     ))}
                     {jobDetails.url && (
-                        <div className="text-blue-700 mt-2">
+                        <div className="mt-2 text-blue-700">
                             {jobDetails.url}
                         </div>
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px" }}>
-                    <button className="mt-2 bg-red-500 text-white font-bold py-2 px-4 rounded w-full">
+                    <button className="mt-2 w-full rounded bg-red-500 px-4 py-2 font-bold text-white">
                         Upload CV
                     </button>
                     <div className="mt-2">

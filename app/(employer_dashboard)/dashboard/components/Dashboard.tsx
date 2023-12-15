@@ -12,8 +12,8 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
     return (
         <div className="mt-12">
             <div className="my-4 text-2xl">Welcome!</div>
-            <div className="bg-white shadow rounded-lg">
-                <div className=" flex justify-between items-center w-full p-6">
+            <div className="rounded-lg bg-white shadow">
+                <div className=" flex w-full items-center justify-between p-6">
                     <div>
                         <div className="text-xl font-semibold">My Jobs</div>
                     </div>
@@ -36,10 +36,10 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
                         user.job_posts.map((job) => (
                             <div
                                 key={job.id}
-                                className="bg-gray-100 p-4 mb-4 rounded-lg shadow md:grid md:grid-cols-2 md:grid-rows-2"
+                                className="mb-4 rounded-lg bg-gray-100 p-4 shadow md:grid md:grid-cols-2 md:grid-rows-2"
                             >
                                 <div className="md:col-span-2">
-                                    <div className="text-xl font-semibold mb-2">
+                                    <div className="mb-2 text-xl font-semibold">
                                         {job.title}
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ const Dashboard = ({ setView, user }: DashboardProps) => {
                             </div>
                         ))
                     ) : (
-                        <div className="text-xl text-center">
+                        <div className="text-center text-xl">
                             No jobs posted yet
                         </div>
                     )}

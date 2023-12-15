@@ -175,10 +175,10 @@ const PostJob = () => {
     }
 
     return (
-        <div className="mt-12 relative">
+        <div className="relative mt-12">
             <div className="my-4 text-2xl">Post a Job</div>
-            <div className="bg-white shadow rounded-lg">
-                <div className=" flex justify-between items-center w-full p-6">
+            <div className="rounded-lg bg-white shadow">
+                <div className=" flex w-full items-center justify-between p-6">
                     <div>
                         <div className="text-xl font-semibold">
                             Job Description
@@ -197,7 +197,7 @@ const PostJob = () => {
                                 value={jobDetails.companyName}
                                 onChange={handleChange}
                                 placeholder="Enter company name"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                     </Box>
@@ -241,7 +241,7 @@ const PostJob = () => {
                                 value={jobDetails.city}
                                 onChange={handleChange}
                                 placeholder="Enter city name"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                     </Box>
@@ -255,7 +255,7 @@ const PostJob = () => {
                                 value={jobDetails.title}
                                 onChange={handleChange}
                                 placeholder="Enter job title"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                     </Box>
@@ -267,15 +267,15 @@ const PostJob = () => {
                                 value={jobDetails.description}
                                 onChange={handleChange}
                                 placeholder="Summarize the job duties"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                                 rows={10}
                             ></textarea>
                         </label>
                     </Box>
                 </div>
             </div>
-            <div className="bg-white shadow rounded-lg mt-12">
-                <div className=" flex justify-between items-center w-full p-6">
+            <div className="mt-12 rounded-lg bg-white shadow">
+                <div className=" flex w-full items-center justify-between p-6">
                     <div>
                         <div className="text-xl font-semibold">
                             Company Information - Optional
@@ -294,7 +294,7 @@ const PostJob = () => {
                                 value={jobDetails.contact_email}
                                 onChange={handleChange}
                                 placeholder="Email for applications"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                     </Box>
@@ -308,7 +308,7 @@ const PostJob = () => {
                                 name="companyLogo"
                                 onChange={handleChangeImge}
                                 placeholder="Company Logo File"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                         <div>
@@ -335,14 +335,14 @@ const PostJob = () => {
                                 value={jobDetails.url}
                                 onChange={handleChange}
                                 placeholder="Url link"
-                                className="w-full p-2 border rounded mt-2"
+                                className="mt-2 w-full rounded border p-2"
                             />
                         </label>
                     </Box>
                 </div>
             </div>
-            <div className="bg-white shadow rounded-lg mt-12">
-                <div className=" flex justify-between items-center w-full p-6">
+            <div className="mt-12 rounded-lg bg-white shadow">
+                <div className=" flex w-full items-center justify-between p-6">
                     <div>
                         <div className="text-xl font-semibold">
                             Job Post Preview
@@ -351,7 +351,7 @@ const PostJob = () => {
                 </div>
                 <Divider />
 
-                <div className=" flex justify-between items-center w-full p-6">
+                <div className=" flex w-full items-center justify-between p-6">
                     <JobPostPreview
                         jobDetails={jobDetails}
                         logoPreview={logoPreview}
@@ -400,13 +400,13 @@ const PostJob = () => {
                         minWidth: "270px"
                     }}
                 >
-                    <div className="text-black text-xl">Enter Country Name</div>
+                    <div className="text-xl text-black">Enter Country Name</div>
                     <input
                         type="text"
                         autoComplete="off"
                         value={countryInput}
                         onChange={(e) => setCountryInput(e.target.value)}
-                        className="w-full p-2 border rounded mt-2"
+                        className="mt-2 w-full rounded border p-2"
                     />
                     <Button
                         onClick={handleCountryModalClose}

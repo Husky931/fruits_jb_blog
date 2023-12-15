@@ -26,19 +26,19 @@ export default function Nav() {
     }
 
     return (
-        <div className="w-full flex justify-between items-center px-4 py-3 bg-blue-600 rounded-lg">
+        <div className="flex w-full items-center justify-between rounded-lg bg-blue-600 px-4 py-3">
             <Link
                 prefetch={false}
-                className="w-[50px] h-[40px]"
+                className="h-[40px] w-[50px]"
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
             >
-                <div className="w-[50px] h-[40px] relative cursor-pointer">
+                <div className="relative h-[40px] w-[50px] cursor-pointer">
                     <Image
                         src="/fruits_job_board_logo.png"
                         alt="harvest jobs logo"
                         width="70"
                         height="70"
-                        className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                        className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 transform"
                     />
                 </div>
             </Link>

@@ -152,7 +152,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
 
     if (isLoading) {
         return (
-            <section className="bg-white p-8 m-4 rounded-lg shadow-lg lg:max-w-[700px]">
+            <section className="m-4 rounded-lg bg-white p-8 shadow-lg lg:max-w-[700px]">
                 <div style={{ pointerEvents: isLoading ? "auto" : "none" }}>
                     <ColorRing
                         visible={true}
@@ -173,7 +173,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
     }
 
     return (
-        <section className="w-full h-auto">
+        <section className="h-auto w-full">
             <Box
                 sx={{
                     marginTop: "30px",
@@ -185,10 +185,10 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     borderRadius: "8px"
                 }}
             >
-                <div className="w-full flex justify-start items-center">
+                <div className="flex w-full items-center justify-start">
                     <Box sx={{ width: "100px", height: "100px" }}>
                         <img
-                            className="max-w-full max-h-full"
+                            className="max-h-full max-w-full"
                             src={
                                 post?.attributes.company_logo.data
                                     ? `${process.env.NEXT_PUBLIC_STRAPI_SERVER}${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`
@@ -197,10 +197,10 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                         />
                     </Box>
                     <Box sx={{ marginLeft: "25px" }}>
-                        <div className="text-2xl md:text-3xl text-[#0000EE] font-bold">
+                        <div className="text-2xl font-bold text-[#0000EE] md:text-3xl">
                             {post?.attributes.title}
                         </div>
-                        <div className="text-[#663300] font-bold text-lg md:text-xl">
+                        <div className="text-lg font-bold text-[#663300] md:text-xl">
                             {post?.attributes.company_name}
                         </div>
                         <div className="font-semibold">
@@ -217,7 +217,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 </div>
 
                 <Box sx={{ marginTop: "30px" }}>
-                    <div className="font-semibold text-2xl my-1">
+                    <div className="my-1 text-2xl font-semibold">
                         Job Description
                     </div>
                     <div> {post?.attributes.job_description}</div>
@@ -226,7 +226,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                             href={`https://${post?.attributes.URL}`}
                             target="_blank"
                         >
-                            <div className="text-blue-700 mt-2">
+                            <div className="mt-2 text-blue-700">
                                 {post?.attributes.URL}
                             </div>
                         </Link>
@@ -251,11 +251,11 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                             <p>Uploading file...</p>
                         </div>
                     ) : successfullySent ? (
-                        <div className="text-2xl font-semibold w-full text-center">
+                        <div className="w-full text-center text-2xl font-semibold">
                             Resume Sent Succesfully!
                         </div>
                     ) : (
-                        <div className="w-full mx-auto">
+                        <div className="mx-auto w-full">
                             <input
                                 type="file"
                                 id="fileInput"
@@ -265,7 +265,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                             />
                             <label
                                 htmlFor="fileInput"
-                                className="mt-2 bg-red-500 text-white font-bold py-2 px-4 rounded block w-full cursor-pointer text-center"
+                                className="mt-2 block w-full cursor-pointer rounded bg-red-500 px-4 py-2 text-center font-bold text-white"
                             >
                                 Upload CV
                             </label>

@@ -76,8 +76,8 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
     return (
         <div className="mt-12">
             <div className="my-4 text-2xl">Manage Jobs</div>
-            <div className="bg-white shadow rounded-lg">
-                <div className="flex justify-between items-center w-full p-6">
+            <div className="rounded-lg bg-white shadow">
+                <div className="flex w-full items-center justify-between p-6">
                     <div>
                         <div className="text-xl font-semibold">Active Jobs</div>
                     </div>
@@ -91,10 +91,10 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                             .map((job: StrapiPostAttributes) => (
                                 <div
                                     key={job.createdAt}
-                                    className="bg-gray-100 p-4 mb-4 rounded-lg shadow md:grid md:grid-cols-2 md:grid-rows-2"
+                                    className="mb-4 rounded-lg bg-gray-100 p-4 shadow md:grid md:grid-cols-2 md:grid-rows-2"
                                 >
                                     <div className="md:col-span-2">
-                                        <div className="text-xl font-semibold mb-2">
+                                        <div className="mb-2 text-xl font-semibold">
                                             {job.title}
                                         </div>
                                     </div>

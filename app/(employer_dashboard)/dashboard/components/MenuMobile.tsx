@@ -23,7 +23,7 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
     return (
         <nav className="w-full ">
             <div
-                className="flex items-center justify-around px-4 py-4 bg-black w-full rounded"
+                className="flex w-full items-center justify-around rounded bg-black px-4 py-4"
                 style={
                     isOpen
                         ? { borderRadius: "4px 4px 0 0" }
@@ -31,17 +31,17 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                 }
             >
                 <Link href="/" passHref>
-                    <div className="w-[55px] h-[45px] relative cursor-pointer">
+                    <div className="relative h-[45px] w-[55px] cursor-pointer">
                         <Image
                             src="/fruits_job_board_logo_white.png"
                             alt="harvest jobs logo"
                             width="70"
                             height="70"
-                            className="absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4"
+                            className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 transform"
                         />
                     </div>
                 </Link>
-                <div className="text-white text-lg font-bold">
+                <div className="text-lg font-bold text-white">
                     Dashboard navigation
                 </div>
 

@@ -27,13 +27,13 @@ const Countries = () => {
         // "sweden",
     ]
     return (
-        <ul className="container px-6 my-12">
-            <div className="space-y-4 sm:justify-evenly md:space-y-0 md:flex md:flex-wrap md:justify-start ">
-                <li className="inline-block py-2 px-1 mx-1 cursor-pointer">
+        <ul className="container my-12 px-6">
+            <div className="space-y-4 sm:justify-evenly md:flex md:flex-wrap md:justify-start md:space-y-0 ">
+                <li className="mx-1 inline-block cursor-pointer px-1 py-2">
                     <Link
                         prefetch={false}
                         className={`
-          ${pathname === "/" ? "text-[#0000EE] font-semibold" : "text-black"}
+          ${pathname === "/" ? "font-semibold text-[#0000EE]" : "text-black"}
           text-3xl`}
                         href="/"
                         as="/"
@@ -45,13 +45,13 @@ const Countries = () => {
                     const isActive = pathname.startsWith(`/${link}`)
                     return (
                         <li
-                            className="inline-block py-2 px-1 mx-1 cursor-pointer"
+                            className="mx-1 inline-block cursor-pointer px-1 py-2"
                             key={link}
                         >
                             <Link
                                 prefetch={false}
                                 className={`
-              ${isActive ? "text-[#0000EE] font-semibold" : "text-black"}
+              ${isActive ? "font-semibold text-[#0000EE]" : "text-black"}
               text-3xl capitalize`}
                                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}
                                 as={`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`}

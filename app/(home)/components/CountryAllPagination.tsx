@@ -61,7 +61,7 @@ export default function CountryAllPagination() {
     if (isLoading)
         return (
             <>
-                <div className="min-h-screen min-w-screen flex justify-center items-top z-50">
+                <div className="min-w-screen items-top z-50 flex min-h-screen justify-center">
                     <ColorRing
                         visible={true}
                         height="160"
@@ -81,7 +81,7 @@ export default function CountryAllPagination() {
 
     return (
         <>
-            <div className="w-full flex justify-start items-center">
+            <div className="flex w-full items-center justify-start">
                 <Pagination
                     count={totalPages}
                     variant="outlined"
@@ -112,7 +112,7 @@ export default function CountryAllPagination() {
                 </Link>
             ))}
 
-            <ul className="w-full mt-[10px]">
+            <ul className="mt-[10px] w-full">
                 {clientsPosts && clientsPosts?.length > 0 && (
                     <div className="mt-[20px] w-full">
                         Aggregated posts from other websites
@@ -132,7 +132,7 @@ export default function CountryAllPagination() {
                     />
                 ))}
             </ul>
-            <div className="w-full flex justify-start items-center">
+            <div className="flex w-full items-center justify-start">
                 <Pagination
                     count={totalPages}
                     variant="outlined"
