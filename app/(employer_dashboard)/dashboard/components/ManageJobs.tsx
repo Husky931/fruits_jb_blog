@@ -74,9 +74,9 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
     }
 
     return (
-        <Box className="mt-12">
+        <div className="mt-12">
             <div className="my-4 text-2xl">Manage Jobs</div>
-            <Box className="bg-white shadow rounded-lg">
+            <div className="bg-white shadow rounded-lg">
                 <div className="flex justify-between items-center w-full p-6">
                     <div>
                         <div className="text-xl font-semibold">Active Jobs</div>
@@ -185,12 +185,12 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                                 </div>
                             ))
                     ) : (
-                        <Typography variant="h6" className="text-center">
+                        <Typography variant="h6" sx={{ textAlign: "center" }}>
                             No approved jobs to manage yet
                         </Typography>
                     )}
                 </div>
-            </Box>
+            </div>
             <Modal
                 open={openModal}
                 onClose={handleCloseModal}
@@ -198,8 +198,14 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                 aria-describedby="modal-description"
             >
                 <Box
-                    className="bg-white p-6 mx-auto rounded-lg shadow-lg"
+                    // className="bg-white p-6 mx-auto rounded-lg shadow-lg"
                     sx={(theme) => ({
+                        backgroundColor: "white",
+                        padding: "24px",
+                        margin: "auto",
+                        borderRadius: "8px",
+                        boxShadow:
+                            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
                         position: "absolute",
                         top: "50%",
                         left: "50%",
@@ -263,7 +269,7 @@ const ManageJobs = ({ user }: ManageJobsProps) => {
                     </Box>
                 </Box>
             </Modal>
-        </Box>
+        </div>
     )
 }
 

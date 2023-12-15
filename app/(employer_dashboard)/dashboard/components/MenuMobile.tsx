@@ -23,8 +23,16 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
     return (
         <nav className="w-full ">
             <Box
-                className="flex items-center justify-around px-4 py-4 bg-black w-full"
-                sx={{ borderRadius: isOpen ? "4px 4px 0 0" : "4px" }}
+                sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "around", // Adjust if needed to match Tailwind's 'justify-around'
+                    paddingX: "16px",
+                    paddingY: "16px",
+                    backgroundColor: "black",
+                    width: "100%",
+                    borderRadius: isOpen ? "4px 4px 0 0" : "4px"
+                }}
             >
                 <Link href="/" passHref>
                     <div className="w-[55px] h-[45px] relative cursor-pointer">
@@ -64,7 +72,11 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                     }}
                 >
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("Dashboard")}
                     >
                         <ListItemIcon>
@@ -79,7 +91,11 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                     </ListItemButton>
 
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("ManageJobs")}
                     >
                         <ListItemIcon>
@@ -89,7 +105,11 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                     </ListItemButton>
 
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("PostJob")}
                     >
                         <ListItemIcon>

@@ -175,9 +175,9 @@ const PostJob = () => {
     }
 
     return (
-        <Box className="mt-12 relative">
+        <div className="mt-12 relative">
             <div className="my-4 text-2xl">Post a Job</div>
-            <Box className="bg-white shadow rounded-lg">
+            <div className="bg-white shadow rounded-lg">
                 <div className=" flex justify-between items-center w-full p-6">
                     <div>
                         <div className="text-xl font-semibold">
@@ -207,7 +207,12 @@ const PostJob = () => {
                             <Select
                                 value={jobDetails.country}
                                 onChange={handleCountryChange}
-                                className="w-full  border rounded mt-2"
+                                sx={{
+                                    width: "100%",
+                                    border: 1,
+                                    borderRadius: "4px",
+                                    mt: "8px"
+                                }}
                             >
                                 <MenuItem value="usa">USA</MenuItem>
                                 <MenuItem value="canada">Canada</MenuItem>
@@ -268,8 +273,8 @@ const PostJob = () => {
                         </label>
                     </Box>
                 </div>
-            </Box>
-            <Box className="bg-white shadow rounded-lg mt-12">
+            </div>
+            <div className="bg-white shadow rounded-lg mt-12">
                 <div className=" flex justify-between items-center w-full p-6">
                     <div>
                         <div className="text-xl font-semibold">
@@ -335,8 +340,8 @@ const PostJob = () => {
                         </label>
                     </Box>
                 </div>
-            </Box>
-            <Box className="bg-white shadow rounded-lg mt-12">
+            </div>
+            <div className="bg-white shadow rounded-lg mt-12">
                 <div className=" flex justify-between items-center w-full p-6">
                     <div>
                         <div className="text-xl font-semibold">
@@ -352,7 +357,7 @@ const PostJob = () => {
                         logoPreview={logoPreview}
                     />
                 </div>
-            </Box>
+            </div>
             <Button
                 variant="contained"
                 onClick={() => createJobPost()}
@@ -418,7 +423,7 @@ const PostJob = () => {
                     </Button>
                 </Box>
             </Modal>
-        </Box>
+        </div>
     )
 }
 

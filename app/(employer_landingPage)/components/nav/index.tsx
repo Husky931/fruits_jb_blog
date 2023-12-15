@@ -49,24 +49,9 @@ export default function EmpoyersNav() {
                 </div>
             </Link>
             <Link href="/dashboard">
-                <Button
-                    sx={{
-                        backgroundColor: "#2557A7",
-                        color: "white",
-                        "&:hover": {
-                            backgroundColor: "#2557A7"
-                        },
-                        border: 0,
-                        fontWeight: "bold",
-                        py: 2,
-                        px: 8,
-                        borderRadius: "4px"
-                    }}
-                    variant="outlined"
-                    color="inherit"
-                >
+                <button className="bg-[#2557A7] text-white hover:bg-[#2557A7]  border-0 font-semibold py-2 px-8 rounded">
                     POST
-                </Button>
+                </button>
             </Link>
         </div>
     )

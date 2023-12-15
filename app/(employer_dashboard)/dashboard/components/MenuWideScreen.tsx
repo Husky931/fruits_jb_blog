@@ -30,7 +30,7 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
             }}
         >
             <Box>
-                <Box className="w-full p-4 mx-auto">
+                <div className="w-full p-4 mx-auto">
                     <Link href="/" passHref>
                         <div className="w-[55px] h-[45px] relative cursor-pointer">
                             <Image
@@ -42,10 +42,14 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                             />
                         </div>
                     </Link>
-                </Box>
-                <Box className="mt-8">
+                </div>
+                <div className="mt-8">
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("Dashboard")}
                     >
                         <ListItemIcon>
@@ -60,7 +64,11 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                     </ListItemButton>
 
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("ManageJobs")}
                     >
                         <ListItemIcon>
@@ -70,7 +78,11 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                     </ListItemButton>
 
                     <ListItemButton
-                        className="hover:bg-white/20"
+                        sx={{
+                            "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.2)"
+                            }
+                        }}
                         onClick={() => setView("PostJob")}
                     >
                         <ListItemIcon>
@@ -78,14 +90,18 @@ const NormalMenu = ({ setView }: NormalMenuProps) => {
                         </ListItemIcon>
                         <ListItemText primary="Post a job" />
                     </ListItemButton>
-                </Box>
+                </div>
             </Box>
 
             <Box className="mb-4">
                 {" "}
                 {/* Added margin at the bottom */}
                 <ListItemButton
-                    className="hover:bg-white/20"
+                    sx={{
+                        "&:hover": {
+                            backgroundColor: "rgba(255, 255, 255, 0.2)"
+                        }
+                    }}
                     onClick={() => {
                         unsetToken()
                     }}

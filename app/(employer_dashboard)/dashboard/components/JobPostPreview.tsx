@@ -33,7 +33,7 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                     borderRadius: "8px"
                 }}
             >
-                <Box className="w-full flex justify-start items-center">
+                <div className="w-full flex justify-start items-center">
                     <Box sx={{ width: "100px", height: "100px" }}>
                         <img
                             className="max-w-full max-h-full"
@@ -53,7 +53,7 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                             , {jobDetails.city}
                         </div>
                     </Box>
-                </Box>
+                </div>
 
                 <Box sx={{ marginTop: "30px" }}>
                     <div className="font-semibold text-2xl my-1">

@@ -12,21 +12,9 @@ export default function HeroImage() {
                     Post a job for free and find the right candidate
                 </p>
                 <Link href="/dashboard">
-                    <Button
-                        variant="contained"
-                        sx={{
-                            mt: { xs: 12, lg: 18 },
-                            ml: { md: 4 },
-                            py: 3,
-                            px: 20,
-                            borderRadius: "4px",
-                            backgroundColor: "#2557A7",
-                            color: "white",
-                            fontWeight: "bold"
-                        }}
-                    >
+                    <button className="mt-12 md:ml-4 lg:mt-18 py-3 px-20 rounded bg-[#2557A7] text-white font-bold">
                         Post a job
-                    </Button>
+                    </button>
                 </Link>
             </div>
         </header>

@@ -73,18 +73,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
     }
 
     return (
-        <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "100%",
-                maxWidth: "md",
-                padding: 4,
-                marginX: "auto"
-            }}
-        >
+        <div className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto">
             {isLoading ? (
                 <div style={{ pointerEvents: "none" }}>
                     <ColorRing
@@ -243,7 +232,7 @@ const Login: React.FC<{ setDisplayRegister: (display: boolean) => void }> = ({
                     </div>
                 </>
             )}
-        </Box>
+        </div>
     )
 }
 
