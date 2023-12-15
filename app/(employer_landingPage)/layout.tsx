@@ -1,5 +1,5 @@
 import Footer from "../(home)/blog/components/Footer"
-import EmployersNav from "./components/nav"
+import EmployersNav from "./employer/components/Nnavigation"
 import { fetchAPI } from "../(home)/blog/utils/fetch-api"
 
 export const metadata = {

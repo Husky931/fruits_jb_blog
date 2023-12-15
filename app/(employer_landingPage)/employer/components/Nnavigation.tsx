@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 import { useUser } from "@/context/AuthUserContext"
 import { User } from "@/types"
 import Link from "next/link"
-import Button from "@mui/material/Button"
 
 export default function EmpoyersNav() {
     const user: User | undefined = useUser()
