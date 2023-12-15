@@ -1,5 +1,5 @@
 import Footer from "../(home)/blog/components/Footer"
-import EmployersNav from "./employer/components/Nnavigation"
+import EmployersNav from "./employer/components/Navigation"
 import { fetchAPI } from "../(home)/blog/utils/fetch-api"
 
 export const metadata = {
@@ -65,7 +65,7 @@ export default async function RootLayout({
     const { navbar, footer } = global.data.attributes
 
     return (
-        <div style={{ height: "100vh", margin: 0 }}>
+        <div style={{ height: "100vh", margin: 0, width: "100%" }}>
             <EmployersNav />
             {children}
             <Footer

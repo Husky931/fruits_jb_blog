@@ -22,17 +22,13 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
 
     return (
         <nav className="w-full ">
-            <Box
-                sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "around", // Adjust if needed to match Tailwind's 'justify-around'
-                    paddingX: "16px",
-                    paddingY: "16px",
-                    backgroundColor: "black",
-                    width: "100%",
-                    borderRadius: isOpen ? "4px 4px 0 0" : "4px"
-                }}
+            <div
+                className="flex items-center justify-around px-4 py-4 bg-black w-full rounded"
+                style={
+                    isOpen
+                        ? { borderRadius: "4px 4px 0 0" }
+                        : { borderRadius: "4px" }
+                }
             >
                 <Link href="/" passHref>
                     <div className="w-[55px] h-[45px] relative cursor-pointer">
@@ -62,7 +58,7 @@ const HamburgerMenu = ({ setView, setIsOpen, isOpen }: HamburgerMenuProps) => {
                         sx={{ color: "white", padding: "0" }}
                     />
                 )}
-            </Box>
+            </div>
             {isOpen && (
                 <Box
                     sx={{
