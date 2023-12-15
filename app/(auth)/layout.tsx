@@ -20,12 +20,5 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
-    return (
-        <div
-            className="min-h-screen flex justify-center items-center bg-blue-600"
-            style={{ height: "100vh", margin: 0 }}
-        >
-            {children}
-        </div>
-    )
+    return <div style={{ height: "100vh", margin: 0 }}>{children}</div>
 }
