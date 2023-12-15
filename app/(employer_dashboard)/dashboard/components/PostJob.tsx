@@ -33,7 +33,7 @@ const PostJob = () => {
     const [successMessage, setSuccessMessage] = useState("")
 
     const [errorModalOpen, setErrorModalOpen] = useState(false)
-    const [errorMessage, setErrorMessage] = useState<unknown | string>("")
+    const [errorMessage, setErrorMessage] = useState<string>("")
 
     const [logoPreview, setLogoPreview] = useState<any>(null)
     const [countryModalOpen, setCountryModalOpen] = useState(false)
@@ -165,8 +165,11 @@ const PostJob = () => {
             setSuccessModalOpen(true)
             window.location.reload()
         } catch (error) {
-            // console.error("Error creating job post:", error.message)
-            setErrorMessage(error.message)
+            if (error instanceof Error) {
+                setErrorMessage(error.message)
+            } else {
+                setErrorMessage("Please fill all the required fields")
+            }
             setErrorModalOpen(true)
         }
     }
@@ -190,6 +193,7 @@ const PostJob = () => {
                             <input
                                 type="text"
                                 name="companyName"
+                                autoComplete="off"
                                 value={jobDetails.companyName}
                                 onChange={handleChange}
                                 placeholder="Enter company name"
@@ -228,6 +232,7 @@ const PostJob = () => {
                             <input
                                 type="text"
                                 name="city"
+                                autoComplete="off"
                                 value={jobDetails.city}
                                 onChange={handleChange}
                                 placeholder="Enter city name"
@@ -241,6 +246,7 @@ const PostJob = () => {
                             <input
                                 type="text"
                                 name="title"
+                                autoComplete="off"
                                 value={jobDetails.title}
                                 onChange={handleChange}
                                 placeholder="Enter job title"
@@ -279,6 +285,7 @@ const PostJob = () => {
                             <input
                                 type="text"
                                 name="contact_email"
+                                autoComplete="off"
                                 value={jobDetails.contact_email}
                                 onChange={handleChange}
                                 placeholder="Email for applications"
@@ -292,6 +299,7 @@ const PostJob = () => {
                             <input
                                 type="file"
                                 accept="image/png, image/jpeg, image/gif"
+                                autoComplete="off"
                                 name="companyLogo"
                                 onChange={handleChangeImge}
                                 placeholder="Company Logo File"
@@ -318,6 +326,7 @@ const PostJob = () => {
                             <input
                                 type="text"
                                 name="url"
+                                autoComplete="off"
                                 value={jobDetails.url}
                                 onChange={handleChange}
                                 placeholder="Url link"
@@ -348,7 +357,6 @@ const PostJob = () => {
                 variant="contained"
                 onClick={() => createJobPost()}
                 sx={{
-                    backgroundColor: "red !important",
                     color: "white",
                     width: "100%",
                     marginTop: "50px",
@@ -390,6 +398,7 @@ const PostJob = () => {
                     <div className="text-black text-xl">Enter Country Name</div>
                     <input
                         type="text"
+                        autoComplete="off"
                         value={countryInput}
                         onChange={(e) => setCountryInput(e.target.value)}
                         className="w-full p-2 border rounded mt-2"

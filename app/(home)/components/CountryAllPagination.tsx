@@ -91,8 +91,9 @@ export default function CountryAllPagination() {
                 />
             </div>
             {clientsPosts?.map((m) => (
-                <Link href={`/post/${m.id}`} key={m.id}>
+                <Link href={`/post/${m.id}`} key={m.id} className="w-full">
                     <SingleClientPost
+                        id={m.attributes.id}
                         title={m.attributes.title}
                         job_description={m.attributes.job_description}
                         createdAt={m.attributes.createdAt}
@@ -106,7 +107,7 @@ export default function CountryAllPagination() {
                         status={m.attributes.status}
                         company_logo={m.attributes.company_logo}
                         contact_email={m.attributes.contact_email}
-                        id={m.attributes.id}
+                        applicants_number={m.attributes.applicants_number}
                     />
                 </Link>
             ))}

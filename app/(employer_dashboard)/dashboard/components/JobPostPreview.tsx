@@ -9,7 +9,7 @@ interface JobDetails {
     country: string
     city: string
     url: string
-    email: string
+    contact_email: string
 }
 
 interface JobPostPreviewProps {

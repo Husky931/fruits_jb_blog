@@ -16,7 +16,7 @@ interface JobPost {
 export default function ClientPostPage({ params }: { params: { id: string } }) {
     const id = params.id
     const [post, setPost] = useState<JobPost | null>(null)
-    const [selectedFile, setSelectedFile] = useState(null)
+    const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
     const [isFileLoading, setIsFileLoading] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
@@ -121,11 +121,11 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
     }
 
     const updateApplicantsNumber = async () => {
-        const currentApplicantsNumber = post.attributes.applicants_number || 0
+        const currentApplicantsNumber = post?.attributes.applicants_number || 0
 
         try {
             const updateResponse = await fetch(
-                `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-posts/${post.id}`,
+                `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-posts/${post?.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -189,7 +189,11 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     <Box sx={{ width: "100px", height: "100px" }}>
                         <img
                             className="max-w-full max-h-full"
-                            src={`${process.env.NEXT_PUBLIC_STRAPI_SERVER}${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`}
+                            src={
+                                post?.attributes.company_logo.data
+                                    ? `${process.env.NEXT_PUBLIC_STRAPI_SERVER}${post?.attributes.company_logo.data.attributes.formats.thumbnail.url}`
+                                    : "/upload-image_1.png"
+                            }
                         />
                     </Box>
                     <Box sx={{ marginLeft: "25px" }}>
@@ -310,7 +314,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 open={confirmUploadModalOpen}
                 title="Send Resume to Employer"
                 description="Your resume will be sent to the employer. Are you sure
-             you want to proceed?"
+                you want to proceed?"
                 onClose={() => setConfirmUploadModalOpen(false)}
                 executeAffirmative={() => handleFileUpload()}
                 executeNegative={() => setConfirmUploadModalOpen(false)}

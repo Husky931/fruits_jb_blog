@@ -95,7 +95,7 @@ export default function CountryPagination() {
                 />
             </div>
             {filteredPosts?.map((m) => (
-                <Link href={`/post/${m.id}`} key={m.id}>
+                <Link href={`/post/${m.id}`} key={m.id} className="w-full">
                     <SingleClientPost
                         key={m.id}
                         id={m.attributes.id}
@@ -112,6 +112,7 @@ export default function CountryPagination() {
                         status={m.attributes.status}
                         company_logo={m.attributes.company_logo}
                         contact_email={m.attributes.contact_email}
+                        applicants_number={m.attributes.applicants_number}
                     />
                 </Link>
             ))}
