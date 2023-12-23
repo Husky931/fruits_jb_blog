@@ -34,12 +34,12 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                 }}
             >
                 <div className="flex w-full items-center justify-start">
-                    <Box sx={{ width: "100px", height: "100px" }}>
+                    <div className="flex h-[100px] w-[100px]">
                         <img
                             className="max-h-full max-w-full"
                             src={logoPreview || "upload-image_1.png"}
                         />
-                    </Box>
+                    </div>
                     <Box sx={{ marginLeft: "25px" }}>
                         <div className="text-2xl font-bold text-[#0000EE] md:text-3xl">
                             {jobDetails.title || "Job Title"}
