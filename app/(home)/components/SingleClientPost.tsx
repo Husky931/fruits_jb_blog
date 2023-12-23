@@ -1,6 +1,7 @@
 import React from "react"
-import { Divider, Box, Typography, Button } from "@mui/material"
+import { Divider, Box, Typography } from "@mui/material"
 import { StrapiPostAttributes } from "@/types"
+import PushPinIcon from "@mui/icons-material/PushPin"
 
 const SingleClientPost: React.FC<StrapiPostAttributes> = ({
     title,
@@ -23,6 +24,7 @@ const SingleClientPost: React.FC<StrapiPostAttributes> = ({
     return (
         <div className="my-4 w-full rounded-lg bg-gray-100 p-4 text-[14px] leading-[20px] shadow sm:text-[14px]">
             <div className="text-2xl font-semibold  text-red-600">
+                <PushPinIcon sx={{ color: "black", mr: "8px" }} />
                 Direct farm apply
             </div>
             <Divider sx={{ marginTop: "10px", marginBottom: "10px" }} />
