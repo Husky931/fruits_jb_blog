@@ -82,7 +82,7 @@ export default function Footer({
 }) {
     return (
         <footer className="py-6">
-            <div className="container px-6 mx-auto space-y-6 md:space-y-12">
+            <div className="container mx-auto space-y-6 px-6 md:space-y-12">
                 <div className="grid grid-cols-12 border-t border-gray-400-50 pt-6">
                     {/* <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
                         <Logo src={logoUrl}>
@@ -94,8 +94,8 @@ export default function Footer({
                         </Logo>
                     </div> */}
 
-                    <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium text-left">
+                    <div className="col-span-6 text-center md:col-span-3 md:text-left">
+                        <p className="pb-1 text-left text-lg font-medium">
                             Categories
                         </p>
                         <ul>
@@ -105,8 +105,8 @@ export default function Footer({
                         </ul>
                     </div>
 
-                    <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium text-left">
+                    <div className="col-span-6 text-center md:col-span-3 md:text-left">
+                        <p className="pb-1 text-left text-lg font-medium">
                             Menu
                         </p>
                         <ul>
@@ -116,7 +116,7 @@ export default function Footer({
                         </ul>
                     </div>
                 </div>
-                <div className="grid justify-center pt-6 lg:justify-between border-t border-gray-400-50">
+                <div className="grid justify-center border-t border-gray-400-50 pt-6 lg:justify-between">
                     <div className="flex">
                         <span className="mr-2">
                             ©{new Date().getFullYear()} All rights reserved
@@ -133,7 +133,7 @@ export default function Footer({
                             ))}
                         </ul> */}
                     </div>
-                    <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                    {/* <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                         {socialLinks.map((link: FooterLink) => {
                             return (
                                 <a
@@ -148,7 +148,7 @@ export default function Footer({
                                 </a>
                             )
                         })}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>
