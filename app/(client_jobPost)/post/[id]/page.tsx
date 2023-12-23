@@ -192,7 +192,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 }}
             >
                 <div className="flex w-full items-center justify-start">
-                    <div className="h-[100px] w-[100px]">
+                    <div className="flex h-[100px] w-[100px]">
                         <img
                             className="max-h-full max-w-full"
                             src={
