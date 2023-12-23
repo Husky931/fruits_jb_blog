@@ -3,10 +3,11 @@ import { useEffect, useState } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
-import { Box, Modal, Typography, Button } from "@mui/material"
+import { Box } from "@mui/material"
 import Link from "next/link"
 import ReusableModal from "@/app/components/ReusableModal"
 import ReusableModalYesNo from "@/app/components/ReusableModalYesNo"
+import Cookies from "js-cookie"
 
 interface JobPost {
     id: number
@@ -47,6 +48,10 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
             }
 
             setIsLoading(false)
+
+            // Check if the user has already applied for this job
+            const hasApplied = Cookies.get(`applied_job_${id}`) === "true"
+            setSuccessfullySent(hasApplied)
         }
     }, [id, clientsPosts])
 
@@ -108,6 +113,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
             setSuccessMessage(
                 "Resume succesfully uploaded and sent to employer. Good luck"
             )
+            Cookies.set(`applied_job_${id}`, "true")
             setConfirmUploadModalOpen(false)
             setSuccessfullySent(true)
             setSuccessModalOpen(true)
