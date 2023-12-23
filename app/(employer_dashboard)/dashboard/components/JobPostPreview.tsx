@@ -72,7 +72,7 @@ const JobPostPreview: React.FC<JobPostPreviewProps> = ({
                     )}
                 </Box>
                 <Box sx={{ marginTop: "30px" }}>
-                    <button className="mt-2 w-full rounded bg-red-500 px-4 py-2 font-bold text-white">
+                    <button className="mt-2 w-full cursor-default rounded bg-red-500 px-4 py-2 font-bold text-white">
                         Upload CV
                     </button>
                     <div className="mt-2">

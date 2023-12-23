@@ -192,7 +192,7 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                 }}
             >
                 <div className="flex w-full items-center justify-start">
-                    <Box sx={{ width: "100px", height: "100px" }}>
+                    <div className="h-[100px] w-[100px]">
                         <img
                             className="max-h-full max-w-full"
                             src={
@@ -201,8 +201,8 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                                     : "/upload-image_1.png"
                             }
                         />
-                    </Box>
-                    <Box sx={{ marginLeft: "25px" }}>
+                    </div>
+                    <div className="mr-[25px] flex-1 text-center">
                         <div className="text-2xl font-bold text-[#0000EE] md:text-3xl">
                             {post?.attributes.title}
                         </div>
@@ -219,9 +219,20 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                                         .toLowerCase()}
                             , {post?.attributes.city_location}
                         </div>
-                    </Box>
+                    </div>
                 </div>
-
+                <div className="mt-[15px]">
+                    <div>
+                        {post?.attributes &&
+                            new Date(
+                                post?.attributes.updatedAt
+                            ).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric"
+                            })}
+                    </div>
+                </div>
                 <Box sx={{ marginTop: "30px" }}>
                     <div className="my-1 text-2xl font-semibold">
                         Job Description
