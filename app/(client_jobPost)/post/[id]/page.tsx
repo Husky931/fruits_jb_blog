@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useClientPosts } from "@/context/ClientPostsContext"
 import { StrapiPostAttributes } from "@/types"
@@ -237,7 +237,17 @@ export default function ClientPostPage({ params }: { params: { id: string } }) {
                     <div className="my-1 text-2xl font-semibold">
                         Job Description
                     </div>
-                    <div> {post?.attributes.job_description}</div>
+
+                    <div>
+                        {post?.attributes.job_description
+                            .split("\n")
+                            .map((line, index) => (
+                                <React.Fragment key={index}>
+                                    {line}
+                                    <br />
+                                </React.Fragment>
+                            ))}
+                    </div>
                     {post?.attributes.URL && (
                         <Link
                             href={`https://${post?.attributes.URL}`}
