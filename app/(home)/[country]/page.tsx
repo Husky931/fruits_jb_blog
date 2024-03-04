@@ -45,23 +45,23 @@ export async function generateMetadata({
 }: {
     params: { country: string }
 }): Promise<Metadata> {
-    const metadata = countryMetadata[params.country]
+    const title = `Daily ${params.country} curated fruit harvesting and picking jobs `
 
     return {
-        title: metadata.description,
+        title: title,
         alternates: {
             canonical: params.country
         },
-        description: metadata.description,
+        description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
         openGraph: {
-            title: metadata.title,
-            description: metadata.description,
+            title: title,
+            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
             images: [`https://fruitpickingjobs.com/og/poster.jpeg`]
         },
         twitter: {
             card: "summary_large_image",
-            title: metadata.title,
-            description: metadata.description,
+            title: title,
+            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
             images: [`https://fruitpickingjobs.com/og/poster.jpeg.jpg`]
         }
     }
