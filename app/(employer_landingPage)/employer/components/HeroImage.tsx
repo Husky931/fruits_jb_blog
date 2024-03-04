@@ -3,16 +3,16 @@ import Link from "next/link"
 
 export default function HeroImage() {
     return (
-        <header className="relative w-full h-[400px] md:h-[400px] xl:h-[500px] 2xl:h-[700px] bg-no-repeat bg-cover bg-top bg-[url('/employers-mob.webp')] md:bg-[url('/employers.webp')]">
-            <div className="2xl:ml-16 z-10 text-center p-4 flex flex-col justify-center items-center w-auto h-full md:items-start md:justify-center md:ml-4">
-                <h1 className="text-[40px] lg:text-[60px] text-white font-bold">
+        <header className="relative h-[400px] w-full bg-[url('/employers-mob.webp')] bg-cover bg-top bg-no-repeat md:h-[400px] md:bg-[url('/employers.webp')] xl:h-[500px] 2xl:h-[700px]">
+            <div className="z-10 flex h-full w-auto flex-col items-center justify-center p-4 text-center md:ml-4 md:items-start md:justify-center 2xl:ml-16">
+                <h1 className="text-[40px] font-bold !text-white lg:text-[60px]">
                     Get your New hire
                 </h1>
-                <p className="text-[20px] mt-2 text-white">
+                <p className="mt-2 text-[20px] text-white">
                     Post a job for free and find the right candidate
                 </p>
                 <Link href="/dashboard">
-                    <button className="mt-12 md:ml-4 lg:mt-18 py-3 px-20 rounded bg-[#2557A7] text-white font-bold">
+                    <button className="lg:mt-18 mt-12 rounded bg-[#2557A7] px-20 py-3 font-bold text-white md:ml-4">
                         Post a job
                     </button>
                 </Link>

@@ -1,4 +1,5 @@
 import CountryPagination from "../components/CountryPagination"
+import countryMetadata from "./countryMetadata"
 import { Metadata } from "next"
 import {
     Australia,
@@ -44,23 +45,23 @@ export async function generateMetadata({
 }: {
     params: { country: string }
 }): Promise<Metadata> {
-    const title = `Daily ${params.country} curated fruit harvesting and picking jobs `
+    const metadata = countryMetadata[params.country]
 
     return {
-        title: title,
+        title: metadata.description,
         alternates: {
             canonical: params.country
         },
-        description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+        description: metadata.description,
         openGraph: {
-            title: title,
-            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+            title: metadata.title,
+            description: metadata.description,
             images: [`https://fruitpickingjobs.com/og/poster.jpeg`]
         },
         twitter: {
             card: "summary_large_image",
-            title: title,
-            description: `Find the latest fruit picking jobs in ${params.country}. Daily updates and curated selection for ${params.country} fruit harvesting.`,
+            title: metadata.title,
+            description: metadata.description,
             images: [`https://fruitpickingjobs.com/og/poster.jpeg.jpg`]
         }
     }
@@ -80,7 +81,7 @@ export default async function Page({
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <div className="w-full flex flex-col justify-start items-center">
+            <div className="flex w-full flex-col items-center justify-start">
                 <CountryPagination />
                 <CountrySEO />
             </div>

@@ -8,18 +8,18 @@ import Footer from "./blog/components/Footer"
 export async function generateMetadata(): Promise<Metadata> {
     const metadataBase = new URL("https://fruitspickingjobs.com")
     return {
-        title: "Fruit harvesting jobs board",
+        title: "Find Fruit Picking Jobs - Explore Vacancies Worldwide | Fruits Picking Jobs",
         description:
-            "Daily fruits picking jobs generated from all over the world",
+            "Discover rewarding fruit picking jobs worldwide. Browse job vacancies for seasonal fruit picking work and start your adventure today. Visit our website for access to diverse fruit picking vacancies.",
         metadataBase: metadataBase,
         alternates: {
             canonical: "https://fruitspickingjobs.com"
         },
         keywords: ["Fruits", "Jobs", "Picking", "World", "Daily"],
         openGraph: {
-            title: "Fruits picking job board",
+            title: "Find Fruit Picking Jobs - Explore Vacancies Worldwide | Fruits Picking Jobs",
             description:
-                "Daily fruits picking jobs generated from all over the world",
+                "Discover rewarding fruit picking jobs worldwide. Browse job vacancies for seasonal fruit picking work and start your adventure today. Visit our website for access to diverse fruit picking vacancies.",
             url: "https://fruitspickingjobs.com",
             siteName: "Fruits Picking Jobs",
             images: [
@@ -33,9 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: "Fruits picking job board",
+            title: "Find Fruit Picking Jobs - Explore Vacancies Worldwide | Fruits Picking Jobs",
             description:
-                "Daily fruits picking jobs generated from all over the world",
+                "Discover rewarding fruit picking jobs worldwide. Browse job vacancies for seasonal fruit picking work and start your adventure today. Visit our website for access to diverse fruit picking vacancies.",
             site: "@fruitspickingjobs",
             images: [metadataBase + "/twitter-image.jpg"]
         }
