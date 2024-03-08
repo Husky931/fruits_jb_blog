@@ -3,7 +3,7 @@ import "./globals.css"
 import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers"
 import { fetchAPI } from "./utils/fetch-api"
 
-import Footer from "./components/Footer"
+import Footer from "../../components/Footer"
 import Navbar from "./components/Navbar"
 
 const FALLBACK_SEO = {
@@ -100,15 +100,6 @@ export default async function RootLayout({
             />
 
             <main className="min-h-screen">{children}</main>
-
-            {/* <Footer
-                // logoUrl={footerLogoUrl}
-                // logoText={footer.footerLogo.logoText}
-                menuLinks={footer.menuLinks}
-                categoryLinks={footer.categories.data}
-                legalLinks={footer.legalLinks}
-                socialLinks={footer.socialLinks}
-            /> */}
         </>
     )
 }

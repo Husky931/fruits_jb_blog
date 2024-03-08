@@ -38,7 +38,7 @@ const Countries = () => {
                         href="/"
                         as="/"
                     >
-                        Latest
+                        Worldwide
                     </Link>
                 </li>
                 {countries.map((link) => {

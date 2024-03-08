@@ -1,6 +1,7 @@
 import Navigation from "../(home)/components/navigation/index"
 import { fetchAPI } from "../(home)/blog/utils/fetch-api"
-import Footer from "../(home)/blog/components/Footer"
+import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/post"),
@@ -50,14 +51,7 @@ export default async function RootLayout({
         <div className="mx-auto max-w-[1350px] p-4 sm:px-24 sm:py-4">
             <Navigation />
             {children}
-            <Footer
-                // logoUrl={footerLogoUrl}
-                // logoText={footer.footerLogo.logoText}
-                menuLinks={footer.menuLinks}
-                categoryLinks={footer.categories.data}
-                legalLinks={footer.legalLinks}
-                socialLinks={footer.socialLinks}
-            />
+            <Footer />
         </div>
     )
 }

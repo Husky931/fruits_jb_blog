@@ -3,7 +3,7 @@ import { Metadata } from "next"
 import Countries from "@/app/(home)/components/NavBar_Countries"
 import Navigation from "./components/navigation"
 import { fetchAPI } from "./blog/utils/fetch-api"
-import Footer from "./blog/components/Footer"
+import Footer from "../components/Footer"
 
 export async function generateMetadata(): Promise<Metadata> {
     const metadataBase = new URL("https://fruitspickingjobs.com")
@@ -81,19 +81,14 @@ export default async function RootLayout({
     const { navbar, footer } = global.data.attributes
 
     return (
-        <div className="mx-auto max-w-[1350px] p-4 sm:px-24 sm:py-4">
+        <div>
             <Navigation />
-            <SiteTitle />
-            <Countries />
-            {children}
-            <Footer
-                // logoUrl={footerLogoUrl}
-                // logoText={footer.footerLogo.logoText}
-                menuLinks={footer.menuLinks}
-                categoryLinks={footer.categories.data}
-                legalLinks={footer.legalLinks}
-                socialLinks={footer.socialLinks}
-            />
+            <div className="mx-auto max-w-[1350px] p-4 sm:px-24 sm:py-4">
+                <SiteTitle />
+                <Countries />
+                {children}
+            </div>
+            <Footer />
         </div>
     )
 }

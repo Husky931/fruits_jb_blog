@@ -1,6 +1,7 @@
-import Footer from "../(home)/blog/components/Footer"
+import Footer from "../components/Footer"
 import EmployersNav from "./employer/components/Navigation"
 import { fetchAPI } from "../(home)/blog/utils/fetch-api"
+import Footer from "../components/Footer"
 
 export const metadata = {
     metadataBase: new URL("https://fruitspickingjobs.com/employers"),
@@ -68,12 +69,7 @@ export default async function RootLayout({
         <div style={{ height: "100vh", margin: 0, width: "100%" }}>
             <EmployersNav />
             {children}
-            <Footer
-                menuLinks={footer.menuLinks}
-                categoryLinks={footer.categories.data}
-                legalLinks={footer.legalLinks}
-                socialLinks={footer.socialLinks}
-            />
+            <Footer />
         </div>
     )
 }
