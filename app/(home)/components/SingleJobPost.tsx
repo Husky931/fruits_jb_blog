@@ -59,7 +59,7 @@ const SingleJobPost: React.FC<PostgresJobPostTypes> = ({
                     <div className="text-[#0000EE]">read more</div>
                 </div>
                 <div className="my-1 inline-block rounded-md border-2 border-custom-dark-blue p-1">
-                    Source: {new URL(link).hostname}
+                    Source: {link}
                 </div>
                 <div className="font-semibold text-gray-500">{displayDate}</div>
             </li>

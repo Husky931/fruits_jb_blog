@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import HomeText from "./components/HomepageText"
-import JobModalSocial from "./components/JobModalSocial"
+// import JobModalSocial from "./components/JobModalSocial"
 import CountryAllPagination from "./components/CountryAllPagination"
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            {jobId && <JobModalSocial jobId={jobId} />}
+            {/* {jobId && <JobModalSocial jobId={jobId} />} */}
             <CountryAllPagination />
             <HomeText />
         </main>

@@ -3,7 +3,7 @@ import Austria from "./Austria"
 import Belgium from "./Belgium"
 import Canada from "./Canada"
 import Denmark from "./Denmark"
-import England from "./England"
+import UK from "./UK"
 import France from "./France"
 import Finland from "./Finland"
 import Germany from "./Germany"
@@ -22,7 +22,7 @@ export {
     Belgium,
     Canada,
     Denmark,
-    England,
+    UK,
     France,
     Finland,
     Germany,

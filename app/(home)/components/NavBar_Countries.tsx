@@ -9,7 +9,7 @@ const Countries = () => {
         // "australia",
         "usa",
         "canada",
-        "england",
+        "uk",
         "france",
         "austria",
         "spain",

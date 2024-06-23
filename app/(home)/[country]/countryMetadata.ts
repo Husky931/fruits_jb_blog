@@ -14,10 +14,10 @@ const countryMetadata: Record<string, MetadataProps> = {
         description:
             "Explore seasonal fruit picking jobs in Canada. Browse employment opportunities in various provinces. Discover job vacancies for fruit picking work and embark on your adventure with us."
     },
-    england: {
-        title: "Discover Fruit Picking Jobs in England - Fruit Picking Vacancies England",
+    uk: {
+        title: "Discover Fruit Picking Jobs in United Kingdom - Fruit Picking Vacancies United Kingdom",
         description:
-            "Explore seasonal fruit picking jobs in England. Browse employment opportunities in different regions. Find job vacancies for fruit picking work and start your journey with us."
+            "Explore seasonal fruit picking jobs in United Kingdom. Browse employment opportunities in different regions. Find job vacancies for fruit picking work and start your journey with us."
     },
     france: {
         title: "Explore Fruit Picking Jobs in France, Fruit Picking Work in France",

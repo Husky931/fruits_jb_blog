@@ -11,10 +11,9 @@ import Link from "next/link"
 
 export default function CountryPagination() {
     const [page, setPage] = useState(1)
-    const [posts, setPosts] = useState([])
-    const [totalPages, setTotalPages] = useState<number>(1)
-    const [isLoading, setIsLoading] = useState(false)
     const clientsPosts = useClientPosts()
+    const [strapiPosts, setStrapiPosts] = useState([])
+    const [loading, setLoading] = useState<boolean>(false)
 
     const pathname = usePathname().slice(1)
     const filteredPosts = clientsPosts?.filter(
@@ -30,41 +29,26 @@ export default function CountryPagination() {
     }
 
     useEffect(() => {
-        const fetchPosts = async (pageNum: number) => {
-            setIsLoading(true)
-
+        const fetchStrapiPosts = async (pageNum: number) => {
+            setLoading(true)
             let url
             if (process.env.NODE_ENV === "production") {
-                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/${pathname}?page=${pageNum}`
+                url = `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-vacancies?filters[country][$eq]=${pathname}`
             } else {
-                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/${pathname}?page=${pageNum}`
+                url = `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-vacancies?filters[country][$eq]=${pathname}`
             }
             const res = await fetch(url, {
                 cache: "no-store"
             })
             const data = await res.json()
-            setPosts(data)
-            setIsLoading(false)
+            console.log(data.data)
+            setStrapiPosts(data.data)
+            setLoading(false)
         }
-
-        const fetchTotalPosts = async () => {
-            let url
-            if (process.env.NODE_ENV === "production") {
-                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/all_number/${pathname}`
-            } else {
-                url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/all_number/${pathname}`
-            }
-            const res = await fetch(url, {
-                cache: "no-store"
-            })
-            const total = await res.json()
-            setTotalPages(Math.ceil(total / 25))
-        }
-        fetchTotalPosts()
-        fetchPosts(page)
+        fetchStrapiPosts(page)
     }, [page])
 
-    if (isLoading)
+    if (loading)
         return (
             <div className="min-w-screen items-top z-50 flex min-h-screen justify-center">
                 <ColorRing
@@ -85,15 +69,6 @@ export default function CountryPagination() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <div className="flex w-full items-center justify-start">
-                <Pagination
-                    count={totalPages}
-                    variant="outlined"
-                    page={page}
-                    onChange={handlePageChange}
-                    sx={{ marginBottom: "10px" }}
-                />
-            </div>
             {filteredPosts?.map((m) => (
                 <Link href={`/post/${m.id}`} key={m.id} className="w-full">
                     <SingleClientPost
@@ -123,29 +98,20 @@ export default function CountryPagination() {
                         Aggregated posts from other websites
                     </div>
                 )}
-                {posts.map((m: any) => (
+                {strapiPosts.map((m: any) => (
                     <SingleJobPost
                         key={m.id}
-                        title={m.title}
-                        companyName={m.company_name}
-                        country={m.country}
-                        jobLocation={m.location}
-                        jobDescription={m.description}
-                        link={m.url}
-                        date={m.posted_date}
-                        db_add_timestamp={m.db_add_timestamp}
-                    />
+                        title={m.attributes.title}
+                        companyName={m.attributes.company_name}
+                        country={m.attributes.country}
+                        db_add_timestamp={m.attributes.createdAt}
+                        jobDescription={m.attributes.job_description}
+                        jobLocation={m.attributes.city_location                        }
+                        link={m.attributes.url}
+                        date={m.attributes.publishedAt}
+                />
                 ))}
             </ul>
-            <div className="flex w-full items-center justify-start">
-                <Pagination
-                    count={totalPages}
-                    variant="outlined"
-                    page={page}
-                    onChange={handlePageChange}
-                    sx={{ marginTop: "30px" }}
-                />
-            </div>
         </main>
     )
 }

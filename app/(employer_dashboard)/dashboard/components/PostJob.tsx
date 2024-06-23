@@ -216,7 +216,7 @@ const PostJob = () => {
                             >
                                 <MenuItem value="usa">USA</MenuItem>
                                 <MenuItem value="canada">Canada</MenuItem>
-                                <MenuItem value="england">England</MenuItem>
+                                <MenuItem value="uk">UK</MenuItem>
                                 <MenuItem value="france">France</MenuItem>
                                 <MenuItem value="austria">Austria</MenuItem>
                                 <MenuItem value="spain">Spain</MenuItem>

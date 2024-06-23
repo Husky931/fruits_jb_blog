@@ -43,12 +43,8 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
         if (jobId) {
             const fetchJob = async () => {
                 setIsLoading(true)
-                let url
-                if (process.env.NODE_ENV === "production") {
-                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/job/${jobId}`
-                } else {
-                    url = `${process.env.NEXT_PUBLIC_EXPRESS_SERVER}/api/job/${jobId}`
-                }
+                let url = ''
+                // to be added Strapi endpoint for social media landing posts
                 const res = await fetch(url, {
                     cache: "no-store"
                 })
