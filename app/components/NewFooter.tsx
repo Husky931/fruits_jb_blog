@@ -1,22 +1,21 @@
 export const NewFooter = () => {
     return (
-        <footer className="bg-white antialiased dark:bg-gray-800">
-            <div className="border-b border-gray-100 py-6 dark:border-gray-700 md:py-8 lg:py-16">
-                <div className="items-start gap-6 md:gap-8 lg:flex 2xl:gap-24">
-                    <div className="grid min-w-0 flex-1 grid-cols-2 gap-6 md:gap-8 xl:grid-cols-3">
+        <footer className="bg-white p-8 antialiased dark:bg-gray-800">
+          
+                <div className="flex flex-col md:flex-row  gap-6 md:flex md:gap-8 2xl:gap-24 ">
+                    <div className="flex flex-1 flex-col">
                         <div>
                             <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Company
                             </h6>
-                            <ul className="space-y-3">
+                            <ul className="space-y-1">
                                 <li>
                                     <a
                                         href="#"
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        {" "}
-                                        About{" "}
+                                        About Us
                                     </a>
                                 </li>
 
@@ -26,8 +25,7 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        {" "}
-                                        Premium{" "}
+                                        Our Mission
                                     </a>
                                 </li>
 
@@ -37,8 +35,7 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        {" "}
-                                        Blog{" "}
+                                        Blog
                                     </a>
                                 </li>
 
@@ -48,36 +45,24 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        {" "}
-                                        Affiliate Program{" "}
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        {" "}
-                                        Get Coupon{" "}
+                                        Affiliate Program
                                     </a>
                                 </li>
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="mt-6">
                             <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                                Order & Purchases
+                                Job Seekers
                             </h6>
-                            <ul className="space-y-3">
+                            <ul className="space-y-1">
                                 <li>
                                     <a
                                         href="#"
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        Order Status
+                                        Find Jobs
                                     </a>
                                 </li>
                                 <li>
@@ -86,7 +71,7 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        Track Your Order
+                                        Submit Resume
                                     </a>
                                 </li>
                                 <li>
@@ -95,7 +80,7 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        Purchase History
+                                        Career Advice
                                     </a>
                                 </li>
                                 <li>
@@ -104,7 +89,7 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        Returns & Refunds
+                                        Interview Tips
                                     </a>
                                 </li>
                                 <li>
@@ -113,70 +98,19 @@ export const NewFooter = () => {
                                         title=""
                                         className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                     >
-                                        Payment Methods
+                                        Job Alers
                                     </a>
                                 </li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div>
-                            <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                                Support & Services
-                            </h6>
-                            <ul className="space-y-3">
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Contact Support
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        FAQs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Service Centers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Warranty Information
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Product Manuals
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
+                    <div className="flex flex-1 flex-col">
                         <div>
                             <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Partnerships
                             </h6>
-                            <ul className="space-y-3">
+                            <ul className="space-y-1">
                                 <li>
                                     <a
                                         href="#"
@@ -225,11 +159,11 @@ export const NewFooter = () => {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="mt-6">
                             <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Payment Options
                             </h6>
-                            <ul className="space-y-3">
+                            <ul className="space-y-1">
                                 <li>
                                     <a
                                         href="#"
@@ -277,12 +211,64 @@ export const NewFooter = () => {
                                 </li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div>
+                    <div className='flex-1'>
+                        <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+                            Resources
+                        </h6>
+                        <ul className="space-y-1">
+                            <li>
+                                <a
+                                    href="#"
+                                    title=""
+                                    className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                                >
+                                    Post a job
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    title=""
+                                    className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                                >
+                                    Employer Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    title=""
+                                    className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                                >
+                                    Find Talent
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    title=""
+                                    className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                                >
+                                    Recruitment Services
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    title=""
+                                    className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                                >
+                                    Employer Resources
+                                </a>
+                            </li>
+                        </ul>
+                        <div className="mt-6">
                             <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Rewards
                             </h6>
-                            <ul className="space-y-3">
+                            <ul className="space-y-1">
                                 <li>
                                     <a
                                         href="#"
@@ -319,186 +305,17 @@ export const NewFooter = () => {
                                         Exclusive Offers
                                     </a>
                                 </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Redeem Rewards
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                                Trade Assurance
-                            </h6>
-                            <ul className="space-y-3">
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        What is Trade Assurance?
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        How It Works
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Buyer Protection
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Seller Guarantee
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        FAQs
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                                Sell on Flowbite
-                            </h6>
-                            <ul className="space-y-3">
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Seller Registration
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        How to Sell
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Seller Policies
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Seller Resources
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Seller Support
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                                Get Support
-                            </h6>
-                            <ul className="space-y-3">
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Contact Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Help Center
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Community Forums
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Technical Support
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                    >
-                                        Live Chat
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="mt-6 w-full md:mt-8 lg:mt-0 lg:max-w-lg">
+                    <div className="flex-2">
                         <div className="space-y-5 rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
                             <a
                                 href="#"
                                 title=""
-                                className="text-primary-700 dark:text-primary-500 text-base font-medium underline hover:no-underline"
+                                className="text-primary-700 dark:text-primary-500 pb-4 text-base font-medium underline hover:no-underline"
                             >
-                                {" "}
                                 Sign In or Create Account{" "}
                             </a>
 
@@ -506,16 +323,15 @@ export const NewFooter = () => {
 
                             <form action="#">
                                 <div className="items-end space-y-4 sm:flex sm:space-y-0">
-                                    <div className="relative mr-3 w-full sm:w-96 lg:w-full">
+                                    <div className="relative mr-3">
                                         <label
                                             htmlFor="email"
-                                            className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                                            className="mb-2 block text-sm font-medium text-gray-900 mt-4 dark:text-gray-300"
                                         >
-                                            {" "}
                                             Get the latest deals and more.{" "}
                                         </label>
                                         <input
-                                            className="focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500 block w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-gray-900 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 sm:w-96 lg:w-full"
+                                            className="focus:border-primary-500 w-full focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500 block  rounded-lg border border-gray-300 bg-white p-3 text-sm text-gray-900 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
                                             placeholder="Enter your email address"
                                             type="email"
                                             id="email"
@@ -524,7 +340,7 @@ export const NewFooter = () => {
                                     <div>
                                         <button
                                             type="submit"
-                                            className="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full cursor-pointer rounded-lg px-5 py-3 text-center text-sm font-medium text-white focus:ring-4"
+                                            className="bg-blue-500 over:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer rounded-lg px-5 py-3 text-center text-sm font-medium text-black focus:ring-4"
                                         >
                                             Subscribe
                                         </button>
@@ -532,84 +348,12 @@ export const NewFooter = () => {
                                 </div>
                             </form>
 
+                         
+                          
+                          
+
+                            <div className="flex space-x-4 mt-8">
                             <hr className="border-gray-200 dark:border-gray-600" />
-
-                            <div>
-                                <p className="mb-3 text-sm font-medium text-gray-900 dark:text-white">
-                                    Trade on the go with{" "}
-                                    <a
-                                        href="#"
-                                        title=""
-                                        className="underline hover:no-underline"
-                                    >
-                                        Flowbite App
-                                    </a>
-                                </p>
-
-                                <div className="gap-4 space-y-4 sm:flex sm:space-y-0">
-                                    <a
-                                        href="#"
-                                        className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 dark:focus:ring-gray-800 sm:w-auto"
-                                    >
-                                        <svg
-                                            className="mr-3 h-7 w-7"
-                                            aria-hidden="true"
-                                            focusable="false"
-                                            data-prefix="fab"
-                                            data-icon="google-play"
-                                            role="img"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 512 512"
-                                        >
-                                            <path
-                                                fill="currentColor"
-                                                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"
-                                            ></path>
-                                        </svg>
-                                        <div className="text-left">
-                                            <div className="mb-1 text-xs">
-                                                Download on the
-                                            </div>
-                                            <div className="-mt-1 font-sans text-sm font-semibold">
-                                                Google Play
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 dark:focus:ring-gray-800 sm:w-auto"
-                                    >
-                                        <svg
-                                            className="mr-3 h-7 w-7"
-                                            aria-hidden="true"
-                                            focusable="false"
-                                            data-prefix="fab"
-                                            data-icon="apple"
-                                            role="img"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 384 512"
-                                        >
-                                            <path
-                                                fill="currentColor"
-                                                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-                                            ></path>
-                                        </svg>
-                                        <div className="text-left">
-                                            <div className="mb-1 text-xs">
-                                                Download on the
-                                            </div>
-                                            <div className="-mt-1 font-sans text-sm font-semibold">
-                                                Mac App Store
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <hr className="border-gray-200 dark:border-gray-600" />
-
-                            <div className="flex space-x-4">
                                 <a
                                     href="#"
                                     className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
@@ -698,75 +442,69 @@ export const NewFooter = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+               
             </div>
 
-            <div className="py-6 md:py-8">
-                <div className="gap-4 space-y-5 xl:flex xl:items-center xl:justify-between xl:space-y-0">
-                    <a href="#" title="" className="block">
-                        <img
-                            className="block h-8 w-auto dark:hidden"
-                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
-                            alt=""
-                        />
-                        <img
-                            className="hidden h-8 w-auto dark:block"
-                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
-                            alt=""
-                        />
-                    </a>
+            <div className="flex items-center justify-between py-6 md:py-8">
+                <a href="#" title="" className="block">
+                    <img
+                        className="block h-8 w-auto dark:hidden"
+                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
+                        alt=""
+                    />
+                    <img
+                        className="hidden h-8 w-auto dark:block"
+                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
+                        alt=""
+                    />
+                </a>
 
-                    <ul className="flex flex-wrap items-center gap-4 text-sm text-gray-900 dark:text-white xl:justify-center">
-                        <li>
-                            <a
-                                href="#"
-                                title=""
-                                className="font-medium hover:underline"
-                            >
-                                {" "}
-                                Flowbite Express{" "}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                title=""
-                                className="font-medium hover:underline"
-                            >
-                                {" "}
-                                Legal Notice{" "}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                title=""
-                                className="font-medium hover:underline"
-                            >
-                                {" "}
-                                Product Listing Policy{" "}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                title=""
-                                className="font-medium hover:underline"
-                            >
-                                {" "}
-                                Terms of Use{" "}
-                            </a>
-                        </li>
-                    </ul>
-
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                        © 2024{" "}
-                        <a href="#" className="hover:underline">
-                            Flowbite
+                <ul className="flex flex-wrap items-center gap-4 text-sm text-gray-900 dark:text-white xl:justify-center">
+                    <li>
+                        <a
+                            href="#"
+                            title=""
+                            className="font-medium hover:underline"
+                        >
+                            Fruits Express
                         </a>
-                        , Inc. All rights reserved.
-                    </p>
-                </div>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            title=""
+                            className="font-medium hover:underline"
+                        >
+                            Legal Notice{" "}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            title=""
+                            className="font-medium hover:underline"
+                        >
+                            Product Listing Policy{" "}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            title=""
+                            className="font-medium hover:underline"
+                        >
+                            Terms of Use{" "}
+                        </a>
+                    </li>
+                </ul>
+
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                    © 2024{" "}
+                    <a href="#" className="hover:underline">
+                        FPJ
+                    </a>
+                    , Inc. All rights reserved.
+                </p>
             </div>
         </footer>
     )
