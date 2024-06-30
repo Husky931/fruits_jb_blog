@@ -25,20 +25,48 @@ export default function Nav() {
         setAnchorEl(null)
     }
 
+    const [isScrolling, setIsScrolling] = useState(false)
+    let scrollTimeout: number | null = null
+
+    const handleScroll = () => {
+        if (!isScrolling) setIsScrolling(true)
+
+        if (scrollTimeout !== null) {
+            clearTimeout(scrollTimeout)
+        }
+
+        scrollTimeout = window.setTimeout(() => {
+            setIsScrolling(false)
+        }, 200) // Adjust the time to control the delay
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+            if (scrollTimeout !== null) {
+                clearTimeout(scrollTimeout)
+            }
+        }
+    }, [])
+
     return (
-        <div className="flex w-full items-center justify-between rounded-lg bg-blue-600 px-4 py-3">
+        <div
+            className={`fixed top-0 z-50 mx-auto flex w-full transform items-center justify-between px-12 py-3 transition-all duration-700 ${
+                isScrolling ? "opacity-0" : "border-0 bg-blue-600 opacity-100"
+            }`}
+        >
             <Link
                 prefetch={false}
-                className="h-[40px] w-[50px]"
+                // className="h-[35px] w-[60px]"
                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/`}
             >
-                <div className="relative h-[40px] w-[50px] cursor-pointer">
-                    <Image
+                <div className="relative h-[35px] w-[65px] cursor-pointer">
+                    <img
                         src="/fruits_job_board_logo.png"
                         alt="harvest jobs logo"
-                        width="70"
-                        height="70"
-                        className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 transform"
+                        className="h-full w-full"
                     />
                 </div>
             </Link>

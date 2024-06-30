@@ -83,11 +83,9 @@ export default async function RootLayout({
 
     return (
         <div>
-            <div className="w-full">
-                <Navigation />
-            </div>
+            <Navigation />
 
-            <div className="mx-auto max-w-[1350px] p-4 sm:px-24 sm:py-4">
+            <div className="mx-auto mt-[60px] max-w-[1350px] p-4 sm:px-24 sm:py-4">
                 <SiteTitle />
                 <Countries />
                 {children}
