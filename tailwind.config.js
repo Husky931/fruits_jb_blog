@@ -1,3 +1,4 @@
+const flowbite = require("flowbite-react/tailwind");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,6 +9,7 @@ module.exports = {
     './app/(auth)/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(employer_dashboard)/**/*.{js,ts,jsx,tsx,mdx}',
     './app/(client_jobPost)/**/*.{js,ts,jsx,tsx,mdx}',
+    flowbite.content(),
   ],
   theme: {
     extend: {
@@ -23,5 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbite.plugin()],
 }
