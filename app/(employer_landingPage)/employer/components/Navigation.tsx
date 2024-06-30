@@ -34,12 +34,12 @@ export default function EmpoyersNav() {
     return (
         // <div className="fixed top-4 left-2/4 transform -translate-x-2/4 w-full md:w-[85%] mx-auto flex justify-between items-center px-4 py-3 bg-transparent z-50 ">
         <div
-            className={`fixed transform w-full mx-auto flex justify-between items-center px-12 py-3 z-50 transition-all duration-700 ${
-                isScrolling ? "opacity-0" : "opacity-100 bg-[#2D2D2D]"
+            className={`fixed z-50 mx-auto flex w-full transform items-center justify-between px-12 py-3 transition-all duration-700 ${
+                isScrolling ? "opacity-0" : "bg-[#2D2D2D] opacity-100"
             }`}
         >
             <Link prefetch={false} href="/">
-                <div className="w-[65px] h-[35px] relative cursor-pointer">
+                <div className="relative h-[35px] w-[65px] cursor-pointer">
                     <img
                         src="/fruits_job_board_logo.png"
                         alt="harvest jobs logo"
@@ -48,7 +48,7 @@ export default function EmpoyersNav() {
                 </div>
             </Link>
             <Link href="/dashboard">
-                <button className="bg-[#2557A7] text-white hover:bg-[#2557A7]  border-0 font-semibold py-2 px-8 rounded">
+                <button className="rounded border-0 bg-[#2557A7]  px-8 py-2 font-semibold text-white hover:bg-[#2557A7]">
                     POST
                 </button>
             </Link>

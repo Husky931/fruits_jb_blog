@@ -3,7 +3,7 @@ import Link from "next/link"
 const Sweden = () => {
     return (
         <section>
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center text-3xl font-bold">
                 Fun Facts About Sweden's Agriculture
             </h1>
             <br />
@@ -76,7 +76,7 @@ const Sweden = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center text-3xl font-bold">
                 Info About Sweden's Agriculture
             </h1>
             <br />
@@ -111,7 +111,7 @@ const Sweden = () => {
                     variety of other fruits though in smaller volumes. Here's a
                     more detailed breakdown:
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="my-1 flex flex-col gap-y-2">
                     <li>
                         <span className="italic">Apples:</span> Apples are the
                         main commercial fruit product in Sweden. The total

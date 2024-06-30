@@ -43,7 +43,7 @@ export default async function JobModalSocial({ jobId }: JobModalProps) {
         if (jobId) {
             const fetchJob = async () => {
                 setIsLoading(true)
-                let url = ''
+                let url = ""
                 // to be added Strapi endpoint for social media landing posts
                 const res = await fetch(url, {
                     cache: "no-store"

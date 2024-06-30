@@ -39,11 +39,11 @@ export default function ArticleSelect({
     }
 }) {
     return (
-        <div className="p-4 rounded-lg min-h-[365px] relative">
+        <div className="relative min-h-[365px] rounded-lg p-4">
             <h4 className="text-xl font-semibold">Browse By Category</h4>
 
             <div>
-                <div className="flex flex-wrap py-6 space-x-2">
+                <div className="flex flex-wrap space-x-2 py-6">
                     {categories.map((category: Category) => {
                         if (category.attributes.articles.data.length === 0)
                             return null
@@ -74,7 +74,7 @@ export default function ArticleSelect({
                     <h4 className="text-lg font-semibold">
                         Other Posts You May Like
                     </h4>
-                    <ul className="ml-4 space-y-1 list-disc">
+                    <ul className="ml-4 list-disc space-y-1">
                         {articles.map((article: Article) => {
                             return (
                                 <li key={article.id}>
@@ -86,7 +86,7 @@ export default function ArticleSelect({
                                             params.slug ===
                                                 article.attributes.slug &&
                                             "text-violet-400"
-                                        }  hover:underline hover:text-violet-400 transition-colors duration-200`}
+                                        }  transition-colors duration-200 hover:text-violet-400 hover:underline`}
                                     >
                                         {article.attributes.title}
                                     </Link>

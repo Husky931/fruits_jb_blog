@@ -23,7 +23,7 @@ export default function CountryAllPagination() {
     useEffect(() => {
         const fetchStrapiPosts = async (pageNum: number) => {
             setLoading(true)
-            let url 
+            let url
             if (process.env.NODE_ENV === "production") {
                 url = `${process.env.NEXT_PUBLIC_STRAPI_SERVER}/api/job-vacancies`
             } else {
@@ -99,7 +99,7 @@ export default function CountryAllPagination() {
                         country={m.attributes.country}
                         db_add_timestamp={m.attributes.createdAt}
                         jobDescription={m.attributes.job_description}
-                        jobLocation={m.attributes.city_location                        }
+                        jobLocation={m.attributes.city_location}
                         link={m.attributes.url}
                         date={m.attributes.publishedAt}
                     />

@@ -1,7 +1,7 @@
 const Denmark = () => {
     return (
         <section className="seo-text mt-8 md:mt-12">
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center text-3xl font-bold">
                 Fun Facts About Denmark's Agriculture
             </h1>
             <br />
@@ -75,7 +75,7 @@ const Denmark = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center text-3xl font-bold">
                 Info About Denmark's Agriculture
             </h1>
             <br />

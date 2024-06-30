@@ -53,11 +53,11 @@ export default function Post({ data }: { data: Article }) {
                     alt={data.attributes.cover.data.attributes.alternativeText}
                     width={400}
                     height={400}
-                    className="w-full h-96 object-cover rounded-lg"
+                    className="h-96 w-full rounded-lg object-cover"
                 />
             )}
             <div className="space-y-6">
-                <h1 className="leading-tight text-5xl font-bold ">{title}</h1>
+                <h1 className="text-5xl font-bold leading-tight ">{title}</h1>
 
                 <div className="md:text-[20px]">{formatDate(publishedAt)}</div>
             </div>

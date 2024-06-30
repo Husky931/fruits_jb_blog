@@ -28,7 +28,7 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
                         <div key={index}>
                             {imageUrl && (
                                 <Image
-                                    className="w-full h-96 object-cover rounded-lg"
+                                    className="h-96 w-full rounded-lg object-cover"
                                     height={400}
                                     width={600}
                                     alt="alt text"

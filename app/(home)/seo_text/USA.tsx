@@ -3,10 +3,10 @@ import Link from "next/link"
 const USA = () => {
     return (
         <section className="seo-text mt-8 md:mt-12">
-            <h1 className="font-bold text-3xl text-center mt-4">
+            <h1 className="mt-4 text-center text-3xl font-bold">
                 Fun Facts About USA's Agriculture
             </h1>
-            <ol className="flex flex-col gap-y-5 mt-2">
+            <ol className="mt-2 flex flex-col gap-y-5">
                 <li>
                     <strong>Corn Capital:</strong> The USA is the world's
                     largest producer of corn, with Iowa being the leading state
@@ -59,7 +59,7 @@ const USA = () => {
             </ol>
             <br />
             <br />
-            <h1 className="font-bold text-3xl text-center">
+            <h1 className="text-center text-3xl font-bold">
                 Info About USA's Agriculture
             </h1>
             <br />
@@ -90,7 +90,7 @@ const USA = () => {
                         </Link>
                     </strong>
                 </p>
-                <ul className="flex flex-col gap-y-2 my-1">
+                <ul className="my-1 flex flex-col gap-y-2">
                     <li>
                         <span className="italic">Grapes:</span> 6871t
                     </li>

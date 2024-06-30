@@ -106,10 +106,10 @@ export default function CountryPagination() {
                         country={m.attributes.country}
                         db_add_timestamp={m.attributes.createdAt}
                         jobDescription={m.attributes.job_description}
-                        jobLocation={m.attributes.city_location                        }
+                        jobLocation={m.attributes.city_location}
                         link={m.attributes.url}
                         date={m.attributes.publishedAt}
-                />
+                    />
                 ))}
             </ul>
         </main>

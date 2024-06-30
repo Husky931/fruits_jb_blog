@@ -31,7 +31,7 @@ function NavLink({ url, text }: NavLink) {
             <Link
                 prefetch={false}
                 href={url}
-                className="flex items-center mx-4 -mb-1 border-b-2"
+                className="mx-4 -mb-1 flex items-center border-b-2"
             >
                 {text}
             </Link>
@@ -53,15 +53,15 @@ export default function Navbar({
     const pathname = usePathname()
     const isBlog = pathname === `/blog`
     return (
-        <div className="m-6 py-1 border-t border-b border-black">
-            <div className="items-center lg:flex justify-start">
-                <ul className="w-full items-start space-x-3 lg:flex text-[18px]">
+        <div className="m-6 border-b border-t border-black py-1">
+            <div className="items-center justify-start lg:flex">
+                <ul className="w-full items-start space-x-3 text-[18px] lg:flex">
                     <Link
                         prefetch={false}
                         href={`/blog`}
                         className={
                             isBlog
-                                ? "text-[#a78bfa] font-semibold"
+                                ? "font-semibold text-[#a78bfa]"
                                 : "text-black"
                         }
                     >
@@ -78,7 +78,7 @@ export default function Navbar({
                                     href={`/blog/${link.attributes.slug}`}
                                     className={
                                         isActive
-                                            ? "text-[#a78bfa] font-semibold"
+                                            ? "font-semibold text-[#a78bfa]"
                                             : "text-black"
                                     }
                                 >
