@@ -1,10 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers"
 import { fetchAPI } from "./utils/fetch-api"
-
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 
 const FALLBACK_SEO = {
     title: "Fruit pickers Daily Blog",
@@ -23,19 +19,8 @@ async function getGlobal(): Promise<any> {
     const urlParamsObject = {
         populate: [
             "metadata.shareImage",
-            "favicon",
-            "navbar.links",
-            "navbar.navbarLogo.logoImg",
-            "footer.footerLogo.logoImg",
-            "footer.menuLinks",
-            "footer.legalLinks",
-            "footer.socialLinks",
-            "footer.categories"
         ]
     }
-
-    // if you transfor the urlParamsObject you get the below query
-    // populate[]=metadata.shareImage&populate[]=favicon&populate[]=navbar.links&populate[]=navbar.navbarLogo.logoImg&populate[]=footer.footerLogo.logoImg&populate[]=footer.menuLinks&populate[]=footer.legalLinks&populate[]=footer.socialLinks&populate[]=footer.categories
 
     const response = await fetchAPI(path, urlParamsObject, options)
     return response
@@ -46,8 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     if (!meta.data) return FALLBACK_SEO
 
-    const { metadata, favicon } = meta.data.attributes
-    const { url } = favicon.data.attributes
+    const { metadata } = meta.data.attributes
 
     return {
         title: metadata.metaTitle,
@@ -72,43 +56,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({
     children,
-    params
 }: {
     children: React.ReactNode
-    params: { lang: string }
 }) {
-    const global = await getGlobal()
-    // TODO: CREATE A CUSTOM ERROR PAGE
-    if (!global.data) return null
-    const { navbar, footer } = global.data.attributes
-
-    const navbarLogoUrl = getStrapiMedia(
-        navbar.navbarLogo.logoImg.data.attributes.url
-    )
-
-    const footerLogoUrl = getStrapiMedia(
-        footer.footerLogo.logoImg.data.attributes.url
-    )
 
     return (
         <>
-            <Navbar
-                links={navbar.links}
-                categoryLinks={footer.categories.data}
-                logoUrl={navbarLogoUrl}
-                logoText={navbar.navbarLogo.logoText}
-            />
-
             <main className="min-h-screen">{children}</main>
-
-            {/* <Footer
-                // logoUrl={footerLogoUrl}
-                // logoText={footer.footerLogo.logoText}
-                menuLinks={footer.menuLinks}
-                categoryLinks={footer.categories.data}
-                legalLinks={footer.legalLinks}
-                socialLinks={footer.socialLinks}
-            /> */}
         </>
     )
 }

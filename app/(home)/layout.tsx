@@ -1,10 +1,8 @@
 import SiteTitle from "@/app/(home)/components/SiteTitle"
 import { Metadata } from "next"
 import Countries from "@/app/(home)/components/NavBar_Countries"
-import Navigation from "./components/navigation"
-import { fetchAPI } from "./blog/utils/fetch-api"
-import Footer from "./blog/components/Footer"
-import NewFooter from "@/app/components/NewFooter"
+import Navigation from "@/app/(home)/components/navigation/AppBar"
+import Footer from "@/app/components/Footer"
 
 export async function generateMetadata(): Promise<Metadata> {
     const metadataBase = new URL("https://fruitspickingjobs.com")
@@ -43,43 +41,11 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-async function getGlobal(): Promise<any> {
-    const path = `/global`
-
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
-
-    if (!token)
-        throw new Error("The Strapi API Token environment variable is not set.")
-
-    const options = { headers: { Authorization: `Bearer ${token}` } }
-
-    const urlParamsObject = {
-        populate: [
-            // "metadata.shareImage",
-            // "favicon",
-            // "navbar.links",
-            // "navbar.navbarLogo.logoImg",
-            "footer.footerLogo.logoImg",
-            "footer.menuLinks",
-            "footer.legalLinks",
-            "footer.socialLinks",
-            "footer.categories"
-        ]
-    }
-
-    const response = await fetchAPI(path, urlParamsObject, options)
-    return response
-}
-
 export default async function RootLayout({
     children
 }: {
     children: React.ReactNode
 }) {
-    const global = await getGlobal()
-    // TODO: CREATE A CUSTOM ERROR PAGE
-    if (!global.data) return null
-    const { navbar, footer } = global.data.attributes
 
     return (
         <div>
@@ -91,7 +57,7 @@ export default async function RootLayout({
                 {children}
             </div>
             <div className="w-full">
-                <NewFooter />
+                <Footer />
             </div>
         </div>
     )

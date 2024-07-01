@@ -1,4 +1,4 @@
-export const NewFooter = () => {
+export const Footer = () => {
     return (
         <footer className="bg-white p-8 antialiased dark:bg-gray-800">
             <div className="flex flex-col gap-6  md:flex md:flex-row md:gap-8 2xl:gap-24 ">
@@ -504,4 +504,4 @@ export const NewFooter = () => {
     )
 }
 
-export default NewFooter
+export default Footer
